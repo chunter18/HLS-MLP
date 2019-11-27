@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;../src/mlp.cpp&apos; ..."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:18 . Memory (MB): peak = 102.680 ; gain = 46.691"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:18 . Memory (MB): peak = 102.680 ; gain = 46.691"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1467" tag="" content="Starting code transformations ..."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;ap_fixed_base&lt;18, 6, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&gt;&gt;&apos; into &apos;sigmoid_activation_L1&apos; (../src/mlp.cpp:137)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;ap_fixed_base&lt;36, 12, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&gt;&gt;&apos; into &apos;sigmoid_activation_L1&apos; (../src/mlp.cpp:137)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;ap_fixed_base&lt;18, 5, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&gt;&gt;&apos; into &apos;sigmoid_activation_L2&apos; (../src/mlp.cpp:169)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;ap_fixed_base&lt;36, 10, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&gt;&gt;&apos; into &apos;sigmoid_activation_L2&apos; (../src/mlp.cpp:169)."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:20 . Memory (MB): peak = 124.453 ; gain = 68.465"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1472" tag="" content="Checking synthesizability ..."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:04 ; elapsed = 00:00:22 . Memory (MB): peak = 136.617 ; gain = 80.629"/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_250" tag="" content="Unrolling all loops for pipelining in function &apos;classify&apos; (../src/mlp.cpp:29)."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_250" tag="" content="Unrolling all loops for pipelining in function &apos;sigmoid_activation_L2&apos; (../src/mlp.cpp:148)."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;outer&apos; (../src/mlp.cpp:99) in function &apos;mvprod_layer_2&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_250" tag="" content="Unrolling all loops for pipelining in function &apos;add_bias_pre_L2&apos; (../src/mlp.cpp:60)."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_250" tag="" content="Unrolling all loops for pipelining in function &apos;sigmoid_activation_L1&apos; (../src/mlp.cpp:116)."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;outer&apos; (../src/mlp.cpp:77) in function &apos;mvprod_layer_1&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_250" tag="" content="Unrolling all loops for pipelining in function &apos;add_bias_pre_L1&apos; (../src/mlp.cpp:49)."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;argmax&apos; (../src/mlp.cpp:36) in function &apos;classify&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;activ&apos; (../src/mlp.cpp:157) in function &apos;sigmoid_activation_L2&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;inner&apos; (../src/mlp.cpp:101) in function &apos;mvprod_layer_2&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;fill&apos; (../src/mlp.cpp:66) in function &apos;add_bias_pre_L2&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;activ&apos; (../src/mlp.cpp:125) in function &apos;sigmoid_activation_L1&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;inner&apos; (../src/mlp.cpp:79) in function &apos;mvprod_layer_1&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;fill&apos; (../src/mlp.cpp:55) in function &apos;add_bias_pre_L1&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_120" tag="" content="Partitioning array &apos;L1_activ.V&apos; (../src/mlp.cpp:8) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_120" tag="" content="Partitioning array &apos;L2_bias_added.V&apos; (../src/mlp.cpp:9) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_120" tag="" content="Partitioning array &apos;L2_out_activ.V&apos; (../src/mlp.cpp:11) automatically."/>
+	<Message severity="WARNING" prefix="[XFORM 203-105]" key="XFORM_PARTITION_INVALID_134" tag="SDX_ARRAY" content="Cannot partition array &apos;weights_L1.V&apos; (../src/mlp.cpp:4): indivisible factor 100 on dimension 2, which has 401 elements."/>
+	<Message severity="WARNING" prefix="[XFORM 203-105]" key="XFORM_PARTITION_INVALID_134" tag="SDX_ARRAY" content="Cannot partition array &apos;bias_added.V&apos; (../src/mlp.cpp:6): indivisible factor 100 on dimension 1, which has 401 elements."/>
+	<Message severity="WARNING" prefix="[XFORM 203-105]" key="XFORM_PARTITION_INVALID_134" tag="SDX_ARRAY" content="Cannot partition array &apos;weights_L1.V&apos; (../src/mlp.cpp:4): indivisible factor 100 on dimension 2, which has 401 elements."/>
+	<Message severity="WARNING" prefix="[XFORM 203-105]" key="XFORM_PARTITION_INVALID_134" tag="SDX_ARRAY" content="Cannot partition array &apos;bias_added.V&apos; (../src/mlp.cpp:6): indivisible factor 100 on dimension 1, which has 401 elements."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_111" tag="" content="Partitioning array &apos;input.V&apos; (../src/mlp.cpp:4) in dimension 1 with a block factor 100."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;weights_L2.V&apos; (../src/mlp.cpp:4) in dimension 1 completely."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_190" tag="SDX_CHANNEL,DATAFLOW" content="Reading dataflow channel &apos;weights_L1.V&apos; in the middle of dataflow may stall the dataflow pipeline:"/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_618" tag="SDX,DATAFLOW" content="Argument &apos;weights_L1.V&apos; has read operations in process function &apos;mvprod_layer_1&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_190" tag="SDX_CHANNEL,DATAFLOW" content="Reading dataflow channel &apos;weights_L2[0].V&apos; in the middle of dataflow may stall the dataflow pipeline:"/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_618" tag="SDX,DATAFLOW" content="Argument &apos;weights_L2[0].V&apos; has read operations in process function &apos;mvprod_layer_2&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_190" tag="SDX_CHANNEL,DATAFLOW" content="Reading dataflow channel &apos;weights_L2[1].V&apos; in the middle of dataflow may stall the dataflow pipeline:"/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_618" tag="SDX,DATAFLOW" content="Argument &apos;weights_L2[1].V&apos; has read operations in process function &apos;mvprod_layer_2&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_190" tag="SDX_CHANNEL,DATAFLOW" content="Reading dataflow channel &apos;weights_L2[2].V&apos; in the middle of dataflow may stall the dataflow pipeline:"/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_618" tag="SDX,DATAFLOW" content="Argument &apos;weights_L2[2].V&apos; has read operations in process function &apos;mvprod_layer_2&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_190" tag="SDX_CHANNEL,DATAFLOW" content="Reading dataflow channel &apos;weights_L2[3].V&apos; in the middle of dataflow may stall the dataflow pipeline:"/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_618" tag="SDX,DATAFLOW" content="Argument &apos;weights_L2[3].V&apos; has read operations in process function &apos;mvprod_layer_2&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_190" tag="SDX_CHANNEL,DATAFLOW" content="Reading dataflow channel &apos;weights_L2[4].V&apos; in the middle of dataflow may stall the dataflow pipeline:"/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_618" tag="SDX,DATAFLOW" content="Argument &apos;weights_L2[4].V&apos; has read operations in process function &apos;mvprod_layer_2&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_190" tag="SDX_CHANNEL,DATAFLOW" content="Reading dataflow channel &apos;weights_L2[5].V&apos; in the middle of dataflow may stall the dataflow pipeline:"/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_618" tag="SDX,DATAFLOW" content="Argument &apos;weights_L2[5].V&apos; has read operations in process function &apos;mvprod_layer_2&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_190" tag="SDX_CHANNEL,DATAFLOW" content="Reading dataflow channel &apos;weights_L2[6].V&apos; in the middle of dataflow may stall the dataflow pipeline:"/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_618" tag="SDX,DATAFLOW" content="Argument &apos;weights_L2[6].V&apos; has read operations in process function &apos;mvprod_layer_2&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_190" tag="SDX_CHANNEL,DATAFLOW" content="Reading dataflow channel &apos;weights_L2[7].V&apos; in the middle of dataflow may stall the dataflow pipeline:"/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_618" tag="SDX,DATAFLOW" content="Argument &apos;weights_L2[7].V&apos; has read operations in process function &apos;mvprod_layer_2&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_190" tag="SDX_CHANNEL,DATAFLOW" content="Reading dataflow channel &apos;weights_L2[8].V&apos; in the middle of dataflow may stall the dataflow pipeline:"/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_618" tag="SDX,DATAFLOW" content="Argument &apos;weights_L2[8].V&apos; has read operations in process function &apos;mvprod_layer_2&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_190" tag="SDX_CHANNEL,DATAFLOW" content="Reading dataflow channel &apos;weights_L2[9].V&apos; in the middle of dataflow may stall the dataflow pipeline:"/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_618" tag="SDX,DATAFLOW" content="Argument &apos;weights_L2[9].V&apos; has read operations in process function &apos;mvprod_layer_2&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-712]" key="XFORM_DATAFLOW_TRANSFORM_230" tag="DATAFLOW" content="Applying dataflow to function &apos;mlp&apos;, detected/extracted 9 process function(s): 
+	 &apos;add_bias_pre_L1&apos;
+	 &apos;mvprod_layer_1&apos;
+	 &apos;sigmoid_activation_L1&apos;
+	 &apos;add_bias_pre_L2&apos;
+	 &apos;mvprod_layer_2&apos;
+	 &apos;sigmoid_activation_L2&apos;
+	 &apos;classify&apos;
+	 &apos;Block_arrayctor.loop2.preheader210_proc&apos;
+	 &apos;__../src/mlp.cpp_line24_proc&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (../src/mlp.cpp:148:37) to (../src/mlp.cpp:178:1) in function &apos;sigmoid_activation_L2&apos;... converting 21 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (../src/mlp.cpp:116:37) to (../src/mlp.cpp:146:1) in function &apos;sigmoid_activation_L1&apos;... converting 51 basic blocks."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Pre-synthesis Time (s): cpu = 00:00:18 ; elapsed = 00:00:36 . Memory (MB): peak = 187.633 ; gain = 131.645"/>
+	<Message severity="WARNING" prefix="[XFORM 203-631]" key="XFORM_FRN_STATUS_336" tag="" content="Renaming function &apos;sigmoid_activation_L2&apos; to &apos;sigmoid_activation_L&apos; (../src/mlp.cpp:150:1)"/>
+	<Message severity="WARNING" prefix="[XFORM 203-631]" key="XFORM_FRN_STATUS_336" tag="" content="Renaming function &apos;sigmoid_activation_L1&apos; to &apos;sigmoid_activation_L.1&apos; (../src/mlp.cpp:118:1)"/>
+	<Message severity="WARNING" prefix="[XFORM 203-631]" key="XFORM_FRN_STATUS_336" tag="" content="Renaming function &apos;__../src/mlp.cpp_line24_proc&apos; to &apos;__../src/mlp.cpp_lin&apos;"/>
+	<Message severity="WARNING" prefix="[XFORM 203-631]" key="XFORM_FRN_STATUS_336" tag="" content="Renaming function &apos;Block_arrayctor.loop2.preheader210_proc&apos; to &apos;Block_arrayctor.loop&apos;"/>
+	<Message severity="INFO" prefix="[XFORM 203-531]" key="XFORM_LOOP_REWIND_STATUS_298" tag="" content="Rewinding loop &apos;outer&apos; (../src/mlp.cpp:99) in function &apos;mvprod_layer_2&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-531]" key="XFORM_LOOP_REWIND_STATUS_298" tag="" content="Rewinding loop &apos;outer&apos; (../src/mlp.cpp:77) in function &apos;mvprod_layer_1&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Architecture Synthesis Time (s): cpu = 00:00:31 ; elapsed = 00:00:50 . Memory (MB): peak = 355.902 ; gain = 299.914"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1317" tag="" content="Starting hardware synthesis ..."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1385" tag="" content="Synthesizing &apos;mlp&apos; ..."/>
+	<Message severity="WARNING" prefix="[SYN 201-103]" key="SYN_MODULE_NAME_ILLEGAL_445" tag="" content="Legalizing function name &apos;sigmoid_activation_L.1&apos; to &apos;sigmoid_activation_L_1&apos;."/>
+	<Message severity="WARNING" prefix="[SYN 201-103]" key="SYN_MODULE_NAME_ILLEGAL_445" tag="" content="Legalizing function name &apos;Block_arrayctor.loop&apos; to &apos;Block_arrayctor_loop&apos;."/>
+	<Message severity="WARNING" prefix="[SYN 201-103]" key="SYN_MODULE_NAME_ILLEGAL_445" tag="" content="Legalizing function name &apos;__../src/mlp.cpp_lin&apos; to &apos;p_src_mlp_cpp_lin&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;add_bias_pre_L1&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_46" tag="" content="Pipelining function &apos;add_bias_pre_L1&apos;."/>
+	<Message severity="WARNING" prefix="[SCHED 204-69]" key="SCHED_RESOURCE_CONSTRAINT_NOT_MET_38" tag="SDX,SCHEDULE" content="Unable to schedule &apos;load&apos; operation (&apos;input_0_V_load_2&apos;, ../src/mlp.cpp:56) on array &apos;input_0_V&apos; due to limited memory ports. Please consider using a memory core with more ports or partitioning the array &apos;input_0_V&apos;."/>
+	<Message severity="WARNING" prefix="[SCHED 204-69]" key="SCHED_RESOURCE_CONSTRAINT_NOT_MET_38" tag="SDX,SCHEDULE" content="Unable to schedule &apos;store&apos; operation (../src/mlp.cpp:56) of variable &apos;input_0_V_load_3&apos;, ../src/mlp.cpp:56 on array &apos;result_V&apos; due to limited memory ports. Please consider using a memory core with more ports or partitioning the array &apos;result_V&apos;."/>
+</Messages>

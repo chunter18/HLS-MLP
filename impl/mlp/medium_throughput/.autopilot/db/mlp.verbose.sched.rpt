@@ -1,0 +1,258 @@
+
+
+================================================================
+== Vivado HLS Report for 'mlp'
+================================================================
+* Date:           Sun Oct 27 17:45:44 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        mlp
+* Solution:       medium_throughput
+* Product family: kintex7
+* Target device:  xc7k325tffg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|     3.374|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+----------+
+    |   Latency   |   Interval  | Pipeline |
+    |  min |  max |  min |  max |   Type   |
+    +------+------+------+------+----------+
+    |  2864|  2867|  1275|  1275| dataflow |
+    +------+------+------+------+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 14
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 14, States = { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 }
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%bias_added_0_V = alloca [51 x i18], align 4" [../src/mlp.cpp:6]   --->   Operation 15 'alloca' 'bias_added_0_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%bias_added_1_V = alloca [51 x i18], align 4" [../src/mlp.cpp:6]   --->   Operation 16 'alloca' 'bias_added_1_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%bias_added_2_V = alloca [51 x i18], align 4" [../src/mlp.cpp:6]   --->   Operation 17 'alloca' 'bias_added_2_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%bias_added_3_V = alloca [51 x i18], align 4" [../src/mlp.cpp:6]   --->   Operation 18 'alloca' 'bias_added_3_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%bias_added_4_V = alloca [51 x i18], align 4" [../src/mlp.cpp:6]   --->   Operation 19 'alloca' 'bias_added_4_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%bias_added_5_V = alloca [51 x i18], align 4" [../src/mlp.cpp:6]   --->   Operation 20 'alloca' 'bias_added_5_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%bias_added_6_V = alloca [51 x i18], align 4" [../src/mlp.cpp:6]   --->   Operation 21 'alloca' 'bias_added_6_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%bias_added_7_V = alloca [44 x i18], align 4" [../src/mlp.cpp:6]   --->   Operation 22 'alloca' 'bias_added_7_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%L1_no_activ_V = alloca [25 x i18], align 4" [../src/mlp.cpp:7]   --->   Operation 23 'alloca' 'L1_no_activ_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%L1_activ_V = alloca [25 x i18], align 4" [../src/mlp.cpp:8]   --->   Operation 24 'alloca' 'L1_activ_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%L2_bias_added_V = alloca [26 x i18], align 4" [../src/mlp.cpp:9]   --->   Operation 25 'alloca' 'L2_bias_added_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%L2_out_V = alloca [10 x i18], align 4" [../src/mlp.cpp:10]   --->   Operation 26 'alloca' 'L2_out_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%L2_out_activ_V = alloca [10 x i18], align 4" [../src/mlp.cpp:11]   --->   Operation 27 'alloca' 'L2_out_activ_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [2/2] (0.00ns)   --->   "call fastcc void @add_bias_pre_L1([50 x i18]* %input_0_V, [50 x i18]* %input_1_V, [50 x i18]* %input_2_V, [50 x i18]* %input_3_V, [50 x i18]* %input_4_V, [50 x i18]* %input_5_V, [50 x i18]* %input_6_V, [50 x i18]* %input_7_V, [51 x i18]* %bias_added_0_V, [51 x i18]* %bias_added_1_V, [51 x i18]* %bias_added_2_V, [51 x i18]* %bias_added_3_V, [51 x i18]* %bias_added_4_V, [51 x i18]* %bias_added_5_V, [51 x i18]* %bias_added_6_V, [44 x i18]* %bias_added_7_V)" [../src/mlp.cpp:14]   --->   Operation 28 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 29 [1/2] (0.00ns)   --->   "call fastcc void @add_bias_pre_L1([50 x i18]* %input_0_V, [50 x i18]* %input_1_V, [50 x i18]* %input_2_V, [50 x i18]* %input_3_V, [50 x i18]* %input_4_V, [50 x i18]* %input_5_V, [50 x i18]* %input_6_V, [50 x i18]* %input_7_V, [51 x i18]* %bias_added_0_V, [51 x i18]* %bias_added_1_V, [51 x i18]* %bias_added_2_V, [51 x i18]* %bias_added_3_V, [51 x i18]* %bias_added_4_V, [51 x i18]* %bias_added_5_V, [51 x i18]* %bias_added_6_V, [44 x i18]* %bias_added_7_V)" [../src/mlp.cpp:14]   --->   Operation 29 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 30 [2/2] (0.00ns)   --->   "call fastcc void @mvprod_layer_1([1275 x i18]* %weights_L1_0_V, [1275 x i18]* %weights_L1_1_V, [1275 x i18]* %weights_L1_2_V, [1275 x i18]* %weights_L1_3_V, [1275 x i18]* %weights_L1_4_V, [1275 x i18]* %weights_L1_5_V, [1275 x i18]* %weights_L1_6_V, [1100 x i18]* %weights_L1_7_V, [51 x i18]* %bias_added_0_V, [51 x i18]* %bias_added_1_V, [51 x i18]* %bias_added_2_V, [51 x i18]* %bias_added_3_V, [51 x i18]* %bias_added_4_V, [51 x i18]* %bias_added_5_V, [51 x i18]* %bias_added_6_V, [44 x i18]* %bias_added_7_V, [25 x i18]* %L1_no_activ_V)" [../src/mlp.cpp:15]   --->   Operation 30 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 31 [1/2] (0.00ns)   --->   "call fastcc void @mvprod_layer_1([1275 x i18]* %weights_L1_0_V, [1275 x i18]* %weights_L1_1_V, [1275 x i18]* %weights_L1_2_V, [1275 x i18]* %weights_L1_3_V, [1275 x i18]* %weights_L1_4_V, [1275 x i18]* %weights_L1_5_V, [1275 x i18]* %weights_L1_6_V, [1100 x i18]* %weights_L1_7_V, [51 x i18]* %bias_added_0_V, [51 x i18]* %bias_added_1_V, [51 x i18]* %bias_added_2_V, [51 x i18]* %bias_added_3_V, [51 x i18]* %bias_added_4_V, [51 x i18]* %bias_added_5_V, [51 x i18]* %bias_added_6_V, [44 x i18]* %bias_added_7_V, [25 x i18]* %L1_no_activ_V)" [../src/mlp.cpp:15]   --->   Operation 31 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 32 [2/2] (0.00ns)   --->   "call fastcc void @sigmoid_activation_L.1([25 x i18]* %L1_no_activ_V, [25 x i18]* %L1_activ_V)" [../src/mlp.cpp:16]   --->   Operation 32 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 33 [1/2] (0.00ns)   --->   "call fastcc void @sigmoid_activation_L.1([25 x i18]* %L1_no_activ_V, [25 x i18]* %L1_activ_V)" [../src/mlp.cpp:16]   --->   Operation 33 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 34 [2/2] (0.00ns)   --->   "call fastcc void @add_bias_pre_L2([25 x i18]* %L1_activ_V, [26 x i18]* %L2_bias_added_V)" [../src/mlp.cpp:18]   --->   Operation 34 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 35 [1/2] (0.00ns)   --->   "call fastcc void @add_bias_pre_L2([25 x i18]* %L1_activ_V, [26 x i18]* %L2_bias_added_V)" [../src/mlp.cpp:18]   --->   Operation 35 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 0.00>
+ST_9 : Operation 36 [2/2] (0.00ns)   --->   "call fastcc void @mvprod_layer_2([260 x i18]* %weights_L2_V, [26 x i18]* %L2_bias_added_V, [10 x i18]* %L2_out_V)" [../src/mlp.cpp:19]   --->   Operation 36 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 0.00>
+ST_10 : Operation 37 [1/2] (0.00ns)   --->   "call fastcc void @mvprod_layer_2([260 x i18]* %weights_L2_V, [26 x i18]* %L2_bias_added_V, [10 x i18]* %L2_out_V)" [../src/mlp.cpp:19]   --->   Operation 37 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 0.00>
+ST_11 : Operation 38 [2/2] (0.00ns)   --->   "call fastcc void @sigmoid_activation_L([10 x i18]* %L2_out_V, [10 x i18]* %L2_out_activ_V)" [../src/mlp.cpp:20]   --->   Operation 38 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 11> <Delay = 0.00>
+ST_12 : Operation 39 [1/2] (0.00ns)   --->   "call fastcc void @sigmoid_activation_L([10 x i18]* %L2_out_V, [10 x i18]* %L2_out_activ_V)" [../src/mlp.cpp:20]   --->   Operation 39 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 12> <Delay = 0.00>
+ST_13 : Operation 40 [2/2] (0.00ns)   --->   "%digit = call fastcc i32 @classify([10 x i18]* %L2_out_activ_V)" [../src/mlp.cpp:22]   --->   Operation 40 'call' 'digit' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.46> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+
+State 14 <SV = 13> <Delay = 0.00>
+ST_14 : Operation 41 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str1) nounwind" [../src/mlp.cpp:6]   --->   Operation 41 'specdataflowpipeline' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 42 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([1100 x i18]* %weights_L1_7_V), !map !143"   --->   Operation 42 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 43 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([1275 x i18]* %weights_L1_6_V), !map !150"   --->   Operation 43 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 44 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([1275 x i18]* %weights_L1_5_V), !map !156"   --->   Operation 44 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 45 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([1275 x i18]* %weights_L1_4_V), !map !162"   --->   Operation 45 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 46 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([1275 x i18]* %weights_L1_3_V), !map !168"   --->   Operation 46 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 47 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([1275 x i18]* %weights_L1_2_V), !map !174"   --->   Operation 47 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 48 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([1275 x i18]* %weights_L1_1_V), !map !180"   --->   Operation 48 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 49 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([1275 x i18]* %weights_L1_0_V), !map !186"   --->   Operation 49 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 50 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([50 x i18]* %input_7_V), !map !192"   --->   Operation 50 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 51 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([50 x i18]* %input_6_V), !map !198"   --->   Operation 51 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 52 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([50 x i18]* %input_5_V), !map !204"   --->   Operation 52 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 53 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([50 x i18]* %input_4_V), !map !210"   --->   Operation 53 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 54 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([50 x i18]* %input_3_V), !map !216"   --->   Operation 54 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 55 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([50 x i18]* %input_2_V), !map !222"   --->   Operation 55 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 56 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([50 x i18]* %input_1_V), !map !228"   --->   Operation 56 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 57 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([50 x i18]* %input_0_V), !map !234"   --->   Operation 57 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 58 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([260 x i18]* %weights_L2_V), !map !240"   --->   Operation 58 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 59 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 0) nounwind, !map !247"   --->   Operation 59 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 60 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([4 x i8]* @mlp_str) nounwind"   --->   Operation 60 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 61 [1/2] (0.00ns)   --->   "%digit = call fastcc i32 @classify([10 x i18]* %L2_out_activ_V)" [../src/mlp.cpp:22]   --->   Operation 61 'call' 'digit' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.46> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_14 : Operation 62 [1/1] (0.00ns)   --->   "%digit_load_loc_chann = call fastcc i32 @Block_arrayctor.loop(i32 %digit)" [../src/mlp.cpp:22]   --->   Operation 62 'call' 'digit_load_loc_chann' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.46> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_14 : Operation 63 [1/1] (0.00ns)   --->   "%tmp = call fastcc i32 @"__../src/mlp.cpp_lin"(i32 %digit_load_loc_chann)" [../src/mlp.cpp:22]   --->   Operation 63 'call' 'tmp' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_14 : Operation 64 [1/1] (0.00ns)   --->   "ret i32 %tmp" [../src/mlp.cpp:24]   --->   Operation 64 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 0.5ns.
+
+ <State 1>: 0ns
+The critical path consists of the following:
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 0ns
+The critical path consists of the following:
+
+ <State 7>: 0ns
+The critical path consists of the following:
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+ <State 9>: 0ns
+The critical path consists of the following:
+
+ <State 10>: 0ns
+The critical path consists of the following:
+
+ <State 11>: 0ns
+The critical path consists of the following:
+
+ <State 12>: 0ns
+The critical path consists of the following:
+
+ <State 13>: 0ns
+The critical path consists of the following:
+
+ <State 14>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

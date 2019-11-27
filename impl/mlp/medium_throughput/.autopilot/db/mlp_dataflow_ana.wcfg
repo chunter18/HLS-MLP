@@ -1,0 +1,918 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="mlp.wdb" id="1">
+         <top_modules>
+            <top_module name="apa_mlp_top" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0ns"></ZoomStartTime>
+      <ZoomEndTime time="2000ns"></ZoomEndTime>
+      <Cursor1Time time="0ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="257"></NameColumnWidth>
+      <ValueColumnWidth column_width="84"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="2" />
+   <wvobject type="group" fp_name="AESL_inst_mlp_group">
+      <obj_property name="label">AESL_inst_mlp</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="protoinst" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/add_bias_pre_L1_U0_activity">
+         <obj_property name="ElementShortName">add_bias_pre_L1_U0_activity</obj_property>
+         <obj_property name="ObjectShortName">add_bias_pre_L1_U0_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/mvprod_layer_1_U0_activity">
+         <obj_property name="ElementShortName">mvprod_layer_1_U0_activity</obj_property>
+         <obj_property name="ObjectShortName">mvprod_layer_1_U0_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_1_U0/sigmoid_activation_L_1_U0_activity">
+         <obj_property name="ElementShortName">sigmoid_activation_L_1_U0_activity</obj_property>
+         <obj_property name="ObjectShortName">sigmoid_activation_L_1_U0_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L2_U0/add_bias_pre_L2_U0_activity">
+         <obj_property name="ElementShortName">add_bias_pre_L2_U0_activity</obj_property>
+         <obj_property name="ObjectShortName">add_bias_pre_L2_U0_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_2_U0/mvprod_layer_2_U0_activity">
+         <obj_property name="ElementShortName">mvprod_layer_2_U0_activity</obj_property>
+         <obj_property name="ObjectShortName">mvprod_layer_2_U0_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_U0/sigmoid_activation_L_U0_activity">
+         <obj_property name="ElementShortName">sigmoid_activation_L_U0_activity</obj_property>
+         <obj_property name="ObjectShortName">sigmoid_activation_L_U0_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_mlp_top/AESL_inst_mlp/classify_U0/classify_U0_activity">
+         <obj_property name="ElementShortName">classify_U0_activity</obj_property>
+         <obj_property name="ObjectShortName">classify_U0_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_mlp_top/AESL_inst_mlp/Block_arrayctor_loop_U0/Block_arrayctor_loop_U0_activity">
+         <obj_property name="ElementShortName">Block_arrayctor_loop_U0_activity</obj_property>
+         <obj_property name="ObjectShortName">Block_arrayctor_loop_U0_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_mlp_top/AESL_inst_mlp/p_src_mlp_cpp_lin_U0/p_src_mlp_cpp_lin_U0_activity">
+         <obj_property name="ElementShortName">p_src_mlp_cpp_lin_U0_activity</obj_property>
+         <obj_property name="ObjectShortName">p_src_mlp_cpp_lin_U0_activity</obj_property>
+      </wvobject>
+      <wvobject type="group" fp_name="add_bias_pre_L1_U0_group">
+         <obj_property name="label">add_bias_pre_L1_U0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="add_bias_pre_L1_U0_Input_group">
+            <obj_property name="label">Input Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="input_0_V_group">
+               <obj_property name="label">input_0_V(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_0_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_0_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_0_V_ce0">
+                  <obj_property name="ElementShortName">input_0_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">input_0_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="input_1_V_group">
+               <obj_property name="label">input_1_V(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_1_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_1_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_1_V_ce0">
+                  <obj_property name="ElementShortName">input_1_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">input_1_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="input_2_V_group">
+               <obj_property name="label">input_2_V(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_2_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_2_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_2_V_ce0">
+                  <obj_property name="ElementShortName">input_2_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">input_2_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="input_3_V_group">
+               <obj_property name="label">input_3_V(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_3_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_3_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_3_V_ce0">
+                  <obj_property name="ElementShortName">input_3_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">input_3_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="input_4_V_group">
+               <obj_property name="label">input_4_V(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_4_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_4_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_4_V_ce0">
+                  <obj_property name="ElementShortName">input_4_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">input_4_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="input_5_V_group">
+               <obj_property name="label">input_5_V(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_5_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_5_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_5_V_ce0">
+                  <obj_property name="ElementShortName">input_5_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">input_5_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="input_6_V_group">
+               <obj_property name="label">input_6_V(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_6_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_6_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_6_V_ce0">
+                  <obj_property name="ElementShortName">input_6_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">input_6_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="input_7_V_group">
+               <obj_property name="label">input_7_V(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_7_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_7_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/input_7_V_ce0">
+                  <obj_property name="ElementShortName">input_7_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">input_7_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="add_bias_pre_L1_U0_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="add_bias_pre_L1_U0_Output_group">
+            <obj_property name="label">Output Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="result_0_V_group">
+               <obj_property name="label">result_0_V(bias_added_0_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_0_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_0_V_d0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_0_V_ce0">
+                  <obj_property name="ElementShortName">result_0_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">result_0_V_ce0</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_0_V_we0">
+                  <obj_property name="ElementShortName">result_0_V_we0</obj_property>
+                  <obj_property name="ObjectShortName">result_0_V_we0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="result_1_V_group">
+               <obj_property name="label">result_1_V(bias_added_1_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_1_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_1_V_d0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_1_V_ce0">
+                  <obj_property name="ElementShortName">result_1_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">result_1_V_ce0</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_1_V_we0">
+                  <obj_property name="ElementShortName">result_1_V_we0</obj_property>
+                  <obj_property name="ObjectShortName">result_1_V_we0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="result_2_V_group">
+               <obj_property name="label">result_2_V(bias_added_2_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_2_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_2_V_d0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_2_V_ce0">
+                  <obj_property name="ElementShortName">result_2_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">result_2_V_ce0</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_2_V_we0">
+                  <obj_property name="ElementShortName">result_2_V_we0</obj_property>
+                  <obj_property name="ObjectShortName">result_2_V_we0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="result_3_V_group">
+               <obj_property name="label">result_3_V(bias_added_3_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_3_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_3_V_d0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_3_V_ce0">
+                  <obj_property name="ElementShortName">result_3_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">result_3_V_ce0</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_3_V_we0">
+                  <obj_property name="ElementShortName">result_3_V_we0</obj_property>
+                  <obj_property name="ObjectShortName">result_3_V_we0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="result_4_V_group">
+               <obj_property name="label">result_4_V(bias_added_4_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_4_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_4_V_d0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_4_V_ce0">
+                  <obj_property name="ElementShortName">result_4_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">result_4_V_ce0</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_4_V_we0">
+                  <obj_property name="ElementShortName">result_4_V_we0</obj_property>
+                  <obj_property name="ObjectShortName">result_4_V_we0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="result_5_V_group">
+               <obj_property name="label">result_5_V(bias_added_5_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_5_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_5_V_d0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_5_V_ce0">
+                  <obj_property name="ElementShortName">result_5_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">result_5_V_ce0</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_5_V_we0">
+                  <obj_property name="ElementShortName">result_5_V_we0</obj_property>
+                  <obj_property name="ObjectShortName">result_5_V_we0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="result_6_V_group">
+               <obj_property name="label">result_6_V(bias_added_6_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_6_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_6_V_d0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_6_V_ce0">
+                  <obj_property name="ElementShortName">result_6_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">result_6_V_ce0</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_6_V_we0">
+                  <obj_property name="ElementShortName">result_6_V_we0</obj_property>
+                  <obj_property name="ObjectShortName">result_6_V_we0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="result_7_V_group">
+               <obj_property name="label">result_7_V(bias_added_7_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_7_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_7_V_d0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_7_V_ce0">
+                  <obj_property name="ElementShortName">result_7_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">result_7_V_ce0</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L1_U0/result_7_V_we0">
+                  <obj_property name="ElementShortName">result_7_V_we0</obj_property>
+                  <obj_property name="ObjectShortName">result_7_V_we0</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="mvprod_layer_1_U0_group">
+         <obj_property name="label">mvprod_layer_1_U0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="mvprod_layer_1_U0_Input_group">
+            <obj_property name="label">Input Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="matrix_0_V_group">
+               <obj_property name="label">matrix_0_V(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_0_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_0_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_0_V_ce0">
+                  <obj_property name="ElementShortName">matrix_0_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">matrix_0_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="matrix_1_V_group">
+               <obj_property name="label">matrix_1_V(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_1_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_1_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_1_V_ce0">
+                  <obj_property name="ElementShortName">matrix_1_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">matrix_1_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="matrix_2_V_group">
+               <obj_property name="label">matrix_2_V(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_2_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_2_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_2_V_ce0">
+                  <obj_property name="ElementShortName">matrix_2_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">matrix_2_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="matrix_3_V_group">
+               <obj_property name="label">matrix_3_V(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_3_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_3_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_3_V_ce0">
+                  <obj_property name="ElementShortName">matrix_3_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">matrix_3_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="matrix_4_V_group">
+               <obj_property name="label">matrix_4_V(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_4_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_4_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_4_V_ce0">
+                  <obj_property name="ElementShortName">matrix_4_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">matrix_4_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="matrix_5_V_group">
+               <obj_property name="label">matrix_5_V(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_5_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_5_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_5_V_ce0">
+                  <obj_property name="ElementShortName">matrix_5_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">matrix_5_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="matrix_6_V_group">
+               <obj_property name="label">matrix_6_V(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_6_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_6_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_6_V_ce0">
+                  <obj_property name="ElementShortName">matrix_6_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">matrix_6_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="matrix_7_V_group">
+               <obj_property name="label">matrix_7_V(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_7_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_7_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/matrix_7_V_ce0">
+                  <obj_property name="ElementShortName">matrix_7_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">matrix_7_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="input_0_V_group">
+               <obj_property name="label">input_0_V(bias_added_0_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_0_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_0_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_0_V_ce0">
+                  <obj_property name="ElementShortName">input_0_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">input_0_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="input_1_V_group">
+               <obj_property name="label">input_1_V(bias_added_1_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_1_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_1_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_1_V_ce0">
+                  <obj_property name="ElementShortName">input_1_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">input_1_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="input_2_V_group">
+               <obj_property name="label">input_2_V(bias_added_2_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_2_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_2_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_2_V_ce0">
+                  <obj_property name="ElementShortName">input_2_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">input_2_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="input_3_V_group">
+               <obj_property name="label">input_3_V(bias_added_3_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_3_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_3_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_3_V_ce0">
+                  <obj_property name="ElementShortName">input_3_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">input_3_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="input_4_V_group">
+               <obj_property name="label">input_4_V(bias_added_4_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_4_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_4_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_4_V_ce0">
+                  <obj_property name="ElementShortName">input_4_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">input_4_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="input_5_V_group">
+               <obj_property name="label">input_5_V(bias_added_5_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_5_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_5_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_5_V_ce0">
+                  <obj_property name="ElementShortName">input_5_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">input_5_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="input_6_V_group">
+               <obj_property name="label">input_6_V(bias_added_6_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_6_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_6_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_6_V_ce0">
+                  <obj_property name="ElementShortName">input_6_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">input_6_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="input_7_V_group">
+               <obj_property name="label">input_7_V(bias_added_7_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_7_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_7_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/input_7_V_ce0">
+                  <obj_property name="ElementShortName">input_7_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">input_7_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="mvprod_layer_1_U0_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="mvprod_layer_1_U0_Output_group">
+            <obj_property name="label">Output Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="result_V_group">
+               <obj_property name="label">result_V(L1_no_activ_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/result_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/result_V_d0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/result_V_ce0">
+                  <obj_property name="ElementShortName">result_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">result_V_ce0</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_1_U0/result_V_we0">
+                  <obj_property name="ElementShortName">result_V_we0</obj_property>
+                  <obj_property name="ObjectShortName">result_V_we0</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="sigmoid_activation_L_1_U0_group">
+         <obj_property name="label">sigmoid_activation_L_1_U0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="sigmoid_activation_L_1_U0_Input_group">
+            <obj_property name="label">Input Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="input_V_group">
+               <obj_property name="label">input_V(L1_no_activ_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_1_U0/input_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_1_U0/input_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_1_U0/input_V_ce0">
+                  <obj_property name="ElementShortName">input_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">input_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="sigmoid_activation_L_1_U0_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_1_U0/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_1_U0/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_1_U0/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_1_U0/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="sigmoid_activation_L_1_U0_Output_group">
+            <obj_property name="label">Output Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="result_V_group">
+               <obj_property name="label">result_V(L1_activ_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_1_U0/result_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_1_U0/result_V_d0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_1_U0/result_V_ce0">
+                  <obj_property name="ElementShortName">result_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">result_V_ce0</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_1_U0/result_V_we0">
+                  <obj_property name="ElementShortName">result_V_we0</obj_property>
+                  <obj_property name="ObjectShortName">result_V_we0</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="add_bias_pre_L2_U0_group">
+         <obj_property name="label">add_bias_pre_L2_U0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="add_bias_pre_L2_U0_Input_group">
+            <obj_property name="label">Input Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="input_V_group">
+               <obj_property name="label">input_V(L1_activ_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L2_U0/input_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L2_U0/input_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L2_U0/input_V_ce0">
+                  <obj_property name="ElementShortName">input_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">input_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="add_bias_pre_L2_U0_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L2_U0/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L2_U0/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L2_U0/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L2_U0/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="add_bias_pre_L2_U0_Output_group">
+            <obj_property name="label">Output Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="result_V_group">
+               <obj_property name="label">result_V(L2_bias_added_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L2_U0/result_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L2_U0/result_V_d0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L2_U0/result_V_ce0">
+                  <obj_property name="ElementShortName">result_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">result_V_ce0</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/add_bias_pre_L2_U0/result_V_we0">
+                  <obj_property name="ElementShortName">result_V_we0</obj_property>
+                  <obj_property name="ObjectShortName">result_V_we0</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="mvprod_layer_2_U0_group">
+         <obj_property name="label">mvprod_layer_2_U0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="mvprod_layer_2_U0_Input_group">
+            <obj_property name="label">Input Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="matrix_V_group">
+               <obj_property name="label">matrix_V(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_2_U0/matrix_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_2_U0/matrix_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_2_U0/matrix_V_ce0">
+                  <obj_property name="ElementShortName">matrix_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">matrix_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="input_V_group">
+               <obj_property name="label">input_V(L2_bias_added_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_2_U0/input_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_2_U0/input_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_2_U0/input_V_ce0">
+                  <obj_property name="ElementShortName">input_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">input_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="mvprod_layer_2_U0_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_2_U0/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_2_U0/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_2_U0/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_2_U0/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="mvprod_layer_2_U0_Output_group">
+            <obj_property name="label">Output Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="result_V_group">
+               <obj_property name="label">result_V(L2_out_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_2_U0/result_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_2_U0/result_V_d0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_2_U0/result_V_ce0">
+                  <obj_property name="ElementShortName">result_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">result_V_ce0</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/mvprod_layer_2_U0/result_V_we0">
+                  <obj_property name="ElementShortName">result_V_we0</obj_property>
+                  <obj_property name="ObjectShortName">result_V_we0</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="sigmoid_activation_L_U0_group">
+         <obj_property name="label">sigmoid_activation_L_U0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="sigmoid_activation_L_U0_Input_group">
+            <obj_property name="label">Input Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="input_V_group">
+               <obj_property name="label">input_V(L2_out_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_U0/input_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_U0/input_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_U0/input_V_ce0">
+                  <obj_property name="ElementShortName">input_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">input_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="sigmoid_activation_L_U0_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_U0/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_U0/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_U0/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_U0/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="sigmoid_activation_L_U0_Output_group">
+            <obj_property name="label">Output Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="result_V_group">
+               <obj_property name="label">result_V(L2_out_activ_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_U0/result_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_U0/result_V_d0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_U0/result_V_ce0">
+                  <obj_property name="ElementShortName">result_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">result_V_ce0</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/sigmoid_activation_L_U0/result_V_we0">
+                  <obj_property name="ElementShortName">result_V_we0</obj_property>
+                  <obj_property name="ObjectShortName">result_V_we0</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="classify_U0_group">
+         <obj_property name="label">classify_U0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="classify_U0_Input_group">
+            <obj_property name="label">Input Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="activated_L2_V_group">
+               <obj_property name="label">activated_L2_V(L2_out_activ_V_U, PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/classify_U0/activated_L2_V_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/classify_U0/activated_L2_V_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/classify_U0/activated_L2_V_ce0">
+                  <obj_property name="ElementShortName">activated_L2_V_ce0</obj_property>
+                  <obj_property name="ObjectShortName">activated_L2_V_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="classify_U0_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/classify_U0/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/classify_U0/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/classify_U0/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/classify_U0/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="classify_U0_Output_group">
+            <obj_property name="label">Output Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="Block_arrayctor_loop_U0_group">
+         <obj_property name="label">Block_arrayctor_loop_U0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="Block_arrayctor_loop_U0_Input_group">
+            <obj_property name="label">Input Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="Block_arrayctor_loop_U0_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/Block_arrayctor_loop_U0/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/Block_arrayctor_loop_U0/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/Block_arrayctor_loop_U0/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/Block_arrayctor_loop_U0/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="Block_arrayctor_loop_U0_Output_group">
+            <obj_property name="label">Output Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="p_src_mlp_cpp_lin_U0_group">
+         <obj_property name="label">p_src_mlp_cpp_lin_U0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="p_src_mlp_cpp_lin_U0_Input_group">
+            <obj_property name="label">Input Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="p_src_mlp_cpp_lin_U0_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/p_src_mlp_cpp_lin_U0/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/p_src_mlp_cpp_lin_U0/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/p_src_mlp_cpp_lin_U0/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_mlp_top/AESL_inst_mlp/p_src_mlp_cpp_lin_U0/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="p_src_mlp_cpp_lin_U0_Output_group">
+            <obj_property name="label">Output Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+</wave_config>

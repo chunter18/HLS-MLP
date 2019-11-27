@@ -1,0 +1,113 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Sat Oct 26 22:30:11 2019
+| Host         : DESKTOP-S201MJR running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file mlp_control_sets_placed.rpt
+| Design       : mlp
+| Device       : xc7k325t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    46 |
+| Unused register locations in slices containing registers |   126 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      8 |            5 |
+|     10 |            4 |
+|     12 |            1 |
+|    16+ |           36 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              54 |           16 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             166 |           34 |
+| Yes          | No                    | No                     |             794 |          126 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             316 |           47 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------+------------------------------------------------------------------------------+--------------------------------------------------------+------------------+----------------+
+| Clock Signal |                                 Enable Signal                                |                    Set/Reset Signal                    | Slice Load Count | Bel Load Count |
++--------------+------------------------------------------------------------------------------+--------------------------------------------------------+------------------+----------------+
+|  ap_clk      | classify_U0/ap_CS_fsm_state3                                                 |                                                        |                1 |              8 |
+|  ap_clk      | sigmoid_activation_L_U0/ap_CS_fsm_state9                                     | sigmoid_activation_L_U0/i_reg_90                       |                1 |              8 |
+|  ap_clk      | classify_U0/ap_CS_fsm_state4                                                 | classify_U0/k_reg_64                                   |                1 |              8 |
+|  ap_clk      | sigmoid_activation_L_U0/ap_NS_fsm[2]                                         |                                                        |                1 |              8 |
+|  ap_clk      | classify_U0/result_write_assign_reg_52                                       | classify_U0/k_reg_64                                   |                1 |              8 |
+|  ap_clk      | sigmoid_activation_L_1_U0/ap_NS_fsm[2]                                       |                                                        |                2 |             10 |
+|  ap_clk      | mvprod_layer_1_U0/ap_block_pp0_stage0_11001                                  | ap_rst                                                 |                1 |             10 |
+|  ap_clk      | add_bias_pre_L2_U0/i_reg_59_reg[4]_0[1]                                      | add_bias_pre_L2_U0/i_reg_59                            |                2 |             10 |
+|  ap_clk      | sigmoid_activation_L_1_U0/ap_CS_fsm_state9                                   | sigmoid_activation_L_1_U0/i_reg_92                     |                1 |             10 |
+|  ap_clk      | mvprod_layer_2_U0/ap_block_pp0_stage0_11001                                  | ap_rst                                                 |                1 |             12 |
+|  ap_clk      | digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/shiftReg_ce                       |                                                        |                4 |             16 |
+|  ap_clk      | classify_U0/E[0]                                                             |                                                        |                2 |             16 |
+|  ap_clk      | add_bias_pre_L1_U0/ap_CS_fsm_state4                                          | add_bias_pre_L1_U0/i_reg_58                            |                2 |             18 |
+|  ap_clk      | add_bias_pre_L1_U0/input_V_ce0[1]                                            |                                                        |                3 |             18 |
+|  ap_clk      | sigmoid_activation_L_1_U0/tmp_4_reg_274_reg_i_1_n_4                          |                                                        |                4 |             28 |
+|  ap_clk      | sigmoid_activation_L_U0/tmp_8_reg_272_reg_i_1_n_4                            |                                                        |                4 |             30 |
+|  ap_clk      | sigmoid_activation_L_1_U0/ap_CS_fsm_state4                                   |                                                        |                6 |             30 |
+|  ap_clk      | mvprod_layer_2_U0/grp_fu_297_ce                                              |                                                        |                6 |             32 |
+|  ap_clk      | sigmoid_activation_L_U0/ap_CS_fsm_reg_n_4_[3]                                |                                                        |                7 |             32 |
+|  ap_clk      | sigmoid_activation_L_U0/ap_CS_fsm_state8                                     | sigmoid_activation_L_U0/p_Val2_4_reg_282[17]_i_1_n_4   |                5 |             34 |
+|  ap_clk      | sigmoid_activation_L_1_U0/ap_CS_fsm_state8                                   | sigmoid_activation_L_1_U0/p_Val2_3_reg_284[17]_i_1_n_4 |                6 |             34 |
+|  ap_clk      | add_bias_pre_L1_U0/ap_CS_fsm_state3                                          |                                                        |                6 |             36 |
+|  ap_clk      | classify_U0/p_0_reg_42[17]_i_1_n_4                                           |                                                        |                5 |             36 |
+|  ap_clk      | classify_U0/q1_reg[17][0]                                                    |                                                        |                3 |             36 |
+|  ap_clk      | mvprod_layer_2_U0/indvar_flatten1_reg_14709_out                              | mvprod_layer_2_U0/indvar_flatten1_reg_147              |                8 |             36 |
+|  ap_clk      | mvprod_layer_2_U0/weights_L2_V_ce0                                           |                                                        |                6 |             36 |
+|  ap_clk      | sigmoid_activation_L_U0/ap_CS_fsm_reg_n_4_[2]                                |                                                        |                5 |             36 |
+|  ap_clk      | mvprod_layer_1_U0/acc_s_reg_1610                                             | mvprod_layer_1_U0/acc_s_reg_161_0                      |                5 |             36 |
+|  ap_clk      | mvprod_layer_2_U0/acc_s_reg_1610                                             | mvprod_layer_2_U0/acc_s_reg_161                        |                5 |             36 |
+|  ap_clk      | sigmoid_activation_L_1_U0/ap_CS_fsm_state3                                   |                                                        |                6 |             36 |
+|  ap_clk      | mvprod_layer_2_U0/indvar_flatten_next_reg_3300                               |                                                        |               10 |             38 |
+|  ap_clk      | mvprod_layer_2_U0/ap_block_pp0_stage0_11001                                  |                                                        |                6 |             42 |
+|  ap_clk      | sigmoid_activation_L_U0/i_1_reg_224_reg[3]_0[1]                              |                                                        |                5 |             44 |
+|  ap_clk      | add_bias_pre_L2_U0/i_reg_59_reg[4]_0[0]                                      |                                                        |                9 |             46 |
+|  ap_clk      | sigmoid_activation_L_1_U0/i_1_reg_226_reg[4]_0[1]                            |                                                        |                7 |             46 |
+|  ap_clk      | add_bias_pre_L2_U0/add_bias_pre_L2_U0_result_V_we0                           |                                                        |                6 |             48 |
+|  ap_clk      | mvprod_layer_2_U0/p_0_in                                                     |                                                        |                3 |             48 |
+|  ap_clk      | sigmoid_activation_L_U0/p_0_in                                               |                                                        |                3 |             48 |
+|  ap_clk      | mvprod_layer_1_U0/p_0_in                                                     |                                                        |                6 |             48 |
+|  ap_clk      | sigmoid_activation_L_1_U0/p_0_in                                             |                                                        |                6 |             48 |
+|  ap_clk      | mvprod_layer_1_U0/mlp_mac_muladd_18cud_U4/mlp_mac_muladd_18cud_DSP48_1_U/p_0 |                                                        |                6 |             50 |
+|  ap_clk      |                                                                              |                                                        |               16 |             54 |
+|  ap_clk      | mvprod_layer_1_U0/ap_block_pp0_stage0_11001                                  |                                                        |                6 |             54 |
+|  ap_clk      | mvprod_layer_1_U0/indvar_flatten1_reg_14709_out                              | mvprod_layer_1_U0/indvar_flatten1_reg_147_1            |                8 |             56 |
+|  ap_clk      | mvprod_layer_1_U0/indvar_flatten_next_reg_3240                               |                                                        |               10 |             58 |
+|  ap_clk      |                                                                              | ap_rst                                                 |               34 |            166 |
++--------------+------------------------------------------------------------------------------+--------------------------------------------------------+------------------+----------------+
+
+

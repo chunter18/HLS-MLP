@@ -1,0 +1,85 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Sat Oct 26 22:29:11 2019
+| Host         : DESKTOP-S201MJR running 64-bit major release  (build 9200)
+| Command      : report_timing -file ./report/mlp_timing_synth.rpt
+| Design       : mlp
+| Device       : 7k325t-ffg676
+| Speed File   : -2  PRODUCTION 1.12 2017-02-17
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             1.213ns  (required time - arrival time)
+  Source:                 sigmoid_activation_L_1_U0/tmp_4_reg_274_reg/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            L1_activ_V_U/mlp_L1_no_activ_V_memcore_U/mlp_L1_no_activ_V_memcore_ram_U/ram_reg_0_63_15_17/RAMB/I
+                            (rising edge-triggered cell RAMD64E clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (ap_clk rise@4.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.527ns  (logic 1.165ns (46.109%)  route 1.362ns (53.891%))
+  Logic Levels:           8  (CARRY4=6 LUT1=1 LUT4=1)
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.510ns = ( 4.510 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.537ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=806, unset)          0.537     0.537    sigmoid_activation_L_1_U0/ap_clk
+                         DSP48E1                                      r  sigmoid_activation_L_1_U0/tmp_4_reg_274_reg/CLK
+  -------------------------------------------------------------------    -------------------
+                         DSP48E1 (Prop_dsp48e1_CLK_P[5])
+                                                      0.348     0.885 f  sigmoid_activation_L_1_U0/tmp_4_reg_274_reg/P[5]
+                         net (fo=1, unplaced)         0.466     1.351    sigmoid_activation_L_1_U0/tmp_4_reg_274_reg_n_104
+                         LUT1 (Prop_lut1_I0_O)        0.043     1.394 r  sigmoid_activation_L_1_U0/p_Val2_2_fu_187_p2_carry_i_1/O
+                         net (fo=1, unplaced)         0.192     1.586    sigmoid_activation_L_1_U0/p_Val2_2_fu_187_p2_carry_i_1_n_4
+                         CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.287     1.873 r  sigmoid_activation_L_1_U0/p_Val2_2_fu_187_p2_carry/CO[3]
+                         net (fo=1, unplaced)         0.007     1.880    sigmoid_activation_L_1_U0/p_Val2_2_fu_187_p2_carry_n_4
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.053     1.933 r  sigmoid_activation_L_1_U0/p_Val2_2_fu_187_p2_carry__0/CO[3]
+                         net (fo=1, unplaced)         0.000     1.933    sigmoid_activation_L_1_U0/p_Val2_2_fu_187_p2_carry__0_n_4
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.053     1.986 r  sigmoid_activation_L_1_U0/p_Val2_2_fu_187_p2_carry__1/CO[3]
+                         net (fo=1, unplaced)         0.000     1.986    sigmoid_activation_L_1_U0/p_Val2_2_fu_187_p2_carry__1_n_4
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.053     2.039 r  sigmoid_activation_L_1_U0/p_Val2_2_fu_187_p2_carry__2/CO[3]
+                         net (fo=1, unplaced)         0.000     2.039    sigmoid_activation_L_1_U0/p_Val2_2_fu_187_p2_carry__2_n_4
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.053     2.092 r  sigmoid_activation_L_1_U0/p_Val2_2_fu_187_p2_carry__3/CO[3]
+                         net (fo=1, unplaced)         0.000     2.092    sigmoid_activation_L_1_U0/p_Val2_2_fu_187_p2_carry__3_n_4
+                         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.155     2.247 r  sigmoid_activation_L_1_U0/p_Val2_2_fu_187_p2_carry__4/O[3]
+                         net (fo=2, unplaced)         0.505     2.752    sigmoid_activation_L_1_U0/p_Val2_2_fu_187_p2[24]
+                         LUT4 (Prop_lut4_I2_O)        0.120     2.872 r  sigmoid_activation_L_1_U0/ram_reg_0_63_15_17_i_2/O
+                         net (fo=1, unplaced)         0.192     3.064    L1_activ_V_U/mlp_L1_no_activ_V_memcore_U/mlp_L1_no_activ_V_memcore_ram_U/ram_reg_0_63_15_17/DIB
+                         RAMD64E                                      r  L1_activ_V_U/mlp_L1_no_activ_V_memcore_U/mlp_L1_no_activ_V_memcore_ram_U/ram_reg_0_63_15_17/RAMB/I
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     4.000     4.000 r  
+                                                      0.000     4.000 r  ap_clk (IN)
+                         net (fo=806, unset)          0.510     4.510    L1_activ_V_U/mlp_L1_no_activ_V_memcore_U/mlp_L1_no_activ_V_memcore_ram_U/ram_reg_0_63_15_17/WCLK
+                         RAMD64E                                      r  L1_activ_V_U/mlp_L1_no_activ_V_memcore_U/mlp_L1_no_activ_V_memcore_ram_U/ram_reg_0_63_15_17/RAMB/CLK
+                         clock pessimism              0.000     4.510    
+                         clock uncertainty           -0.035     4.475    
+                         RAMD64E (Setup_ramd64e_CLK_I)
+                                                     -0.198     4.277    L1_activ_V_U/mlp_L1_no_activ_V_memcore_U/mlp_L1_no_activ_V_memcore_ram_U/ram_reg_0_63_15_17/RAMB
+  -------------------------------------------------------------------
+                         required time                          4.277    
+                         arrival time                          -3.064    
+  -------------------------------------------------------------------
+                         slack                                  1.213    
+
+
+
+

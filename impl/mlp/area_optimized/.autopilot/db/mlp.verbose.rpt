@@ -1,0 +1,885 @@
+
+
+================================================================
+== Vivado HLS Report for 'mlp'
+================================================================
+* Date:           Sat Oct 26 22:26:26 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        mlp
+* Solution:       area_optimized
+* Product family: kintex7
+* Target device:  xc7k325tffg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|     3.286|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+-------+-------+-------+----------+
+    |    Latency    |    Interval   | Pipeline |
+    |  min  |  max  |  min  |  max  |   Type   |
+    +-------+-------+-------+-------+----------+
+    |  11860|  11862|  10025|  10025| dataflow |
+    +-------+-------+-------+-------+----------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------+------------------------+-------+-------+-------+-------+---------------------------------------------+
+        |                           |                        |    Latency    |    Interval   |                   Pipeline                  |
+        |          Instance         |         Module         |  min  |  max  |  min  |  max  |                     Type                    |
+        +---------------------------+------------------------+-------+-------+-------+-------+---------------------------------------------+
+        |mvprod_layer_2_U0          |mvprod_layer_2          |    267|    268|    260|    260| loop rewind(delay=4 initiation interval(s)) |
+        |sigmoid_activation_L_1_U0  |sigmoid_activation_L_1  |    201|    201|    201|    201|                     none                    |
+        |sigmoid_activation_L_U0    |sigmoid_activation_L    |     81|     81|     81|     81|                     none                    |
+        |mvprod_layer_1_U0          |mvprod_layer_1          |  10031|  10032|  10025|  10025| loop rewind(delay=4 initiation interval(s)) |
+        |classify_U0                |classify                |     22|     22|     22|     22|                     none                    |
+        |add_bias_pre_L1_U0         |add_bias_pre_L1         |   1201|   1201|   1201|   1201|                     none                    |
+        |add_bias_pre_L2_U0         |add_bias_pre_L2         |     51|     51|     51|     51|                     none                    |
+        |Block_arrayctor_loop_U0    |Block_arrayctor_loop    |      0|      0|      0|      0|                     none                    |
+        |p_src_mlp_cpp_lin_U0       |p_src_mlp_cpp_lin       |      0|      0|      0|      0|                     none                    |
+        +---------------------------+------------------------+-------+-------+-------+-------+---------------------------------------------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  |
++-----------------+---------+-------+--------+--------+
+|DSP              |        -|      -|       -|       -|
+|Expression       |        -|      -|       0|      46|
+|FIFO             |        0|      -|      10|      88|
+|Instance         |        0|      6|    1395|    1869|
+|Memory           |        1|      -|     180|      30|
+|Multiplexer      |        -|      -|       -|      54|
+|Register         |        -|      -|       9|       -|
++-----------------+---------+-------+--------+--------+
+|Total            |        1|      6|    1594|    2087|
++-----------------+---------+-------+--------+--------+
+|Available        |      890|    840|  407600|  203800|
++-----------------+---------+-------+--------+--------+
+|Utilization (%)  |    ~0   |   ~0  |   ~0   |       1|
++-----------------+---------+-------+--------+--------+
+
++ Detail: 
+    * Instance: 
+    +---------------------------+------------------------+---------+-------+-----+-----+
+    |          Instance         |         Module         | BRAM_18K| DSP48E|  FF | LUT |
+    +---------------------------+------------------------+---------+-------+-----+-----+
+    |Block_arrayctor_loop_U0    |Block_arrayctor_loop    |        0|      0|   34|   20|
+    |add_bias_pre_L1_U0         |add_bias_pre_L1         |        0|      0|   41|   96|
+    |add_bias_pre_L2_U0         |add_bias_pre_L2         |        0|      0|   14|   89|
+    |classify_U0                |classify                |        0|      0|   63|  162|
+    |mvprod_layer_1_U0          |mvprod_layer_1          |        0|      2|  451|  461|
+    |mvprod_layer_2_U0          |mvprod_layer_2          |        0|      2|  477|  473|
+    |p_src_mlp_cpp_lin_U0       |p_src_mlp_cpp_lin       |        0|      0|   34|   20|
+    |sigmoid_activation_L_U0    |sigmoid_activation_L    |        0|      1|  141|  273|
+    |sigmoid_activation_L_1_U0  |sigmoid_activation_L_1  |        0|      1|  140|  275|
+    +---------------------------+------------------------+---------+-------+-----+-----+
+    |Total                      |                        |        0|      6| 1395| 1869|
+    +---------------------------+------------------------+---------+-------+-----+-----+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +-------------------+---------------------+---------+----+----+------+-----+------+-------------+
+    |       Memory      |        Module       | BRAM_18K| FF | LUT| Words| Bits| Banks| W*Bits*Banks|
+    +-------------------+---------------------+---------+----+----+------+-----+------+-------------+
+    |L1_no_activ_V_U    |mlp_L1_no_activ_V    |        0|  36|   8|    25|   18|     2|          900|
+    |L1_activ_V_U       |mlp_L1_no_activ_V    |        0|  36|   8|    25|   18|     2|          900|
+    |L2_bias_added_V_U  |mlp_L2_bias_added_V  |        0|  36|   8|    26|   18|     2|          936|
+    |L2_out_V_U         |mlp_L2_out_V         |        0|  36|   3|    10|   18|     2|          360|
+    |L2_out_activ_V_U   |mlp_L2_out_V         |        0|  36|   3|    10|   18|     2|          360|
+    |bias_added_V_U     |mlp_bias_added_V     |        1|   0|   0|   401|   18|     2|        14436|
+    +-------------------+---------------------+---------+----+----+------+-----+------+-------------+
+    |Total              |                     |        1| 180|  30|   497|  108|    12|        17892|
+    +-------------------+---------------------+---------+----+----+------+-----+------+-------------+
+
+    * FIFO: 
+    +------------------------+---------+---+----+------+-----+---------+
+    |          Name          | BRAM_18K| FF| LUT| Depth| Bits| Size:D*B|
+    +------------------------+---------+---+----+------+-----+---------+
+    |digit_U                 |        0|  5|  44|     2|   32|       64|
+    |digit_load_loc_chann_U  |        0|  5|  44|     2|   32|       64|
+    +------------------------+---------+---+----+------+-----+---------+
+    |Total                   |        0| 10|  88|     4|   64|      128|
+    +------------------------+---------+---+----+------+-----+---------+
+
+    * Expression: 
+    +-------------------------------------+----------+-------+---+----+------------+------------+
+    |            Variable Name            | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------------------+----------+-------+---+----+------------+------------+
+    |add_bias_pre_L1_U0_ap_ready_count    |     +    |      0|  0|  10|           2|           1|
+    |mvprod_layer_1_U0_ap_ready_count     |     +    |      0|  0|  10|           2|           1|
+    |mvprod_layer_2_U0_ap_ready_count     |     +    |      0|  0|  10|           2|           1|
+    |add_bias_pre_L1_U0_ap_start          |    and   |      0|  0|   2|           1|           1|
+    |ap_idle                              |    and   |      0|  0|   2|           1|           1|
+    |ap_sync_ready                        |    and   |      0|  0|   2|           1|           1|
+    |mvprod_layer_1_U0_ap_start           |    and   |      0|  0|   2|           1|           1|
+    |mvprod_layer_2_U0_ap_start           |    and   |      0|  0|   2|           1|           1|
+    |ap_sync_add_bias_pre_L1_U0_ap_ready  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_mvprod_layer_1_U0_ap_ready   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_mvprod_layer_2_U0_ap_ready   |    or    |      0|  0|   2|           1|           1|
+    +-------------------------------------+----------+-------+---+----+------------+------------+
+    |Total                                |          |      0|  0|  46|          14|          11|
+    +-------------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------------------+----+-----------+-----+-----------+
+    |                   Name                  | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------------------+----+-----------+-----+-----------+
+    |add_bias_pre_L1_U0_ap_ready_count        |   9|          2|    2|          4|
+    |ap_sync_reg_add_bias_pre_L1_U0_ap_ready  |   9|          2|    1|          2|
+    |ap_sync_reg_mvprod_layer_1_U0_ap_ready   |   9|          2|    1|          2|
+    |ap_sync_reg_mvprod_layer_2_U0_ap_ready   |   9|          2|    1|          2|
+    |mvprod_layer_1_U0_ap_ready_count         |   9|          2|    2|          4|
+    |mvprod_layer_2_U0_ap_ready_count         |   9|          2|    2|          4|
+    +-----------------------------------------+----+-----------+-----+-----------+
+    |Total                                    |  54|         12|    9|         18|
+    +-----------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------------------+---+----+-----+-----------+
+    |                   Name                  | FF| LUT| Bits| Const Bits|
+    +-----------------------------------------+---+----+-----+-----------+
+    |add_bias_pre_L1_U0_ap_ready_count        |  2|   0|    2|          0|
+    |ap_sync_reg_add_bias_pre_L1_U0_ap_ready  |  1|   0|    1|          0|
+    |ap_sync_reg_mvprod_layer_1_U0_ap_ready   |  1|   0|    1|          0|
+    |ap_sync_reg_mvprod_layer_2_U0_ap_ready   |  1|   0|    1|          0|
+    |mvprod_layer_1_U0_ap_ready_count         |  2|   0|    2|          0|
+    |mvprod_layer_2_U0_ap_ready_count         |  2|   0|    2|          0|
+    +-----------------------------------------+---+----+-----+-----------+
+    |Total                                    |  9|   0|    9|          0|
+    +-----------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+--------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-----------------------+-----+-----+------------+--------------+--------------+
+|ap_clk                 |  in |    1| ap_ctrl_hs |      mlp     | return value |
+|ap_rst                 |  in |    1| ap_ctrl_hs |      mlp     | return value |
+|ap_return              | out |   32| ap_ctrl_hs |      mlp     | return value |
+|ap_done                | out |    1| ap_ctrl_hs |      mlp     | return value |
+|ap_start               |  in |    1| ap_ctrl_hs |      mlp     | return value |
+|ap_ready               | out |    1| ap_ctrl_hs |      mlp     | return value |
+|ap_idle                | out |    1| ap_ctrl_hs |      mlp     | return value |
+|weights_L1_V_address0  | out |   14|  ap_memory | weights_L1_V |     array    |
+|weights_L1_V_ce0       | out |    1|  ap_memory | weights_L1_V |     array    |
+|weights_L1_V_d0        | out |   18|  ap_memory | weights_L1_V |     array    |
+|weights_L1_V_q0        |  in |   18|  ap_memory | weights_L1_V |     array    |
+|weights_L1_V_we0       | out |    1|  ap_memory | weights_L1_V |     array    |
+|weights_L1_V_address1  | out |   14|  ap_memory | weights_L1_V |     array    |
+|weights_L1_V_ce1       | out |    1|  ap_memory | weights_L1_V |     array    |
+|weights_L1_V_d1        | out |   18|  ap_memory | weights_L1_V |     array    |
+|weights_L1_V_q1        |  in |   18|  ap_memory | weights_L1_V |     array    |
+|weights_L1_V_we1       | out |    1|  ap_memory | weights_L1_V |     array    |
+|weights_L2_V_address0  | out |    9|  ap_memory | weights_L2_V |     array    |
+|weights_L2_V_ce0       | out |    1|  ap_memory | weights_L2_V |     array    |
+|weights_L2_V_d0        | out |   18|  ap_memory | weights_L2_V |     array    |
+|weights_L2_V_q0        |  in |   18|  ap_memory | weights_L2_V |     array    |
+|weights_L2_V_we0       | out |    1|  ap_memory | weights_L2_V |     array    |
+|weights_L2_V_address1  | out |    9|  ap_memory | weights_L2_V |     array    |
+|weights_L2_V_ce1       | out |    1|  ap_memory | weights_L2_V |     array    |
+|weights_L2_V_d1        | out |   18|  ap_memory | weights_L2_V |     array    |
+|weights_L2_V_q1        |  in |   18|  ap_memory | weights_L2_V |     array    |
+|weights_L2_V_we1       | out |    1|  ap_memory | weights_L2_V |     array    |
+|input_V_address0       | out |    9|  ap_memory |    input_V   |     array    |
+|input_V_ce0            | out |    1|  ap_memory |    input_V   |     array    |
+|input_V_d0             | out |   18|  ap_memory |    input_V   |     array    |
+|input_V_q0             |  in |   18|  ap_memory |    input_V   |     array    |
+|input_V_we0            | out |    1|  ap_memory |    input_V   |     array    |
+|input_V_address1       | out |    9|  ap_memory |    input_V   |     array    |
+|input_V_ce1            | out |    1|  ap_memory |    input_V   |     array    |
+|input_V_d1             | out |   18|  ap_memory |    input_V   |     array    |
+|input_V_q1             |  in |   18|  ap_memory |    input_V   |     array    |
+|input_V_we1            | out |    1|  ap_memory |    input_V   |     array    |
++-----------------------+-----+-----+------------+--------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 2
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 14
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 14, States = { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 }
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.26>
+ST_1 : Operation 15 [1/1] (2.26ns)   --->   "%bias_added_V = alloca [401 x i18], align 4" [../src/mlp.cpp:6]   --->   Operation 15 'alloca' 'bias_added_V' <Predicate = true> <Delay = 2.26>
+ST_1 : Operation 16 [1/1] (1.14ns)   --->   "%L1_no_activ_V = alloca [25 x i18], align 4" [../src/mlp.cpp:7]   --->   Operation 16 'alloca' 'L1_no_activ_V' <Predicate = true> <Delay = 1.14>
+ST_1 : Operation 17 [1/1] (1.14ns)   --->   "%L1_activ_V = alloca [25 x i18], align 4" [../src/mlp.cpp:8]   --->   Operation 17 'alloca' 'L1_activ_V' <Predicate = true> <Delay = 1.14>
+ST_1 : Operation 18 [1/1] (1.14ns)   --->   "%L2_bias_added_V = alloca [26 x i18], align 4" [../src/mlp.cpp:9]   --->   Operation 18 'alloca' 'L2_bias_added_V' <Predicate = true> <Delay = 1.14>
+ST_1 : Operation 19 [1/1] (1.14ns)   --->   "%L2_out_V = alloca [10 x i18], align 4" [../src/mlp.cpp:10]   --->   Operation 19 'alloca' 'L2_out_V' <Predicate = true> <Delay = 1.14>
+ST_1 : Operation 20 [1/1] (1.14ns)   --->   "%L2_out_activ_V = alloca [10 x i18], align 4" [../src/mlp.cpp:11]   --->   Operation 20 'alloca' 'L2_out_activ_V' <Predicate = true> <Delay = 1.14>
+ST_1 : Operation 21 [2/2] (0.00ns)   --->   "call fastcc void @add_bias_pre_L1([400 x i18]* %input_V, [401 x i18]* %bias_added_V)" [../src/mlp.cpp:14]   --->   Operation 21 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 22 [1/2] (0.00ns)   --->   "call fastcc void @add_bias_pre_L1([400 x i18]* %input_V, [401 x i18]* %bias_added_V)" [../src/mlp.cpp:14]   --->   Operation 22 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 23 [2/2] (0.00ns)   --->   "call fastcc void @mvprod_layer_1([10025 x i18]* %weights_L1_V, [401 x i18]* %bias_added_V, [25 x i18]* %L1_no_activ_V)" [../src/mlp.cpp:15]   --->   Operation 23 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 24 [1/2] (0.00ns)   --->   "call fastcc void @mvprod_layer_1([10025 x i18]* %weights_L1_V, [401 x i18]* %bias_added_V, [25 x i18]* %L1_no_activ_V)" [../src/mlp.cpp:15]   --->   Operation 24 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 25 [2/2] (0.00ns)   --->   "call fastcc void @sigmoid_activation_L.1([25 x i18]* %L1_no_activ_V, [25 x i18]* %L1_activ_V)" [../src/mlp.cpp:16]   --->   Operation 25 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 26 [1/2] (0.00ns)   --->   "call fastcc void @sigmoid_activation_L.1([25 x i18]* %L1_no_activ_V, [25 x i18]* %L1_activ_V)" [../src/mlp.cpp:16]   --->   Operation 26 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 27 [2/2] (0.00ns)   --->   "call fastcc void @add_bias_pre_L2([25 x i18]* %L1_activ_V, [26 x i18]* %L2_bias_added_V)" [../src/mlp.cpp:18]   --->   Operation 27 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 28 [1/2] (0.00ns)   --->   "call fastcc void @add_bias_pre_L2([25 x i18]* %L1_activ_V, [26 x i18]* %L2_bias_added_V)" [../src/mlp.cpp:18]   --->   Operation 28 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 0.00>
+ST_9 : Operation 29 [2/2] (0.00ns)   --->   "call fastcc void @mvprod_layer_2([260 x i18]* %weights_L2_V, [26 x i18]* %L2_bias_added_V, [10 x i18]* %L2_out_V)" [../src/mlp.cpp:19]   --->   Operation 29 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 0.00>
+ST_10 : Operation 30 [1/2] (0.00ns)   --->   "call fastcc void @mvprod_layer_2([260 x i18]* %weights_L2_V, [26 x i18]* %L2_bias_added_V, [10 x i18]* %L2_out_V)" [../src/mlp.cpp:19]   --->   Operation 30 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 0.00>
+ST_11 : Operation 31 [2/2] (0.00ns)   --->   "call fastcc void @sigmoid_activation_L([10 x i18]* %L2_out_V, [10 x i18]* %L2_out_activ_V)" [../src/mlp.cpp:20]   --->   Operation 31 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 11> <Delay = 0.00>
+ST_12 : Operation 32 [1/2] (0.00ns)   --->   "call fastcc void @sigmoid_activation_L([10 x i18]* %L2_out_V, [10 x i18]* %L2_out_activ_V)" [../src/mlp.cpp:20]   --->   Operation 32 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 12> <Delay = 0.00>
+ST_13 : Operation 33 [2/2] (0.00ns)   --->   "%digit = call fastcc i32 @classify([10 x i18]* %L2_out_activ_V)" [../src/mlp.cpp:22]   --->   Operation 33 'call' 'digit' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.46> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+
+State 14 <SV = 13> <Delay = 0.00>
+ST_14 : Operation 34 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str) nounwind" [../src/mlp.cpp:6]   --->   Operation 34 'specdataflowpipeline' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 35 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([10025 x i18]* %weights_L1_V), !map !143"   --->   Operation 35 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 36 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([260 x i18]* %weights_L2_V), !map !150"   --->   Operation 36 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 37 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([400 x i18]* %input_V), !map !157"   --->   Operation 37 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 38 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 0) nounwind, !map !163"   --->   Operation 38 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 39 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([4 x i8]* @mlp_str) nounwind"   --->   Operation 39 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 40 [1/2] (0.00ns)   --->   "%digit = call fastcc i32 @classify([10 x i18]* %L2_out_activ_V)" [../src/mlp.cpp:22]   --->   Operation 40 'call' 'digit' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.46> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_14 : Operation 41 [1/1] (0.00ns)   --->   "%digit_load_loc_chann = call fastcc i32 @Block_arrayctor.loop(i32 %digit)" [../src/mlp.cpp:22]   --->   Operation 41 'call' 'digit_load_loc_chann' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.46> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_14 : Operation 42 [1/1] (0.00ns)   --->   "%tmp = call fastcc i32 @"__../src/mlp.cpp_lin"(i32 %digit_load_loc_chann)" [../src/mlp.cpp:22]   --->   Operation 42 'call' 'tmp' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_14 : Operation 43 [1/1] (0.00ns)   --->   "ret i32 %tmp" [../src/mlp.cpp:24]   --->   Operation 43 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 1
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ weights_L1_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ weights_L2_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ input_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+bias_added_V         (alloca              ) [ 001110000000000]
+L1_no_activ_V        (alloca              ) [ 001111100000000]
+L1_activ_V           (alloca              ) [ 001111111000000]
+L2_bias_added_V      (alloca              ) [ 001111111110000]
+L2_out_V             (alloca              ) [ 001111111111100]
+L2_out_activ_V       (alloca              ) [ 001111111111111]
+StgValue_22          (call                ) [ 000000000000000]
+StgValue_24          (call                ) [ 000000000000000]
+StgValue_26          (call                ) [ 000000000000000]
+StgValue_28          (call                ) [ 000000000000000]
+StgValue_30          (call                ) [ 000000000000000]
+StgValue_32          (call                ) [ 000000000000000]
+StgValue_34          (specdataflowpipeline) [ 000000000000000]
+StgValue_35          (specbitsmap         ) [ 000000000000000]
+StgValue_36          (specbitsmap         ) [ 000000000000000]
+StgValue_37          (specbitsmap         ) [ 000000000000000]
+StgValue_38          (specbitsmap         ) [ 000000000000000]
+StgValue_39          (spectopmodule       ) [ 000000000000000]
+digit                (call                ) [ 000000000000000]
+digit_load_loc_chann (call                ) [ 000000000000000]
+tmp                  (call                ) [ 000000000000000]
+StgValue_43          (ret                 ) [ 000000000000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="weights_L1_V">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="weights_L1_V"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="weights_L2_V">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="weights_L2_V"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="input_V">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="input_V"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1001" name="const_6">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1001" name="const_8">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="add_bias_pre_L1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mvprod_layer_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="sigmoid_activation_L.1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="add_bias_pre_L2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mvprod_layer_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="sigmoid_activation_L"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="classify"/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecDataflowPipeline"/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecBitsMap"/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1001" name="const_32">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecTopModule"/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mlp_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="Block_arrayctor.loop"/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1001" name="const_38">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="__../src/mlp.cpp_lin"/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1004" name="bias_added_V_alloca_fu_40">
+<pin_list>
+<pin id="41" dir="0" index="0" bw="1" slack="0"/>
+<pin id="42" dir="1" index="1" bw="18" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="bias_added_V/1 "/>
+</bind>
+</comp>
+
+<comp id="44" class="1004" name="L1_no_activ_V_alloca_fu_44">
+<pin_list>
+<pin id="45" dir="0" index="0" bw="1" slack="0"/>
+<pin id="46" dir="1" index="1" bw="18" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="L1_no_activ_V/1 "/>
+</bind>
+</comp>
+
+<comp id="48" class="1004" name="L1_activ_V_alloca_fu_48">
+<pin_list>
+<pin id="49" dir="0" index="0" bw="1" slack="0"/>
+<pin id="50" dir="1" index="1" bw="18" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="L1_activ_V/1 "/>
+</bind>
+</comp>
+
+<comp id="52" class="1004" name="L2_bias_added_V_alloca_fu_52">
+<pin_list>
+<pin id="53" dir="0" index="0" bw="1" slack="0"/>
+<pin id="54" dir="1" index="1" bw="18" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="L2_bias_added_V/1 "/>
+</bind>
+</comp>
+
+<comp id="56" class="1004" name="L2_out_V_alloca_fu_56">
+<pin_list>
+<pin id="57" dir="0" index="0" bw="1" slack="0"/>
+<pin id="58" dir="1" index="1" bw="18" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="L2_out_V/1 "/>
+</bind>
+</comp>
+
+<comp id="60" class="1004" name="L2_out_activ_V_alloca_fu_60">
+<pin_list>
+<pin id="61" dir="0" index="0" bw="1" slack="0"/>
+<pin id="62" dir="1" index="1" bw="18" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="L2_out_activ_V/1 "/>
+</bind>
+</comp>
+
+<comp id="64" class="1004" name="grp_mvprod_layer_2_fu_64">
+<pin_list>
+<pin id="65" dir="0" index="0" bw="0" slack="0"/>
+<pin id="66" dir="0" index="1" bw="18" slack="0"/>
+<pin id="67" dir="0" index="2" bw="18" slack="2147483647"/>
+<pin id="68" dir="0" index="3" bw="18" slack="2147483647"/>
+<pin id="69" dir="1" index="4" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_29/9 "/>
+</bind>
+</comp>
+
+<comp id="72" class="1004" name="grp_sigmoid_activation_L_1_fu_72">
+<pin_list>
+<pin id="73" dir="0" index="0" bw="0" slack="0"/>
+<pin id="74" dir="0" index="1" bw="18" slack="2147483647"/>
+<pin id="75" dir="0" index="2" bw="18" slack="2147483647"/>
+<pin id="76" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_25/5 "/>
+</bind>
+</comp>
+
+<comp id="78" class="1004" name="grp_sigmoid_activation_L_fu_78">
+<pin_list>
+<pin id="79" dir="0" index="0" bw="0" slack="0"/>
+<pin id="80" dir="0" index="1" bw="18" slack="2147483647"/>
+<pin id="81" dir="0" index="2" bw="18" slack="2147483647"/>
+<pin id="82" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_31/11 "/>
+</bind>
+</comp>
+
+<comp id="84" class="1004" name="grp_mvprod_layer_1_fu_84">
+<pin_list>
+<pin id="85" dir="0" index="0" bw="0" slack="0"/>
+<pin id="86" dir="0" index="1" bw="18" slack="0"/>
+<pin id="87" dir="0" index="2" bw="18" slack="2147483647"/>
+<pin id="88" dir="0" index="3" bw="18" slack="2147483647"/>
+<pin id="89" dir="1" index="4" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_23/3 "/>
+</bind>
+</comp>
+
+<comp id="92" class="1004" name="grp_classify_fu_92">
+<pin_list>
+<pin id="93" dir="0" index="0" bw="32" slack="0"/>
+<pin id="94" dir="0" index="1" bw="18" slack="2147483647"/>
+<pin id="95" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="digit/13 "/>
+</bind>
+</comp>
+
+<comp id="97" class="1004" name="grp_add_bias_pre_L1_fu_97">
+<pin_list>
+<pin id="98" dir="0" index="0" bw="0" slack="0"/>
+<pin id="99" dir="0" index="1" bw="18" slack="0"/>
+<pin id="100" dir="0" index="2" bw="18" slack="0"/>
+<pin id="101" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_21/1 "/>
+</bind>
+</comp>
+
+<comp id="105" class="1004" name="grp_add_bias_pre_L2_fu_105">
+<pin_list>
+<pin id="106" dir="0" index="0" bw="0" slack="0"/>
+<pin id="107" dir="0" index="1" bw="18" slack="2147483647"/>
+<pin id="108" dir="0" index="2" bw="18" slack="2147483647"/>
+<pin id="109" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_27/7 "/>
+</bind>
+</comp>
+
+<comp id="111" class="1004" name="digit_load_loc_chann_Block_arrayctor_loop_fu_111">
+<pin_list>
+<pin id="112" dir="0" index="0" bw="32" slack="0"/>
+<pin id="113" dir="0" index="1" bw="32" slack="0"/>
+<pin id="114" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="digit_load_loc_chann/14 "/>
+</bind>
+</comp>
+
+<comp id="117" class="1004" name="tmp_p_src_mlp_cpp_lin_fu_117">
+<pin_list>
+<pin id="118" dir="0" index="0" bw="32" slack="0"/>
+<pin id="119" dir="0" index="1" bw="32" slack="0"/>
+<pin id="120" dir="1" index="2" bw="32" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="tmp/14 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="43"><net_src comp="6" pin="0"/><net_sink comp="40" pin=0"/></net>
+
+<net id="47"><net_src comp="6" pin="0"/><net_sink comp="44" pin=0"/></net>
+
+<net id="51"><net_src comp="6" pin="0"/><net_sink comp="48" pin=0"/></net>
+
+<net id="55"><net_src comp="6" pin="0"/><net_sink comp="52" pin=0"/></net>
+
+<net id="59"><net_src comp="6" pin="0"/><net_sink comp="56" pin=0"/></net>
+
+<net id="63"><net_src comp="6" pin="0"/><net_sink comp="60" pin=0"/></net>
+
+<net id="70"><net_src comp="16" pin="0"/><net_sink comp="64" pin=0"/></net>
+
+<net id="71"><net_src comp="2" pin="0"/><net_sink comp="64" pin=1"/></net>
+
+<net id="77"><net_src comp="12" pin="0"/><net_sink comp="72" pin=0"/></net>
+
+<net id="83"><net_src comp="18" pin="0"/><net_sink comp="78" pin=0"/></net>
+
+<net id="90"><net_src comp="10" pin="0"/><net_sink comp="84" pin=0"/></net>
+
+<net id="91"><net_src comp="0" pin="0"/><net_sink comp="84" pin=1"/></net>
+
+<net id="96"><net_src comp="20" pin="0"/><net_sink comp="92" pin=0"/></net>
+
+<net id="102"><net_src comp="8" pin="0"/><net_sink comp="97" pin=0"/></net>
+
+<net id="103"><net_src comp="4" pin="0"/><net_sink comp="97" pin=1"/></net>
+
+<net id="104"><net_src comp="40" pin="1"/><net_sink comp="97" pin=2"/></net>
+
+<net id="110"><net_src comp="14" pin="0"/><net_sink comp="105" pin=0"/></net>
+
+<net id="115"><net_src comp="36" pin="0"/><net_sink comp="111" pin=0"/></net>
+
+<net id="116"><net_src comp="92" pin="2"/><net_sink comp="111" pin=1"/></net>
+
+<net id="121"><net_src comp="38" pin="0"/><net_sink comp="117" pin=0"/></net>
+
+<net id="122"><net_src comp="111" pin="2"/><net_sink comp="117" pin=1"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+	Port: mlp : weights_L1_V | {3 4 }
+	Port: mlp : weights_L2_V | {9 10 }
+	Port: mlp : input_V | {1 2 }
+  - Chain level:
+	State 1
+		StgValue_21 : 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+		digit_load_loc_chann : 1
+		tmp : 2
+		StgValue_43 : 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|--------------------------------------------------|---------|---------|---------|---------|
+| Operation|                  Functional Unit                 |  DSP48E |  Delay  |    FF   |   LUT   |
+|----------|--------------------------------------------------|---------|---------|---------|---------|
+|          |             grp_mvprod_layer_2_fu_64             |    2    |   4.36  |   258   |   205   |
+|          |         grp_sigmoid_activation_L_1_fu_72         |    1    |   4.36  |   229   |   233   |
+|          |          grp_sigmoid_activation_L_fu_78          |    1    |   4.36  |   231   |   231   |
+|          |             grp_mvprod_layer_1_fu_84             |    2    |   4.36  |   229   |   181   |
+|   call   |                grp_classify_fu_92                |    0    | 1.81514 |   134   |   116   |
+|          |             grp_add_bias_pre_L1_fu_97            |    0    |  2.616  |    45   |    56   |
+|          |            grp_add_bias_pre_L2_fu_105            |    0    |  2.616  |    15   |    53   |
+|          | digit_load_loc_chann_Block_arrayctor_loop_fu_111 |    0    |    0    |    0    |    0    |
+|          |           tmp_p_src_mlp_cpp_lin_fu_117           |    0    |    0    |    0    |    0    |
+|----------|--------------------------------------------------|---------|---------|---------|---------|
+|   Total  |                                                  |    6    | 24.4871 |   1141  |   1075  |
+|----------|--------------------------------------------------|---------|---------|---------|---------|
+
+Memories:
++---------------+--------+--------+--------+
+|               |  BRAM  |   FF   |   LUT  |
++---------------+--------+--------+--------+
+|   L1_activ_V  |    0   |   36   |    8   |
+| L1_no_activ_V |    0   |   36   |    8   |
+|L2_bias_added_V|    0   |   36   |    8   |
+|    L2_out_V   |    0   |   36   |    3   |
+| L2_out_activ_V|    0   |   36   |    3   |
+|  bias_added_V |    1   |    0   |    0   |
++---------------+--------+--------+--------+
+|     Total     |    1   |   180  |   30   |
++---------------+--------+--------+--------+
+
+* Register list:
+N/A
+
+* Multiplexer (MUX) list: 
+|--------|------|------|------|--------|
+|  Comp  |  Pin | Size |  BW  | S x BW |
+|--------|------|------|------|--------|
+|  Total |      |      |      |    0   |
+|--------|------|------|------|--------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+--------+
+|           |  BRAM  | DSP48E |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+--------+--------+
+|  Function |    -   |    6   |   24   |  1141  |  1075  |
+|   Memory  |    1   |    -   |    -   |   180  |   30   |
+|Multiplexer|    -   |    -   |    -   |    -   |    -   |
+|  Register |    -   |    -   |    -   |    -   |    -   |
++-----------+--------+--------+--------+--------+--------+
+|   Total   |    1   |    6   |   24   |  1321  |  1105  |
++-----------+--------+--------+--------+--------+--------+

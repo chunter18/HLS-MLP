@@ -1,0 +1,61 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "mvprod_layer_1",
+          "label": "inner",
+          "functionLabel": "",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [{
+                "name": "rewind",
+                "value": "",
+                "positionalBoolean": "1"
+              }]
+          }
+        },
+        {
+          "functionName": "mvprod_layer_2",
+          "label": "inner",
+          "functionLabel": "",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [{
+                "name": "rewind",
+                "value": "",
+                "positionalBoolean": "1"
+              }]
+          }
+        },
+        {
+          "functionName": "mlp",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {"name": "DATAFLOW"}
+        },
+        {
+          "functionName": "mlp",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "ALLOCATION",
+            "option": [
+              {
+                "name": "instances",
+                "value": "Mul",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "limit",
+                "value": "2"
+              },
+              {
+                "name": "core",
+                "value": "",
+                "positionalBoolean": "type"
+              }
+            ]
+          }
+        }
+      ]
+    }]}

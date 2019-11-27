@@ -1,0 +1,1391 @@
+INFO-FLOW: Workspace C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized opened at Sat Oct 26 22:25:57 -0700 2019
+Execute     config_clock -quiet -name default -period 4 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 50950} {LUT 203800}    {FF 407600} {DSP48E 840}    {BRAM 890}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.121 sec.
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.164 sec.
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.167 sec.
+Command     ap_source done; 0.167 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7_fpv6 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_hp.lib 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7_hp.hlp 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     set_part xc7k325tffg676-2 
+Execute       add_library xilinx/kintex7/kintex7:xc7k325t:ffg676:-2 
+Execute         get_default_platform 
+Execute         license_isbetapart xc7k325t 
+Command         license_isbetapart done; error code: 1; 
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 50950} {LUT 203800}    {FF 407600} {DSP48E 840}    {BRAM 890}  
+Execute         config_chip_info -quiet -speed medium 
+Execute       add_library xilinx/kintex7/kintex7_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7k325tffg676-2'
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 50950} {LUT 203800}    {FF 407600} {DSP48E 840}    {BRAM 890}  
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 0.288 sec.
+Execute   set_part xc7k325tffg676-2 
+Execute     add_library xilinx/kintex7/kintex7:xc7k325t:ffg676:-2 
+Execute       get_default_platform 
+Execute       license_isbetapart xc7k325t 
+Command       license_isbetapart done; error code: 1; 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 50950} {LUT 203800}    {FF 407600} {DSP48E 840}    {BRAM 890}  
+Execute       config_chip_info -quiet -speed medium 
+Execute     add_library xilinx/kintex7/kintex7_fpv6 
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute   create_clock -period 4 -name default 
+Execute   source ./mlp/area_optimized/directives.tcl 
+Execute     set_directive_dataflow mlp 
+INFO-FLOW: Setting directive 'DATAFLOW' 
+Execute     set_directive_pipeline -rewind mvprod_layer_1/inner 
+INFO-FLOW: Setting directive 'DATAFLOW' 
+INFO-FLOW: Setting directive 'PIPELINE' rewind=positionBoolean1 
+Execute     set_directive_pipeline -rewind mvprod_layer_2/inner 
+INFO-FLOW: Setting directive 'DATAFLOW' 
+INFO-FLOW: Setting directive 'PIPELINE' rewind=positionBoolean1 
+INFO-FLOW: Setting directive 'PIPELINE' rewind=positionBoolean1 
+Execute   csynth_design 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -lm 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+Execute       get_config_schedule -relax_ii_for_timing 
+Execute       get_config_schedule -suppress_dependence_error_break 
+INFO: [HLS 200-10] Analyzing design file '../src/mlp.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling ../src/mlp.cpp as C++
+Execute       get_default_platform 
+Execute       is_encrypted ../src/mlp.cpp 
+Execute       get_default_platform 
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "A:/Xilinx/Vivado/2018.2/msys" -hls  -fno-exceptions  -D__llvm__  -E "../src/mlp.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "A:/Xilinx/Vivado/2018.2/common/technology/autopilot" -I "A:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pp.0.cpp" 
+INFO-FLOW: exec A:/Xilinx/Vivado/2018.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain A:/Xilinx/Vivado/2018.2/msys -hls -fno-exceptions -D__llvm__ -E ../src/mlp.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I A:/Xilinx/Vivado/2018.2/common/technology/autopilot -I A:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pp.0.cpp
+Command       clang done; 1.171 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "A:/Xilinx/Vivado/2018.2/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "A:/Xilinx/Vivado/2018.2/common/technology/autopilot" -I "A:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pp.0.cpp"  -o "C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/useless.bc"  
+INFO-FLOW: exec A:/Xilinx/Vivado/2018.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain A:/Xilinx/Vivado/2018.2/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I A:/Xilinx/Vivado/2018.2/common/technology/autopilot -I A:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pp.0.cpp -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/useless.bc
+Command       clang done; 1.81 sec.
+INFO-FLOW: GCC PP time: 2 seconds per iteration
+INFO-FLOW: Setting directive 'DATAFLOW' 
+INFO-FLOW: Setting directive 'PIPELINE' rewind=positionBoolean1 
+INFO-FLOW: Setting directive 'PIPELINE' rewind=positionBoolean1 
+INFO-FLOW: Setting directive 'DATAFLOW' 
+INFO-FLOW: Setting directive 'PIPELINE' rewind=positionBoolean1 
+INFO-FLOW: Setting directive 'PIPELINE' rewind=positionBoolean1 
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pp.0.cpp std=gnu++98 -directive=C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec A:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/.systemc_flag -quiet -fix-errors C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 1.081 sec.
+INFO-FLOW: CDT Preprocessing with tidy-3.1...
+Execute       tidy_31 xilinx-directive2pragma C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pp.0.cpp std=gnu++98 -directive=C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/area_optimized.json 
+INFO-FLOW: exec A:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/area_optimized.json -quiet -fix-errors C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 1.606 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr A:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/xilinx-dataflow-lawyer.mlp.pp.0.cpp.diag.yml C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/xilinx-dataflow-lawyer.mlp.pp.0.cpp.out.log 2> C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/xilinx-dataflow-lawyer.mlp.pp.0.cpp.err.log 
+Command       ap_eval done; 1.016 sec.
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec A:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer -quiet -fix-errors C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+INFO-FLOW: exec A:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 2.855 sec.
+INFO-FLOW: tidy-3.1 time 5 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec A:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 1.414 sec.
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "A:/Xilinx/Vivado/2018.2/msys" -hls  -fno-exceptions  -D__llvm__  -E "C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pragma.1.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "A:/Xilinx/Vivado/2018.2/common/technology/autopilot" -I "A:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pragma.2.cpp" 
+INFO-FLOW: exec A:/Xilinx/Vivado/2018.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain A:/Xilinx/Vivado/2018.2/msys -hls -fno-exceptions -D__llvm__ -E C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pragma.1.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I A:/Xilinx/Vivado/2018.2/common/technology/autopilot -I A:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pragma.2.cpp
+Command       clang done; 1.135 sec.
+Execute       get_default_platform 
+INFO-FLOW: Processing labels
+Execute       clang -src C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain A:/Xilinx/Vivado/2018.2/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "A:/Xilinx/Vivado/2018.2/common/technology/autopilot" -I "A:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.bc" 
+INFO-FLOW: exec A:/Xilinx/Vivado/2018.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain A:/Xilinx/Vivado/2018.2/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I A:/Xilinx/Vivado/2018.2/common/technology/autopilot -I A:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.bc
+Command       clang done; 1.914 sec.
+INFO-FLOW: Linking Debug ...
+Execute       llvm-ld C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.g.bc -hls-opt -except-internalize mlp -LA:/Xilinx/Vivado/2018.2/win64/lib -lhlsm -lhlsmc++ -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/a.g 
+Command       llvm-ld done; 1.175 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:17 . Memory (MB): peak = 102.898 ; gain = 47.207
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:17 . Memory (MB): peak = 102.898 ; gain = 47.207
+Execute       ::config_rtl 
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/a.pp.bc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/a.pp.0.bc -f 
+Execute         llvm-ld C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/a.pp.0.bc -disable-opt -LA:/Xilinx/Vivado/2018.2/win64/lib -lfloatconversion -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/a.g.0 
+Command         llvm-ld done; 0.683 sec.
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top mlp -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/a.g.0.bc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<18, 6, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'sigmoid_activation_L1' (../src/mlp.cpp:137).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<36, 12, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'sigmoid_activation_L1' (../src/mlp.cpp:137).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<18, 5, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'sigmoid_activation_L2' (../src/mlp.cpp:169).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<36, 10, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'sigmoid_activation_L2' (../src/mlp.cpp:169).
+Command         transform done; 1.896 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:03 ; elapsed = 00:00:20 . Memory (MB): peak = 123.902 ; gain = 68.211
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/a.g.1.bc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/a.g.2.prechk.bc -f 
+Command         transform done; 1.625 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/a.g.2.prechk.bc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:04 ; elapsed = 00:00:21 . Memory (MB): peak = 135.922 ; gain = 80.230
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/a.g.1.bc to C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -clib-intrinsic-prepare -dce -func-buffer -dce -array-normalize -func-legal -instcombine -gvn -constprop -dce -ptrArgReplace -mem2reg -instcombine -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg -instcombine -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -instcombine -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -inst-simplify -dce -norm-name -function-inline -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/a.o.1.bc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/a.o.1.tmp.bc -f 
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L1.V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L1.V' has read operations in process function 'mvprod_layer_1'.
+WARNING: [XFORM 203-713] All the elements of global array 'L1_no_activ.V' should be updated in process function 'mvprod_layer_1', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'L1_activ.V' should be updated in process function 'sigmoid_activation_L1', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2.V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2.V' has read operations in process function 'mvprod_layer_2'.
+WARNING: [XFORM 203-713] All the elements of global array 'L2_out.V' should be updated in process function 'mvprod_layer_2', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'L2_out_activ.V' should be updated in process function 'sigmoid_activation_L2', otherwise it may not be synthesized correctly.
+INFO: [XFORM 203-712] Applying dataflow to function 'mlp', detected/extracted 9 process function(s): 
+	 'add_bias_pre_L1'
+	 'mvprod_layer_1'
+	 'sigmoid_activation_L1'
+	 'add_bias_pre_L2'
+	 'mvprod_layer_2'
+	 'sigmoid_activation_L2'
+	 'classify'
+	 'Block_arrayctor.loop1.preheader311_proc'
+	 '__../src/mlp.cpp_line24_proc'.
+Command         transform done; 1.859 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/a.o.1.tmp.bc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../src/mlp.cpp:157:3) to (../src/mlp.cpp:172:6) in function 'sigmoid_activation_L2'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../src/mlp.cpp:125:3) to (../src/mlp.cpp:140:6) in function 'sigmoid_activation_L1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../src/mlp.cpp:36:3) to (../src/mlp.cpp:35:26) in function 'classify'... converting 3 basic blocks.
+Command         transform done; 0.253 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:06 ; elapsed = 00:00:24 . Memory (MB): peak = 168.961 ; gain = 113.270
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -bitwidth -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -dead-allocation-elimination -cdfg-build C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/a.o.2.bc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [XFORM 203-541] Flattening a loop nest 'outer' (../src/mlp.cpp:99:3) in function 'mvprod_layer_2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'outer' (../src/mlp.cpp:77:3) in function 'mvprod_layer_1'.
+WARNING: [XFORM 203-631] Renaming function 'sigmoid_activation_L2' to 'sigmoid_activation_L' (../src/mlp.cpp:156:27)
+WARNING: [XFORM 203-631] Renaming function 'sigmoid_activation_L1' to 'sigmoid_activation_L.1' (../src/mlp.cpp:124:27)
+WARNING: [XFORM 203-631] Renaming function '__../src/mlp.cpp_line24_proc' to '__../src/mlp.cpp_lin' 
+WARNING: [XFORM 203-631] Renaming function 'Block_arrayctor.loop1.preheader311_proc' to 'Block_arrayctor.loop' 
+INFO: [XFORM 203-531] Rewinding loop 'outer_inner' in function 'mvprod_layer_2'.
+INFO: [XFORM 203-531] Rewinding loop 'outer_inner' in function 'mvprod_layer_1'.
+Command         transform done; 0.404 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:07 ; elapsed = 00:00:24 . Memory (MB): peak = 251.742 ; gain = 196.051
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 6.921 sec.
+Command     elaborate done; 23.079 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'mlp' ...
+Execute       ap_set_top_model mlp 
+WARNING: [SYN 201-103] Legalizing function name 'sigmoid_activation_L.1' to 'sigmoid_activation_L_1'.
+WARNING: [SYN 201-103] Legalizing function name 'Block_arrayctor.loop' to 'Block_arrayctor_loop'.
+WARNING: [SYN 201-103] Legalizing function name '__../src/mlp.cpp_lin' to 'p_src_mlp_cpp_lin'.
+Execute       get_model_list mlp -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model mlp 
+Execute       preproc_iomode -model __../src/mlp.cpp_lin 
+Execute       preproc_iomode -model Block_arrayctor.loop 
+Execute       preproc_iomode -model classify 
+Execute       preproc_iomode -model sigmoid_activation_L 
+Execute       preproc_iomode -model mvprod_layer_2 
+Execute       preproc_iomode -model add_bias_pre_L2 
+Execute       preproc_iomode -model sigmoid_activation_L.1 
+Execute       preproc_iomode -model mvprod_layer_1 
+Execute       preproc_iomode -model add_bias_pre_L1 
+Execute       get_model_list mlp -filter all-wo-channel 
+INFO-FLOW: Model list for configure: add_bias_pre_L1 mvprod_layer_1 sigmoid_activation_L.1 add_bias_pre_L2 mvprod_layer_2 sigmoid_activation_L classify Block_arrayctor.loop __../src/mlp.cpp_lin mlp
+INFO-FLOW: Configuring Module : add_bias_pre_L1 ...
+Execute       set_default_model add_bias_pre_L1 
+Execute       apply_spec_resource_limit add_bias_pre_L1 
+INFO-FLOW: Configuring Module : mvprod_layer_1 ...
+Execute       set_default_model mvprod_layer_1 
+Execute       apply_spec_resource_limit mvprod_layer_1 
+INFO-FLOW: Configuring Module : sigmoid_activation_L.1 ...
+Execute       set_default_model sigmoid_activation_L.1 
+Execute       apply_spec_resource_limit sigmoid_activation_L.1 
+INFO-FLOW: Configuring Module : add_bias_pre_L2 ...
+Execute       set_default_model add_bias_pre_L2 
+Execute       apply_spec_resource_limit add_bias_pre_L2 
+INFO-FLOW: Configuring Module : mvprod_layer_2 ...
+Execute       set_default_model mvprod_layer_2 
+Execute       apply_spec_resource_limit mvprod_layer_2 
+INFO-FLOW: Configuring Module : sigmoid_activation_L ...
+Execute       set_default_model sigmoid_activation_L 
+Execute       apply_spec_resource_limit sigmoid_activation_L 
+INFO-FLOW: Configuring Module : classify ...
+Execute       set_default_model classify 
+Execute       apply_spec_resource_limit classify 
+INFO-FLOW: Configuring Module : Block_arrayctor.loop ...
+Execute       set_default_model Block_arrayctor.loop 
+Execute       apply_spec_resource_limit Block_arrayctor.loop 
+INFO-FLOW: Configuring Module : __../src/mlp.cpp_lin ...
+Execute       set_default_model __../src/mlp.cpp_lin 
+Execute       apply_spec_resource_limit __../src/mlp.cpp_lin 
+INFO-FLOW: Configuring Module : mlp ...
+Execute       set_default_model mlp 
+Execute       apply_spec_resource_limit mlp 
+INFO-FLOW: Model list for preprocess: add_bias_pre_L1 mvprod_layer_1 sigmoid_activation_L.1 add_bias_pre_L2 mvprod_layer_2 sigmoid_activation_L classify Block_arrayctor.loop __../src/mlp.cpp_lin mlp
+INFO-FLOW: Preprocessing Module: add_bias_pre_L1 ...
+Execute       set_default_model add_bias_pre_L1 
+Execute       cdfg_preprocess -model add_bias_pre_L1 
+Execute       rtl_gen_preprocess add_bias_pre_L1 
+INFO-FLOW: Preprocessing Module: mvprod_layer_1 ...
+Execute       set_default_model mvprod_layer_1 
+Execute       cdfg_preprocess -model mvprod_layer_1 
+Execute       rtl_gen_preprocess mvprod_layer_1 
+INFO-FLOW: Preprocessing Module: sigmoid_activation_L.1 ...
+Execute       set_default_model sigmoid_activation_L.1 
+Execute       cdfg_preprocess -model sigmoid_activation_L.1 
+Execute       rtl_gen_preprocess sigmoid_activation_L.1 
+INFO-FLOW: Preprocessing Module: add_bias_pre_L2 ...
+Execute       set_default_model add_bias_pre_L2 
+Execute       cdfg_preprocess -model add_bias_pre_L2 
+Execute       rtl_gen_preprocess add_bias_pre_L2 
+INFO-FLOW: Preprocessing Module: mvprod_layer_2 ...
+Execute       set_default_model mvprod_layer_2 
+Execute       cdfg_preprocess -model mvprod_layer_2 
+Execute       rtl_gen_preprocess mvprod_layer_2 
+INFO-FLOW: Preprocessing Module: sigmoid_activation_L ...
+Execute       set_default_model sigmoid_activation_L 
+Execute       cdfg_preprocess -model sigmoid_activation_L 
+Execute       rtl_gen_preprocess sigmoid_activation_L 
+INFO-FLOW: Preprocessing Module: classify ...
+Execute       set_default_model classify 
+Execute       cdfg_preprocess -model classify 
+Execute       rtl_gen_preprocess classify 
+INFO-FLOW: Preprocessing Module: Block_arrayctor.loop ...
+Execute       set_default_model Block_arrayctor.loop 
+Execute       cdfg_preprocess -model Block_arrayctor.loop 
+Execute       rtl_gen_preprocess Block_arrayctor.loop 
+INFO-FLOW: Preprocessing Module: __../src/mlp.cpp_lin ...
+Execute       set_default_model __../src/mlp.cpp_lin 
+Execute       cdfg_preprocess -model __../src/mlp.cpp_lin 
+Execute       rtl_gen_preprocess __../src/mlp.cpp_lin 
+INFO-FLOW: Preprocessing Module: mlp ...
+Execute       set_default_model mlp 
+Execute       cdfg_preprocess -model mlp 
+Execute       rtl_gen_preprocess mlp 
+INFO-FLOW: Model list for synthesis: add_bias_pre_L1 mvprod_layer_1 sigmoid_activation_L.1 add_bias_pre_L2 mvprod_layer_2 sigmoid_activation_L classify Block_arrayctor.loop __../src/mlp.cpp_lin mlp
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'add_bias_pre_L1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model add_bias_pre_L1 
+Execute       schedule -model add_bias_pre_L1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 24.101 seconds; current allocated memory: 206.396 MB.
+Execute       report -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L1.verbose.sched.rpt -verbose -f 
+INFO: [HLS 200-434] Only 0 loops out of a total 1 loops have been pipelined in this design.
+Execute       db_write -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L1.sched.adb -f 
+INFO-FLOW: Finish scheduling add_bias_pre_L1.
+Execute       set_default_model add_bias_pre_L1 
+Execute       bind -model add_bias_pre_L1 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=add_bias_pre_L1
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.098 seconds; current allocated memory: 206.483 MB.
+Execute       report -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L1.verbose.bind.rpt -verbose -f 
+Execute       db_write -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L1.bind.adb -f 
+INFO-FLOW: Finish binding add_bias_pre_L1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mvprod_layer_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model mvprod_layer_1 
+Execute       schedule -model mvprod_layer_1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'outer_inner'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 8.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.138 seconds; current allocated memory: 206.766 MB.
+Execute       report -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_1.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_1.sched.adb -f 
+INFO-FLOW: Finish scheduling mvprod_layer_1.
+Execute       set_default_model mvprod_layer_1 
+Execute       bind -model mvprod_layer_1 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=mvprod_layer_1
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.118 seconds; current allocated memory: 206.958 MB.
+Execute       report -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_1.verbose.bind.rpt -verbose -f 
+Execute       db_write -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_1.bind.adb -f 
+INFO-FLOW: Finish binding mvprod_layer_1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sigmoid_activation_L_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model sigmoid_activation_L.1 
+Execute       schedule -model sigmoid_activation_L.1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.143 seconds; current allocated memory: 207.122 MB.
+Execute       report -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L_1.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L_1.sched.adb -f 
+INFO-FLOW: Finish scheduling sigmoid_activation_L.1.
+Execute       set_default_model sigmoid_activation_L.1 
+Execute       bind -model sigmoid_activation_L.1 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=sigmoid_activation_L.1
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.101 seconds; current allocated memory: 207.258 MB.
+Execute       report -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L_1.verbose.bind.rpt -verbose -f 
+Execute       db_write -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L_1.bind.adb -f 
+INFO-FLOW: Finish binding sigmoid_activation_L.1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'add_bias_pre_L2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model add_bias_pre_L2 
+Execute       schedule -model add_bias_pre_L2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.128 seconds; current allocated memory: 207.364 MB.
+Execute       report -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L2.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L2.sched.adb -f 
+INFO-FLOW: Finish scheduling add_bias_pre_L2.
+Execute       set_default_model add_bias_pre_L2 
+Execute       bind -model add_bias_pre_L2 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=add_bias_pre_L2
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.094 seconds; current allocated memory: 207.425 MB.
+Execute       report -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L2.verbose.bind.rpt -verbose -f 
+Execute       db_write -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L2.bind.adb -f 
+INFO-FLOW: Finish binding add_bias_pre_L2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mvprod_layer_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model mvprod_layer_2 
+Execute       schedule -model mvprod_layer_2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'outer_inner'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 9.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.138 seconds; current allocated memory: 207.657 MB.
+Execute       report -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_2.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_2.sched.adb -f 
+INFO-FLOW: Finish scheduling mvprod_layer_2.
+Execute       set_default_model mvprod_layer_2 
+Execute       bind -model mvprod_layer_2 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=mvprod_layer_2
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.113 seconds; current allocated memory: 207.853 MB.
+Execute       report -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_2.verbose.bind.rpt -verbose -f 
+Execute       db_write -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_2.bind.adb -f 
+INFO-FLOW: Finish binding mvprod_layer_2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sigmoid_activation_L' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model sigmoid_activation_L 
+Execute       schedule -model sigmoid_activation_L 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.145 seconds; current allocated memory: 208.001 MB.
+Execute       report -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L.sched.adb -f 
+INFO-FLOW: Finish scheduling sigmoid_activation_L.
+Execute       set_default_model sigmoid_activation_L 
+Execute       bind -model sigmoid_activation_L 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=sigmoid_activation_L
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.115 seconds; current allocated memory: 208.136 MB.
+Execute       report -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L.verbose.bind.rpt -verbose -f 
+Execute       db_write -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L.bind.adb -f 
+INFO-FLOW: Finish binding sigmoid_activation_L.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'classify' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model classify 
+Execute       schedule -model classify 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.121 seconds; current allocated memory: 208.198 MB.
+Execute       report -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/classify.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/classify.sched.adb -f 
+INFO-FLOW: Finish scheduling classify.
+Execute       set_default_model classify 
+Execute       bind -model classify 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=classify
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.092 seconds; current allocated memory: 208.279 MB.
+Execute       report -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/classify.verbose.bind.rpt -verbose -f 
+Execute       db_write -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/classify.bind.adb -f 
+INFO-FLOW: Finish binding classify.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Block_arrayctor_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Block_arrayctor.loop 
+Execute       schedule -model Block_arrayctor.loop 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.099 seconds; current allocated memory: 208.287 MB.
+Execute       report -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/Block_arrayctor_loop.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/Block_arrayctor_loop.sched.adb -f 
+INFO-FLOW: Finish scheduling Block_arrayctor.loop.
+Execute       set_default_model Block_arrayctor.loop 
+Execute       bind -model Block_arrayctor.loop 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=Block_arrayctor.loop
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.078 seconds; current allocated memory: 208.308 MB.
+Execute       report -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/Block_arrayctor_loop.verbose.bind.rpt -verbose -f 
+Execute       db_write -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/Block_arrayctor_loop.bind.adb -f 
+INFO-FLOW: Finish binding Block_arrayctor.loop.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_src_mlp_cpp_lin' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model __../src/mlp.cpp_lin 
+Execute       schedule -model __../src/mlp.cpp_lin 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.084 seconds; current allocated memory: 208.317 MB.
+Execute       report -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/p_src_mlp_cpp_lin.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/p_src_mlp_cpp_lin.sched.adb -f 
+INFO-FLOW: Finish scheduling __../src/mlp.cpp_lin.
+Execute       set_default_model __../src/mlp.cpp_lin 
+Execute       bind -model __../src/mlp.cpp_lin 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=__../src/mlp.cpp_lin
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.073 seconds; current allocated memory: 208.337 MB.
+Execute       report -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/p_src_mlp_cpp_lin.verbose.bind.rpt -verbose -f 
+Execute       db_write -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/p_src_mlp_cpp_lin.bind.adb -f 
+INFO-FLOW: Finish binding __../src/mlp.cpp_lin.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mlp' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model mlp 
+Execute       schedule -model mlp 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.087 seconds; current allocated memory: 208.426 MB.
+Execute       report -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.verbose.sched.rpt -verbose -f 
+Execute       db_write -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.sched.adb -f 
+INFO-FLOW: Finish scheduling mlp.
+Execute       set_default_model mlp 
+Execute       bind -model mlp 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=mlp
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.183 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.236 seconds; current allocated memory: 208.608 MB.
+Execute       report -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.verbose.bind.rpt -verbose -f 
+Execute       db_write -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.bind.adb -f 
+INFO-FLOW: Finish binding mlp.
+Execute       get_model_list mlp -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess add_bias_pre_L1 
+Execute       rtl_gen_preprocess mvprod_layer_1 
+Execute       rtl_gen_preprocess sigmoid_activation_L.1 
+Execute       rtl_gen_preprocess add_bias_pre_L2 
+Execute       rtl_gen_preprocess mvprod_layer_2 
+Execute       rtl_gen_preprocess sigmoid_activation_L 
+Execute       rtl_gen_preprocess classify 
+Execute       rtl_gen_preprocess Block_arrayctor.loop 
+Execute       rtl_gen_preprocess __../src/mlp.cpp_lin 
+Execute       rtl_gen_preprocess mlp 
+INFO-FLOW: Model list for RTL generation: add_bias_pre_L1 mvprod_layer_1 sigmoid_activation_L.1 add_bias_pre_L2 mvprod_layer_2 sigmoid_activation_L classify Block_arrayctor.loop __../src/mlp.cpp_lin mlp
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'add_bias_pre_L1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model add_bias_pre_L1 -vendor xilinx -mg_file C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L1.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'add_bias_pre_L1'.
+INFO: [HLS 200-111]  Elapsed time: 0.177 seconds; current allocated memory: 208.814 MB.
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute       gen_rtl add_bias_pre_L1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/systemc/add_bias_pre_L1 -synmodules add_bias_pre_L1 mvprod_layer_1 sigmoid_activation_L.1 add_bias_pre_L2 mvprod_layer_2 sigmoid_activation_L classify Block_arrayctor.loop __../src/mlp.cpp_lin mlp 
+Execute       gen_rtl add_bias_pre_L1 -style xilinx -f -lang vhdl -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/vhdl/add_bias_pre_L1 
+Execute       gen_rtl add_bias_pre_L1 -style xilinx -f -lang vlog -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/verilog/add_bias_pre_L1 
+Execute       gen_tb_info add_bias_pre_L1 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L1 -p C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db 
+Execute       report -model add_bias_pre_L1 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/report/add_bias_pre_L1_csynth.rpt -f 
+Execute       report -model add_bias_pre_L1 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/report/add_bias_pre_L1_csynth.xml -f -x 
+Execute       report -model add_bias_pre_L1 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L1.verbose.rpt -verbose -f 
+Execute       db_write -model add_bias_pre_L1 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L1.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mvprod_layer_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model mvprod_layer_1 -vendor xilinx -mg_file C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_1.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'mlp_mac_muladd_5ns_10ns_9ns_14_3_1' to 'mlp_mac_muladd_5nbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mlp_mac_muladd_18s_18s_38ns_39_3_1' to 'mlp_mac_muladd_18cud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'mlp_mac_muladd_18cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mlp_mac_muladd_5nbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mvprod_layer_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.232 seconds; current allocated memory: 209.360 MB.
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute       gen_rtl mvprod_layer_1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/systemc/mvprod_layer_1 -synmodules add_bias_pre_L1 mvprod_layer_1 sigmoid_activation_L.1 add_bias_pre_L2 mvprod_layer_2 sigmoid_activation_L classify Block_arrayctor.loop __../src/mlp.cpp_lin mlp 
+Execute       gen_rtl mvprod_layer_1 -style xilinx -f -lang vhdl -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/vhdl/mvprod_layer_1 
+Execute       gen_rtl mvprod_layer_1 -style xilinx -f -lang vlog -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/verilog/mvprod_layer_1 
+Execute       gen_tb_info mvprod_layer_1 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_1 -p C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db 
+Execute       report -model mvprod_layer_1 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/report/mvprod_layer_1_csynth.rpt -f 
+Execute       report -model mvprod_layer_1 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/report/mvprod_layer_1_csynth.xml -f -x 
+Execute       report -model mvprod_layer_1 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_1.verbose.rpt -verbose -f 
+Execute       db_write -model mvprod_layer_1 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_1.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sigmoid_activation_L_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model sigmoid_activation_L.1 -vendor xilinx -mg_file C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L_1.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'mlp_mul_mul_18s_18s_31_3_1' to 'mlp_mul_mul_18s_1dEe' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'mlp_mul_mul_18s_1dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sigmoid_activation_L_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.348 seconds; current allocated memory: 209.771 MB.
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute       gen_rtl sigmoid_activation_L.1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/systemc/sigmoid_activation_L_1 -synmodules add_bias_pre_L1 mvprod_layer_1 sigmoid_activation_L.1 add_bias_pre_L2 mvprod_layer_2 sigmoid_activation_L classify Block_arrayctor.loop __../src/mlp.cpp_lin mlp 
+Execute       gen_rtl sigmoid_activation_L.1 -style xilinx -f -lang vhdl -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/vhdl/sigmoid_activation_L_1 
+Execute       gen_rtl sigmoid_activation_L.1 -style xilinx -f -lang vlog -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/verilog/sigmoid_activation_L_1 
+Execute       gen_tb_info sigmoid_activation_L.1 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L_1 -p C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db 
+Execute       report -model sigmoid_activation_L.1 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/report/sigmoid_activation_L_1_csynth.rpt -f 
+Execute       report -model sigmoid_activation_L.1 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/report/sigmoid_activation_L_1_csynth.xml -f -x 
+Execute       report -model sigmoid_activation_L.1 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L_1.verbose.rpt -verbose -f 
+Execute       db_write -model sigmoid_activation_L.1 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L_1.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'add_bias_pre_L2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model add_bias_pre_L2 -vendor xilinx -mg_file C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L2.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'add_bias_pre_L2'.
+INFO: [HLS 200-111]  Elapsed time: 0.281 seconds; current allocated memory: 209.947 MB.
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute       gen_rtl add_bias_pre_L2 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/systemc/add_bias_pre_L2 -synmodules add_bias_pre_L1 mvprod_layer_1 sigmoid_activation_L.1 add_bias_pre_L2 mvprod_layer_2 sigmoid_activation_L classify Block_arrayctor.loop __../src/mlp.cpp_lin mlp 
+Execute       gen_rtl add_bias_pre_L2 -style xilinx -f -lang vhdl -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/vhdl/add_bias_pre_L2 
+Execute       gen_rtl add_bias_pre_L2 -style xilinx -f -lang vlog -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/verilog/add_bias_pre_L2 
+Execute       gen_tb_info add_bias_pre_L2 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L2 -p C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db 
+Execute       report -model add_bias_pre_L2 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/report/add_bias_pre_L2_csynth.rpt -f 
+Execute       report -model add_bias_pre_L2 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/report/add_bias_pre_L2_csynth.xml -f -x 
+Execute       report -model add_bias_pre_L2 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L2.verbose.rpt -verbose -f 
+Execute       db_write -model add_bias_pre_L2 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L2.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mvprod_layer_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model mvprod_layer_2 -vendor xilinx -mg_file C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_2.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'mlp_mac_muladd_4ns_6ns_5ns_9_3_1' to 'mlp_mac_muladd_4neOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mlp_mul_mul_18s_18s_36_3_1' to 'mlp_mul_mul_18s_1fYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'mlp_mac_muladd_4neOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mlp_mul_mul_18s_1fYi': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mvprod_layer_2'.
+INFO: [HLS 200-111]  Elapsed time: 0.254 seconds; current allocated memory: 210.458 MB.
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute       gen_rtl mvprod_layer_2 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/systemc/mvprod_layer_2 -synmodules add_bias_pre_L1 mvprod_layer_1 sigmoid_activation_L.1 add_bias_pre_L2 mvprod_layer_2 sigmoid_activation_L classify Block_arrayctor.loop __../src/mlp.cpp_lin mlp 
+Execute       gen_rtl mvprod_layer_2 -style xilinx -f -lang vhdl -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/vhdl/mvprod_layer_2 
+Execute       gen_rtl mvprod_layer_2 -style xilinx -f -lang vlog -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/verilog/mvprod_layer_2 
+Execute       gen_tb_info mvprod_layer_2 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_2 -p C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db 
+Execute       report -model mvprod_layer_2 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/report/mvprod_layer_2_csynth.rpt -f 
+Execute       report -model mvprod_layer_2 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/report/mvprod_layer_2_csynth.xml -f -x 
+Execute       report -model mvprod_layer_2 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_2.verbose.rpt -verbose -f 
+Execute       db_write -model mvprod_layer_2 -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_2.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sigmoid_activation_L' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model sigmoid_activation_L -vendor xilinx -mg_file C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'mlp_mul_mul_18s_18s_33_3_1' to 'mlp_mul_mul_18s_1g8j' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'mlp_mul_mul_18s_1g8j': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sigmoid_activation_L'.
+INFO: [HLS 200-111]  Elapsed time: 0.378 seconds; current allocated memory: 210.845 MB.
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute       gen_rtl sigmoid_activation_L -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/systemc/sigmoid_activation_L -synmodules add_bias_pre_L1 mvprod_layer_1 sigmoid_activation_L.1 add_bias_pre_L2 mvprod_layer_2 sigmoid_activation_L classify Block_arrayctor.loop __../src/mlp.cpp_lin mlp 
+Execute       gen_rtl sigmoid_activation_L -style xilinx -f -lang vhdl -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/vhdl/sigmoid_activation_L 
+Execute       gen_rtl sigmoid_activation_L -style xilinx -f -lang vlog -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/verilog/sigmoid_activation_L 
+Execute       gen_tb_info sigmoid_activation_L -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L -p C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db 
+Execute       report -model sigmoid_activation_L -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/report/sigmoid_activation_L_csynth.rpt -f 
+Execute       report -model sigmoid_activation_L -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/report/sigmoid_activation_L_csynth.xml -f -x 
+Execute       report -model sigmoid_activation_L -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L.verbose.rpt -verbose -f 
+Execute       db_write -model sigmoid_activation_L -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'classify' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model classify -vendor xilinx -mg_file C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/classify.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'classify'.
+INFO: [HLS 200-111]  Elapsed time: 0.307 seconds; current allocated memory: 211.050 MB.
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute       gen_rtl classify -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/systemc/classify -synmodules add_bias_pre_L1 mvprod_layer_1 sigmoid_activation_L.1 add_bias_pre_L2 mvprod_layer_2 sigmoid_activation_L classify Block_arrayctor.loop __../src/mlp.cpp_lin mlp 
+Execute       gen_rtl classify -style xilinx -f -lang vhdl -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/vhdl/classify 
+Execute       gen_rtl classify -style xilinx -f -lang vlog -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/verilog/classify 
+Execute       gen_tb_info classify -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/classify -p C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db 
+Execute       report -model classify -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/report/classify_csynth.rpt -f 
+Execute       report -model classify -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/report/classify_csynth.xml -f -x 
+Execute       report -model classify -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/classify.verbose.rpt -verbose -f 
+Execute       db_write -model classify -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/classify.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Block_arrayctor_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model Block_arrayctor.loop -vendor xilinx -mg_file C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/Block_arrayctor_loop.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_arrayctor_loop'.
+INFO: [HLS 200-111]  Elapsed time: 0.256 seconds; current allocated memory: 211.201 MB.
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Block_arrayctor.loop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/systemc/Block_arrayctor_loop -synmodules add_bias_pre_L1 mvprod_layer_1 sigmoid_activation_L.1 add_bias_pre_L2 mvprod_layer_2 sigmoid_activation_L classify Block_arrayctor.loop __../src/mlp.cpp_lin mlp 
+Execute       gen_rtl Block_arrayctor.loop -style xilinx -f -lang vhdl -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/vhdl/Block_arrayctor_loop 
+Execute       gen_rtl Block_arrayctor.loop -style xilinx -f -lang vlog -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/verilog/Block_arrayctor_loop 
+Execute       gen_tb_info Block_arrayctor.loop -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/Block_arrayctor_loop -p C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db 
+Execute       report -model Block_arrayctor.loop -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/report/Block_arrayctor_loop_csynth.rpt -f 
+Execute       report -model Block_arrayctor.loop -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/report/Block_arrayctor_loop_csynth.xml -f -x 
+Execute       report -model Block_arrayctor.loop -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/Block_arrayctor_loop.verbose.rpt -verbose -f 
+Execute       db_write -model Block_arrayctor.loop -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/Block_arrayctor_loop.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_src_mlp_cpp_lin' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model __../src/mlp.cpp_lin -vendor xilinx -mg_file C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/p_src_mlp_cpp_lin.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_src_mlp_cpp_lin'.
+INFO: [HLS 200-111]  Elapsed time: 0.141 seconds; current allocated memory: 211.324 MB.
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute       gen_rtl __../src/mlp.cpp_lin -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/systemc/p_src_mlp_cpp_lin -synmodules add_bias_pre_L1 mvprod_layer_1 sigmoid_activation_L.1 add_bias_pre_L2 mvprod_layer_2 sigmoid_activation_L classify Block_arrayctor.loop __../src/mlp.cpp_lin mlp 
+Execute       gen_rtl __../src/mlp.cpp_lin -style xilinx -f -lang vhdl -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/vhdl/p_src_mlp_cpp_lin 
+Execute       gen_rtl __../src/mlp.cpp_lin -style xilinx -f -lang vlog -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/verilog/p_src_mlp_cpp_lin 
+Execute       gen_tb_info __../src/mlp.cpp_lin -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/p_src_mlp_cpp_lin -p C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db 
+Execute       report -model __../src/mlp.cpp_lin -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/report/p_src_mlp_cpp_lin_csynth.rpt -f 
+Execute       report -model __../src/mlp.cpp_lin -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/report/p_src_mlp_cpp_lin_csynth.xml -f -x 
+Execute       report -model __../src/mlp.cpp_lin -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/p_src_mlp_cpp_lin.verbose.rpt -verbose -f 
+Execute       db_write -model __../src/mlp.cpp_lin -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/p_src_mlp_cpp_lin.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mlp' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model mlp -vendor xilinx -mg_file C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'mlp/weights_L1_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mlp/weights_L2_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mlp/input_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'mlp' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mlp'.
+INFO: [HLS 200-111]  Elapsed time: 0.227 seconds; current allocated memory: 212.267 MB.
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute       gen_rtl mlp -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/systemc/mlp -synmodules add_bias_pre_L1 mvprod_layer_1 sigmoid_activation_L.1 add_bias_pre_L2 mvprod_layer_2 sigmoid_activation_L classify Block_arrayctor.loop __../src/mlp.cpp_lin mlp 
+Execute       gen_rtl mlp -istop -style xilinx -f -lang vhdl -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/vhdl/mlp 
+Execute       gen_rtl mlp -istop -style xilinx -f -lang vlog -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/verilog/mlp 
+Execute       export_constraint_db -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.constraint.tcl -f -tool general 
+Execute       report -model mlp -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.design.xml -verbose -f -dv 
+Command       report done; 0.117 sec.
+Execute       report -model mlp -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.sdaccel.xml -verbose -f -sdaccel 
+Execute       gen_tb_info mlp -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp -p C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db 
+Execute       report -model mlp -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/report/mlp_csynth.rpt -f 
+Execute       report -model mlp -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/syn/report/mlp_csynth.xml -f -x 
+Execute       report -model mlp -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.verbose.rpt -verbose -f 
+Command       report done; 0.11 sec.
+Execute       db_write -model mlp -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.adb -f 
+Execute       sc_get_clocks mlp 
+Execute       sc_get_portdomain mlp 
+INFO-FLOW: Model list for RTL component generation: add_bias_pre_L1 mvprod_layer_1 sigmoid_activation_L.1 add_bias_pre_L2 mvprod_layer_2 sigmoid_activation_L classify Block_arrayctor.loop __../src/mlp.cpp_lin mlp
+INFO-FLOW: Handling components in module [add_bias_pre_L1] ... 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L1.compgen.tcl 
+INFO-FLOW: Handling components in module [mvprod_layer_1] ... 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_1.compgen.tcl 
+INFO-FLOW: Found component mlp_mac_muladd_5nbkb.
+INFO-FLOW: Append model mlp_mac_muladd_5nbkb
+INFO-FLOW: Found component mlp_mac_muladd_18cud.
+INFO-FLOW: Append model mlp_mac_muladd_18cud
+INFO-FLOW: Handling components in module [sigmoid_activation_L_1] ... 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L_1.compgen.tcl 
+INFO-FLOW: Found component mlp_mul_mul_18s_1dEe.
+INFO-FLOW: Append model mlp_mul_mul_18s_1dEe
+INFO-FLOW: Handling components in module [add_bias_pre_L2] ... 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L2.compgen.tcl 
+INFO-FLOW: Handling components in module [mvprod_layer_2] ... 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_2.compgen.tcl 
+INFO-FLOW: Found component mlp_mac_muladd_4neOg.
+INFO-FLOW: Append model mlp_mac_muladd_4neOg
+INFO-FLOW: Found component mlp_mul_mul_18s_1fYi.
+INFO-FLOW: Append model mlp_mul_mul_18s_1fYi
+INFO-FLOW: Handling components in module [sigmoid_activation_L] ... 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L.compgen.tcl 
+INFO-FLOW: Found component mlp_mul_mul_18s_1g8j.
+INFO-FLOW: Append model mlp_mul_mul_18s_1g8j
+INFO-FLOW: Handling components in module [classify] ... 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/classify.compgen.tcl 
+INFO-FLOW: Handling components in module [Block_arrayctor_loop] ... 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/Block_arrayctor_loop.compgen.tcl 
+INFO-FLOW: Handling components in module [p_src_mlp_cpp_lin] ... 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/p_src_mlp_cpp_lin.compgen.tcl 
+INFO-FLOW: Handling components in module [mlp] ... 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.compgen.tcl 
+INFO-FLOW: Found component fifo_w32_d2_A.
+INFO-FLOW: Append model fifo_w32_d2_A
+INFO-FLOW: Found component fifo_w32_d2_A.
+INFO-FLOW: Append model fifo_w32_d2_A
+INFO-FLOW: Append model add_bias_pre_L1
+INFO-FLOW: Append model mvprod_layer_1
+INFO-FLOW: Append model sigmoid_activation_L_1
+INFO-FLOW: Append model add_bias_pre_L2
+INFO-FLOW: Append model mvprod_layer_2
+INFO-FLOW: Append model sigmoid_activation_L
+INFO-FLOW: Append model classify
+INFO-FLOW: Append model Block_arrayctor_loop
+INFO-FLOW: Append model p_src_mlp_cpp_lin
+INFO-FLOW: Append model mlp
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: mlp_mac_muladd_5nbkb mlp_mac_muladd_18cud mlp_mul_mul_18s_1dEe mlp_mac_muladd_4neOg mlp_mul_mul_18s_1fYi mlp_mul_mul_18s_1g8j fifo_w32_d2_A fifo_w32_d2_A add_bias_pre_L1 mvprod_layer_1 sigmoid_activation_L_1 add_bias_pre_L2 mvprod_layer_2 sigmoid_activation_L classify Block_arrayctor_loop p_src_mlp_cpp_lin mlp
+INFO-FLOW: To file: write model mlp_mac_muladd_5nbkb
+INFO-FLOW: To file: write model mlp_mac_muladd_18cud
+INFO-FLOW: To file: write model mlp_mul_mul_18s_1dEe
+INFO-FLOW: To file: write model mlp_mac_muladd_4neOg
+INFO-FLOW: To file: write model mlp_mul_mul_18s_1fYi
+INFO-FLOW: To file: write model mlp_mul_mul_18s_1g8j
+INFO-FLOW: To file: write model fifo_w32_d2_A
+INFO-FLOW: To file: write model fifo_w32_d2_A
+INFO-FLOW: To file: write model add_bias_pre_L1
+INFO-FLOW: To file: write model mvprod_layer_1
+INFO-FLOW: To file: write model sigmoid_activation_L_1
+INFO-FLOW: To file: write model add_bias_pre_L2
+INFO-FLOW: To file: write model mvprod_layer_2
+INFO-FLOW: To file: write model sigmoid_activation_L
+INFO-FLOW: To file: write model classify
+INFO-FLOW: To file: write model Block_arrayctor_loop
+INFO-FLOW: To file: write model p_src_mlp_cpp_lin
+INFO-FLOW: To file: write model mlp
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+Execute       get_config_sdx -target 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7.gen 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute               source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source done; 0.111 sec.
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source done; 0.153 sec.
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.156 sec.
+Command       ap_source done; 0.156 sec.
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L1.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_1.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L_1.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L2.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_2.compgen.tcl 
+Command       ap_source done; 0.101 sec.
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/classify.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/Block_arrayctor_loop.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/p_src_mlp_cpp_lin.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'mlp_bias_added_V_memcore_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'mlp_L1_no_activ_V_memcore_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'mlp_L2_bias_added_V_memcore_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'mlp_L2_out_V_memcore_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'digit_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'digit_load_loc_chann_U(fifo_w32_d2_A)' using Shift Registers.
+Command       ap_source done; 0.286 sec.
+Execute       get_config_sdx -target 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7.gen 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute               source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source done; 0.112 sec.
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source done; 0.156 sec.
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.159 sec.
+Command       ap_source done; 0.159 sec.
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L1.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_1.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L_1.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L2.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_2.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/classify.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/Block_arrayctor_loop.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/p_src_mlp_cpp_lin.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.compgen.tcl 
+Command       ap_source done; 0.176 sec.
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L1.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_1.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L_1.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L2.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_2.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/classify.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/Block_arrayctor_loop.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/p_src_mlp_cpp_lin.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.compgen.tcl 
+Execute         source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute         source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute         source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L1.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_1.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L_1.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L2.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_2.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/classify.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/Block_arrayctor_loop.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/p_src_mlp_cpp_lin.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.compgen.tcl 
+Command       ap_source done; 0.135 sec.
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.constraint.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.constraint.tcl 
+Execute       sc_get_clocks mlp 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_sdx -profile 
+Execute       ::config_rtl 
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:10 ; elapsed = 00:00:33 . Memory (MB): peak = 270.195 ; gain = 214.504
+INFO: [SYSC 207-301] Generating SystemC RTL for mlp.
+INFO: [VHDL 208-304] Generating VHDL RTL for mlp.
+INFO: [VLOG 209-307] Generating Verilog RTL for mlp.
+Command     autosyn done; 8.659 sec.
+Command   csynth_design done; 31.744 sec.
+Command ap_source done; 32.199 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized opened at Sat Oct 26 22:27:26 -0700 2019
+Execute     config_clock -quiet -name default -period 4 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 50950} {LUT 203800}    {FF 407600} {DSP48E 840}    {BRAM 890}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.122 sec.
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.166 sec.
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.169 sec.
+Command     ap_source done; 0.17 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7_fpv6 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_hp.lib 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7_hp.hlp 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     set_part xc7k325tffg676-2 
+Execute       add_library xilinx/kintex7/kintex7:xc7k325t:ffg676:-2 
+Execute         get_default_platform 
+Execute         license_isbetapart xc7k325t 
+Command         license_isbetapart done; error code: 1; 
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 50950} {LUT 203800}    {FF 407600} {DSP48E 840}    {BRAM 890}  
+Execute         config_chip_info -quiet -speed medium 
+Execute       add_library xilinx/kintex7/kintex7_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7k325tffg676-2'
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 50950} {LUT 203800}    {FF 407600} {DSP48E 840}    {BRAM 890}  
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 0.287 sec.
+Execute   export_design -flow impl -rtl verilog -format ip_catalog 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.114 sec.
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.155 sec.
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.158 sec.
+Command     ap_source done; 0.158 sec.
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     get_config_sdx -target 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.116 sec.
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.156 sec.
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.159 sec.
+Command     ap_source done; 0.159 sec.
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L1.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_1.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L_1.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L2.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_2.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/classify.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/Block_arrayctor_loop.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/p_src_mlp_cpp_lin.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.compgen.tcl 
+Command     ap_source done; 0.173 sec.
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L1.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_1.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L_1.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L2.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_2.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/classify.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/Block_arrayctor_loop.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/p_src_mlp_cpp_lin.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.compgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute       source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L1.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_1.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L_1.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L2.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_2.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/classify.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/Block_arrayctor_loop.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/p_src_mlp_cpp_lin.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.compgen.tcl 
+Command     ap_source done; 0.142 sec.
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.constraint.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.rtl_wrap.cfg.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.constraint.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.constraint.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.constraint.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.111 sec.
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.153 sec.
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.155 sec.
+Command     ap_source done; 0.156 sec.
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.111 sec.
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.153 sec.
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.156 sec.
+Command     ap_source done; 0.156 sec.
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     get_config_sdx -target 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.111 sec.
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.152 sec.
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.155 sec.
+Command     ap_source done; 0.155 sec.
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L1.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_1.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L_1.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/add_bias_pre_L2.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mvprod_layer_2.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/sigmoid_activation_L.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/classify.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/Block_arrayctor_loop.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/p_src_mlp_cpp_lin.compgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.compgen.tcl 
+Command     ap_source done; 0.171 sec.
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.constraint.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/mlp.tbgen.tcl 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.111 sec.
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.152 sec.
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.155 sec.
+Command     ap_source done; 0.156 sec.
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     get_config_rtl -vivado_synth_design_args 
+Execute     source C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/.autopilot/db/global.setting.tcl 
+Execute     get_config_rtl -vivado_synth_strategy 
+Execute     get_config_rtl -vivado_synth_strategy 
+Execute     get_config_rtl -vivado_phys_opt 
+Command   export_design done; 219.309 sec.
+Command ap_source done; 219.602 sec.
+Execute cleanup_all 

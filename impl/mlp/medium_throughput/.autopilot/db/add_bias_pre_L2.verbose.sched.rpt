@@ -1,0 +1,150 @@
+
+
+================================================================
+== Vivado HLS Report for 'add_bias_pre_L2'
+================================================================
+* Date:           Sun Oct 27 17:45:41 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        mlp
+* Solution:       medium_throughput
+* Product family: kintex7
+* Target device:  xc7k325tffg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|     2.296|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   51|   51|   51|   51|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- fill    |   50|   50|         2|          -|          -|    25|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!tmp)
+3 --> 
+	2  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.14>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%result_V_addr = getelementptr [26 x i18]* %result_V, i64 0, i64 0"   --->   Operation 4 'getelementptr' 'result_V_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (1.14ns)   --->   "store i18 65536, i18* %result_V_addr, align 4" [../src/mlp.cpp:64]   --->   Operation 5 'store' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 26> <RAM>
+ST_1 : Operation 6 [1/1] (0.87ns)   --->   "br label %1" [../src/mlp.cpp:65]   --->   Operation 6 'br' <Predicate = true> <Delay = 0.87>
+
+State 2 <SV = 1> <Delay = 1.14>
+ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%i = phi i5 [ 0, %0 ], [ %i_2, %2 ]"   --->   Operation 7 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 8 [1/1] (0.88ns)   --->   "%tmp = icmp eq i5 %i, -7" [../src/mlp.cpp:65]   --->   Operation 8 'icmp' 'tmp' <Predicate = true> <Delay = 0.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 25, i64 25, i64 25)"   --->   Operation 9 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (1.10ns)   --->   "%i_2 = add i5 %i, 1" [../src/mlp.cpp:67]   --->   Operation 10 'add' 'i_2' <Predicate = true> <Delay = 1.10> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.10> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "br i1 %tmp, label %3, label %2" [../src/mlp.cpp:65]   --->   Operation 11 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%tmp_2 = zext i5 %i to i64" [../src/mlp.cpp:67]   --->   Operation 12 'zext' 'tmp_2' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%input_V_addr = getelementptr [25 x i18]* %input_V, i64 0, i64 %tmp_2" [../src/mlp.cpp:67]   --->   Operation 13 'getelementptr' 'input_V_addr' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 14 [2/2] (1.14ns)   --->   "%input_V_load = load i18* %input_V_addr, align 4" [../src/mlp.cpp:67]   --->   Operation 14 'load' 'input_V_load' <Predicate = (!tmp)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 26> <RAM>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "ret void" [../src/mlp.cpp:69]   --->   Operation 15 'ret' <Predicate = (tmp)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 2.29>
+ST_3 : Operation 16 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([5 x i8]* @p_str3) nounwind" [../src/mlp.cpp:66]   --->   Operation 16 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 17 [1/1] (0.00ns)   --->   "%tmp_s = zext i5 %i_2 to i64" [../src/mlp.cpp:67]   --->   Operation 17 'zext' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 18 [1/2] (1.14ns)   --->   "%input_V_load = load i18* %input_V_addr, align 4" [../src/mlp.cpp:67]   --->   Operation 18 'load' 'input_V_load' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 26> <RAM>
+ST_3 : Operation 19 [1/1] (0.00ns)   --->   "%result_V_addr_2 = getelementptr [26 x i18]* %result_V, i64 0, i64 %tmp_s" [../src/mlp.cpp:67]   --->   Operation 19 'getelementptr' 'result_V_addr_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 20 [1/1] (1.14ns)   --->   "store i18 %input_V_load, i18* %result_V_addr_2, align 4" [../src/mlp.cpp:67]   --->   Operation 20 'store' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 26> <RAM>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "br label %1" [../src/mlp.cpp:65]   --->   Operation 21 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 0.5ns.
+
+ <State 1>: 1.15ns
+The critical path consists of the following:
+	'getelementptr' operation ('result_V_addr') [3]  (0 ns)
+	'store' operation (../src/mlp.cpp:64) of constant 65536 on array 'result_V' [4]  (1.15 ns)
+
+ <State 2>: 1.15ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', ../src/mlp.cpp:67) [7]  (0 ns)
+	'getelementptr' operation ('input_V_addr', ../src/mlp.cpp:67) [16]  (0 ns)
+	'load' operation ('input_V_load', ../src/mlp.cpp:67) on array 'input_V' [17]  (1.15 ns)
+
+ <State 3>: 2.3ns
+The critical path consists of the following:
+	'load' operation ('input_V_load', ../src/mlp.cpp:67) on array 'input_V' [17]  (1.15 ns)
+	'store' operation (../src/mlp.cpp:67) of variable 'input_V_load', ../src/mlp.cpp:67 on array 'result_V' [19]  (1.15 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

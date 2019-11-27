@@ -1,0 +1,15 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Sun Oct 27 21:26:08 2019
+| Host         : DESKTOP-S201MJR running 64-bit major release  (build 9200)
+| Command      : report_bus_skew -warn_on_violation -file mlp_bus_skew_routed.rpt -pb mlp_bus_skew_routed.pb -rpx mlp_bus_skew_routed.rpx
+| Design       : mlp
+| Device       : 7k325t-ffg676
+| Speed File   : -2  PRODUCTION 1.12 2017-02-17
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Bus Skew Report
+
+No bus skew constraints
+

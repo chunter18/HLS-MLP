@@ -1,0 +1,90 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="mlp" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="weights_L1" positionalBoolean="4"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="100"/>
+                <option name="dim" value="2"/>
+            </pragma>
+        </directive>
+        <directive functionName="mlp" label="" functionLabel="">
+            <pragma name="DATAFLOW"/>
+        </directive>
+        <directive functionName="mlp" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="input" positionalBoolean="4"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="100"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="mlp" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="bias_added" positionalBoolean="4"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="100"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="mvprod_layer_1" label="" functionLabel="">
+            <pragma name="ALLOCATION">
+                <option name="instances" value="mul" positionalBoolean="4"/>
+                <option name="limit" value="100"/>
+                <option name="operation" value="" positionalBoolean="type"/>
+            </pragma>
+        </directive>
+        <directive functionName="mvprod_layer_2" label="" functionLabel="">
+            <pragma name="ALLOCATION">
+                <option name="instances" value="mul" positionalBoolean="4"/>
+                <option name="limit" value="100"/>
+                <option name="operation" value="" positionalBoolean="type"/>
+            </pragma>
+        </directive>
+        <directive functionName="add_bias_pre_L1" label="" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="II" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="add_bias_pre_L2" label="" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="II" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="sigmoid_activation_L1" label="" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="II" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="sigmoid_activation_L2" label="" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="II" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="classify" label="" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="II" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="mlp" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="weights_L2" positionalBoolean="4"/>
+                <option name="complete" value="" positionalBoolean="type"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="mvprod_layer_1" label="outer" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="II" value="5"/>
+                <option name="rewind" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="mvprod_layer_2" label="outer" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="II" value="1"/>
+                <option name="rewind" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

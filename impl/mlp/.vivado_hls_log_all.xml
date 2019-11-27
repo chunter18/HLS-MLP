@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SCHED 204-69] Unable to schedule 'store' operation (../src/mlp.cpp:56) of variable 'input_0_V_load_3', ../src/mlp.cpp:56 on array 'result_V' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'result_V'.&#xD;&#xA;" projectName="mlp" solutionName="higher_throughput" date="2019-10-27T22:01:00.954-0700" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('input_0_V_load_2', ../src/mlp.cpp:56) on array 'input_0_V' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'input_0_V'." projectName="mlp" solutionName="higher_throughput" date="2019-10-27T21:56:52.019-0700" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name '__../src/mlp.cpp_lin' to 'p_src_mlp_cpp_lin'." projectName="mlp" solutionName="higher_throughput" date="2019-10-27T21:56:50.063-0700" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'Block_arrayctor.loop' to 'Block_arrayctor_loop'." projectName="mlp" solutionName="higher_throughput" date="2019-10-27T21:56:49.767-0700" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'sigmoid_activation_L.1' to 'sigmoid_activation_L_1'." projectName="mlp" solutionName="higher_throughput" date="2019-10-27T21:56:49.760-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'Block_arrayctor.loop2.preheader210_proc' to 'Block_arrayctor.loop' " projectName="mlp" solutionName="higher_throughput" date="2019-10-27T21:56:48.406-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function '__../src/mlp.cpp_line24_proc' to '__../src/mlp.cpp_lin' " projectName="mlp" solutionName="higher_throughput" date="2019-10-27T21:56:39.488-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'sigmoid_activation_L1' to 'sigmoid_activation_L.1' (../src/mlp.cpp:118:1)" projectName="mlp" solutionName="higher_throughput" date="2019-10-27T21:56:39.481-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'sigmoid_activation_L2' to 'sigmoid_activation_L' (../src/mlp.cpp:150:1)" projectName="mlp" solutionName="higher_throughput" date="2019-10-27T21:56:39.474-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] Argument 'weights_L2[9].V' has read operations in process function 'mvprod_layer_2'." projectName="mlp" solutionName="higher_throughput" date="2019-10-27T21:56:30.976-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[9].V' in the middle of dataflow may stall the dataflow pipeline:" projectName="mlp" solutionName="higher_throughput" date="2019-10-27T21:56:30.948-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] Argument 'weights_L2[8].V' has read operations in process function 'mvprod_layer_2'." projectName="mlp" solutionName="higher_throughput" date="2019-10-27T21:56:30.941-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[8].V' in the middle of dataflow may stall the dataflow pipeline:" projectName="mlp" solutionName="higher_throughput" date="2019-10-27T21:56:30.934-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] Argument 'weights_L2[7].V' has read operations in process function 'mvprod_layer_2'." projectName="mlp" solutionName="higher_throughput" date="2019-10-27T21:56:30.929-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[7].V' in the middle of dataflow may stall the dataflow pipeline:" projectName="mlp" solutionName="higher_throughput" date="2019-10-27T21:56:30.923-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] Argument 'weights_L2[6].V' has read operations in process function 'mvprod_layer_2'." projectName="mlp" solutionName="higher_throughput" date="2019-10-27T21:56:30.918-0700" type="Warning"/>
+      </synLog>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

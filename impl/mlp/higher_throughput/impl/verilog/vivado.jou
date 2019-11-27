@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sun Oct 27 19:03:50 2019
+# Process ID: 19332
+# Current directory: C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/high_throughput/impl/verilog
+# Command line: vivado.exe -notrace -mode batch -source run_vivado.tcl
+# Log file: C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/high_throughput/impl/verilog/vivado.log
+# Journal file: C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/high_throughput/impl/verilog\vivado.jou
+#-----------------------------------------------------------
+source run_vivado.tcl -notrace

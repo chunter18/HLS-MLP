@@ -1,0 +1,349 @@
+
+
+================================================================
+== Vivado HLS Report for 'add_bias_pre_L1'
+================================================================
+* Date:           Sun Oct 27 17:45:08 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        mlp
+* Solution:       medium_throughput
+* Product family: kintex7
+* Target device:  xc7k325tffg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|     3.296|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------------------------------------------+
+    |  Latency  |  Interval |                   Pipeline                  |
+    | min | max | min | max |                     Type                    |
+    +-----+-----+-----+-----+---------------------------------------------+
+    |  811|  812|  800|  800| loop rewind(delay=0 initiation interval(s)) |
+    +-----+-----+-----+-----+---------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- fill    |  811|  811|        14|          2|          1|   400|    yes   |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 2, depth = 14
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 15
+* Pipeline : 1
+  Pipeline-0 : II = 2, D = 14, States = { 2 3 6 7 8 9 10 11 12 13 14 15 4 5 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	6  / true
+4 --> 
+	5  / true
+5 --> 
+	2  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	4  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.87>
+ST_1 : Operation 16 [1/1] (0.87ns)   --->   "br label %rewind_header" [../src/mlp.cpp:54]   --->   Operation 16 'br' <Predicate = true> <Delay = 0.87>
+
+State 2 <SV = 1> <Delay = 1.35>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%i4 = phi i9 [ 0, %0 ], [ %i, %2 ], [ 0, %3 ]"   --->   Operation 17 'phi' 'i4' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%phi_urem = phi i9 [ 0, %0 ], [ %idx_urem, %2 ], [ 0, %3 ]"   --->   Operation 18 'phi' 'phi_urem' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (1.35ns)   --->   "%i = add i9 %i4, 1" [../src/mlp.cpp:56]   --->   Operation 19 'add' 'i' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%newIndex1 = zext i9 %phi_urem to i64"   --->   Operation 20 'zext' 'newIndex1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%input_0_V_addr = getelementptr [50 x i18]* %input_0_V, i64 0, i64 %newIndex1"   --->   Operation 21 'getelementptr' 'input_0_V_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [2/2] (1.14ns)   --->   "%input_0_V_load = load i18* %input_0_V_addr, align 4"   --->   Operation 22 'load' 'input_0_V_load' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%input_1_V_addr = getelementptr [50 x i18]* %input_1_V, i64 0, i64 %newIndex1"   --->   Operation 23 'getelementptr' 'input_1_V_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [2/2] (1.14ns)   --->   "%input_1_V_load = load i18* %input_1_V_addr, align 4"   --->   Operation 24 'load' 'input_1_V_load' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%input_2_V_addr = getelementptr [50 x i18]* %input_2_V, i64 0, i64 %newIndex1"   --->   Operation 25 'getelementptr' 'input_2_V_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [2/2] (1.14ns)   --->   "%input_2_V_load = load i18* %input_2_V_addr, align 4"   --->   Operation 26 'load' 'input_2_V_load' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%input_3_V_addr = getelementptr [50 x i18]* %input_3_V, i64 0, i64 %newIndex1"   --->   Operation 27 'getelementptr' 'input_3_V_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 28 [2/2] (1.14ns)   --->   "%input_3_V_load = load i18* %input_3_V_addr, align 4"   --->   Operation 28 'load' 'input_3_V_load' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%input_4_V_addr = getelementptr [50 x i18]* %input_4_V, i64 0, i64 %newIndex1"   --->   Operation 29 'getelementptr' 'input_4_V_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [2/2] (1.14ns)   --->   "%input_4_V_load = load i18* %input_4_V_addr, align 4"   --->   Operation 30 'load' 'input_4_V_load' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%input_5_V_addr = getelementptr [50 x i18]* %input_5_V, i64 0, i64 %newIndex1"   --->   Operation 31 'getelementptr' 'input_5_V_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [2/2] (1.14ns)   --->   "%input_5_V_load = load i18* %input_5_V_addr, align 4"   --->   Operation 32 'load' 'input_5_V_load' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%input_6_V_addr = getelementptr [50 x i18]* %input_6_V, i64 0, i64 %newIndex1"   --->   Operation 33 'getelementptr' 'input_6_V_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [2/2] (1.14ns)   --->   "%input_6_V_load = load i18* %input_6_V_addr, align 4"   --->   Operation 34 'load' 'input_6_V_load' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%input_7_V_addr = getelementptr [50 x i18]* %input_7_V, i64 0, i64 %newIndex1"   --->   Operation 35 'getelementptr' 'input_7_V_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 36 [2/2] (1.14ns)   --->   "%input_7_V_load = load i18* %input_7_V_addr, align 4"   --->   Operation 36 'load' 'input_7_V_load' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_2 : Operation 37 [1/1] (1.35ns)   --->   "%next_urem = add i9 %phi_urem, 1"   --->   Operation 37 'add' 'next_urem' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 38 [1/1] (0.98ns)   --->   "%tmp = icmp eq i9 %i4, -113" [../src/mlp.cpp:54]   --->   Operation 38 'icmp' 'tmp' <Predicate = true> <Delay = 0.98> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.98> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 2.14>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%do_init = phi i1 [ true, %0 ], [ false, %2 ], [ true, %3 ]"   --->   Operation 39 'phi' 'do_init' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%phi_mul = phi i18 [ 0, %0 ], [ %next_mul, %2 ], [ 0, %3 ]"   --->   Operation 40 'phi' 'phi_mul' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "br i1 %do_init, label %rewind_init, label %1"   --->   Operation 41 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 42 [1/1] (1.36ns)   --->   "%next_mul = add i18 %phi_mul, 656"   --->   Operation 42 'add' 'next_mul' <Predicate = true> <Delay = 1.36> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%tmp_3 = call i3 @_ssdm_op_PartSelect.i3.i18.i32.i32(i18 %phi_mul, i32 15, i32 17)"   --->   Operation 43 'partselect' 'tmp_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%arrayNo_cast = zext i3 %tmp_3 to i32"   --->   Operation 44 'zext' 'arrayNo_cast' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 45 [1/2] (1.14ns)   --->   "%input_0_V_load = load i18* %input_0_V_addr, align 4"   --->   Operation 45 'load' 'input_0_V_load' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_3 : Operation 46 [1/2] (1.14ns)   --->   "%input_1_V_load = load i18* %input_1_V_addr, align 4"   --->   Operation 46 'load' 'input_1_V_load' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_3 : Operation 47 [1/2] (1.14ns)   --->   "%input_2_V_load = load i18* %input_2_V_addr, align 4"   --->   Operation 47 'load' 'input_2_V_load' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_3 : Operation 48 [1/2] (1.14ns)   --->   "%input_3_V_load = load i18* %input_3_V_addr, align 4"   --->   Operation 48 'load' 'input_3_V_load' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_3 : Operation 49 [1/2] (1.14ns)   --->   "%input_4_V_load = load i18* %input_4_V_addr, align 4"   --->   Operation 49 'load' 'input_4_V_load' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_3 : Operation 50 [1/2] (1.14ns)   --->   "%input_5_V_load = load i18* %input_5_V_addr, align 4"   --->   Operation 50 'load' 'input_5_V_load' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_3 : Operation 51 [1/2] (1.14ns)   --->   "%input_6_V_load = load i18* %input_6_V_addr, align 4"   --->   Operation 51 'load' 'input_6_V_load' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_3 : Operation 52 [1/2] (1.14ns)   --->   "%input_7_V_load = load i18* %input_7_V_addr, align 4"   --->   Operation 52 'load' 'input_7_V_load' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_3 : Operation 53 [2/2] (0.81ns)   --->   "%tmp_4 = call i18 @_ssdm_op_Mux.ap_auto.8i18.i32(i18 %input_0_V_load, i18 %input_1_V_load, i18 %input_2_V_load, i18 %input_3_V_load, i18 %input_4_V_load, i18 %input_5_V_load, i18 %input_6_V_load, i18 %input_7_V_load, i32 %arrayNo_cast)"   --->   Operation 53 'mux' 'tmp_4' <Predicate = true> <Delay = 0.81> <Core = "MuxnS">   --->   Core 31 'MuxnS' <Latency = 1> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 54 [13/13] (2.14ns)   --->   "%newIndex2 = urem i9 %i, 51" [../src/mlp.cpp:56]   --->   Operation 54 'urem' 'newIndex2' <Predicate = true> <Delay = 2.14> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 12> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 55 [1/1] (0.98ns)   --->   "%tmp_6 = icmp ult i9 %next_urem, 50"   --->   Operation 55 'icmp' 'tmp_6' <Predicate = true> <Delay = 0.98> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.98> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 56 [1/1] (0.37ns)   --->   "%idx_urem = select i1 %tmp_6, i9 %next_urem, i9 0"   --->   Operation 56 'select' 'idx_urem' <Predicate = true> <Delay = 0.37> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 57 [1/1] (0.00ns)   --->   "br label %rewind_header" [../src/mlp.cpp:58]   --->   Operation 57 'br' <Predicate = (tmp)> <Delay = 0.00>
+
+State 4 <SV = 13> <Delay = 2.14>
+ST_4 : Operation 58 [1/1] (0.00ns)   --->   "%result_0_V_addr_1 = getelementptr [51 x i18]* %result_0_V, i64 0, i64 0"   --->   Operation 58 'getelementptr' 'result_0_V_addr_1' <Predicate = (do_init)> <Delay = 0.00>
+ST_4 : Operation 59 [1/1] (1.14ns)   --->   "store i18 65536, i18* %result_0_V_addr_1, align 4" [../src/mlp.cpp:53]   --->   Operation 59 'store' <Predicate = (do_init)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_4 : Operation 60 [2/13] (2.14ns)   --->   "%newIndex2 = urem i9 %i, 51" [../src/mlp.cpp:56]   --->   Operation 60 'urem' 'newIndex2' <Predicate = true> <Delay = 2.14> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 12> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 5 <SV = 14> <Delay = 3.29>
+ST_5 : Operation 61 [1/1] (0.00ns)   --->   "%empty_29 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 400, i64 400, i64 400)"   --->   Operation 61 'speclooptripcount' 'empty_29' <Predicate = (do_init)> <Delay = 0.00>
+ST_5 : Operation 62 [1/1] (0.00ns)   --->   "br label %1" [../src/mlp.cpp:54]   --->   Operation 62 'br' <Predicate = (do_init)> <Delay = 0.00>
+ST_5 : Operation 63 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([5 x i8]* @p_str3) nounwind" [../src/mlp.cpp:55]   --->   Operation 63 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 64 [1/1] (0.00ns)   --->   "%tmp_s = call i32 (...)* @_ssdm_op_SpecRegionBegin([5 x i8]* @p_str3)" [../src/mlp.cpp:55]   --->   Operation 64 'specregionbegin' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 65 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [../src/mlp.cpp:56]   --->   Operation 65 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 66 [1/13] (2.14ns)   --->   "%newIndex2 = urem i9 %i, 51" [../src/mlp.cpp:56]   --->   Operation 66 'urem' 'newIndex2' <Predicate = true> <Delay = 2.14> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 12> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 67 [1/1] (0.00ns)   --->   "%newIndex3 = zext i9 %newIndex2 to i64" [../src/mlp.cpp:56]   --->   Operation 67 'zext' 'newIndex3' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 68 [1/1] (0.00ns)   --->   "%result_0_V_addr = getelementptr [51 x i18]* %result_0_V, i64 0, i64 %newIndex3" [../src/mlp.cpp:56]   --->   Operation 68 'getelementptr' 'result_0_V_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 69 [1/1] (0.00ns)   --->   "%result_1_V_addr = getelementptr [51 x i18]* %result_1_V, i64 0, i64 %newIndex3" [../src/mlp.cpp:56]   --->   Operation 69 'getelementptr' 'result_1_V_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 70 [1/1] (0.00ns)   --->   "%result_2_V_addr = getelementptr [51 x i18]* %result_2_V, i64 0, i64 %newIndex3" [../src/mlp.cpp:56]   --->   Operation 70 'getelementptr' 'result_2_V_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 71 [1/1] (0.00ns)   --->   "%result_3_V_addr = getelementptr [51 x i18]* %result_3_V, i64 0, i64 %newIndex3" [../src/mlp.cpp:56]   --->   Operation 71 'getelementptr' 'result_3_V_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 72 [1/1] (0.00ns)   --->   "%result_4_V_addr = getelementptr [51 x i18]* %result_4_V, i64 0, i64 %newIndex3" [../src/mlp.cpp:56]   --->   Operation 72 'getelementptr' 'result_4_V_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 73 [1/1] (0.00ns)   --->   "%result_5_V_addr = getelementptr [51 x i18]* %result_5_V, i64 0, i64 %newIndex3" [../src/mlp.cpp:56]   --->   Operation 73 'getelementptr' 'result_5_V_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 74 [1/1] (0.00ns)   --->   "%result_6_V_addr = getelementptr [51 x i18]* %result_6_V, i64 0, i64 %newIndex3" [../src/mlp.cpp:56]   --->   Operation 74 'getelementptr' 'result_6_V_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 75 [1/1] (0.00ns)   --->   "%result_7_V_addr = getelementptr [44 x i18]* %result_7_V, i64 0, i64 %newIndex3" [../src/mlp.cpp:56]   --->   Operation 75 'getelementptr' 'result_7_V_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 76 [1/1] (1.14ns)   --->   "store i18 %tmp_4, i18* %result_6_V_addr, align 4" [../src/mlp.cpp:56]   --->   Operation 76 'store' <Predicate = (arrayNo1 == 6)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_5 : Operation 77 [1/1] (0.00ns)   --->   "br label %2" [../src/mlp.cpp:56]   --->   Operation 77 'br' <Predicate = (arrayNo1 == 6)> <Delay = 0.00>
+ST_5 : Operation 78 [1/1] (1.14ns)   --->   "store i18 %tmp_4, i18* %result_5_V_addr, align 4" [../src/mlp.cpp:56]   --->   Operation 78 'store' <Predicate = (arrayNo1 == 5)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_5 : Operation 79 [1/1] (0.00ns)   --->   "br label %2" [../src/mlp.cpp:56]   --->   Operation 79 'br' <Predicate = (arrayNo1 == 5)> <Delay = 0.00>
+ST_5 : Operation 80 [1/1] (1.14ns)   --->   "store i18 %tmp_4, i18* %result_4_V_addr, align 4" [../src/mlp.cpp:56]   --->   Operation 80 'store' <Predicate = (arrayNo1 == 4)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_5 : Operation 81 [1/1] (0.00ns)   --->   "br label %2" [../src/mlp.cpp:56]   --->   Operation 81 'br' <Predicate = (arrayNo1 == 4)> <Delay = 0.00>
+ST_5 : Operation 82 [1/1] (1.14ns)   --->   "store i18 %tmp_4, i18* %result_3_V_addr, align 4" [../src/mlp.cpp:56]   --->   Operation 82 'store' <Predicate = (arrayNo1 == 3)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_5 : Operation 83 [1/1] (0.00ns)   --->   "br label %2" [../src/mlp.cpp:56]   --->   Operation 83 'br' <Predicate = (arrayNo1 == 3)> <Delay = 0.00>
+ST_5 : Operation 84 [1/1] (1.14ns)   --->   "store i18 %tmp_4, i18* %result_2_V_addr, align 4" [../src/mlp.cpp:56]   --->   Operation 84 'store' <Predicate = (arrayNo1 == 2)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_5 : Operation 85 [1/1] (0.00ns)   --->   "br label %2" [../src/mlp.cpp:56]   --->   Operation 85 'br' <Predicate = (arrayNo1 == 2)> <Delay = 0.00>
+ST_5 : Operation 86 [1/1] (1.14ns)   --->   "store i18 %tmp_4, i18* %result_1_V_addr, align 4" [../src/mlp.cpp:56]   --->   Operation 86 'store' <Predicate = (arrayNo1 == 1)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_5 : Operation 87 [1/1] (0.00ns)   --->   "br label %2" [../src/mlp.cpp:56]   --->   Operation 87 'br' <Predicate = (arrayNo1 == 1)> <Delay = 0.00>
+ST_5 : Operation 88 [1/1] (1.14ns)   --->   "store i18 %tmp_4, i18* %result_0_V_addr, align 4" [../src/mlp.cpp:56]   --->   Operation 88 'store' <Predicate = (arrayNo1 == 0)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_5 : Operation 89 [1/1] (0.00ns)   --->   "br label %2" [../src/mlp.cpp:56]   --->   Operation 89 'br' <Predicate = (arrayNo1 == 0)> <Delay = 0.00>
+ST_5 : Operation 90 [1/1] (1.14ns)   --->   "store i18 %tmp_4, i18* %result_7_V_addr, align 4" [../src/mlp.cpp:56]   --->   Operation 90 'store' <Predicate = (arrayNo1 != 0 & arrayNo1 != 1 & arrayNo1 != 2 & arrayNo1 != 3 & arrayNo1 != 4 & arrayNo1 != 5 & arrayNo1 != 6)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 44> <RAM>
+ST_5 : Operation 91 [1/1] (0.00ns)   --->   "br label %2" [../src/mlp.cpp:56]   --->   Operation 91 'br' <Predicate = (arrayNo1 != 0 & arrayNo1 != 1 & arrayNo1 != 2 & arrayNo1 != 3 & arrayNo1 != 4 & arrayNo1 != 5 & arrayNo1 != 6)> <Delay = 0.00>
+ST_5 : Operation 92 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([5 x i8]* @p_str3, i32 %tmp_s)" [../src/mlp.cpp:57]   --->   Operation 92 'specregionend' 'empty' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 93 [1/1] (0.00ns)   --->   "%empty_28 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 400, i64 400, i64 400)"   --->   Operation 93 'speclooptripcount' 'empty_28' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 94 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_Return()" [../src/mlp.cpp:58]   --->   Operation 94 'return' <Predicate = (tmp)> <Delay = 0.00>
+
+State 6 <SV = 3> <Delay = 3.04>
+ST_6 : Operation 95 [1/2] (0.81ns)   --->   "%tmp_4 = call i18 @_ssdm_op_Mux.ap_auto.8i18.i32(i18 %input_0_V_load, i18 %input_1_V_load, i18 %input_2_V_load, i18 %input_3_V_load, i18 %input_4_V_load, i18 %input_5_V_load, i18 %input_6_V_load, i18 %input_7_V_load, i32 %arrayNo_cast)"   --->   Operation 95 'mux' 'tmp_4' <Predicate = true> <Delay = 0.81> <Core = "MuxnS">   --->   Core 31 'MuxnS' <Latency = 1> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 96 [1/1] (0.00ns)   --->   "%zext_cast = zext i9 %i to i20" [../src/mlp.cpp:56]   --->   Operation 96 'zext' 'zext_cast' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 97 [3/3] (3.04ns)   --->   "%mul = mul i20 %zext_cast, 643" [../src/mlp.cpp:56]   --->   Operation 97 'mul' 'mul' <Predicate = true> <Delay = 3.04> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.04> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 98 [12/13] (2.14ns)   --->   "%newIndex2 = urem i9 %i, 51" [../src/mlp.cpp:56]   --->   Operation 98 'urem' 'newIndex2' <Predicate = true> <Delay = 2.14> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 12> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 99 [1/1] (0.00ns)   --->   "br i1 %tmp, label %3, label %rewind_header" [../src/mlp.cpp:54]   --->   Operation 99 'br' <Predicate = true> <Delay = 0.00>
+
+State 7 <SV = 4> <Delay = 3.04>
+ST_7 : Operation 100 [2/3] (3.04ns)   --->   "%mul = mul i20 %zext_cast, 643" [../src/mlp.cpp:56]   --->   Operation 100 'mul' 'mul' <Predicate = true> <Delay = 3.04> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.04> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_7 : Operation 101 [11/13] (2.14ns)   --->   "%newIndex2 = urem i9 %i, 51" [../src/mlp.cpp:56]   --->   Operation 101 'urem' 'newIndex2' <Predicate = true> <Delay = 2.14> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 12> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 5> <Delay = 2.14>
+ST_8 : Operation 102 [1/3] (0.00ns)   --->   "%mul = mul i20 %zext_cast, 643" [../src/mlp.cpp:56]   --->   Operation 102 'mul' 'mul' <Predicate = true> <Delay = 0.00> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.04> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_8 : Operation 103 [10/13] (2.14ns)   --->   "%newIndex2 = urem i9 %i, 51" [../src/mlp.cpp:56]   --->   Operation 103 'urem' 'newIndex2' <Predicate = true> <Delay = 2.14> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 12> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 6> <Delay = 2.14>
+ST_9 : Operation 104 [1/1] (0.00ns)   --->   "%tmp_5 = call i5 @_ssdm_op_PartSelect.i5.i20.i32.i32(i20 %mul, i32 15, i32 19)" [../src/mlp.cpp:56]   --->   Operation 104 'partselect' 'tmp_5' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 105 [1/1] (0.00ns)   --->   "%arrayNo1 = sext i5 %tmp_5 to i9" [../src/mlp.cpp:56]   --->   Operation 105 'sext' 'arrayNo1' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 106 [9/13] (2.14ns)   --->   "%newIndex2 = urem i9 %i, 51" [../src/mlp.cpp:56]   --->   Operation 106 'urem' 'newIndex2' <Predicate = true> <Delay = 2.14> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 12> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 107 [1/1] (0.88ns)   --->   "switch i9 %arrayNo1, label %branch7 [
+    i9 0, label %branch0
+    i9 1, label %branch1
+    i9 2, label %branch2
+    i9 3, label %branch3
+    i9 4, label %branch4
+    i9 5, label %branch5
+    i9 6, label %branch6
+  ]" [../src/mlp.cpp:56]   --->   Operation 107 'switch' <Predicate = true> <Delay = 0.88>
+
+State 10 <SV = 7> <Delay = 2.14>
+ST_10 : Operation 108 [8/13] (2.14ns)   --->   "%newIndex2 = urem i9 %i, 51" [../src/mlp.cpp:56]   --->   Operation 108 'urem' 'newIndex2' <Predicate = true> <Delay = 2.14> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 12> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 8> <Delay = 2.14>
+ST_11 : Operation 109 [7/13] (2.14ns)   --->   "%newIndex2 = urem i9 %i, 51" [../src/mlp.cpp:56]   --->   Operation 109 'urem' 'newIndex2' <Predicate = true> <Delay = 2.14> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 12> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 9> <Delay = 2.14>
+ST_12 : Operation 110 [6/13] (2.14ns)   --->   "%newIndex2 = urem i9 %i, 51" [../src/mlp.cpp:56]   --->   Operation 110 'urem' 'newIndex2' <Predicate = true> <Delay = 2.14> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 12> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 10> <Delay = 2.14>
+ST_13 : Operation 111 [5/13] (2.14ns)   --->   "%newIndex2 = urem i9 %i, 51" [../src/mlp.cpp:56]   --->   Operation 111 'urem' 'newIndex2' <Predicate = true> <Delay = 2.14> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 12> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 11> <Delay = 2.14>
+ST_14 : Operation 112 [4/13] (2.14ns)   --->   "%newIndex2 = urem i9 %i, 51" [../src/mlp.cpp:56]   --->   Operation 112 'urem' 'newIndex2' <Predicate = true> <Delay = 2.14> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 12> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 12> <Delay = 2.14>
+ST_15 : Operation 113 [3/13] (2.14ns)   --->   "%newIndex2 = urem i9 %i, 51" [../src/mlp.cpp:56]   --->   Operation 113 'urem' 'newIndex2' <Predicate = true> <Delay = 2.14> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 12> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 0.5ns.
+
+ <State 1>: 0.872ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('do_init') [19]  (0.872 ns)
+
+ <State 2>: 1.36ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', ../src/mlp.cpp:56) [20]  (0 ns)
+	'add' operation ('i', ../src/mlp.cpp:56) [33]  (1.36 ns)
+
+ <State 3>: 2.15ns
+The critical path consists of the following:
+	'urem' operation ('newIndex2', ../src/mlp.cpp:56) [59]  (2.15 ns)
+
+ <State 4>: 2.15ns
+The critical path consists of the following:
+	'urem' operation ('newIndex2', ../src/mlp.cpp:56) [59]  (2.15 ns)
+
+ <State 5>: 3.3ns
+The critical path consists of the following:
+	'urem' operation ('newIndex2', ../src/mlp.cpp:56) [59]  (2.15 ns)
+	'getelementptr' operation ('result_4_V_addr', ../src/mlp.cpp:56) [65]  (0 ns)
+	'store' operation (../src/mlp.cpp:56) of variable 'tmp_4' on array 'result_4_V' [77]  (1.15 ns)
+
+ <State 6>: 3.04ns
+The critical path consists of the following:
+	'mul' operation ('mul', ../src/mlp.cpp:56) [56]  (3.04 ns)
+
+ <State 7>: 3.04ns
+The critical path consists of the following:
+	'mul' operation ('mul', ../src/mlp.cpp:56) [56]  (3.04 ns)
+
+ <State 8>: 2.15ns
+The critical path consists of the following:
+	'urem' operation ('newIndex2', ../src/mlp.cpp:56) [59]  (2.15 ns)
+
+ <State 9>: 2.15ns
+The critical path consists of the following:
+	'urem' operation ('newIndex2', ../src/mlp.cpp:56) [59]  (2.15 ns)
+
+ <State 10>: 2.15ns
+The critical path consists of the following:
+	'urem' operation ('newIndex2', ../src/mlp.cpp:56) [59]  (2.15 ns)
+
+ <State 11>: 2.15ns
+The critical path consists of the following:
+	'urem' operation ('newIndex2', ../src/mlp.cpp:56) [59]  (2.15 ns)
+
+ <State 12>: 2.15ns
+The critical path consists of the following:
+	'urem' operation ('newIndex2', ../src/mlp.cpp:56) [59]  (2.15 ns)
+
+ <State 13>: 2.15ns
+The critical path consists of the following:
+	'urem' operation ('newIndex2', ../src/mlp.cpp:56) [59]  (2.15 ns)
+
+ <State 14>: 2.15ns
+The critical path consists of the following:
+	'urem' operation ('newIndex2', ../src/mlp.cpp:56) [59]  (2.15 ns)
+
+ <State 15>: 2.15ns
+The critical path consists of the following:
+	'urem' operation ('newIndex2', ../src/mlp.cpp:56) [59]  (2.15 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

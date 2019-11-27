@@ -1,0 +1,164 @@
+
+
+================================================================
+== Vivado HLS Report for 'classify'
+================================================================
+* Date:           Sun Oct 27 17:45:43 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        mlp
+* Solution:       medium_throughput
+* Product family: kintex7
+* Target device:  xc7k325tffg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|     2.996|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   22|   22|   22|   22|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- argmax  |   20|   20|         2|          -|          -|    10|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / (!tmp)
+4 --> 
+	3  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.14>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%activated_L2_V_addr = getelementptr [10 x i18]* %activated_L2_V, i64 0, i64 0"   --->   Operation 5 'getelementptr' 'activated_L2_V_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [2/2] (1.14ns)   --->   "%max_V = load i18* %activated_L2_V_addr, align 4" [../src/mlp.cpp:31]   --->   Operation 6 'load' 'max_V' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+
+State 2 <SV = 1> <Delay = 1.14>
+ST_2 : Operation 7 [1/2] (1.14ns)   --->   "%max_V = load i18* %activated_L2_V_addr, align 4" [../src/mlp.cpp:31]   --->   Operation 7 'load' 'max_V' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_2 : Operation 8 [1/1] (0.87ns)   --->   "br label %1" [../src/mlp.cpp:35]   --->   Operation 8 'br' <Predicate = true> <Delay = 0.87>
+
+State 3 <SV = 2> <Delay = 1.14>
+ST_3 : Operation 9 [1/1] (0.00ns)   --->   "%p_0 = phi i18 [ %max_V, %0 ], [ %max_V_2, %_ifconv ]"   --->   Operation 9 'phi' 'p_0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 10 [1/1] (0.00ns)   --->   "%result_write_assign = phi i32 [ 1, %0 ], [ %network_digit_1, %_ifconv ]" [../src/mlp.cpp:37]   --->   Operation 10 'phi' 'result_write_assign' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 11 [1/1] (0.00ns)   --->   "%k = phi i4 [ 0, %0 ], [ %network_digit, %_ifconv ]"   --->   Operation 11 'phi' 'k' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 12 [1/1] (0.86ns)   --->   "%tmp = icmp eq i4 %k, -6" [../src/mlp.cpp:35]   --->   Operation 12 'icmp' 'tmp' <Predicate = true> <Delay = 0.86> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 13 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)"   --->   Operation 13 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 14 [1/1] (1.01ns)   --->   "%network_digit = add i4 %k, 1" [../src/mlp.cpp:40]   --->   Operation 14 'add' 'network_digit' <Predicate = true> <Delay = 1.01> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 15 [1/1] (0.00ns)   --->   "br i1 %tmp, label %2, label %_ifconv" [../src/mlp.cpp:35]   --->   Operation 15 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 16 [1/1] (0.00ns)   --->   "%tmp_s = zext i4 %k to i64" [../src/mlp.cpp:37]   --->   Operation 16 'zext' 'tmp_s' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 17 [1/1] (0.00ns)   --->   "%activated_L2_V_addr_1 = getelementptr [10 x i18]* %activated_L2_V, i64 0, i64 %tmp_s" [../src/mlp.cpp:37]   --->   Operation 17 'getelementptr' 'activated_L2_V_addr_1' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 18 [2/2] (1.14ns)   --->   "%max_V_1 = load i18* %activated_L2_V_addr_1, align 4" [../src/mlp.cpp:37]   --->   Operation 18 'load' 'max_V_1' <Predicate = (!tmp)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_3 : Operation 19 [1/1] (0.00ns)   --->   "ret i32 %result_write_assign" [../src/mlp.cpp:45]   --->   Operation 19 'ret' <Predicate = (tmp)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 2.99>
+ST_4 : Operation 20 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([7 x i8]* @p_str2) nounwind" [../src/mlp.cpp:36]   --->   Operation 20 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 21 [1/2] (1.14ns)   --->   "%max_V_1 = load i18* %activated_L2_V_addr_1, align 4" [../src/mlp.cpp:37]   --->   Operation 21 'load' 'max_V_1' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_4 : Operation 22 [1/1] (1.28ns)   --->   "%tmp_1 = icmp sgt i18 %max_V_1, %p_0" [../src/mlp.cpp:37]   --->   Operation 22 'icmp' 'tmp_1' <Predicate = true> <Delay = 1.28> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 23 [1/1] (0.00ns)   --->   "%network_digit_2_cast = zext i4 %network_digit to i32" [../src/mlp.cpp:40]   --->   Operation 23 'zext' 'network_digit_2_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 24 [1/1] (0.56ns)   --->   "%max_V_2 = select i1 %tmp_1, i18 %max_V_1, i18 %p_0" [../src/mlp.cpp:37]   --->   Operation 24 'select' 'max_V_2' <Predicate = true> <Delay = 0.56> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 25 [1/1] (0.49ns)   --->   "%network_digit_1 = select i1 %tmp_1, i32 %network_digit_2_cast, i32 %result_write_assign" [../src/mlp.cpp:37]   --->   Operation 25 'select' 'network_digit_1' <Predicate = true> <Delay = 0.49> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 26 [1/1] (0.00ns)   --->   "br label %1" [../src/mlp.cpp:35]   --->   Operation 26 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 0.5ns.
+
+ <State 1>: 1.15ns
+The critical path consists of the following:
+	'getelementptr' operation ('activated_L2_V_addr') [2]  (0 ns)
+	'load' operation ('max.V', ../src/mlp.cpp:31) on array 'activated_L2_V' [3]  (1.15 ns)
+
+ <State 2>: 1.15ns
+The critical path consists of the following:
+	'load' operation ('max.V', ../src/mlp.cpp:31) on array 'activated_L2_V' [3]  (1.15 ns)
+
+ <State 3>: 1.15ns
+The critical path consists of the following:
+	'phi' operation ('network_digit') with incoming values : ('network_digit', ../src/mlp.cpp:40) [8]  (0 ns)
+	'getelementptr' operation ('activated_L2_V_addr_1', ../src/mlp.cpp:37) [16]  (0 ns)
+	'load' operation ('max.V', ../src/mlp.cpp:37) on array 'activated_L2_V' [17]  (1.15 ns)
+
+ <State 4>: 3ns
+The critical path consists of the following:
+	'load' operation ('max.V', ../src/mlp.cpp:37) on array 'activated_L2_V' [17]  (1.15 ns)
+	'icmp' operation ('tmp_1', ../src/mlp.cpp:37) [18]  (1.28 ns)
+	'select' operation ('max.V', ../src/mlp.cpp:37) [20]  (0.563 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

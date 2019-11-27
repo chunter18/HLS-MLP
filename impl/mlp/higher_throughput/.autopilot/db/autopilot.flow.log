@@ -1,0 +1,509 @@
+INFO-FLOW: Workspace C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput opened at Sun Oct 27 21:56:00 -0700 2019
+Execute     config_clock -quiet -name default -period 4 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 50950} {LUT 203800}    {FF 407600} {DSP48E 840}    {BRAM 890}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.126 sec.
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.168 sec.
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.17 sec.
+Command     ap_source done; 0.17 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7_fpv6 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_hp.lib 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7_hp.hlp 
+Execute     source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute       source A:/Xilinx/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     set_part xc7k325tffg676-2 
+Execute       add_library xilinx/kintex7/kintex7:xc7k325t:ffg676:-2 
+Execute         get_default_platform 
+Execute         license_isbetapart xc7k325t 
+Command         license_isbetapart done; error code: 1; 
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 50950} {LUT 203800}    {FF 407600} {DSP48E 840}    {BRAM 890}  
+Execute         config_chip_info -quiet -speed medium 
+Execute       add_library xilinx/kintex7/kintex7_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7k325tffg676-2'
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 50950} {LUT 203800}    {FF 407600} {DSP48E 840}    {BRAM 890}  
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 0.299 sec.
+Execute   set_part xc7k325tffg676-2 
+Execute     add_library xilinx/kintex7/kintex7:xc7k325t:ffg676:-2 
+Execute       get_default_platform 
+Execute       license_isbetapart xc7k325t 
+Command       license_isbetapart done; error code: 1; 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 50950} {LUT 203800}    {FF 407600} {DSP48E 840}    {BRAM 890}  
+Execute       config_chip_info -quiet -speed medium 
+Execute     add_library xilinx/kintex7/kintex7_fpv6 
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute   create_clock -period 4 -name default 
+Execute   source ./mlp/higher_throughput/directives.tcl 
+Execute     set_directive_array_partition -type block -factor 100 -dim 2 mlp weights_L1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L1 block=positionBoolean0type factor=100 dim=2 
+Execute     set_directive_dataflow mlp 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L1 block=positionBoolean0type factor=100 dim=2 
+INFO-FLOW: Setting directive 'DATAFLOW' 
+Execute     set_directive_array_partition -type block -factor 100 -dim 1 mlp input 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L1 block=positionBoolean0type factor=100 dim=2 
+INFO-FLOW: Setting directive 'DATAFLOW' 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredinput block=positionBoolean0type factor=100 dim=1 
+Execute     set_directive_array_partition -type block -factor 100 -dim 1 mlp bias_added 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L1 block=positionBoolean0type factor=100 dim=2 
+INFO-FLOW: Setting directive 'DATAFLOW' 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredinput block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredbias_added block=positionBoolean0type factor=100 dim=1 
+Execute     set_directive_allocation -limit 100 -type operation mvprod_layer_1 mul 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L1 block=positionBoolean0type factor=100 dim=2 
+INFO-FLOW: Setting directive 'DATAFLOW' 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredinput block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredbias_added block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+Execute     set_directive_allocation -limit 100 -type operation mvprod_layer_2 mul 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L1 block=positionBoolean0type factor=100 dim=2 
+INFO-FLOW: Setting directive 'DATAFLOW' 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredinput block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredbias_added block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+Execute     set_directive_pipeline -II 1 add_bias_pre_L1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L1 block=positionBoolean0type factor=100 dim=2 
+INFO-FLOW: Setting directive 'DATAFLOW' 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredinput block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredbias_added block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+Execute     set_directive_pipeline -II 1 add_bias_pre_L2 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L1 block=positionBoolean0type factor=100 dim=2 
+INFO-FLOW: Setting directive 'DATAFLOW' 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredinput block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredbias_added block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+Execute     set_directive_pipeline -II 1 sigmoid_activation_L1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L1 block=positionBoolean0type factor=100 dim=2 
+INFO-FLOW: Setting directive 'DATAFLOW' 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredinput block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredbias_added block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+Execute     set_directive_pipeline -II 1 sigmoid_activation_L2 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L1 block=positionBoolean0type factor=100 dim=2 
+INFO-FLOW: Setting directive 'DATAFLOW' 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredinput block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredbias_added block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+Execute     set_directive_pipeline -II 1 classify 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L1 block=positionBoolean0type factor=100 dim=2 
+INFO-FLOW: Setting directive 'DATAFLOW' 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredinput block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredbias_added block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+Execute     set_directive_array_partition -type complete -dim 1 mlp weights_L2 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L1 block=positionBoolean0type factor=100 dim=2 
+INFO-FLOW: Setting directive 'DATAFLOW' 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredinput block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredbias_added block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L2 complete=positionBoolean0type dim=1 
+Execute     set_directive_pipeline -II 5 -rewind mvprod_layer_1/outer 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L1 block=positionBoolean0type factor=100 dim=2 
+INFO-FLOW: Setting directive 'DATAFLOW' 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredinput block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredbias_added block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L2 complete=positionBoolean0type dim=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=5 rewind=positionBoolean1 
+Execute     set_directive_pipeline -II 1 -rewind mvprod_layer_2/outer 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L1 block=positionBoolean0type factor=100 dim=2 
+INFO-FLOW: Setting directive 'DATAFLOW' 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredinput block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredbias_added block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L2 complete=positionBoolean0type dim=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=5 rewind=positionBoolean1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 rewind=positionBoolean1 
+Execute   csynth_design 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -lm 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+Execute       get_config_schedule -relax_ii_for_timing 
+Execute       get_config_schedule -suppress_dependence_error_break 
+INFO: [HLS 200-10] Analyzing design file '../src/mlp.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling ../src/mlp.cpp as C++
+Execute       get_default_platform 
+Execute       is_encrypted ../src/mlp.cpp 
+Execute       get_default_platform 
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "A:/Xilinx/Vivado/2018.2/msys" -hls  -fno-exceptions  -D__llvm__  -E "../src/mlp.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "A:/Xilinx/Vivado/2018.2/common/technology/autopilot" -I "A:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pp.0.cpp" 
+INFO-FLOW: exec A:/Xilinx/Vivado/2018.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain A:/Xilinx/Vivado/2018.2/msys -hls -fno-exceptions -D__llvm__ -E ../src/mlp.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I A:/Xilinx/Vivado/2018.2/common/technology/autopilot -I A:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pp.0.cpp
+Command       clang done; 1.161 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "A:/Xilinx/Vivado/2018.2/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "A:/Xilinx/Vivado/2018.2/common/technology/autopilot" -I "A:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pp.0.cpp"  -o "C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/useless.bc"  
+INFO-FLOW: exec A:/Xilinx/Vivado/2018.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain A:/Xilinx/Vivado/2018.2/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I A:/Xilinx/Vivado/2018.2/common/technology/autopilot -I A:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pp.0.cpp -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/useless.bc
+Command       clang done; 1.831 sec.
+INFO-FLOW: GCC PP time: 2 seconds per iteration
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L1 block=positionBoolean0type factor=100 dim=2 
+INFO-FLOW: Setting directive 'DATAFLOW' 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredinput block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredbias_added block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L2 complete=positionBoolean0type dim=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=5 rewind=positionBoolean1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 rewind=positionBoolean1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L1 block=positionBoolean0type factor=100 dim=2 
+INFO-FLOW: Setting directive 'DATAFLOW' 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredinput block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredbias_added block=positionBoolean0type factor=100 dim=1 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'ALLOCATION' instances=positionBooleanTextRequiredmul limit=100 operation=positionBoolean0type 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 
+INFO-FLOW: Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredweights_L2 complete=positionBoolean0type dim=1 
+INFO-FLOW: Setting directive 'PIPELINE' II=5 rewind=positionBoolean1 
+INFO-FLOW: Setting directive 'PIPELINE' II=1 rewind=positionBoolean1 
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pp.0.cpp std=gnu++98 -directive=C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec A:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/.systemc_flag -quiet -fix-errors C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 1.074 sec.
+INFO-FLOW: CDT Preprocessing with tidy-3.1...
+Execute       tidy_31 xilinx-directive2pragma C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pp.0.cpp std=gnu++98 -directive=C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/higher_throughput.json 
+INFO-FLOW: exec A:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/higher_throughput.json -quiet -fix-errors C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 1.737 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr A:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/xilinx-dataflow-lawyer.mlp.pp.0.cpp.diag.yml C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/xilinx-dataflow-lawyer.mlp.pp.0.cpp.out.log 2> C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/xilinx-dataflow-lawyer.mlp.pp.0.cpp.err.log 
+Command       ap_eval done; 1.076 sec.
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec A:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer -quiet -fix-errors C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+INFO-FLOW: exec A:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 2.877 sec.
+INFO-FLOW: tidy-3.1 time 5 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec A:/Xilinx/Vivado/2018.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 2.001 sec.
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "A:/Xilinx/Vivado/2018.2/msys" -hls  -fno-exceptions  -D__llvm__  -E "C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pragma.1.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "A:/Xilinx/Vivado/2018.2/common/technology/autopilot" -I "A:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pragma.2.cpp" 
+INFO-FLOW: exec A:/Xilinx/Vivado/2018.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain A:/Xilinx/Vivado/2018.2/msys -hls -fno-exceptions -D__llvm__ -E C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pragma.1.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I A:/Xilinx/Vivado/2018.2/common/technology/autopilot -I A:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pragma.2.cpp
+Command       clang done; 1.132 sec.
+Execute       get_default_platform 
+INFO-FLOW: Processing labels
+Execute       clang -src C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain A:/Xilinx/Vivado/2018.2/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "A:/Xilinx/Vivado/2018.2/common/technology/autopilot" -I "A:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.bc" 
+INFO-FLOW: exec A:/Xilinx/Vivado/2018.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain A:/Xilinx/Vivado/2018.2/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I A:/Xilinx/Vivado/2018.2/common/technology/autopilot -I A:/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.bc
+Command       clang done; 1.958 sec.
+INFO-FLOW: Linking Debug ...
+Execute       llvm-ld C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/mlp.g.bc -hls-opt -except-internalize mlp -LA:/Xilinx/Vivado/2018.2/win64/lib -lhlsm -lhlsmc++ -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/a.g 
+Command       llvm-ld done; 1.213 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:18 . Memory (MB): peak = 102.680 ; gain = 46.691
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:18 . Memory (MB): peak = 102.680 ; gain = 46.691
+Execute       ::config_rtl 
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/a.pp.bc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/a.pp.0.bc -f 
+Execute         llvm-ld C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/a.pp.0.bc -disable-opt -LA:/Xilinx/Vivado/2018.2/win64/lib -lfloatconversion -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/a.g.0 
+Command         llvm-ld done; 0.697 sec.
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top mlp -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/a.g.0.bc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<18, 6, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'sigmoid_activation_L1' (../src/mlp.cpp:137).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<36, 12, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'sigmoid_activation_L1' (../src/mlp.cpp:137).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<18, 5, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'sigmoid_activation_L2' (../src/mlp.cpp:169).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<36, 10, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'sigmoid_activation_L2' (../src/mlp.cpp:169).
+Command         transform done; 1.428 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:20 . Memory (MB): peak = 124.453 ; gain = 68.465
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/a.g.1.bc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/a.g.2.prechk.bc -f 
+Command         transform done; 1.192 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/a.g.2.prechk.bc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:04 ; elapsed = 00:00:22 . Memory (MB): peak = 136.617 ; gain = 80.629
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/a.g.1.bc to C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -clib-intrinsic-prepare -dce -func-buffer -dce -array-normalize -func-legal -instcombine -gvn -constprop -dce -ptrArgReplace -mem2reg -instcombine -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg -instcombine -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -instcombine -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -inst-simplify -dce -norm-name -function-inline -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/a.o.1.bc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'classify' (../src/mlp.cpp:29).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'sigmoid_activation_L2' (../src/mlp.cpp:148).
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'outer' (../src/mlp.cpp:99) in function 'mvprod_layer_2' for pipelining.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'add_bias_pre_L2' (../src/mlp.cpp:60).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'sigmoid_activation_L1' (../src/mlp.cpp:116).
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'outer' (../src/mlp.cpp:77) in function 'mvprod_layer_1' for pipelining.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'add_bias_pre_L1' (../src/mlp.cpp:49).
+INFO: [XFORM 203-501] Unrolling loop 'argmax' (../src/mlp.cpp:36) in function 'classify' completely.
+INFO: [XFORM 203-501] Unrolling loop 'activ' (../src/mlp.cpp:157) in function 'sigmoid_activation_L2' completely.
+INFO: [XFORM 203-501] Unrolling loop 'inner' (../src/mlp.cpp:101) in function 'mvprod_layer_2' completely.
+INFO: [XFORM 203-501] Unrolling loop 'fill' (../src/mlp.cpp:66) in function 'add_bias_pre_L2' completely.
+INFO: [XFORM 203-501] Unrolling loop 'activ' (../src/mlp.cpp:125) in function 'sigmoid_activation_L1' completely.
+INFO: [XFORM 203-501] Unrolling loop 'inner' (../src/mlp.cpp:79) in function 'mvprod_layer_1' completely.
+INFO: [XFORM 203-501] Unrolling loop 'fill' (../src/mlp.cpp:55) in function 'add_bias_pre_L1' completely.
+INFO: [XFORM 203-102] Partitioning array 'L1_activ.V' (../src/mlp.cpp:8) automatically.
+INFO: [XFORM 203-102] Partitioning array 'L2_bias_added.V' (../src/mlp.cpp:9) automatically.
+INFO: [XFORM 203-102] Partitioning array 'L2_out_activ.V' (../src/mlp.cpp:11) automatically.
+WARNING: [XFORM 203-105] Cannot partition array 'weights_L1.V' (../src/mlp.cpp:4): indivisible factor 100 on dimension 2, which has 401 elements.
+WARNING: [XFORM 203-105] Cannot partition array 'bias_added.V' (../src/mlp.cpp:6): indivisible factor 100 on dimension 1, which has 401 elements.
+WARNING: [XFORM 203-105] Cannot partition array 'weights_L1.V' (../src/mlp.cpp:4): indivisible factor 100 on dimension 2, which has 401 elements.
+WARNING: [XFORM 203-105] Cannot partition array 'bias_added.V' (../src/mlp.cpp:6): indivisible factor 100 on dimension 1, which has 401 elements.
+INFO: [XFORM 203-101] Partitioning array 'input.V' (../src/mlp.cpp:4) in dimension 1 with a block factor 100.
+INFO: [XFORM 203-101] Partitioning array 'weights_L2.V' (../src/mlp.cpp:4) in dimension 1 completely.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L1.V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L1.V' has read operations in process function 'mvprod_layer_1'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[0].V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2[0].V' has read operations in process function 'mvprod_layer_2'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[1].V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2[1].V' has read operations in process function 'mvprod_layer_2'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[2].V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2[2].V' has read operations in process function 'mvprod_layer_2'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[3].V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2[3].V' has read operations in process function 'mvprod_layer_2'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[4].V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2[4].V' has read operations in process function 'mvprod_layer_2'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[5].V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2[5].V' has read operations in process function 'mvprod_layer_2'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[6].V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2[6].V' has read operations in process function 'mvprod_layer_2'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[7].V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2[7].V' has read operations in process function 'mvprod_layer_2'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[8].V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2[8].V' has read operations in process function 'mvprod_layer_2'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[9].V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2[9].V' has read operations in process function 'mvprod_layer_2'.
+INFO: [XFORM 203-712] Applying dataflow to function 'mlp', detected/extracted 9 process function(s): 
+	 'add_bias_pre_L1'
+	 'mvprod_layer_1'
+	 'sigmoid_activation_L1'
+	 'add_bias_pre_L2'
+	 'mvprod_layer_2'
+	 'sigmoid_activation_L2'
+	 'classify'
+	 'Block_arrayctor.loop2.preheader210_proc'
+	 '__../src/mlp.cpp_line24_proc'.
+Command         transform done; 9.696 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/a.o.1.tmp.bc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../src/mlp.cpp:148:37) to (../src/mlp.cpp:178:1) in function 'sigmoid_activation_L2'... converting 21 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../src/mlp.cpp:116:37) to (../src/mlp.cpp:146:1) in function 'sigmoid_activation_L1'... converting 51 basic blocks.
+Command         transform done; 4.924 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:18 ; elapsed = 00:00:36 . Memory (MB): peak = 187.633 ; gain = 131.645
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -bitwidth -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -dead-allocation-elimination -cdfg-build C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/a.o.2.bc -o C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+WARNING: [XFORM 203-631] Renaming function 'sigmoid_activation_L2' to 'sigmoid_activation_L' (../src/mlp.cpp:150:1)
+WARNING: [XFORM 203-631] Renaming function 'sigmoid_activation_L1' to 'sigmoid_activation_L.1' (../src/mlp.cpp:118:1)
+WARNING: [XFORM 203-631] Renaming function '__../src/mlp.cpp_line24_proc' to '__../src/mlp.cpp_lin' 
+WARNING: [XFORM 203-631] Renaming function 'Block_arrayctor.loop2.preheader210_proc' to 'Block_arrayctor.loop' 
+INFO: [XFORM 203-531] Rewinding loop 'outer' (../src/mlp.cpp:99) in function 'mvprod_layer_2'.
+INFO: [XFORM 203-531] Rewinding loop 'outer' (../src/mlp.cpp:77) in function 'mvprod_layer_1'.
+Command         transform done; 13.474 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:31 ; elapsed = 00:00:50 . Memory (MB): peak = 355.902 ; gain = 299.914
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 31.622 sec.
+Command     elaborate done; 48.694 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'mlp' ...
+Execute       ap_set_top_model mlp 
+WARNING: [SYN 201-103] Legalizing function name 'sigmoid_activation_L.1' to 'sigmoid_activation_L_1'.
+WARNING: [SYN 201-103] Legalizing function name 'Block_arrayctor.loop' to 'Block_arrayctor_loop'.
+WARNING: [SYN 201-103] Legalizing function name '__../src/mlp.cpp_lin' to 'p_src_mlp_cpp_lin'.
+Execute       get_model_list mlp -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model mlp 
+Execute       preproc_iomode -model __../src/mlp.cpp_lin 
+Execute       preproc_iomode -model Block_arrayctor.loop 
+Execute       preproc_iomode -model classify 
+Execute       preproc_iomode -model sigmoid_activation_L 
+Execute       preproc_iomode -model mvprod_layer_2 
+Execute       preproc_iomode -model add_bias_pre_L2 
+Execute       preproc_iomode -model sigmoid_activation_L.1 
+Execute       preproc_iomode -model mvprod_layer_1 
+Execute       preproc_iomode -model add_bias_pre_L1 
+Execute       get_model_list mlp -filter all-wo-channel 
+INFO-FLOW: Model list for configure: add_bias_pre_L1 mvprod_layer_1 sigmoid_activation_L.1 add_bias_pre_L2 mvprod_layer_2 sigmoid_activation_L classify Block_arrayctor.loop __../src/mlp.cpp_lin mlp
+INFO-FLOW: Configuring Module : add_bias_pre_L1 ...
+Execute       set_default_model add_bias_pre_L1 
+Execute       apply_spec_resource_limit add_bias_pre_L1 
+INFO-FLOW: Configuring Module : mvprod_layer_1 ...
+Execute       set_default_model mvprod_layer_1 
+Execute       apply_spec_resource_limit mvprod_layer_1 
+INFO-FLOW: Configuring Module : sigmoid_activation_L.1 ...
+Execute       set_default_model sigmoid_activation_L.1 
+Execute       apply_spec_resource_limit sigmoid_activation_L.1 
+INFO-FLOW: Configuring Module : add_bias_pre_L2 ...
+Execute       set_default_model add_bias_pre_L2 
+Execute       apply_spec_resource_limit add_bias_pre_L2 
+INFO-FLOW: Configuring Module : mvprod_layer_2 ...
+Execute       set_default_model mvprod_layer_2 
+Execute       apply_spec_resource_limit mvprod_layer_2 
+INFO-FLOW: Configuring Module : sigmoid_activation_L ...
+Execute       set_default_model sigmoid_activation_L 
+Execute       apply_spec_resource_limit sigmoid_activation_L 
+INFO-FLOW: Configuring Module : classify ...
+Execute       set_default_model classify 
+Execute       apply_spec_resource_limit classify 
+INFO-FLOW: Configuring Module : Block_arrayctor.loop ...
+Execute       set_default_model Block_arrayctor.loop 
+Execute       apply_spec_resource_limit Block_arrayctor.loop 
+INFO-FLOW: Configuring Module : __../src/mlp.cpp_lin ...
+Execute       set_default_model __../src/mlp.cpp_lin 
+Execute       apply_spec_resource_limit __../src/mlp.cpp_lin 
+INFO-FLOW: Configuring Module : mlp ...
+Execute       set_default_model mlp 
+Execute       apply_spec_resource_limit mlp 
+INFO-FLOW: Model list for preprocess: add_bias_pre_L1 mvprod_layer_1 sigmoid_activation_L.1 add_bias_pre_L2 mvprod_layer_2 sigmoid_activation_L classify Block_arrayctor.loop __../src/mlp.cpp_lin mlp
+INFO-FLOW: Preprocessing Module: add_bias_pre_L1 ...
+Execute       set_default_model add_bias_pre_L1 
+Execute       cdfg_preprocess -model add_bias_pre_L1 
+Command       cdfg_preprocess done; 0.158 sec.
+Execute       rtl_gen_preprocess add_bias_pre_L1 
+INFO-FLOW: Preprocessing Module: mvprod_layer_1 ...
+Execute       set_default_model mvprod_layer_1 
+Execute       cdfg_preprocess -model mvprod_layer_1 
+Command       cdfg_preprocess done; 0.105 sec.
+Execute       rtl_gen_preprocess mvprod_layer_1 
+INFO-FLOW: Preprocessing Module: sigmoid_activation_L.1 ...
+Execute       set_default_model sigmoid_activation_L.1 
+Execute       cdfg_preprocess -model sigmoid_activation_L.1 
+Execute       rtl_gen_preprocess sigmoid_activation_L.1 
+INFO-FLOW: Preprocessing Module: add_bias_pre_L2 ...
+Execute       set_default_model add_bias_pre_L2 
+Execute       cdfg_preprocess -model add_bias_pre_L2 
+Execute       rtl_gen_preprocess add_bias_pre_L2 
+INFO-FLOW: Preprocessing Module: mvprod_layer_2 ...
+Execute       set_default_model mvprod_layer_2 
+Execute       cdfg_preprocess -model mvprod_layer_2 
+Execute       rtl_gen_preprocess mvprod_layer_2 
+INFO-FLOW: Preprocessing Module: sigmoid_activation_L ...
+Execute       set_default_model sigmoid_activation_L 
+Execute       cdfg_preprocess -model sigmoid_activation_L 
+Execute       rtl_gen_preprocess sigmoid_activation_L 
+INFO-FLOW: Preprocessing Module: classify ...
+Execute       set_default_model classify 
+Execute       cdfg_preprocess -model classify 
+Execute       rtl_gen_preprocess classify 
+INFO-FLOW: Preprocessing Module: Block_arrayctor.loop ...
+Execute       set_default_model Block_arrayctor.loop 
+Execute       cdfg_preprocess -model Block_arrayctor.loop 
+Execute       rtl_gen_preprocess Block_arrayctor.loop 
+INFO-FLOW: Preprocessing Module: __../src/mlp.cpp_lin ...
+Execute       set_default_model __../src/mlp.cpp_lin 
+Execute       cdfg_preprocess -model __../src/mlp.cpp_lin 
+Execute       rtl_gen_preprocess __../src/mlp.cpp_lin 
+INFO-FLOW: Preprocessing Module: mlp ...
+Execute       set_default_model mlp 
+Execute       cdfg_preprocess -model mlp 
+Execute       rtl_gen_preprocess mlp 
+INFO-FLOW: Model list for synthesis: add_bias_pre_L1 mvprod_layer_1 sigmoid_activation_L.1 add_bias_pre_L2 mvprod_layer_2 sigmoid_activation_L classify Block_arrayctor.loop __../src/mlp.cpp_lin mlp
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'add_bias_pre_L1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model add_bias_pre_L1 
+Execute       schedule -model add_bias_pre_L1 

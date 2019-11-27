@@ -1,0 +1,76 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Sun Oct 27 17:57:57 2019
+| Host         : DESKTOP-S201MJR running 64-bit major release  (build 9200)
+| Command      : report_timing -file ./report/mlp_timing_synth.rpt
+| Design       : mlp
+| Device       : 7k325t-ffg676
+| Speed File   : -2  PRODUCTION 1.12 2017-02-17
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -1.975ns  (required time - arrival time)
+  Source:                 ap_sync_reg_mvprod_layer_1_U0_ap_ready_reg/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            mvprod_layer_1_U0/mlp_mul_18s_18s_3dEe_U28/mlp_mul_18s_18s_3dEe_MulnS_0_U/p_reg/A[12]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (ap_clk rise@4.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        4.539ns  (logic 0.604ns (13.308%)  route 3.935ns (86.692%))
+  Logic Levels:           7  (LUT4=2 LUT5=2 LUT6=3)
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.510ns = ( 4.510 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.537ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=29797, unset)        0.537     0.537    ap_clk
+                         FDRE                                         r  ap_sync_reg_mvprod_layer_1_U0_ap_ready_reg/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.223     0.760 f  ap_sync_reg_mvprod_layer_1_U0_ap_ready_reg/Q
+                         net (fo=3, unplaced)         0.434     1.194    bias_added_4_V_U/ap_sync_reg_mvprod_layer_1_U0_ap_ready
+                         LUT4 (Prop_lut4_I1_O)        0.123     1.317 f  bias_added_4_V_U/weights_L1_6_V_ce0_INST_0_i_4/O
+                         net (fo=66, unplaced)        0.496     1.813    mvprod_layer_1_U0/mlp_mul_18s_18s_3dEe_U29/mlp_mul_18s_18s_3dEe_MulnS_0_U/empty_n_reg
+                         LUT6 (Prop_lut6_I1_O)        0.043     1.856 r  mvprod_layer_1_U0/mlp_mul_18s_18s_3dEe_U29/mlp_mul_18s_18s_3dEe_MulnS_0_U/weights_L1_6_V_ce1_INST_0_i_3/O
+                         net (fo=398, unplaced)       0.876     2.732    mvprod_layer_1_U0/mlp_mul_18s_18s_3dEe_U29/mlp_mul_18s_18s_3dEe_MulnS_0_U/input_7_V_load_42_reg_32549_reg[0][0]
+                         LUT6 (Prop_lut6_I1_O)        0.043     2.775 f  mvprod_layer_1_U0/mlp_mul_18s_18s_3dEe_U29/mlp_mul_18s_18s_3dEe_MulnS_0_U/p_reg_i_537__2/O
+                         net (fo=5, unplaced)         0.298     3.073    mvprod_layer_1_U0/mlp_mul_18s_18s_3dEe_U29/mlp_mul_18s_18s_3dEe_MulnS_0_U/p_reg_9
+                         LUT5 (Prop_lut5_I4_O)        0.043     3.116 f  mvprod_layer_1_U0/mlp_mul_18s_18s_3dEe_U29/mlp_mul_18s_18s_3dEe_MulnS_0_U/p_reg_i_274__6/O
+                         net (fo=160, unplaced)       0.353     3.469    mvprod_layer_1_U0/mlp_mul_18s_18s_3dEe_U28/mlp_mul_18s_18s_3dEe_MulnS_0_U/ap_CS_fsm_reg[29]
+                         LUT5 (Prop_lut5_I2_O)        0.043     3.512 r  mvprod_layer_1_U0/mlp_mul_18s_18s_3dEe_U28/mlp_mul_18s_18s_3dEe_MulnS_0_U/p_reg_i_322__1/O
+                         net (fo=1, unplaced)         0.742     4.254    mvprod_layer_1_U0/mlp_mul_18s_18s_3dEe_U28/mlp_mul_18s_18s_3dEe_MulnS_0_U/p_reg_i_322__1_n_3
+                         LUT6 (Prop_lut6_I0_O)        0.043     4.297 r  mvprod_layer_1_U0/mlp_mul_18s_18s_3dEe_U28/mlp_mul_18s_18s_3dEe_MulnS_0_U/p_reg_i_125__0/O
+                         net (fo=1, unplaced)         0.270     4.567    mvprod_layer_1_U0/mlp_mul_18s_18s_3dEe_U28/mlp_mul_18s_18s_3dEe_MulnS_0_U/p_reg_i_125__0_n_3
+                         LUT4 (Prop_lut4_I2_O)        0.043     4.610 r  mvprod_layer_1_U0/mlp_mul_18s_18s_3dEe_U28/mlp_mul_18s_18s_3dEe_MulnS_0_U/p_reg_i_24__1/O
+                         net (fo=1, unplaced)         0.466     5.076    mvprod_layer_1_U0/mlp_mul_18s_18s_3dEe_U28/mlp_mul_18s_18s_3dEe_MulnS_0_U/p_reg_i_24__1_n_3
+                         DSP48E1                                      r  mvprod_layer_1_U0/mlp_mul_18s_18s_3dEe_U28/mlp_mul_18s_18s_3dEe_MulnS_0_U/p_reg/A[12]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     4.000     4.000 r  
+                                                      0.000     4.000 r  ap_clk (IN)
+                         net (fo=29797, unset)        0.510     4.510    mvprod_layer_1_U0/mlp_mul_18s_18s_3dEe_U28/mlp_mul_18s_18s_3dEe_MulnS_0_U/ap_clk
+                         DSP48E1                                      r  mvprod_layer_1_U0/mlp_mul_18s_18s_3dEe_U28/mlp_mul_18s_18s_3dEe_MulnS_0_U/p_reg/CLK
+                         clock pessimism              0.000     4.510    
+                         clock uncertainty           -0.035     4.475    
+                         DSP48E1 (Setup_dsp48e1_CLK_A[12])
+                                                     -1.374     3.101    mvprod_layer_1_U0/mlp_mul_18s_18s_3dEe_U28/mlp_mul_18s_18s_3dEe_MulnS_0_U/p_reg
+  -------------------------------------------------------------------
+                         required time                          3.101    
+                         arrival time                          -5.076    
+  -------------------------------------------------------------------
+                         slack                                 -1.975    
+
+
+
+

@@ -1,0 +1,810 @@
+
+
+================================================================
+== Vivado HLS Report for 'mvprod_layer_2'
+================================================================
+* Date:           Sun Oct 27 17:45:42 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        mlp
+* Solution:       medium_throughput
+* Product family: kintex7
+* Target device:  xc7k325tffg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|     2.700|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------------------------------------------+
+    |  Latency  |  Interval |                   Pipeline                  |
+    | min | max | min | max |                     Type                    |
+    +-----+-----+-----+-----+---------------------------------------------+
+    |  263|  264|  260|  260| loop rewind(delay=0 initiation interval(s)) |
+    +-----+-----+-----+-----+---------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- outer   |  263|  263|        30|         26|         26|    10|    yes   |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 26, depth = 30
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 31
+* Pipeline : 1
+  Pipeline-0 : II = 26, D = 30, States = { 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	2  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.87>
+ST_1 : Operation 32 [1/1] (0.87ns)   --->   "br label %rewind_header" [../src/mlp.cpp:98]   --->   Operation 32 'br' <Predicate = true> <Delay = 0.87>
+
+State 2 <SV = 1> <Delay = 2.26>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%phi_mul = phi i8 [ 0, %0 ], [ %next_mul, %._crit_edge.0 ], [ 0, %1 ]"   --->   Operation 33 'phi' 'phi_mul' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%phi_mul_cast = zext i8 %phi_mul to i64" [../src/mlp.cpp:99]   --->   Operation 34 'zext' 'phi_mul_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%matrix_V_addr = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %phi_mul_cast" [../src/mlp.cpp:105]   --->   Operation 35 'getelementptr' 'matrix_V_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%tmp_4 = or i8 %phi_mul, 1" [../src/mlp.cpp:105]   --->   Operation 36 'or' 'tmp_4' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%tmp_12_cast = zext i8 %tmp_4 to i64" [../src/mlp.cpp:105]   --->   Operation 37 'zext' 'tmp_12_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%matrix_V_addr_1 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_12_cast" [../src/mlp.cpp:105]   --->   Operation 38 'getelementptr' 'matrix_V_addr_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (1.35ns)   --->   "%tmp_5 = add i8 %phi_mul, 2" [../src/mlp.cpp:105]   --->   Operation 39 'add' 'tmp_5' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 40 [1/1] (1.35ns)   --->   "%tmp_6 = add i8 %phi_mul, 3" [../src/mlp.cpp:105]   --->   Operation 40 'add' 'tmp_6' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%input_V_addr = getelementptr [26 x i18]* %input_V, i64 0, i64 0" [../src/mlp.cpp:105]   --->   Operation 41 'getelementptr' 'input_V_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 42 [2/2] (1.14ns)   --->   "%input_V_load = load i18* %input_V_addr, align 4" [../src/mlp.cpp:105]   --->   Operation 42 'load' 'input_V_load' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_2 : Operation 43 [2/2] (2.26ns)   --->   "%matrix_V_load = load i18* %matrix_V_addr, align 4" [../src/mlp.cpp:105]   --->   Operation 43 'load' 'matrix_V_load' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%input_V_addr_1 = getelementptr [26 x i18]* %input_V, i64 0, i64 1" [../src/mlp.cpp:105]   --->   Operation 44 'getelementptr' 'input_V_addr_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 45 [2/2] (1.14ns)   --->   "%input_V_load_1 = load i18* %input_V_addr_1, align 4" [../src/mlp.cpp:105]   --->   Operation 45 'load' 'input_V_load_1' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_2 : Operation 46 [2/2] (2.26ns)   --->   "%matrix_V_load_1 = load i18* %matrix_V_addr_1, align 4" [../src/mlp.cpp:105]   --->   Operation 46 'load' 'matrix_V_load_1' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+
+State 3 <SV = 2> <Delay = 2.26>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%tmp_13_cast = zext i8 %tmp_5 to i64" [../src/mlp.cpp:105]   --->   Operation 47 'zext' 'tmp_13_cast' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%matrix_V_addr_2 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_13_cast" [../src/mlp.cpp:105]   --->   Operation 48 'getelementptr' 'matrix_V_addr_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%tmp_14_cast = zext i8 %tmp_6 to i64" [../src/mlp.cpp:105]   --->   Operation 49 'zext' 'tmp_14_cast' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%matrix_V_addr_3 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_14_cast" [../src/mlp.cpp:105]   --->   Operation 50 'getelementptr' 'matrix_V_addr_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 51 [1/1] (1.35ns)   --->   "%tmp_7 = add i8 %phi_mul, 4" [../src/mlp.cpp:105]   --->   Operation 51 'add' 'tmp_7' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 52 [1/1] (1.35ns)   --->   "%tmp_9 = add i8 %phi_mul, 5" [../src/mlp.cpp:105]   --->   Operation 52 'add' 'tmp_9' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 53 [1/2] (1.14ns)   --->   "%input_V_load = load i18* %input_V_addr, align 4" [../src/mlp.cpp:105]   --->   Operation 53 'load' 'input_V_load' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_3 : Operation 54 [1/2] (2.26ns)   --->   "%matrix_V_load = load i18* %matrix_V_addr, align 4" [../src/mlp.cpp:105]   --->   Operation 54 'load' 'matrix_V_load' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_3 : Operation 55 [1/2] (1.14ns)   --->   "%input_V_load_1 = load i18* %input_V_addr_1, align 4" [../src/mlp.cpp:105]   --->   Operation 55 'load' 'input_V_load_1' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_3 : Operation 56 [1/2] (2.26ns)   --->   "%matrix_V_load_1 = load i18* %matrix_V_addr_1, align 4" [../src/mlp.cpp:105]   --->   Operation 56 'load' 'matrix_V_load_1' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_3 : Operation 57 [1/1] (0.00ns)   --->   "%input_V_addr_2 = getelementptr [26 x i18]* %input_V, i64 0, i64 2" [../src/mlp.cpp:105]   --->   Operation 57 'getelementptr' 'input_V_addr_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 58 [2/2] (1.14ns)   --->   "%input_V_load_2 = load i18* %input_V_addr_2, align 4" [../src/mlp.cpp:105]   --->   Operation 58 'load' 'input_V_load_2' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_3 : Operation 59 [2/2] (2.26ns)   --->   "%matrix_V_load_2 = load i18* %matrix_V_addr_2, align 4" [../src/mlp.cpp:105]   --->   Operation 59 'load' 'matrix_V_load_2' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_3 : Operation 60 [1/1] (0.00ns)   --->   "%input_V_addr_3 = getelementptr [26 x i18]* %input_V, i64 0, i64 3" [../src/mlp.cpp:105]   --->   Operation 60 'getelementptr' 'input_V_addr_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 61 [2/2] (1.14ns)   --->   "%input_V_load_3 = load i18* %input_V_addr_3, align 4" [../src/mlp.cpp:105]   --->   Operation 61 'load' 'input_V_load_3' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_3 : Operation 62 [2/2] (2.26ns)   --->   "%matrix_V_load_3 = load i18* %matrix_V_addr_3, align 4" [../src/mlp.cpp:105]   --->   Operation 62 'load' 'matrix_V_load_3' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+
+State 4 <SV = 3> <Delay = 2.26>
+ST_4 : Operation 63 [1/1] (0.00ns)   --->   "%tmp_15_cast = zext i8 %tmp_7 to i64" [../src/mlp.cpp:105]   --->   Operation 63 'zext' 'tmp_15_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 64 [1/1] (0.00ns)   --->   "%matrix_V_addr_4 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_15_cast" [../src/mlp.cpp:105]   --->   Operation 64 'getelementptr' 'matrix_V_addr_4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 65 [1/1] (0.00ns)   --->   "%tmp_16_cast = zext i8 %tmp_9 to i64" [../src/mlp.cpp:105]   --->   Operation 65 'zext' 'tmp_16_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 66 [1/1] (0.00ns)   --->   "%matrix_V_addr_5 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_16_cast" [../src/mlp.cpp:105]   --->   Operation 66 'getelementptr' 'matrix_V_addr_5' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 67 [1/1] (1.35ns)   --->   "%tmp_10 = add i8 %phi_mul, 6" [../src/mlp.cpp:105]   --->   Operation 67 'add' 'tmp_10' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 68 [1/1] (1.35ns)   --->   "%tmp_11 = add i8 %phi_mul, 7" [../src/mlp.cpp:105]   --->   Operation 68 'add' 'tmp_11' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 69 [1/1] (0.00ns)   --->   "%OP1_V_cast = sext i18 %input_V_load to i35" [../src/mlp.cpp:105]   --->   Operation 69 'sext' 'OP1_V_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 70 [1/1] (0.00ns)   --->   "%OP2_V_cast = sext i18 %matrix_V_load to i35" [../src/mlp.cpp:105]   --->   Operation 70 'sext' 'OP2_V_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 71 [2/2] (2.22ns)   --->   "%p_Val2_s = mul i35 %OP1_V_cast, %OP2_V_cast" [../src/mlp.cpp:105]   --->   Operation 71 'mul' 'p_Val2_s' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 72 [1/2] (1.14ns)   --->   "%input_V_load_2 = load i18* %input_V_addr_2, align 4" [../src/mlp.cpp:105]   --->   Operation 72 'load' 'input_V_load_2' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_4 : Operation 73 [1/2] (2.26ns)   --->   "%matrix_V_load_2 = load i18* %matrix_V_addr_2, align 4" [../src/mlp.cpp:105]   --->   Operation 73 'load' 'matrix_V_load_2' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_4 : Operation 74 [1/2] (1.14ns)   --->   "%input_V_load_3 = load i18* %input_V_addr_3, align 4" [../src/mlp.cpp:105]   --->   Operation 74 'load' 'input_V_load_3' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_4 : Operation 75 [1/2] (2.26ns)   --->   "%matrix_V_load_3 = load i18* %matrix_V_addr_3, align 4" [../src/mlp.cpp:105]   --->   Operation 75 'load' 'matrix_V_load_3' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_4 : Operation 76 [1/1] (0.00ns)   --->   "%input_V_addr_4 = getelementptr [26 x i18]* %input_V, i64 0, i64 4" [../src/mlp.cpp:105]   --->   Operation 76 'getelementptr' 'input_V_addr_4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 77 [2/2] (1.14ns)   --->   "%input_V_load_4 = load i18* %input_V_addr_4, align 4" [../src/mlp.cpp:105]   --->   Operation 77 'load' 'input_V_load_4' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_4 : Operation 78 [2/2] (2.26ns)   --->   "%matrix_V_load_4 = load i18* %matrix_V_addr_4, align 4" [../src/mlp.cpp:105]   --->   Operation 78 'load' 'matrix_V_load_4' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_4 : Operation 79 [1/1] (0.00ns)   --->   "%input_V_addr_5 = getelementptr [26 x i18]* %input_V, i64 0, i64 5" [../src/mlp.cpp:105]   --->   Operation 79 'getelementptr' 'input_V_addr_5' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 80 [2/2] (1.14ns)   --->   "%input_V_load_5 = load i18* %input_V_addr_5, align 4" [../src/mlp.cpp:105]   --->   Operation 80 'load' 'input_V_load_5' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_4 : Operation 81 [2/2] (2.26ns)   --->   "%matrix_V_load_5 = load i18* %matrix_V_addr_5, align 4" [../src/mlp.cpp:105]   --->   Operation 81 'load' 'matrix_V_load_5' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+
+State 5 <SV = 4> <Delay = 2.26>
+ST_5 : Operation 82 [1/1] (0.00ns)   --->   "%tmp_17_cast = zext i8 %tmp_10 to i64" [../src/mlp.cpp:105]   --->   Operation 82 'zext' 'tmp_17_cast' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 83 [1/1] (0.00ns)   --->   "%matrix_V_addr_6 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_17_cast" [../src/mlp.cpp:105]   --->   Operation 83 'getelementptr' 'matrix_V_addr_6' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 84 [1/1] (0.00ns)   --->   "%tmp_18_cast = zext i8 %tmp_11 to i64" [../src/mlp.cpp:105]   --->   Operation 84 'zext' 'tmp_18_cast' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 85 [1/1] (0.00ns)   --->   "%matrix_V_addr_7 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_18_cast" [../src/mlp.cpp:105]   --->   Operation 85 'getelementptr' 'matrix_V_addr_7' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 86 [1/1] (1.35ns)   --->   "%tmp_12 = add i8 %phi_mul, 8" [../src/mlp.cpp:105]   --->   Operation 86 'add' 'tmp_12' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 87 [1/1] (1.35ns)   --->   "%tmp_13 = add i8 %phi_mul, 9" [../src/mlp.cpp:105]   --->   Operation 87 'add' 'tmp_13' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 88 [1/2] (2.22ns)   --->   "%p_Val2_s = mul i35 %OP1_V_cast, %OP2_V_cast" [../src/mlp.cpp:105]   --->   Operation 88 'mul' 'p_Val2_s' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 89 [1/1] (0.00ns)   --->   "%OP1_V_1 = sext i18 %input_V_load_1 to i35" [../src/mlp.cpp:105]   --->   Operation 89 'sext' 'OP1_V_1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 90 [1/1] (0.00ns)   --->   "%OP2_V_1 = sext i18 %matrix_V_load_1 to i35" [../src/mlp.cpp:105]   --->   Operation 90 'sext' 'OP2_V_1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 91 [2/2] (2.22ns)   --->   "%p_Val2_14_1 = mul i35 %OP1_V_1, %OP2_V_1" [../src/mlp.cpp:105]   --->   Operation 91 'mul' 'p_Val2_14_1' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 92 [1/1] (0.00ns)   --->   "%tmp_30 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_s, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 92 'partselect' 'tmp_30' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 93 [1/2] (1.14ns)   --->   "%input_V_load_4 = load i18* %input_V_addr_4, align 4" [../src/mlp.cpp:105]   --->   Operation 93 'load' 'input_V_load_4' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_5 : Operation 94 [1/2] (2.26ns)   --->   "%matrix_V_load_4 = load i18* %matrix_V_addr_4, align 4" [../src/mlp.cpp:105]   --->   Operation 94 'load' 'matrix_V_load_4' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_5 : Operation 95 [1/2] (1.14ns)   --->   "%input_V_load_5 = load i18* %input_V_addr_5, align 4" [../src/mlp.cpp:105]   --->   Operation 95 'load' 'input_V_load_5' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_5 : Operation 96 [1/2] (2.26ns)   --->   "%matrix_V_load_5 = load i18* %matrix_V_addr_5, align 4" [../src/mlp.cpp:105]   --->   Operation 96 'load' 'matrix_V_load_5' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_5 : Operation 97 [1/1] (0.00ns)   --->   "%input_V_addr_6 = getelementptr [26 x i18]* %input_V, i64 0, i64 6" [../src/mlp.cpp:105]   --->   Operation 97 'getelementptr' 'input_V_addr_6' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 98 [2/2] (1.14ns)   --->   "%input_V_load_6 = load i18* %input_V_addr_6, align 4" [../src/mlp.cpp:105]   --->   Operation 98 'load' 'input_V_load_6' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_5 : Operation 99 [2/2] (2.26ns)   --->   "%matrix_V_load_6 = load i18* %matrix_V_addr_6, align 4" [../src/mlp.cpp:105]   --->   Operation 99 'load' 'matrix_V_load_6' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_5 : Operation 100 [1/1] (0.00ns)   --->   "%input_V_addr_7 = getelementptr [26 x i18]* %input_V, i64 0, i64 7" [../src/mlp.cpp:105]   --->   Operation 100 'getelementptr' 'input_V_addr_7' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 101 [2/2] (1.14ns)   --->   "%input_V_load_7 = load i18* %input_V_addr_7, align 4" [../src/mlp.cpp:105]   --->   Operation 101 'load' 'input_V_load_7' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_5 : Operation 102 [2/2] (2.26ns)   --->   "%matrix_V_load_7 = load i18* %matrix_V_addr_7, align 4" [../src/mlp.cpp:105]   --->   Operation 102 'load' 'matrix_V_load_7' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+
+State 6 <SV = 5> <Delay = 2.26>
+ST_6 : Operation 103 [1/1] (0.00ns)   --->   "%do_init = phi i1 [ true, %0 ], [ false, %._crit_edge.0 ], [ true, %1 ]"   --->   Operation 103 'phi' 'do_init' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 104 [1/1] (0.00ns)   --->   "br i1 %do_init, label %rewind_init, label %._crit_edge.0"   --->   Operation 104 'br' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 105 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecResourceLimit(i32 1, [4 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/mlp.cpp:95]   --->   Operation 105 'specresourcelimit' <Predicate = (do_init)> <Delay = 0.00>
+ST_6 : Operation 106 [1/1] (0.00ns)   --->   "%empty_25 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)"   --->   Operation 106 'speclooptripcount' 'empty_25' <Predicate = (do_init)> <Delay = 0.00>
+ST_6 : Operation 107 [1/1] (0.00ns)   --->   "br label %._crit_edge.0" [../src/mlp.cpp:98]   --->   Operation 107 'br' <Predicate = (do_init)> <Delay = 0.00>
+ST_6 : Operation 108 [1/1] (0.00ns)   --->   "%tmp_19_cast = zext i8 %tmp_12 to i64" [../src/mlp.cpp:105]   --->   Operation 108 'zext' 'tmp_19_cast' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 109 [1/1] (0.00ns)   --->   "%matrix_V_addr_8 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_19_cast" [../src/mlp.cpp:105]   --->   Operation 109 'getelementptr' 'matrix_V_addr_8' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 110 [1/1] (0.00ns)   --->   "%tmp_20_cast = zext i8 %tmp_13 to i64" [../src/mlp.cpp:105]   --->   Operation 110 'zext' 'tmp_20_cast' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 111 [1/1] (0.00ns)   --->   "%matrix_V_addr_9 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_20_cast" [../src/mlp.cpp:105]   --->   Operation 111 'getelementptr' 'matrix_V_addr_9' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 112 [1/1] (1.35ns)   --->   "%tmp_14 = add i8 %phi_mul, 10" [../src/mlp.cpp:105]   --->   Operation 112 'add' 'tmp_14' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 113 [1/1] (1.35ns)   --->   "%tmp_15 = add i8 %phi_mul, 11" [../src/mlp.cpp:105]   --->   Operation 113 'add' 'tmp_15' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 114 [1/2] (2.22ns)   --->   "%p_Val2_14_1 = mul i35 %OP1_V_1, %OP2_V_1" [../src/mlp.cpp:105]   --->   Operation 114 'mul' 'p_Val2_14_1' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 115 [1/1] (0.00ns)   --->   "%OP1_V_2 = sext i18 %input_V_load_2 to i35" [../src/mlp.cpp:105]   --->   Operation 115 'sext' 'OP1_V_2' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 116 [1/1] (0.00ns)   --->   "%OP2_V_2 = sext i18 %matrix_V_load_2 to i35" [../src/mlp.cpp:105]   --->   Operation 116 'sext' 'OP2_V_2' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 117 [2/2] (2.22ns)   --->   "%p_Val2_14_2 = mul i35 %OP1_V_2, %OP2_V_2" [../src/mlp.cpp:105]   --->   Operation 117 'mul' 'p_Val2_14_2' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 118 [1/2] (1.14ns)   --->   "%input_V_load_6 = load i18* %input_V_addr_6, align 4" [../src/mlp.cpp:105]   --->   Operation 118 'load' 'input_V_load_6' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_6 : Operation 119 [1/2] (2.26ns)   --->   "%matrix_V_load_6 = load i18* %matrix_V_addr_6, align 4" [../src/mlp.cpp:105]   --->   Operation 119 'load' 'matrix_V_load_6' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_6 : Operation 120 [1/2] (1.14ns)   --->   "%input_V_load_7 = load i18* %input_V_addr_7, align 4" [../src/mlp.cpp:105]   --->   Operation 120 'load' 'input_V_load_7' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_6 : Operation 121 [1/2] (2.26ns)   --->   "%matrix_V_load_7 = load i18* %matrix_V_addr_7, align 4" [../src/mlp.cpp:105]   --->   Operation 121 'load' 'matrix_V_load_7' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_6 : Operation 122 [1/1] (0.00ns)   --->   "%input_V_addr_8 = getelementptr [26 x i18]* %input_V, i64 0, i64 8" [../src/mlp.cpp:105]   --->   Operation 122 'getelementptr' 'input_V_addr_8' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 123 [2/2] (1.14ns)   --->   "%input_V_load_8 = load i18* %input_V_addr_8, align 4" [../src/mlp.cpp:105]   --->   Operation 123 'load' 'input_V_load_8' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_6 : Operation 124 [2/2] (2.26ns)   --->   "%matrix_V_load_8 = load i18* %matrix_V_addr_8, align 4" [../src/mlp.cpp:105]   --->   Operation 124 'load' 'matrix_V_load_8' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_6 : Operation 125 [1/1] (0.00ns)   --->   "%input_V_addr_9 = getelementptr [26 x i18]* %input_V, i64 0, i64 9" [../src/mlp.cpp:105]   --->   Operation 125 'getelementptr' 'input_V_addr_9' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 126 [2/2] (1.14ns)   --->   "%input_V_load_9 = load i18* %input_V_addr_9, align 4" [../src/mlp.cpp:105]   --->   Operation 126 'load' 'input_V_load_9' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_6 : Operation 127 [2/2] (2.26ns)   --->   "%matrix_V_load_9 = load i18* %matrix_V_addr_9, align 4" [../src/mlp.cpp:105]   --->   Operation 127 'load' 'matrix_V_load_9' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+
+State 7 <SV = 6> <Delay = 2.26>
+ST_7 : Operation 128 [1/1] (0.00ns)   --->   "%tmp_21_cast = zext i8 %tmp_14 to i64" [../src/mlp.cpp:105]   --->   Operation 128 'zext' 'tmp_21_cast' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 129 [1/1] (0.00ns)   --->   "%matrix_V_addr_10 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_21_cast" [../src/mlp.cpp:105]   --->   Operation 129 'getelementptr' 'matrix_V_addr_10' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 130 [1/1] (0.00ns)   --->   "%tmp_22_cast = zext i8 %tmp_15 to i64" [../src/mlp.cpp:105]   --->   Operation 130 'zext' 'tmp_22_cast' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 131 [1/1] (0.00ns)   --->   "%matrix_V_addr_11 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_22_cast" [../src/mlp.cpp:105]   --->   Operation 131 'getelementptr' 'matrix_V_addr_11' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 132 [1/1] (1.35ns)   --->   "%tmp_16 = add i8 %phi_mul, 12" [../src/mlp.cpp:105]   --->   Operation 132 'add' 'tmp_16' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 133 [1/1] (1.35ns)   --->   "%tmp_17 = add i8 %phi_mul, 13" [../src/mlp.cpp:105]   --->   Operation 133 'add' 'tmp_17' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 134 [1/1] (0.00ns)   --->   "%tmp_41_1 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_30, i17 0)" [../src/mlp.cpp:105]   --->   Operation 134 'bitconcatenate' 'tmp_41_1' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 135 [1/1] (1.55ns)   --->   "%p_Val2_15_1 = add i35 %p_Val2_14_1, %tmp_41_1" [../src/mlp.cpp:105]   --->   Operation 135 'add' 'p_Val2_15_1' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 136 [1/2] (2.22ns)   --->   "%p_Val2_14_2 = mul i35 %OP1_V_2, %OP2_V_2" [../src/mlp.cpp:105]   --->   Operation 136 'mul' 'p_Val2_14_2' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 137 [1/1] (0.00ns)   --->   "%tmp_31 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_1, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 137 'partselect' 'tmp_31' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 138 [1/1] (0.00ns)   --->   "%OP1_V_3 = sext i18 %input_V_load_3 to i35" [../src/mlp.cpp:105]   --->   Operation 138 'sext' 'OP1_V_3' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 139 [1/1] (0.00ns)   --->   "%OP2_V_3 = sext i18 %matrix_V_load_3 to i35" [../src/mlp.cpp:105]   --->   Operation 139 'sext' 'OP2_V_3' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 140 [2/2] (2.22ns)   --->   "%p_Val2_14_3 = mul i35 %OP1_V_3, %OP2_V_3" [../src/mlp.cpp:105]   --->   Operation 140 'mul' 'p_Val2_14_3' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 141 [1/2] (1.14ns)   --->   "%input_V_load_8 = load i18* %input_V_addr_8, align 4" [../src/mlp.cpp:105]   --->   Operation 141 'load' 'input_V_load_8' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_7 : Operation 142 [1/2] (2.26ns)   --->   "%matrix_V_load_8 = load i18* %matrix_V_addr_8, align 4" [../src/mlp.cpp:105]   --->   Operation 142 'load' 'matrix_V_load_8' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_7 : Operation 143 [1/2] (1.14ns)   --->   "%input_V_load_9 = load i18* %input_V_addr_9, align 4" [../src/mlp.cpp:105]   --->   Operation 143 'load' 'input_V_load_9' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_7 : Operation 144 [1/2] (2.26ns)   --->   "%matrix_V_load_9 = load i18* %matrix_V_addr_9, align 4" [../src/mlp.cpp:105]   --->   Operation 144 'load' 'matrix_V_load_9' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_7 : Operation 145 [1/1] (0.00ns)   --->   "%input_V_addr_10 = getelementptr [26 x i18]* %input_V, i64 0, i64 10" [../src/mlp.cpp:105]   --->   Operation 145 'getelementptr' 'input_V_addr_10' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 146 [2/2] (1.14ns)   --->   "%input_V_load_10 = load i18* %input_V_addr_10, align 4" [../src/mlp.cpp:105]   --->   Operation 146 'load' 'input_V_load_10' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_7 : Operation 147 [2/2] (2.26ns)   --->   "%matrix_V_load_10 = load i18* %matrix_V_addr_10, align 4" [../src/mlp.cpp:105]   --->   Operation 147 'load' 'matrix_V_load_10' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_7 : Operation 148 [1/1] (0.00ns)   --->   "%input_V_addr_11 = getelementptr [26 x i18]* %input_V, i64 0, i64 11" [../src/mlp.cpp:105]   --->   Operation 148 'getelementptr' 'input_V_addr_11' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 149 [2/2] (1.14ns)   --->   "%input_V_load_11 = load i18* %input_V_addr_11, align 4" [../src/mlp.cpp:105]   --->   Operation 149 'load' 'input_V_load_11' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_7 : Operation 150 [2/2] (2.26ns)   --->   "%matrix_V_load_11 = load i18* %matrix_V_addr_11, align 4" [../src/mlp.cpp:105]   --->   Operation 150 'load' 'matrix_V_load_11' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+
+State 8 <SV = 7> <Delay = 2.26>
+ST_8 : Operation 151 [1/1] (0.00ns)   --->   "%tmp_23_cast = zext i8 %tmp_16 to i64" [../src/mlp.cpp:105]   --->   Operation 151 'zext' 'tmp_23_cast' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 152 [1/1] (0.00ns)   --->   "%matrix_V_addr_12 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_23_cast" [../src/mlp.cpp:105]   --->   Operation 152 'getelementptr' 'matrix_V_addr_12' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 153 [1/1] (0.00ns)   --->   "%tmp_24_cast = zext i8 %tmp_17 to i64" [../src/mlp.cpp:105]   --->   Operation 153 'zext' 'tmp_24_cast' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 154 [1/1] (0.00ns)   --->   "%matrix_V_addr_13 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_24_cast" [../src/mlp.cpp:105]   --->   Operation 154 'getelementptr' 'matrix_V_addr_13' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 155 [1/1] (1.35ns)   --->   "%tmp_18 = add i8 %phi_mul, 14" [../src/mlp.cpp:105]   --->   Operation 155 'add' 'tmp_18' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 156 [1/1] (1.35ns)   --->   "%tmp_19 = add i8 %phi_mul, 15" [../src/mlp.cpp:105]   --->   Operation 156 'add' 'tmp_19' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 157 [1/1] (0.00ns)   --->   "%tmp_41_2 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_31, i17 0)" [../src/mlp.cpp:105]   --->   Operation 157 'bitconcatenate' 'tmp_41_2' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 158 [1/1] (1.55ns)   --->   "%p_Val2_15_2 = add i35 %p_Val2_14_2, %tmp_41_2" [../src/mlp.cpp:105]   --->   Operation 158 'add' 'p_Val2_15_2' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 159 [1/2] (2.22ns)   --->   "%p_Val2_14_3 = mul i35 %OP1_V_3, %OP2_V_3" [../src/mlp.cpp:105]   --->   Operation 159 'mul' 'p_Val2_14_3' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 160 [1/1] (0.00ns)   --->   "%tmp_32 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_2, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 160 'partselect' 'tmp_32' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 161 [1/1] (0.00ns)   --->   "%OP1_V_4 = sext i18 %input_V_load_4 to i35" [../src/mlp.cpp:105]   --->   Operation 161 'sext' 'OP1_V_4' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 162 [1/1] (0.00ns)   --->   "%OP2_V_4 = sext i18 %matrix_V_load_4 to i35" [../src/mlp.cpp:105]   --->   Operation 162 'sext' 'OP2_V_4' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 163 [2/2] (2.22ns)   --->   "%p_Val2_14_4 = mul i35 %OP1_V_4, %OP2_V_4" [../src/mlp.cpp:105]   --->   Operation 163 'mul' 'p_Val2_14_4' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 164 [1/2] (1.14ns)   --->   "%input_V_load_10 = load i18* %input_V_addr_10, align 4" [../src/mlp.cpp:105]   --->   Operation 164 'load' 'input_V_load_10' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_8 : Operation 165 [1/2] (2.26ns)   --->   "%matrix_V_load_10 = load i18* %matrix_V_addr_10, align 4" [../src/mlp.cpp:105]   --->   Operation 165 'load' 'matrix_V_load_10' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_8 : Operation 166 [1/2] (1.14ns)   --->   "%input_V_load_11 = load i18* %input_V_addr_11, align 4" [../src/mlp.cpp:105]   --->   Operation 166 'load' 'input_V_load_11' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_8 : Operation 167 [1/2] (2.26ns)   --->   "%matrix_V_load_11 = load i18* %matrix_V_addr_11, align 4" [../src/mlp.cpp:105]   --->   Operation 167 'load' 'matrix_V_load_11' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_8 : Operation 168 [1/1] (0.00ns)   --->   "%input_V_addr_12 = getelementptr [26 x i18]* %input_V, i64 0, i64 12" [../src/mlp.cpp:105]   --->   Operation 168 'getelementptr' 'input_V_addr_12' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 169 [2/2] (1.14ns)   --->   "%input_V_load_12 = load i18* %input_V_addr_12, align 4" [../src/mlp.cpp:105]   --->   Operation 169 'load' 'input_V_load_12' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_8 : Operation 170 [2/2] (2.26ns)   --->   "%matrix_V_load_12 = load i18* %matrix_V_addr_12, align 4" [../src/mlp.cpp:105]   --->   Operation 170 'load' 'matrix_V_load_12' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_8 : Operation 171 [1/1] (0.00ns)   --->   "%input_V_addr_13 = getelementptr [26 x i18]* %input_V, i64 0, i64 13" [../src/mlp.cpp:105]   --->   Operation 171 'getelementptr' 'input_V_addr_13' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 172 [2/2] (1.14ns)   --->   "%input_V_load_13 = load i18* %input_V_addr_13, align 4" [../src/mlp.cpp:105]   --->   Operation 172 'load' 'input_V_load_13' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_8 : Operation 173 [2/2] (2.26ns)   --->   "%matrix_V_load_13 = load i18* %matrix_V_addr_13, align 4" [../src/mlp.cpp:105]   --->   Operation 173 'load' 'matrix_V_load_13' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+
+State 9 <SV = 8> <Delay = 2.26>
+ST_9 : Operation 174 [1/1] (0.00ns)   --->   "%tmp_25_cast = zext i8 %tmp_18 to i64" [../src/mlp.cpp:105]   --->   Operation 174 'zext' 'tmp_25_cast' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 175 [1/1] (0.00ns)   --->   "%matrix_V_addr_14 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_25_cast" [../src/mlp.cpp:105]   --->   Operation 175 'getelementptr' 'matrix_V_addr_14' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 176 [1/1] (0.00ns)   --->   "%tmp_26_cast = zext i8 %tmp_19 to i64" [../src/mlp.cpp:105]   --->   Operation 176 'zext' 'tmp_26_cast' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 177 [1/1] (0.00ns)   --->   "%matrix_V_addr_15 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_26_cast" [../src/mlp.cpp:105]   --->   Operation 177 'getelementptr' 'matrix_V_addr_15' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 178 [1/1] (1.35ns)   --->   "%tmp_20 = add i8 %phi_mul, 16" [../src/mlp.cpp:105]   --->   Operation 178 'add' 'tmp_20' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 179 [1/1] (1.35ns)   --->   "%tmp_21 = add i8 %phi_mul, 17" [../src/mlp.cpp:105]   --->   Operation 179 'add' 'tmp_21' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 180 [1/1] (0.00ns)   --->   "%tmp_41_3 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_32, i17 0)" [../src/mlp.cpp:105]   --->   Operation 180 'bitconcatenate' 'tmp_41_3' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 181 [1/1] (1.55ns)   --->   "%p_Val2_15_3 = add i35 %p_Val2_14_3, %tmp_41_3" [../src/mlp.cpp:105]   --->   Operation 181 'add' 'p_Val2_15_3' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 182 [1/2] (2.22ns)   --->   "%p_Val2_14_4 = mul i35 %OP1_V_4, %OP2_V_4" [../src/mlp.cpp:105]   --->   Operation 182 'mul' 'p_Val2_14_4' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 183 [1/1] (0.00ns)   --->   "%tmp_33 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_3, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 183 'partselect' 'tmp_33' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 184 [1/1] (0.00ns)   --->   "%OP1_V_5 = sext i18 %input_V_load_5 to i35" [../src/mlp.cpp:105]   --->   Operation 184 'sext' 'OP1_V_5' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 185 [1/1] (0.00ns)   --->   "%OP2_V_5 = sext i18 %matrix_V_load_5 to i35" [../src/mlp.cpp:105]   --->   Operation 185 'sext' 'OP2_V_5' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 186 [2/2] (2.22ns)   --->   "%p_Val2_14_5 = mul i35 %OP1_V_5, %OP2_V_5" [../src/mlp.cpp:105]   --->   Operation 186 'mul' 'p_Val2_14_5' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 187 [1/2] (1.14ns)   --->   "%input_V_load_12 = load i18* %input_V_addr_12, align 4" [../src/mlp.cpp:105]   --->   Operation 187 'load' 'input_V_load_12' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_9 : Operation 188 [1/2] (2.26ns)   --->   "%matrix_V_load_12 = load i18* %matrix_V_addr_12, align 4" [../src/mlp.cpp:105]   --->   Operation 188 'load' 'matrix_V_load_12' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_9 : Operation 189 [1/2] (1.14ns)   --->   "%input_V_load_13 = load i18* %input_V_addr_13, align 4" [../src/mlp.cpp:105]   --->   Operation 189 'load' 'input_V_load_13' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_9 : Operation 190 [1/2] (2.26ns)   --->   "%matrix_V_load_13 = load i18* %matrix_V_addr_13, align 4" [../src/mlp.cpp:105]   --->   Operation 190 'load' 'matrix_V_load_13' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_9 : Operation 191 [1/1] (0.00ns)   --->   "%input_V_addr_14 = getelementptr [26 x i18]* %input_V, i64 0, i64 14" [../src/mlp.cpp:105]   --->   Operation 191 'getelementptr' 'input_V_addr_14' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 192 [2/2] (1.14ns)   --->   "%input_V_load_14 = load i18* %input_V_addr_14, align 4" [../src/mlp.cpp:105]   --->   Operation 192 'load' 'input_V_load_14' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_9 : Operation 193 [2/2] (2.26ns)   --->   "%matrix_V_load_14 = load i18* %matrix_V_addr_14, align 4" [../src/mlp.cpp:105]   --->   Operation 193 'load' 'matrix_V_load_14' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_9 : Operation 194 [1/1] (0.00ns)   --->   "%input_V_addr_15 = getelementptr [26 x i18]* %input_V, i64 0, i64 15" [../src/mlp.cpp:105]   --->   Operation 194 'getelementptr' 'input_V_addr_15' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 195 [2/2] (1.14ns)   --->   "%input_V_load_15 = load i18* %input_V_addr_15, align 4" [../src/mlp.cpp:105]   --->   Operation 195 'load' 'input_V_load_15' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_9 : Operation 196 [2/2] (2.26ns)   --->   "%matrix_V_load_15 = load i18* %matrix_V_addr_15, align 4" [../src/mlp.cpp:105]   --->   Operation 196 'load' 'matrix_V_load_15' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+
+State 10 <SV = 9> <Delay = 2.26>
+ST_10 : Operation 197 [1/1] (0.00ns)   --->   "%tmp_27_cast = zext i8 %tmp_20 to i64" [../src/mlp.cpp:105]   --->   Operation 197 'zext' 'tmp_27_cast' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 198 [1/1] (0.00ns)   --->   "%matrix_V_addr_16 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_27_cast" [../src/mlp.cpp:105]   --->   Operation 198 'getelementptr' 'matrix_V_addr_16' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 199 [1/1] (0.00ns)   --->   "%tmp_28_cast = zext i8 %tmp_21 to i64" [../src/mlp.cpp:105]   --->   Operation 199 'zext' 'tmp_28_cast' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 200 [1/1] (0.00ns)   --->   "%matrix_V_addr_17 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_28_cast" [../src/mlp.cpp:105]   --->   Operation 200 'getelementptr' 'matrix_V_addr_17' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 201 [1/1] (1.35ns)   --->   "%tmp_22 = add i8 %phi_mul, 18" [../src/mlp.cpp:105]   --->   Operation 201 'add' 'tmp_22' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 202 [1/1] (1.35ns)   --->   "%tmp_23 = add i8 %phi_mul, 19" [../src/mlp.cpp:105]   --->   Operation 202 'add' 'tmp_23' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 203 [1/1] (0.00ns)   --->   "%tmp_41_4 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_33, i17 0)" [../src/mlp.cpp:105]   --->   Operation 203 'bitconcatenate' 'tmp_41_4' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 204 [1/1] (1.55ns)   --->   "%p_Val2_15_4 = add i35 %p_Val2_14_4, %tmp_41_4" [../src/mlp.cpp:105]   --->   Operation 204 'add' 'p_Val2_15_4' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 205 [1/2] (2.22ns)   --->   "%p_Val2_14_5 = mul i35 %OP1_V_5, %OP2_V_5" [../src/mlp.cpp:105]   --->   Operation 205 'mul' 'p_Val2_14_5' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 206 [1/1] (0.00ns)   --->   "%tmp_34 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_4, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 206 'partselect' 'tmp_34' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 207 [1/1] (0.00ns)   --->   "%OP1_V_6 = sext i18 %input_V_load_6 to i35" [../src/mlp.cpp:105]   --->   Operation 207 'sext' 'OP1_V_6' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 208 [1/1] (0.00ns)   --->   "%OP2_V_6 = sext i18 %matrix_V_load_6 to i35" [../src/mlp.cpp:105]   --->   Operation 208 'sext' 'OP2_V_6' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 209 [2/2] (2.22ns)   --->   "%p_Val2_14_6 = mul i35 %OP1_V_6, %OP2_V_6" [../src/mlp.cpp:105]   --->   Operation 209 'mul' 'p_Val2_14_6' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 210 [1/2] (1.14ns)   --->   "%input_V_load_14 = load i18* %input_V_addr_14, align 4" [../src/mlp.cpp:105]   --->   Operation 210 'load' 'input_V_load_14' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_10 : Operation 211 [1/2] (2.26ns)   --->   "%matrix_V_load_14 = load i18* %matrix_V_addr_14, align 4" [../src/mlp.cpp:105]   --->   Operation 211 'load' 'matrix_V_load_14' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_10 : Operation 212 [1/2] (1.14ns)   --->   "%input_V_load_15 = load i18* %input_V_addr_15, align 4" [../src/mlp.cpp:105]   --->   Operation 212 'load' 'input_V_load_15' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_10 : Operation 213 [1/2] (2.26ns)   --->   "%matrix_V_load_15 = load i18* %matrix_V_addr_15, align 4" [../src/mlp.cpp:105]   --->   Operation 213 'load' 'matrix_V_load_15' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_10 : Operation 214 [1/1] (0.00ns)   --->   "%input_V_addr_16 = getelementptr [26 x i18]* %input_V, i64 0, i64 16" [../src/mlp.cpp:105]   --->   Operation 214 'getelementptr' 'input_V_addr_16' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 215 [2/2] (1.14ns)   --->   "%input_V_load_16 = load i18* %input_V_addr_16, align 4" [../src/mlp.cpp:105]   --->   Operation 215 'load' 'input_V_load_16' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_10 : Operation 216 [2/2] (2.26ns)   --->   "%matrix_V_load_16 = load i18* %matrix_V_addr_16, align 4" [../src/mlp.cpp:105]   --->   Operation 216 'load' 'matrix_V_load_16' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_10 : Operation 217 [1/1] (0.00ns)   --->   "%input_V_addr_17 = getelementptr [26 x i18]* %input_V, i64 0, i64 17" [../src/mlp.cpp:105]   --->   Operation 217 'getelementptr' 'input_V_addr_17' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 218 [2/2] (1.14ns)   --->   "%input_V_load_17 = load i18* %input_V_addr_17, align 4" [../src/mlp.cpp:105]   --->   Operation 218 'load' 'input_V_load_17' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_10 : Operation 219 [2/2] (2.26ns)   --->   "%matrix_V_load_17 = load i18* %matrix_V_addr_17, align 4" [../src/mlp.cpp:105]   --->   Operation 219 'load' 'matrix_V_load_17' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+
+State 11 <SV = 10> <Delay = 2.26>
+ST_11 : Operation 220 [1/1] (0.00ns)   --->   "%tmp_29_cast = zext i8 %tmp_22 to i64" [../src/mlp.cpp:105]   --->   Operation 220 'zext' 'tmp_29_cast' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 221 [1/1] (0.00ns)   --->   "%matrix_V_addr_18 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_29_cast" [../src/mlp.cpp:105]   --->   Operation 221 'getelementptr' 'matrix_V_addr_18' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 222 [1/1] (0.00ns)   --->   "%tmp_30_cast = zext i8 %tmp_23 to i64" [../src/mlp.cpp:105]   --->   Operation 222 'zext' 'tmp_30_cast' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 223 [1/1] (0.00ns)   --->   "%matrix_V_addr_19 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_30_cast" [../src/mlp.cpp:105]   --->   Operation 223 'getelementptr' 'matrix_V_addr_19' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 224 [1/1] (1.35ns)   --->   "%tmp_24 = add i8 %phi_mul, 20" [../src/mlp.cpp:105]   --->   Operation 224 'add' 'tmp_24' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 225 [1/1] (1.35ns)   --->   "%tmp_25 = add i8 %phi_mul, 21" [../src/mlp.cpp:105]   --->   Operation 225 'add' 'tmp_25' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 226 [1/1] (0.00ns)   --->   "%tmp_41_5 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_34, i17 0)" [../src/mlp.cpp:105]   --->   Operation 226 'bitconcatenate' 'tmp_41_5' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 227 [1/1] (1.55ns)   --->   "%p_Val2_15_5 = add i35 %p_Val2_14_5, %tmp_41_5" [../src/mlp.cpp:105]   --->   Operation 227 'add' 'p_Val2_15_5' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 228 [1/2] (2.22ns)   --->   "%p_Val2_14_6 = mul i35 %OP1_V_6, %OP2_V_6" [../src/mlp.cpp:105]   --->   Operation 228 'mul' 'p_Val2_14_6' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 229 [1/1] (0.00ns)   --->   "%tmp_35 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_5, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 229 'partselect' 'tmp_35' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 230 [1/1] (0.00ns)   --->   "%OP1_V_7 = sext i18 %input_V_load_7 to i35" [../src/mlp.cpp:105]   --->   Operation 230 'sext' 'OP1_V_7' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 231 [1/1] (0.00ns)   --->   "%OP2_V_7 = sext i18 %matrix_V_load_7 to i35" [../src/mlp.cpp:105]   --->   Operation 231 'sext' 'OP2_V_7' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 232 [2/2] (2.22ns)   --->   "%p_Val2_14_7 = mul i35 %OP1_V_7, %OP2_V_7" [../src/mlp.cpp:105]   --->   Operation 232 'mul' 'p_Val2_14_7' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 233 [1/2] (1.14ns)   --->   "%input_V_load_16 = load i18* %input_V_addr_16, align 4" [../src/mlp.cpp:105]   --->   Operation 233 'load' 'input_V_load_16' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_11 : Operation 234 [1/2] (2.26ns)   --->   "%matrix_V_load_16 = load i18* %matrix_V_addr_16, align 4" [../src/mlp.cpp:105]   --->   Operation 234 'load' 'matrix_V_load_16' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_11 : Operation 235 [1/2] (1.14ns)   --->   "%input_V_load_17 = load i18* %input_V_addr_17, align 4" [../src/mlp.cpp:105]   --->   Operation 235 'load' 'input_V_load_17' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_11 : Operation 236 [1/2] (2.26ns)   --->   "%matrix_V_load_17 = load i18* %matrix_V_addr_17, align 4" [../src/mlp.cpp:105]   --->   Operation 236 'load' 'matrix_V_load_17' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_11 : Operation 237 [1/1] (0.00ns)   --->   "%input_V_addr_18 = getelementptr [26 x i18]* %input_V, i64 0, i64 18" [../src/mlp.cpp:105]   --->   Operation 237 'getelementptr' 'input_V_addr_18' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 238 [2/2] (1.14ns)   --->   "%input_V_load_18 = load i18* %input_V_addr_18, align 4" [../src/mlp.cpp:105]   --->   Operation 238 'load' 'input_V_load_18' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_11 : Operation 239 [2/2] (2.26ns)   --->   "%matrix_V_load_18 = load i18* %matrix_V_addr_18, align 4" [../src/mlp.cpp:105]   --->   Operation 239 'load' 'matrix_V_load_18' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_11 : Operation 240 [1/1] (0.00ns)   --->   "%input_V_addr_19 = getelementptr [26 x i18]* %input_V, i64 0, i64 19" [../src/mlp.cpp:105]   --->   Operation 240 'getelementptr' 'input_V_addr_19' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 241 [2/2] (1.14ns)   --->   "%input_V_load_19 = load i18* %input_V_addr_19, align 4" [../src/mlp.cpp:105]   --->   Operation 241 'load' 'input_V_load_19' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_11 : Operation 242 [2/2] (2.26ns)   --->   "%matrix_V_load_19 = load i18* %matrix_V_addr_19, align 4" [../src/mlp.cpp:105]   --->   Operation 242 'load' 'matrix_V_load_19' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+
+State 12 <SV = 11> <Delay = 2.26>
+ST_12 : Operation 243 [1/1] (0.00ns)   --->   "%phi_mul_cast2 = zext i8 %phi_mul to i9" [../src/mlp.cpp:99]   --->   Operation 243 'zext' 'phi_mul_cast2' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 244 [1/1] (0.00ns)   --->   "%tmp_31_cast = zext i8 %tmp_24 to i64" [../src/mlp.cpp:105]   --->   Operation 244 'zext' 'tmp_31_cast' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 245 [1/1] (0.00ns)   --->   "%matrix_V_addr_20 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_31_cast" [../src/mlp.cpp:105]   --->   Operation 245 'getelementptr' 'matrix_V_addr_20' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 246 [1/1] (0.00ns)   --->   "%tmp_32_cast = zext i8 %tmp_25 to i64" [../src/mlp.cpp:105]   --->   Operation 246 'zext' 'tmp_32_cast' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 247 [1/1] (0.00ns)   --->   "%matrix_V_addr_21 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_32_cast" [../src/mlp.cpp:105]   --->   Operation 247 'getelementptr' 'matrix_V_addr_21' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 248 [1/1] (1.35ns)   --->   "%tmp_26 = add i9 %phi_mul_cast2, 22" [../src/mlp.cpp:105]   --->   Operation 248 'add' 'tmp_26' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 249 [1/1] (1.35ns)   --->   "%tmp_27 = add i9 %phi_mul_cast2, 23" [../src/mlp.cpp:105]   --->   Operation 249 'add' 'tmp_27' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 250 [1/1] (0.00ns)   --->   "%tmp_41_6 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_35, i17 0)" [../src/mlp.cpp:105]   --->   Operation 250 'bitconcatenate' 'tmp_41_6' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 251 [1/1] (1.55ns)   --->   "%p_Val2_15_6 = add i35 %p_Val2_14_6, %tmp_41_6" [../src/mlp.cpp:105]   --->   Operation 251 'add' 'p_Val2_15_6' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 252 [1/2] (2.22ns)   --->   "%p_Val2_14_7 = mul i35 %OP1_V_7, %OP2_V_7" [../src/mlp.cpp:105]   --->   Operation 252 'mul' 'p_Val2_14_7' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 253 [1/1] (0.00ns)   --->   "%tmp_36 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_6, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 253 'partselect' 'tmp_36' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 254 [1/1] (0.00ns)   --->   "%OP1_V_8 = sext i18 %input_V_load_8 to i35" [../src/mlp.cpp:105]   --->   Operation 254 'sext' 'OP1_V_8' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 255 [1/1] (0.00ns)   --->   "%OP2_V_8 = sext i18 %matrix_V_load_8 to i35" [../src/mlp.cpp:105]   --->   Operation 255 'sext' 'OP2_V_8' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 256 [2/2] (2.22ns)   --->   "%p_Val2_14_8 = mul i35 %OP1_V_8, %OP2_V_8" [../src/mlp.cpp:105]   --->   Operation 256 'mul' 'p_Val2_14_8' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 257 [1/2] (1.14ns)   --->   "%input_V_load_18 = load i18* %input_V_addr_18, align 4" [../src/mlp.cpp:105]   --->   Operation 257 'load' 'input_V_load_18' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_12 : Operation 258 [1/2] (2.26ns)   --->   "%matrix_V_load_18 = load i18* %matrix_V_addr_18, align 4" [../src/mlp.cpp:105]   --->   Operation 258 'load' 'matrix_V_load_18' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_12 : Operation 259 [1/2] (1.14ns)   --->   "%input_V_load_19 = load i18* %input_V_addr_19, align 4" [../src/mlp.cpp:105]   --->   Operation 259 'load' 'input_V_load_19' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_12 : Operation 260 [1/2] (2.26ns)   --->   "%matrix_V_load_19 = load i18* %matrix_V_addr_19, align 4" [../src/mlp.cpp:105]   --->   Operation 260 'load' 'matrix_V_load_19' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_12 : Operation 261 [1/1] (0.00ns)   --->   "%input_V_addr_20 = getelementptr [26 x i18]* %input_V, i64 0, i64 20" [../src/mlp.cpp:105]   --->   Operation 261 'getelementptr' 'input_V_addr_20' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 262 [2/2] (1.14ns)   --->   "%input_V_load_20 = load i18* %input_V_addr_20, align 4" [../src/mlp.cpp:105]   --->   Operation 262 'load' 'input_V_load_20' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_12 : Operation 263 [2/2] (2.26ns)   --->   "%matrix_V_load_20 = load i18* %matrix_V_addr_20, align 4" [../src/mlp.cpp:105]   --->   Operation 263 'load' 'matrix_V_load_20' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_12 : Operation 264 [1/1] (0.00ns)   --->   "%input_V_addr_21 = getelementptr [26 x i18]* %input_V, i64 0, i64 21" [../src/mlp.cpp:105]   --->   Operation 264 'getelementptr' 'input_V_addr_21' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 265 [2/2] (1.14ns)   --->   "%input_V_load_21 = load i18* %input_V_addr_21, align 4" [../src/mlp.cpp:105]   --->   Operation 265 'load' 'input_V_load_21' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_12 : Operation 266 [2/2] (2.26ns)   --->   "%matrix_V_load_21 = load i18* %matrix_V_addr_21, align 4" [../src/mlp.cpp:105]   --->   Operation 266 'load' 'matrix_V_load_21' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+
+State 13 <SV = 12> <Delay = 2.26>
+ST_13 : Operation 267 [1/1] (0.00ns)   --->   "%tmp_33_cast = zext i9 %tmp_26 to i64" [../src/mlp.cpp:105]   --->   Operation 267 'zext' 'tmp_33_cast' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 268 [1/1] (0.00ns)   --->   "%matrix_V_addr_22 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_33_cast" [../src/mlp.cpp:105]   --->   Operation 268 'getelementptr' 'matrix_V_addr_22' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 269 [1/1] (0.00ns)   --->   "%tmp_34_cast = zext i9 %tmp_27 to i64" [../src/mlp.cpp:105]   --->   Operation 269 'zext' 'tmp_34_cast' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 270 [1/1] (0.00ns)   --->   "%matrix_V_addr_23 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_34_cast" [../src/mlp.cpp:105]   --->   Operation 270 'getelementptr' 'matrix_V_addr_23' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 271 [1/1] (1.35ns)   --->   "%tmp_28 = add i9 %phi_mul_cast2, 24" [../src/mlp.cpp:105]   --->   Operation 271 'add' 'tmp_28' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 272 [1/1] (1.35ns)   --->   "%tmp_29 = add i9 %phi_mul_cast2, 25" [../src/mlp.cpp:105]   --->   Operation 272 'add' 'tmp_29' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 273 [1/1] (0.00ns)   --->   "%tmp_41_7 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_36, i17 0)" [../src/mlp.cpp:105]   --->   Operation 273 'bitconcatenate' 'tmp_41_7' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 274 [1/1] (1.55ns)   --->   "%p_Val2_15_7 = add i35 %p_Val2_14_7, %tmp_41_7" [../src/mlp.cpp:105]   --->   Operation 274 'add' 'p_Val2_15_7' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 275 [1/2] (2.22ns)   --->   "%p_Val2_14_8 = mul i35 %OP1_V_8, %OP2_V_8" [../src/mlp.cpp:105]   --->   Operation 275 'mul' 'p_Val2_14_8' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 276 [1/1] (0.00ns)   --->   "%tmp_37 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_7, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 276 'partselect' 'tmp_37' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 277 [1/1] (0.00ns)   --->   "%OP1_V_9 = sext i18 %input_V_load_9 to i35" [../src/mlp.cpp:105]   --->   Operation 277 'sext' 'OP1_V_9' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 278 [1/1] (0.00ns)   --->   "%OP2_V_9 = sext i18 %matrix_V_load_9 to i35" [../src/mlp.cpp:105]   --->   Operation 278 'sext' 'OP2_V_9' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 279 [2/2] (2.22ns)   --->   "%p_Val2_14_9 = mul i35 %OP1_V_9, %OP2_V_9" [../src/mlp.cpp:105]   --->   Operation 279 'mul' 'p_Val2_14_9' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 280 [1/2] (1.14ns)   --->   "%input_V_load_20 = load i18* %input_V_addr_20, align 4" [../src/mlp.cpp:105]   --->   Operation 280 'load' 'input_V_load_20' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_13 : Operation 281 [1/2] (2.26ns)   --->   "%matrix_V_load_20 = load i18* %matrix_V_addr_20, align 4" [../src/mlp.cpp:105]   --->   Operation 281 'load' 'matrix_V_load_20' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_13 : Operation 282 [1/2] (1.14ns)   --->   "%input_V_load_21 = load i18* %input_V_addr_21, align 4" [../src/mlp.cpp:105]   --->   Operation 282 'load' 'input_V_load_21' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_13 : Operation 283 [1/2] (2.26ns)   --->   "%matrix_V_load_21 = load i18* %matrix_V_addr_21, align 4" [../src/mlp.cpp:105]   --->   Operation 283 'load' 'matrix_V_load_21' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_13 : Operation 284 [1/1] (0.00ns)   --->   "%input_V_addr_22 = getelementptr [26 x i18]* %input_V, i64 0, i64 22" [../src/mlp.cpp:105]   --->   Operation 284 'getelementptr' 'input_V_addr_22' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 285 [2/2] (1.14ns)   --->   "%input_V_load_22 = load i18* %input_V_addr_22, align 4" [../src/mlp.cpp:105]   --->   Operation 285 'load' 'input_V_load_22' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_13 : Operation 286 [2/2] (2.26ns)   --->   "%matrix_V_load_22 = load i18* %matrix_V_addr_22, align 4" [../src/mlp.cpp:105]   --->   Operation 286 'load' 'matrix_V_load_22' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_13 : Operation 287 [1/1] (0.00ns)   --->   "%input_V_addr_23 = getelementptr [26 x i18]* %input_V, i64 0, i64 23" [../src/mlp.cpp:105]   --->   Operation 287 'getelementptr' 'input_V_addr_23' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 288 [2/2] (1.14ns)   --->   "%input_V_load_23 = load i18* %input_V_addr_23, align 4" [../src/mlp.cpp:105]   --->   Operation 288 'load' 'input_V_load_23' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_13 : Operation 289 [2/2] (2.26ns)   --->   "%matrix_V_load_23 = load i18* %matrix_V_addr_23, align 4" [../src/mlp.cpp:105]   --->   Operation 289 'load' 'matrix_V_load_23' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+
+State 14 <SV = 13> <Delay = 2.26>
+ST_14 : Operation 290 [1/1] (0.00ns)   --->   "%tmp_35_cast = zext i9 %tmp_28 to i64" [../src/mlp.cpp:105]   --->   Operation 290 'zext' 'tmp_35_cast' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 291 [1/1] (0.00ns)   --->   "%matrix_V_addr_24 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_35_cast" [../src/mlp.cpp:105]   --->   Operation 291 'getelementptr' 'matrix_V_addr_24' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 292 [1/1] (0.00ns)   --->   "%tmp_36_cast = zext i9 %tmp_29 to i64" [../src/mlp.cpp:105]   --->   Operation 292 'zext' 'tmp_36_cast' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 293 [1/1] (0.00ns)   --->   "%matrix_V_addr_25 = getelementptr [260 x i18]* %matrix_V, i64 0, i64 %tmp_36_cast" [../src/mlp.cpp:105]   --->   Operation 293 'getelementptr' 'matrix_V_addr_25' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 294 [1/1] (0.00ns)   --->   "%tmp_41_8 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_37, i17 0)" [../src/mlp.cpp:105]   --->   Operation 294 'bitconcatenate' 'tmp_41_8' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 295 [1/1] (1.55ns)   --->   "%p_Val2_15_8 = add i35 %p_Val2_14_8, %tmp_41_8" [../src/mlp.cpp:105]   --->   Operation 295 'add' 'p_Val2_15_8' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 296 [1/2] (2.22ns)   --->   "%p_Val2_14_9 = mul i35 %OP1_V_9, %OP2_V_9" [../src/mlp.cpp:105]   --->   Operation 296 'mul' 'p_Val2_14_9' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 297 [1/1] (0.00ns)   --->   "%tmp_38 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_8, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 297 'partselect' 'tmp_38' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 298 [1/1] (0.00ns)   --->   "%OP1_V_s = sext i18 %input_V_load_10 to i35" [../src/mlp.cpp:105]   --->   Operation 298 'sext' 'OP1_V_s' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 299 [1/1] (0.00ns)   --->   "%OP2_V_s = sext i18 %matrix_V_load_10 to i35" [../src/mlp.cpp:105]   --->   Operation 299 'sext' 'OP2_V_s' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 300 [2/2] (2.22ns)   --->   "%p_Val2_14_s = mul i35 %OP1_V_s, %OP2_V_s" [../src/mlp.cpp:105]   --->   Operation 300 'mul' 'p_Val2_14_s' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 301 [1/2] (1.14ns)   --->   "%input_V_load_22 = load i18* %input_V_addr_22, align 4" [../src/mlp.cpp:105]   --->   Operation 301 'load' 'input_V_load_22' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_14 : Operation 302 [1/2] (2.26ns)   --->   "%matrix_V_load_22 = load i18* %matrix_V_addr_22, align 4" [../src/mlp.cpp:105]   --->   Operation 302 'load' 'matrix_V_load_22' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_14 : Operation 303 [1/2] (1.14ns)   --->   "%input_V_load_23 = load i18* %input_V_addr_23, align 4" [../src/mlp.cpp:105]   --->   Operation 303 'load' 'input_V_load_23' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_14 : Operation 304 [1/2] (2.26ns)   --->   "%matrix_V_load_23 = load i18* %matrix_V_addr_23, align 4" [../src/mlp.cpp:105]   --->   Operation 304 'load' 'matrix_V_load_23' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_14 : Operation 305 [1/1] (0.00ns)   --->   "%input_V_addr_24 = getelementptr [26 x i18]* %input_V, i64 0, i64 24" [../src/mlp.cpp:105]   --->   Operation 305 'getelementptr' 'input_V_addr_24' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 306 [2/2] (1.14ns)   --->   "%input_V_load_24 = load i18* %input_V_addr_24, align 4" [../src/mlp.cpp:105]   --->   Operation 306 'load' 'input_V_load_24' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_14 : Operation 307 [2/2] (2.26ns)   --->   "%matrix_V_load_24 = load i18* %matrix_V_addr_24, align 4" [../src/mlp.cpp:105]   --->   Operation 307 'load' 'matrix_V_load_24' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_14 : Operation 308 [1/1] (0.00ns)   --->   "%input_V_addr_25 = getelementptr [26 x i18]* %input_V, i64 0, i64 25" [../src/mlp.cpp:105]   --->   Operation 308 'getelementptr' 'input_V_addr_25' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 309 [2/2] (1.14ns)   --->   "%input_V_load_25 = load i18* %input_V_addr_25, align 4" [../src/mlp.cpp:105]   --->   Operation 309 'load' 'input_V_load_25' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_14 : Operation 310 [2/2] (2.26ns)   --->   "%matrix_V_load_25 = load i18* %matrix_V_addr_25, align 4" [../src/mlp.cpp:105]   --->   Operation 310 'load' 'matrix_V_load_25' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+
+State 15 <SV = 14> <Delay = 2.26>
+ST_15 : Operation 311 [1/1] (0.00ns)   --->   "%tmp_41_9 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_38, i17 0)" [../src/mlp.cpp:105]   --->   Operation 311 'bitconcatenate' 'tmp_41_9' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 312 [1/1] (1.55ns)   --->   "%p_Val2_15_9 = add i35 %p_Val2_14_9, %tmp_41_9" [../src/mlp.cpp:105]   --->   Operation 312 'add' 'p_Val2_15_9' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 313 [1/2] (2.22ns)   --->   "%p_Val2_14_s = mul i35 %OP1_V_s, %OP2_V_s" [../src/mlp.cpp:105]   --->   Operation 313 'mul' 'p_Val2_14_s' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 314 [1/1] (0.00ns)   --->   "%tmp_39 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_9, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 314 'partselect' 'tmp_39' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 315 [1/1] (0.00ns)   --->   "%OP1_V_10 = sext i18 %input_V_load_11 to i35" [../src/mlp.cpp:105]   --->   Operation 315 'sext' 'OP1_V_10' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 316 [1/1] (0.00ns)   --->   "%OP2_V_10 = sext i18 %matrix_V_load_11 to i35" [../src/mlp.cpp:105]   --->   Operation 316 'sext' 'OP2_V_10' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 317 [2/2] (2.22ns)   --->   "%p_Val2_14_10 = mul i35 %OP1_V_10, %OP2_V_10" [../src/mlp.cpp:105]   --->   Operation 317 'mul' 'p_Val2_14_10' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 318 [1/2] (1.14ns)   --->   "%input_V_load_24 = load i18* %input_V_addr_24, align 4" [../src/mlp.cpp:105]   --->   Operation 318 'load' 'input_V_load_24' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_15 : Operation 319 [1/2] (2.26ns)   --->   "%matrix_V_load_24 = load i18* %matrix_V_addr_24, align 4" [../src/mlp.cpp:105]   --->   Operation 319 'load' 'matrix_V_load_24' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_15 : Operation 320 [1/2] (1.14ns)   --->   "%input_V_load_25 = load i18* %input_V_addr_25, align 4" [../src/mlp.cpp:105]   --->   Operation 320 'load' 'input_V_load_25' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_15 : Operation 321 [1/2] (2.26ns)   --->   "%matrix_V_load_25 = load i18* %matrix_V_addr_25, align 4" [../src/mlp.cpp:105]   --->   Operation 321 'load' 'matrix_V_load_25' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+
+State 16 <SV = 15> <Delay = 2.22>
+ST_16 : Operation 322 [1/1] (0.00ns)   --->   "%tmp_41_s = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_39, i17 0)" [../src/mlp.cpp:105]   --->   Operation 322 'bitconcatenate' 'tmp_41_s' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 323 [1/1] (1.55ns)   --->   "%p_Val2_15_s = add i35 %p_Val2_14_s, %tmp_41_s" [../src/mlp.cpp:105]   --->   Operation 323 'add' 'p_Val2_15_s' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 324 [1/2] (2.22ns)   --->   "%p_Val2_14_10 = mul i35 %OP1_V_10, %OP2_V_10" [../src/mlp.cpp:105]   --->   Operation 324 'mul' 'p_Val2_14_10' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 325 [1/1] (0.00ns)   --->   "%tmp_40 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_s, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 325 'partselect' 'tmp_40' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 326 [1/1] (0.00ns)   --->   "%OP1_V_11 = sext i18 %input_V_load_12 to i35" [../src/mlp.cpp:105]   --->   Operation 326 'sext' 'OP1_V_11' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 327 [1/1] (0.00ns)   --->   "%OP2_V_11 = sext i18 %matrix_V_load_12 to i35" [../src/mlp.cpp:105]   --->   Operation 327 'sext' 'OP2_V_11' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 328 [2/2] (2.22ns)   --->   "%p_Val2_14_11 = mul i35 %OP1_V_11, %OP2_V_11" [../src/mlp.cpp:105]   --->   Operation 328 'mul' 'p_Val2_14_11' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 2.22>
+ST_17 : Operation 329 [1/1] (0.00ns)   --->   "%tmp_41_10 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_40, i17 0)" [../src/mlp.cpp:105]   --->   Operation 329 'bitconcatenate' 'tmp_41_10' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 330 [1/1] (1.55ns)   --->   "%p_Val2_15_10 = add i35 %p_Val2_14_10, %tmp_41_10" [../src/mlp.cpp:105]   --->   Operation 330 'add' 'p_Val2_15_10' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 331 [1/2] (2.22ns)   --->   "%p_Val2_14_11 = mul i35 %OP1_V_11, %OP2_V_11" [../src/mlp.cpp:105]   --->   Operation 331 'mul' 'p_Val2_14_11' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 332 [1/1] (0.00ns)   --->   "%tmp_41 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_10, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 332 'partselect' 'tmp_41' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 333 [1/1] (0.00ns)   --->   "%OP1_V_12 = sext i18 %input_V_load_13 to i35" [../src/mlp.cpp:105]   --->   Operation 333 'sext' 'OP1_V_12' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 334 [1/1] (0.00ns)   --->   "%OP2_V_12 = sext i18 %matrix_V_load_13 to i35" [../src/mlp.cpp:105]   --->   Operation 334 'sext' 'OP2_V_12' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 335 [2/2] (2.22ns)   --->   "%p_Val2_14_12 = mul i35 %OP1_V_12, %OP2_V_12" [../src/mlp.cpp:105]   --->   Operation 335 'mul' 'p_Val2_14_12' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 2.22>
+ST_18 : Operation 336 [1/1] (0.00ns)   --->   "%tmp_41_11 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_41, i17 0)" [../src/mlp.cpp:105]   --->   Operation 336 'bitconcatenate' 'tmp_41_11' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 337 [1/1] (1.55ns)   --->   "%p_Val2_15_11 = add i35 %p_Val2_14_11, %tmp_41_11" [../src/mlp.cpp:105]   --->   Operation 337 'add' 'p_Val2_15_11' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 338 [1/2] (2.22ns)   --->   "%p_Val2_14_12 = mul i35 %OP1_V_12, %OP2_V_12" [../src/mlp.cpp:105]   --->   Operation 338 'mul' 'p_Val2_14_12' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 339 [1/1] (0.00ns)   --->   "%tmp_42 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_11, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 339 'partselect' 'tmp_42' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 340 [1/1] (0.00ns)   --->   "%OP1_V_13 = sext i18 %input_V_load_14 to i35" [../src/mlp.cpp:105]   --->   Operation 340 'sext' 'OP1_V_13' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 341 [1/1] (0.00ns)   --->   "%OP2_V_13 = sext i18 %matrix_V_load_14 to i35" [../src/mlp.cpp:105]   --->   Operation 341 'sext' 'OP2_V_13' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 342 [2/2] (2.22ns)   --->   "%p_Val2_14_13 = mul i35 %OP1_V_13, %OP2_V_13" [../src/mlp.cpp:105]   --->   Operation 342 'mul' 'p_Val2_14_13' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 2.22>
+ST_19 : Operation 343 [1/1] (0.00ns)   --->   "%tmp_41_12 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_42, i17 0)" [../src/mlp.cpp:105]   --->   Operation 343 'bitconcatenate' 'tmp_41_12' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 344 [1/1] (1.55ns)   --->   "%p_Val2_15_12 = add i35 %p_Val2_14_12, %tmp_41_12" [../src/mlp.cpp:105]   --->   Operation 344 'add' 'p_Val2_15_12' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 345 [1/2] (2.22ns)   --->   "%p_Val2_14_13 = mul i35 %OP1_V_13, %OP2_V_13" [../src/mlp.cpp:105]   --->   Operation 345 'mul' 'p_Val2_14_13' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 346 [1/1] (0.00ns)   --->   "%tmp_43 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_12, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 346 'partselect' 'tmp_43' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 347 [1/1] (0.00ns)   --->   "%OP1_V_14 = sext i18 %input_V_load_15 to i35" [../src/mlp.cpp:105]   --->   Operation 347 'sext' 'OP1_V_14' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 348 [1/1] (0.00ns)   --->   "%OP2_V_14 = sext i18 %matrix_V_load_15 to i35" [../src/mlp.cpp:105]   --->   Operation 348 'sext' 'OP2_V_14' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 349 [2/2] (2.22ns)   --->   "%p_Val2_14_14 = mul i35 %OP1_V_14, %OP2_V_14" [../src/mlp.cpp:105]   --->   Operation 349 'mul' 'p_Val2_14_14' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 2.22>
+ST_20 : Operation 350 [1/1] (0.00ns)   --->   "%tmp_41_13 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_43, i17 0)" [../src/mlp.cpp:105]   --->   Operation 350 'bitconcatenate' 'tmp_41_13' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 351 [1/1] (1.55ns)   --->   "%p_Val2_15_13 = add i35 %p_Val2_14_13, %tmp_41_13" [../src/mlp.cpp:105]   --->   Operation 351 'add' 'p_Val2_15_13' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 352 [1/2] (2.22ns)   --->   "%p_Val2_14_14 = mul i35 %OP1_V_14, %OP2_V_14" [../src/mlp.cpp:105]   --->   Operation 352 'mul' 'p_Val2_14_14' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 353 [1/1] (0.00ns)   --->   "%tmp_44 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_13, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 353 'partselect' 'tmp_44' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 354 [1/1] (0.00ns)   --->   "%OP1_V_15 = sext i18 %input_V_load_16 to i35" [../src/mlp.cpp:105]   --->   Operation 354 'sext' 'OP1_V_15' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 355 [1/1] (0.00ns)   --->   "%OP2_V_15 = sext i18 %matrix_V_load_16 to i35" [../src/mlp.cpp:105]   --->   Operation 355 'sext' 'OP2_V_15' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 356 [2/2] (2.22ns)   --->   "%p_Val2_14_15 = mul i35 %OP1_V_15, %OP2_V_15" [../src/mlp.cpp:105]   --->   Operation 356 'mul' 'p_Val2_14_15' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 20> <Delay = 2.22>
+ST_21 : Operation 357 [1/1] (0.00ns)   --->   "%tmp_41_14 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_44, i17 0)" [../src/mlp.cpp:105]   --->   Operation 357 'bitconcatenate' 'tmp_41_14' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 358 [1/1] (1.55ns)   --->   "%p_Val2_15_14 = add i35 %p_Val2_14_14, %tmp_41_14" [../src/mlp.cpp:105]   --->   Operation 358 'add' 'p_Val2_15_14' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 359 [1/2] (2.22ns)   --->   "%p_Val2_14_15 = mul i35 %OP1_V_15, %OP2_V_15" [../src/mlp.cpp:105]   --->   Operation 359 'mul' 'p_Val2_14_15' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 360 [1/1] (0.00ns)   --->   "%tmp_45 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_14, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 360 'partselect' 'tmp_45' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 361 [1/1] (0.00ns)   --->   "%OP1_V_16 = sext i18 %input_V_load_17 to i35" [../src/mlp.cpp:105]   --->   Operation 361 'sext' 'OP1_V_16' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 362 [1/1] (0.00ns)   --->   "%OP2_V_16 = sext i18 %matrix_V_load_17 to i35" [../src/mlp.cpp:105]   --->   Operation 362 'sext' 'OP2_V_16' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 363 [2/2] (2.22ns)   --->   "%p_Val2_14_16 = mul i35 %OP1_V_16, %OP2_V_16" [../src/mlp.cpp:105]   --->   Operation 363 'mul' 'p_Val2_14_16' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 21> <Delay = 2.22>
+ST_22 : Operation 364 [1/1] (0.00ns)   --->   "%tmp_41_15 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_45, i17 0)" [../src/mlp.cpp:105]   --->   Operation 364 'bitconcatenate' 'tmp_41_15' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 365 [1/1] (1.55ns)   --->   "%p_Val2_15_15 = add i35 %p_Val2_14_15, %tmp_41_15" [../src/mlp.cpp:105]   --->   Operation 365 'add' 'p_Val2_15_15' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 366 [1/2] (2.22ns)   --->   "%p_Val2_14_16 = mul i35 %OP1_V_16, %OP2_V_16" [../src/mlp.cpp:105]   --->   Operation 366 'mul' 'p_Val2_14_16' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 367 [1/1] (0.00ns)   --->   "%tmp_46 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_15, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 367 'partselect' 'tmp_46' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 368 [1/1] (0.00ns)   --->   "%OP1_V_17 = sext i18 %input_V_load_18 to i35" [../src/mlp.cpp:105]   --->   Operation 368 'sext' 'OP1_V_17' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 369 [1/1] (0.00ns)   --->   "%OP2_V_17 = sext i18 %matrix_V_load_18 to i35" [../src/mlp.cpp:105]   --->   Operation 369 'sext' 'OP2_V_17' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 370 [2/2] (2.22ns)   --->   "%p_Val2_14_17 = mul i35 %OP1_V_17, %OP2_V_17" [../src/mlp.cpp:105]   --->   Operation 370 'mul' 'p_Val2_14_17' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 22> <Delay = 2.22>
+ST_23 : Operation 371 [1/1] (0.00ns)   --->   "%tmp_41_16 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_46, i17 0)" [../src/mlp.cpp:105]   --->   Operation 371 'bitconcatenate' 'tmp_41_16' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 372 [1/1] (1.55ns)   --->   "%p_Val2_15_16 = add i35 %p_Val2_14_16, %tmp_41_16" [../src/mlp.cpp:105]   --->   Operation 372 'add' 'p_Val2_15_16' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 373 [1/2] (2.22ns)   --->   "%p_Val2_14_17 = mul i35 %OP1_V_17, %OP2_V_17" [../src/mlp.cpp:105]   --->   Operation 373 'mul' 'p_Val2_14_17' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 374 [1/1] (0.00ns)   --->   "%tmp_47 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_16, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 374 'partselect' 'tmp_47' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 375 [1/1] (0.00ns)   --->   "%OP1_V_18 = sext i18 %input_V_load_19 to i35" [../src/mlp.cpp:105]   --->   Operation 375 'sext' 'OP1_V_18' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 376 [1/1] (0.00ns)   --->   "%OP2_V_18 = sext i18 %matrix_V_load_19 to i35" [../src/mlp.cpp:105]   --->   Operation 376 'sext' 'OP2_V_18' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 377 [2/2] (2.22ns)   --->   "%p_Val2_14_18 = mul i35 %OP1_V_18, %OP2_V_18" [../src/mlp.cpp:105]   --->   Operation 377 'mul' 'p_Val2_14_18' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 23> <Delay = 2.22>
+ST_24 : Operation 378 [1/1] (0.00ns)   --->   "%tmp_41_17 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_47, i17 0)" [../src/mlp.cpp:105]   --->   Operation 378 'bitconcatenate' 'tmp_41_17' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 379 [1/1] (1.55ns)   --->   "%p_Val2_15_17 = add i35 %p_Val2_14_17, %tmp_41_17" [../src/mlp.cpp:105]   --->   Operation 379 'add' 'p_Val2_15_17' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 380 [1/2] (2.22ns)   --->   "%p_Val2_14_18 = mul i35 %OP1_V_18, %OP2_V_18" [../src/mlp.cpp:105]   --->   Operation 380 'mul' 'p_Val2_14_18' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 381 [1/1] (0.00ns)   --->   "%tmp_48 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_17, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 381 'partselect' 'tmp_48' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 382 [1/1] (0.00ns)   --->   "%OP1_V_19 = sext i18 %input_V_load_20 to i35" [../src/mlp.cpp:105]   --->   Operation 382 'sext' 'OP1_V_19' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 383 [1/1] (0.00ns)   --->   "%OP2_V_19 = sext i18 %matrix_V_load_20 to i35" [../src/mlp.cpp:105]   --->   Operation 383 'sext' 'OP2_V_19' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 384 [2/2] (2.22ns)   --->   "%p_Val2_14_19 = mul i35 %OP1_V_19, %OP2_V_19" [../src/mlp.cpp:105]   --->   Operation 384 'mul' 'p_Val2_14_19' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 24> <Delay = 2.22>
+ST_25 : Operation 385 [1/1] (0.00ns)   --->   "%tmp_41_18 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_48, i17 0)" [../src/mlp.cpp:105]   --->   Operation 385 'bitconcatenate' 'tmp_41_18' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 386 [1/1] (1.55ns)   --->   "%p_Val2_15_18 = add i35 %p_Val2_14_18, %tmp_41_18" [../src/mlp.cpp:105]   --->   Operation 386 'add' 'p_Val2_15_18' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 387 [1/2] (2.22ns)   --->   "%p_Val2_14_19 = mul i35 %OP1_V_19, %OP2_V_19" [../src/mlp.cpp:105]   --->   Operation 387 'mul' 'p_Val2_14_19' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 388 [1/1] (0.00ns)   --->   "%tmp_49 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_18, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 388 'partselect' 'tmp_49' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 389 [1/1] (0.00ns)   --->   "%OP1_V_20 = sext i18 %input_V_load_21 to i35" [../src/mlp.cpp:105]   --->   Operation 389 'sext' 'OP1_V_20' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 390 [1/1] (0.00ns)   --->   "%OP2_V_20 = sext i18 %matrix_V_load_21 to i35" [../src/mlp.cpp:105]   --->   Operation 390 'sext' 'OP2_V_20' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 391 [2/2] (2.22ns)   --->   "%p_Val2_14_20 = mul i35 %OP1_V_20, %OP2_V_20" [../src/mlp.cpp:105]   --->   Operation 391 'mul' 'p_Val2_14_20' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 26 <SV = 25> <Delay = 2.22>
+ST_26 : Operation 392 [1/1] (0.00ns)   --->   "%tmp_41_19 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_49, i17 0)" [../src/mlp.cpp:105]   --->   Operation 392 'bitconcatenate' 'tmp_41_19' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 393 [1/1] (1.55ns)   --->   "%p_Val2_15_19 = add i35 %p_Val2_14_19, %tmp_41_19" [../src/mlp.cpp:105]   --->   Operation 393 'add' 'p_Val2_15_19' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 394 [1/2] (2.22ns)   --->   "%p_Val2_14_20 = mul i35 %OP1_V_20, %OP2_V_20" [../src/mlp.cpp:105]   --->   Operation 394 'mul' 'p_Val2_14_20' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 395 [1/1] (0.00ns)   --->   "%tmp_50 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_19, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 395 'partselect' 'tmp_50' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 396 [1/1] (0.00ns)   --->   "%OP1_V_21 = sext i18 %input_V_load_22 to i35" [../src/mlp.cpp:105]   --->   Operation 396 'sext' 'OP1_V_21' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 397 [1/1] (0.00ns)   --->   "%OP2_V_21 = sext i18 %matrix_V_load_22 to i35" [../src/mlp.cpp:105]   --->   Operation 397 'sext' 'OP2_V_21' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 398 [2/2] (2.22ns)   --->   "%p_Val2_14_21 = mul i35 %OP1_V_21, %OP2_V_21" [../src/mlp.cpp:105]   --->   Operation 398 'mul' 'p_Val2_14_21' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 26> <Delay = 2.22>
+ST_27 : Operation 399 [1/1] (0.00ns)   --->   "%m1 = phi i4 [ 0, %0 ], [ %m, %._crit_edge.0 ], [ 0, %1 ]"   --->   Operation 399 'phi' 'm1' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 400 [1/1] (1.35ns)   --->   "%next_mul = add i8 %phi_mul, 26"   --->   Operation 400 'add' 'next_mul' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 401 [1/1] (0.00ns)   --->   "%tmp_41_20 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_50, i17 0)" [../src/mlp.cpp:105]   --->   Operation 401 'bitconcatenate' 'tmp_41_20' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 402 [1/1] (1.55ns)   --->   "%p_Val2_15_20 = add i35 %p_Val2_14_20, %tmp_41_20" [../src/mlp.cpp:105]   --->   Operation 402 'add' 'p_Val2_15_20' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 403 [1/2] (2.22ns)   --->   "%p_Val2_14_21 = mul i35 %OP1_V_21, %OP2_V_21" [../src/mlp.cpp:105]   --->   Operation 403 'mul' 'p_Val2_14_21' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 404 [1/1] (0.00ns)   --->   "%tmp_51 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_20, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 404 'partselect' 'tmp_51' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 405 [1/1] (0.00ns)   --->   "%OP1_V_22 = sext i18 %input_V_load_23 to i35" [../src/mlp.cpp:105]   --->   Operation 405 'sext' 'OP1_V_22' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 406 [1/1] (0.00ns)   --->   "%OP2_V_22 = sext i18 %matrix_V_load_23 to i35" [../src/mlp.cpp:105]   --->   Operation 406 'sext' 'OP2_V_22' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 407 [2/2] (2.22ns)   --->   "%p_Val2_14_22 = mul i35 %OP1_V_22, %OP2_V_22" [../src/mlp.cpp:105]   --->   Operation 407 'mul' 'p_Val2_14_22' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 408 [1/1] (0.86ns)   --->   "%tmp = icmp eq i4 %m1, -7" [../src/mlp.cpp:98]   --->   Operation 408 'icmp' 'tmp' <Predicate = true> <Delay = 0.86> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 409 [1/1] (0.00ns)   --->   "br label %rewind_header" [../src/mlp.cpp:112]   --->   Operation 409 'br' <Predicate = (tmp)> <Delay = 0.00>
+
+State 28 <SV = 27> <Delay = 2.22>
+ST_28 : Operation 410 [1/1] (0.00ns)   --->   "%tmp_41_21 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_51, i17 0)" [../src/mlp.cpp:105]   --->   Operation 410 'bitconcatenate' 'tmp_41_21' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 411 [1/1] (1.55ns)   --->   "%p_Val2_15_21 = add i35 %p_Val2_14_21, %tmp_41_21" [../src/mlp.cpp:105]   --->   Operation 411 'add' 'p_Val2_15_21' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 412 [1/2] (2.22ns)   --->   "%p_Val2_14_22 = mul i35 %OP1_V_22, %OP2_V_22" [../src/mlp.cpp:105]   --->   Operation 412 'mul' 'p_Val2_14_22' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 413 [1/1] (0.00ns)   --->   "%tmp_52 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_21, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 413 'partselect' 'tmp_52' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 414 [1/1] (0.00ns)   --->   "%OP1_V_23 = sext i18 %input_V_load_24 to i35" [../src/mlp.cpp:105]   --->   Operation 414 'sext' 'OP1_V_23' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 415 [1/1] (0.00ns)   --->   "%OP2_V_23 = sext i18 %matrix_V_load_24 to i35" [../src/mlp.cpp:105]   --->   Operation 415 'sext' 'OP2_V_23' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 416 [2/2] (2.22ns)   --->   "%p_Val2_14_23 = mul i35 %OP1_V_23, %OP2_V_23" [../src/mlp.cpp:105]   --->   Operation 416 'mul' 'p_Val2_14_23' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 29 <SV = 28> <Delay = 2.22>
+ST_29 : Operation 417 [1/1] (0.00ns)   --->   "%tmp_41_22 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_52, i17 0)" [../src/mlp.cpp:105]   --->   Operation 417 'bitconcatenate' 'tmp_41_22' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 418 [1/1] (1.55ns)   --->   "%p_Val2_15_22 = add i35 %p_Val2_14_22, %tmp_41_22" [../src/mlp.cpp:105]   --->   Operation 418 'add' 'p_Val2_15_22' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 419 [1/2] (2.22ns)   --->   "%p_Val2_14_23 = mul i35 %OP1_V_23, %OP2_V_23" [../src/mlp.cpp:105]   --->   Operation 419 'mul' 'p_Val2_14_23' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 420 [1/1] (0.00ns)   --->   "%tmp_53 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_22, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 420 'partselect' 'tmp_53' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 421 [1/1] (0.00ns)   --->   "%OP1_V_24 = sext i18 %input_V_load_25 to i35" [../src/mlp.cpp:105]   --->   Operation 421 'sext' 'OP1_V_24' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 422 [1/1] (0.00ns)   --->   "%OP2_V_24 = sext i18 %matrix_V_load_25 to i35" [../src/mlp.cpp:105]   --->   Operation 422 'sext' 'OP2_V_24' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 423 [2/2] (2.22ns)   --->   "%p_Val2_14_24 = mul i35 %OP1_V_24, %OP2_V_24" [../src/mlp.cpp:105]   --->   Operation 423 'mul' 'p_Val2_14_24' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 30 <SV = 29> <Delay = 2.22>
+ST_30 : Operation 424 [1/1] (0.00ns)   --->   "%tmp_41_23 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_53, i17 0)" [../src/mlp.cpp:105]   --->   Operation 424 'bitconcatenate' 'tmp_41_23' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 425 [1/1] (1.55ns)   --->   "%p_Val2_15_23 = add i35 %p_Val2_14_23, %tmp_41_23" [../src/mlp.cpp:105]   --->   Operation 425 'add' 'p_Val2_15_23' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 426 [1/2] (2.22ns)   --->   "%p_Val2_14_24 = mul i35 %OP1_V_24, %OP2_V_24" [../src/mlp.cpp:105]   --->   Operation 426 'mul' 'p_Val2_14_24' <Predicate = true> <Delay = 2.22> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 427 [1/1] (0.00ns)   --->   "%tmp_54 = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_23, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 427 'partselect' 'tmp_54' <Predicate = true> <Delay = 0.00>
+
+State 31 <SV = 30> <Delay = 2.70>
+ST_31 : Operation 428 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([6 x i8]* @p_str5) nounwind" [../src/mlp.cpp:99]   --->   Operation 428 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 429 [1/1] (0.00ns)   --->   "%tmp_8 = call i32 (...)* @_ssdm_op_SpecRegionBegin([6 x i8]* @p_str5)" [../src/mlp.cpp:99]   --->   Operation 429 'specregionbegin' 'tmp_8' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 430 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 26, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [../src/mlp.cpp:100]   --->   Operation 430 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 431 [1/1] (0.00ns)   --->   "%tmp_s = zext i4 %m1 to i64" [../src/mlp.cpp:105]   --->   Operation 431 'zext' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 432 [1/1] (0.00ns)   --->   "%result_V_addr = getelementptr [10 x i18]* %result_V, i64 0, i64 %tmp_s" [../src/mlp.cpp:108]   --->   Operation 432 'getelementptr' 'result_V_addr' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 433 [1/1] (0.00ns)   --->   "%tmp_41_24 = call i35 @_ssdm_op_BitConcatenate.i35.i18.i17(i18 %tmp_54, i17 0)" [../src/mlp.cpp:105]   --->   Operation 433 'bitconcatenate' 'tmp_41_24' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 434 [1/1] (1.55ns)   --->   "%p_Val2_15_24 = add i35 %p_Val2_14_24, %tmp_41_24" [../src/mlp.cpp:105]   --->   Operation 434 'add' 'p_Val2_15_24' <Predicate = true> <Delay = 1.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 435 [1/1] (0.00ns)   --->   "%acc_V_s = call i18 @_ssdm_op_PartSelect.i18.i35.i32.i32(i35 %p_Val2_15_24, i32 17, i32 34)" [../src/mlp.cpp:105]   --->   Operation 435 'partselect' 'acc_V_s' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 436 [1/1] (1.14ns)   --->   "store i18 %acc_V_s, i18* %result_V_addr, align 4" [../src/mlp.cpp:108]   --->   Operation 436 'store' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_31 : Operation 437 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([6 x i8]* @p_str5, i32 %tmp_8)" [../src/mlp.cpp:110]   --->   Operation 437 'specregionend' 'empty' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 438 [1/1] (1.01ns)   --->   "%m = add i4 %m1, 1" [../src/mlp.cpp:98]   --->   Operation 438 'add' 'm' <Predicate = true> <Delay = 1.01> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 439 [1/1] (0.00ns)   --->   "%empty_24 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)"   --->   Operation 439 'speclooptripcount' 'empty_24' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 440 [1/1] (0.00ns)   --->   "br i1 %tmp, label %1, label %rewind_header" [../src/mlp.cpp:98]   --->   Operation 440 'br' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 441 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_Return()" [../src/mlp.cpp:112]   --->   Operation 441 'return' <Predicate = (tmp)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 0.5ns.
+
+ <State 1>: 0.872ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('do_init') [6]  (0.872 ns)
+
+ <State 2>: 2.27ns
+The critical path consists of the following:
+	'phi' operation ('phi_mul') with incoming values : ('next_mul') [8]  (0 ns)
+	'or' operation ('tmp_4', ../src/mlp.cpp:105) [23]  (0 ns)
+	'getelementptr' operation ('matrix_V_addr_1', ../src/mlp.cpp:105) [25]  (0 ns)
+	'load' operation ('matrix_V_load_1', ../src/mlp.cpp:105) on array 'matrix_V' [108]  (2.27 ns)
+
+ <State 3>: 2.27ns
+The critical path consists of the following:
+	'getelementptr' operation ('matrix_V_addr_2', ../src/mlp.cpp:105) [28]  (0 ns)
+	'load' operation ('matrix_V_load_2', ../src/mlp.cpp:105) on array 'matrix_V' [117]  (2.27 ns)
+
+ <State 4>: 2.27ns
+The critical path consists of the following:
+	'getelementptr' operation ('matrix_V_addr_4', ../src/mlp.cpp:105) [34]  (0 ns)
+	'load' operation ('matrix_V_load_4', ../src/mlp.cpp:105) on array 'matrix_V' [135]  (2.27 ns)
+
+ <State 5>: 2.27ns
+The critical path consists of the following:
+	'getelementptr' operation ('matrix_V_addr_6', ../src/mlp.cpp:105) [40]  (0 ns)
+	'load' operation ('matrix_V_load_6', ../src/mlp.cpp:105) on array 'matrix_V' [153]  (2.27 ns)
+
+ <State 6>: 2.27ns
+The critical path consists of the following:
+	'getelementptr' operation ('matrix_V_addr_8', ../src/mlp.cpp:105) [46]  (0 ns)
+	'load' operation ('matrix_V_load_8', ../src/mlp.cpp:105) on array 'matrix_V' [171]  (2.27 ns)
+
+ <State 7>: 2.27ns
+The critical path consists of the following:
+	'getelementptr' operation ('matrix_V_addr_10', ../src/mlp.cpp:105) [52]  (0 ns)
+	'load' operation ('matrix_V_load_10', ../src/mlp.cpp:105) on array 'matrix_V' [189]  (2.27 ns)
+
+ <State 8>: 2.27ns
+The critical path consists of the following:
+	'getelementptr' operation ('matrix_V_addr_12', ../src/mlp.cpp:105) [58]  (0 ns)
+	'load' operation ('matrix_V_load_12', ../src/mlp.cpp:105) on array 'matrix_V' [207]  (2.27 ns)
+
+ <State 9>: 2.27ns
+The critical path consists of the following:
+	'getelementptr' operation ('matrix_V_addr_14', ../src/mlp.cpp:105) [64]  (0 ns)
+	'load' operation ('matrix_V_load_14', ../src/mlp.cpp:105) on array 'matrix_V' [225]  (2.27 ns)
+
+ <State 10>: 2.27ns
+The critical path consists of the following:
+	'getelementptr' operation ('matrix_V_addr_16', ../src/mlp.cpp:105) [70]  (0 ns)
+	'load' operation ('matrix_V_load_16', ../src/mlp.cpp:105) on array 'matrix_V' [243]  (2.27 ns)
+
+ <State 11>: 2.27ns
+The critical path consists of the following:
+	'getelementptr' operation ('matrix_V_addr_18', ../src/mlp.cpp:105) [76]  (0 ns)
+	'load' operation ('matrix_V_load_18', ../src/mlp.cpp:105) on array 'matrix_V' [261]  (2.27 ns)
+
+ <State 12>: 2.27ns
+The critical path consists of the following:
+	'getelementptr' operation ('matrix_V_addr_20', ../src/mlp.cpp:105) [82]  (0 ns)
+	'load' operation ('matrix_V_load_20', ../src/mlp.cpp:105) on array 'matrix_V' [279]  (2.27 ns)
+
+ <State 13>: 2.27ns
+The critical path consists of the following:
+	'getelementptr' operation ('matrix_V_addr_22', ../src/mlp.cpp:105) [88]  (0 ns)
+	'load' operation ('matrix_V_load_22', ../src/mlp.cpp:105) on array 'matrix_V' [297]  (2.27 ns)
+
+ <State 14>: 2.27ns
+The critical path consists of the following:
+	'getelementptr' operation ('matrix_V_addr_24', ../src/mlp.cpp:105) [94]  (0 ns)
+	'load' operation ('matrix_V_load_24', ../src/mlp.cpp:105) on array 'matrix_V' [315]  (2.27 ns)
+
+ <State 15>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('matrix_V_load_24', ../src/mlp.cpp:105) on array 'matrix_V' [315]  (2.27 ns)
+
+ <State 16>: 2.22ns
+The critical path consists of the following:
+	'mul' operation ('p_Val2_14_10', ../src/mlp.cpp:105) [200]  (2.22 ns)
+
+ <State 17>: 2.22ns
+The critical path consists of the following:
+	'mul' operation ('p_Val2_14_11', ../src/mlp.cpp:105) [209]  (2.22 ns)
+
+ <State 18>: 2.22ns
+The critical path consists of the following:
+	'mul' operation ('p_Val2_14_12', ../src/mlp.cpp:105) [218]  (2.22 ns)
+
+ <State 19>: 2.22ns
+The critical path consists of the following:
+	'mul' operation ('p_Val2_14_13', ../src/mlp.cpp:105) [227]  (2.22 ns)
+
+ <State 20>: 2.22ns
+The critical path consists of the following:
+	'mul' operation ('p_Val2_14_14', ../src/mlp.cpp:105) [236]  (2.22 ns)
+
+ <State 21>: 2.22ns
+The critical path consists of the following:
+	'mul' operation ('p_Val2_14_15', ../src/mlp.cpp:105) [245]  (2.22 ns)
+
+ <State 22>: 2.22ns
+The critical path consists of the following:
+	'mul' operation ('p_Val2_14_16', ../src/mlp.cpp:105) [254]  (2.22 ns)
+
+ <State 23>: 2.22ns
+The critical path consists of the following:
+	'mul' operation ('p_Val2_14_17', ../src/mlp.cpp:105) [263]  (2.22 ns)
+
+ <State 24>: 2.22ns
+The critical path consists of the following:
+	'mul' operation ('p_Val2_14_18', ../src/mlp.cpp:105) [272]  (2.22 ns)
+
+ <State 25>: 2.22ns
+The critical path consists of the following:
+	'mul' operation ('p_Val2_14_19', ../src/mlp.cpp:105) [281]  (2.22 ns)
+
+ <State 26>: 2.22ns
+The critical path consists of the following:
+	'mul' operation ('p_Val2_14_20', ../src/mlp.cpp:105) [290]  (2.22 ns)
+
+ <State 27>: 2.22ns
+The critical path consists of the following:
+	'mul' operation ('p_Val2_14_21', ../src/mlp.cpp:105) [299]  (2.22 ns)
+
+ <State 28>: 2.22ns
+The critical path consists of the following:
+	'mul' operation ('p_Val2_14_22', ../src/mlp.cpp:105) [308]  (2.22 ns)
+
+ <State 29>: 2.22ns
+The critical path consists of the following:
+	'mul' operation ('p_Val2_14_23', ../src/mlp.cpp:105) [317]  (2.22 ns)
+
+ <State 30>: 2.22ns
+The critical path consists of the following:
+	'mul' operation ('p_Val2_14_24', ../src/mlp.cpp:105) [326]  (2.22 ns)
+
+ <State 31>: 2.7ns
+The critical path consists of the following:
+	'add' operation ('p_Val2_15_24', ../src/mlp.cpp:105) [329]  (1.55 ns)
+	'store' operation (../src/mlp.cpp:108) of variable 'acc_V_s', ../src/mlp.cpp:105 on array 'result_V' [331]  (1.15 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

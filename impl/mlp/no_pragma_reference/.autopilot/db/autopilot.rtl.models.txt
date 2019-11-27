@@ -1,0 +1,9 @@
+mlp_mac_muladd_18bkb
+mlp_mul_mul_18s_1cud
+mlp_bias_added_V
+mlp_L1_no_activ_V
+mlp_L2_bias_added_V
+mlp_L2_out_V
+mvprod_layer_1
+mvprod_layer_2
+mlp

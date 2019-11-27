@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="mlp.h" path="C:\Users\Cole\Downloads\cole_hunter_elen226_a3\mlp\src\mlp.h"/>
+    <originFiles name="mlp.cpp" path="C:\Users\Cole\Downloads\cole_hunter_elen226_a3\mlp\src\mlp.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="theta2.dat" path="C:\Users\Cole\Downloads\cole_hunter_elen226_a3\mlp\src\theta2.dat"/>
+    <originFiles name="theta1.dat" path="C:\Users\Cole\Downloads\cole_hunter_elen226_a3\mlp\src\theta1.dat"/>
+    <originFiles name="tb_mlp.cpp" path="C:\Users\Cole\Downloads\cole_hunter_elen226_a3\mlp\src\tb_mlp.cpp"/>
+    <originFiles name="network_outputs_fullbatch.dat" path="C:\Users\Cole\Downloads\cole_hunter_elen226_a3\mlp\src\network_outputs_fullbatch.dat"/>
+    <originFiles name="network_inputs_fullbatch.dat" path="C:\Users\Cole\Downloads\cole_hunter_elen226_a3\mlp\src\network_inputs_fullbatch.dat"/>
+    <originFiles name="L2_out_no_activ.dat" path="C:\Users\Cole\Downloads\cole_hunter_elen226_a3\mlp\impl\L2_out_no_activ.dat"/>
+    <originFiles name="L2_out_activ.dat" path="C:\Users\Cole\Downloads\cole_hunter_elen226_a3\mlp\impl\L2_out_activ.dat"/>
+    <originFiles name="L1_out_no_activ.dat" path="C:\Users\Cole\Downloads\cole_hunter_elen226_a3\mlp\impl\L1_out_no_activ.dat"/>
+    <originFiles name="L1_out_activ.dat" path="C:\Users\Cole\Downloads\cole_hunter_elen226_a3\mlp\impl\L1_out_activ.dat"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

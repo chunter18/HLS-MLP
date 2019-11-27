@@ -1,0 +1,23 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../../src/tb_mlp.cpp in debug mode
+   Compiling ../../../../../src/mlp.cpp in debug mode
+   Generating csim.exe
+0	0	-2.93685	-0.0225677
+0	2	4.9551	0.11615
+0	5	5.65015	-0.597946
+0	7	-6.41597	-0.0337372
+1	7	-7.28729	-0.0337372
+4	5	7.55112	-0.597946
+4	7	-11.7895	-0.0337372
+4	8	11.9974	-0.410706
+17	2	13.7559	0.11615
+17	5	14.5765	-0.597946
+468	22	15.5528	-0.183228
+3137	22	16.1246	-0.183228
+
+maximum error = 16.3078
+
+mean-squared error = 325.31
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

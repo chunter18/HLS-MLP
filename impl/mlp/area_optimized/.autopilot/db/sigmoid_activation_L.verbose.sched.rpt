@@ -1,0 +1,226 @@
+
+
+================================================================
+== Vivado HLS Report for 'sigmoid_activation_L'
+================================================================
+* Date:           Sat Oct 26 22:26:22 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        mlp
+* Solution:       area_optimized
+* Product family: kintex7
+* Target device:  xc7k325tffg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|     3.215|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   81|   81|   81|   81|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- activ   |   80|   80|         8|          -|          -|    10|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 9
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!tmp)
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	2  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.87>
+ST_1 : Operation 10 [1/1] (0.87ns)   --->   "br label %0" [../src/mlp.cpp:156]   --->   Operation 10 'br' <Predicate = true> <Delay = 0.87>
+
+State 2 <SV = 1> <Delay = 1.14>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%i = phi i4 [ 0, %ap_fixed_base.exit ], [ %i_1, %3 ]"   --->   Operation 11 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.86ns)   --->   "%tmp = icmp eq i4 %i, -6" [../src/mlp.cpp:156]   --->   Operation 12 'icmp' 'tmp' <Predicate = true> <Delay = 0.86> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)"   --->   Operation 13 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (1.01ns)   --->   "%i_1 = add i4 %i, 1" [../src/mlp.cpp:156]   --->   Operation 14 'add' 'i_1' <Predicate = true> <Delay = 1.01> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "br i1 %tmp, label %4, label %_ifconv" [../src/mlp.cpp:156]   --->   Operation 15 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%tmp_1 = zext i4 %i to i64" [../src/mlp.cpp:158]   --->   Operation 16 'zext' 'tmp_1' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%input_V_addr = getelementptr [10 x i18]* %input_V, i64 0, i64 %tmp_1" [../src/mlp.cpp:158]   --->   Operation 17 'getelementptr' 'input_V_addr' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 18 [2/2] (1.14ns)   --->   "%p_Val2_s = load i18* %input_V_addr, align 4" [../src/mlp.cpp:158]   --->   Operation 18 'load' 'p_Val2_s' <Predicate = (!tmp)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "ret void" [../src/mlp.cpp:178]   --->   Operation 19 'ret' <Predicate = (tmp)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 1.14>
+ST_3 : Operation 20 [1/2] (1.14ns)   --->   "%p_Val2_s = load i18* %input_V_addr, align 4" [../src/mlp.cpp:158]   --->   Operation 20 'load' 'p_Val2_s' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%tmp_2 = call i1 @_ssdm_op_BitSelect.i1.i18.i32(i18 %p_Val2_s, i32 17)" [../src/mlp.cpp:161]   --->   Operation 21 'bitselect' 'tmp_2' <Predicate = true> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 3.21>
+ST_4 : Operation 22 [1/1] (1.36ns)   --->   "%p_Val2_1 = sub i18 0, %p_Val2_s" [../src/mlp.cpp:162]   --->   Operation 22 'sub' 'p_Val2_1' <Predicate = (tmp_2)> <Delay = 1.36> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 23 [1/1] (0.56ns)   --->   "%p_Val2_2 = select i1 %tmp_2, i18 %p_Val2_1, i18 %p_Val2_s" [../src/mlp.cpp:161]   --->   Operation 23 'select' 'p_Val2_2' <Predicate = true> <Delay = 0.56> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.56> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 24 [1/1] (1.28ns)   --->   "%tmp_7 = icmp sgt i18 %p_Val2_2, 32768" [../src/mlp.cpp:166]   --->   Operation 24 'icmp' 'tmp_7' <Predicate = true> <Delay = 1.28> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 25 [1/1] (0.00ns)   --->   "%tmp_3 = call i15 @_ssdm_op_PartSelect.i15.i18.i32.i32(i18 %p_Val2_2, i32 2, i32 16)" [../src/mlp.cpp:161]   --->   Operation 25 'partselect' 'tmp_3' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 3.04>
+ST_5 : Operation 26 [1/1] (0.00ns)   --->   "%OP1_V_cast = sext i18 %p_Val2_2 to i33" [../src/mlp.cpp:169]   --->   Operation 26 'sext' 'OP1_V_cast' <Predicate = (!tmp_7)> <Delay = 0.00>
+ST_5 : Operation 27 [3/3] (3.04ns)   --->   "%tmp_8 = mul i33 %OP1_V_cast, %OP1_V_cast" [../src/mlp.cpp:169]   --->   Operation 27 'mul' 'tmp_8' <Predicate = (!tmp_7)> <Delay = 3.04> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.04> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 6 <SV = 5> <Delay = 3.04>
+ST_6 : Operation 28 [2/3] (3.04ns)   --->   "%tmp_8 = mul i33 %OP1_V_cast, %OP1_V_cast" [../src/mlp.cpp:169]   --->   Operation 28 'mul' 'tmp_8' <Predicate = (!tmp_7)> <Delay = 3.04> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.04> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 7 <SV = 6> <Delay = 1.36>
+ST_7 : Operation 29 [1/1] (0.00ns)   --->   "%tmp_s = call i18 @_ssdm_op_BitConcatenate.i18.i15.i3(i15 %tmp_3, i3 0)" [../src/mlp.cpp:161]   --->   Operation 29 'bitconcatenate' 'tmp_s' <Predicate = (!tmp_7)> <Delay = 0.00>
+ST_7 : Operation 30 [1/3] (0.00ns)   --->   "%tmp_8 = mul i33 %OP1_V_cast, %OP1_V_cast" [../src/mlp.cpp:169]   --->   Operation 30 'mul' 'tmp_8' <Predicate = (!tmp_7)> <Delay = 0.00> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.04> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_7 : Operation 31 [1/1] (1.36ns)   --->   "%p_Val2_5 = add i18 %tmp_s, 32768" [../src/mlp.cpp:169]   --->   Operation 31 'add' 'p_Val2_5' <Predicate = (!tmp_7)> <Delay = 1.36> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 3.18>
+ST_8 : Operation 32 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([6 x i8]* @p_str5) nounwind" [../src/mlp.cpp:157]   --->   Operation 32 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 33 [1/1] (0.00ns)   --->   "%tmp_4 = call i28 @_ssdm_op_BitConcatenate.i28.i18.i10(i18 %p_Val2_5, i10 0)" [../src/mlp.cpp:169]   --->   Operation 33 'bitconcatenate' 'tmp_4' <Predicate = (!tmp_7)> <Delay = 0.00>
+ST_8 : Operation 34 [1/1] (0.00ns)   --->   "%tmp_11_cast = call i28 @_ssdm_op_PartSelect.i28.i33.i32.i32(i33 %tmp_8, i32 5, i32 32)" [../src/mlp.cpp:169]   --->   Operation 34 'partselect' 'tmp_11_cast' <Predicate = (!tmp_7)> <Delay = 0.00>
+ST_8 : Operation 35 [1/1] (1.47ns)   --->   "%p_Val2_3 = sub i28 %tmp_4, %tmp_11_cast" [../src/mlp.cpp:169]   --->   Operation 35 'sub' 'p_Val2_3' <Predicate = (!tmp_7)> <Delay = 1.47> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 36 [1/1] (0.00ns)   --->   "%tmp_9 = call i18 @_ssdm_op_PartSelect.i18.i28.i32.i32(i28 %p_Val2_3, i32 10, i32 27)" [../src/mlp.cpp:169]   --->   Operation 36 'partselect' 'tmp_9' <Predicate = (!tmp_7)> <Delay = 0.00>
+ST_8 : Operation 37 [1/1] (0.56ns)   --->   "%p_Val2_4 = select i1 %tmp_7, i18 65536, i18 %tmp_9" [../src/mlp.cpp:175]   --->   Operation 37 'select' 'p_Val2_4' <Predicate = true> <Delay = 0.56> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.56> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 38 [1/1] (0.00ns)   --->   "br i1 %tmp_2, label %2, label %1" [../src/mlp.cpp:172]   --->   Operation 38 'br' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 39 [1/1] (0.00ns)   --->   "%result_V_addr_1 = getelementptr [10 x i18]* %result_V, i64 0, i64 %tmp_1" [../src/mlp.cpp:173]   --->   Operation 39 'getelementptr' 'result_V_addr_1' <Predicate = (!tmp_2)> <Delay = 0.00>
+ST_8 : Operation 40 [1/1] (1.14ns)   --->   "store i18 %p_Val2_4, i18* %result_V_addr_1, align 4" [../src/mlp.cpp:173]   --->   Operation 40 'store' <Predicate = (!tmp_2)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_8 : Operation 41 [1/1] (0.00ns)   --->   "br label %3" [../src/mlp.cpp:173]   --->   Operation 41 'br' <Predicate = (!tmp_2)> <Delay = 0.00>
+
+State 9 <SV = 8> <Delay = 2.51>
+ST_9 : Operation 42 [1/1] (1.36ns)   --->   "%p_Val2_7 = sub i18 65536, %p_Val2_4" [../src/mlp.cpp:175]   --->   Operation 42 'sub' 'p_Val2_7' <Predicate = (tmp_2)> <Delay = 1.36> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 43 [1/1] (0.00ns)   --->   "%result_V_addr = getelementptr [10 x i18]* %result_V, i64 0, i64 %tmp_1" [../src/mlp.cpp:175]   --->   Operation 43 'getelementptr' 'result_V_addr' <Predicate = (tmp_2)> <Delay = 0.00>
+ST_9 : Operation 44 [1/1] (1.14ns)   --->   "store i18 %p_Val2_7, i18* %result_V_addr, align 4" [../src/mlp.cpp:175]   --->   Operation 44 'store' <Predicate = (tmp_2)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_9 : Operation 45 [1/1] (0.00ns)   --->   "br label %3"   --->   Operation 45 'br' <Predicate = (tmp_2)> <Delay = 0.00>
+ST_9 : Operation 46 [1/1] (0.00ns)   --->   "br label %0" [../src/mlp.cpp:156]   --->   Operation 46 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 0.5ns.
+
+ <State 1>: 0.872ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', ../src/mlp.cpp:156) [5]  (0.872 ns)
+
+ <State 2>: 1.15ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', ../src/mlp.cpp:156) [5]  (0 ns)
+	'getelementptr' operation ('input_V_addr', ../src/mlp.cpp:158) [13]  (0 ns)
+	'load' operation ('__Val2__', ../src/mlp.cpp:158) on array 'input_V' [14]  (1.15 ns)
+
+ <State 3>: 1.15ns
+The critical path consists of the following:
+	'load' operation ('__Val2__', ../src/mlp.cpp:158) on array 'input_V' [14]  (1.15 ns)
+
+ <State 4>: 3.21ns
+The critical path consists of the following:
+	'sub' operation ('p_Val2_1', ../src/mlp.cpp:162) [16]  (1.37 ns)
+	'select' operation ('__Val2__', ../src/mlp.cpp:161) [17]  (0.563 ns)
+	'icmp' operation ('tmp_7', ../src/mlp.cpp:166) [18]  (1.28 ns)
+
+ <State 5>: 3.04ns
+The critical path consists of the following:
+	'mul' operation ('tmp_8', ../src/mlp.cpp:169) [22]  (3.04 ns)
+
+ <State 6>: 3.04ns
+The critical path consists of the following:
+	'mul' operation ('tmp_8', ../src/mlp.cpp:169) [22]  (3.04 ns)
+
+ <State 7>: 1.37ns
+The critical path consists of the following:
+	'add' operation ('p_Val2_5', ../src/mlp.cpp:169) [23]  (1.37 ns)
+
+ <State 8>: 3.18ns
+The critical path consists of the following:
+	'sub' operation ('__Val2__', ../src/mlp.cpp:169) [26]  (1.47 ns)
+	'select' operation ('__Val2__', ../src/mlp.cpp:175) [28]  (0.563 ns)
+	'store' operation (../src/mlp.cpp:173) of variable '__Val2__', ../src/mlp.cpp:175 on array 'result_V' [32]  (1.15 ns)
+
+ <State 9>: 2.51ns
+The critical path consists of the following:
+	'sub' operation ('p_Val2_7', ../src/mlp.cpp:175) [35]  (1.37 ns)
+	'store' operation (../src/mlp.cpp:175) of variable 'p_Val2_7', ../src/mlp.cpp:175 on array 'result_V' [37]  (1.15 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

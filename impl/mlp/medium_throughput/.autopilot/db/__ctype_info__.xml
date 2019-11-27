@@ -1,0 +1,183 @@
+<InterfaceSummary>
+<RtlPorts>
+<name>weights_L1_0_V</name>
+<CType>
+<TypeName>ap_fixed 18 2 5 3 0</TypeName>
+<TypeWidth>18</TypeWidth>
+<PhysicalWidth>18</PhysicalWidth>
+</CType>
+<CFractionWidth>16</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>weights_L1_1_V</name>
+<CType>
+<TypeName>ap_fixed 18 2 5 3 0</TypeName>
+<TypeWidth>18</TypeWidth>
+<PhysicalWidth>18</PhysicalWidth>
+</CType>
+<CFractionWidth>16</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>weights_L1_2_V</name>
+<CType>
+<TypeName>ap_fixed 18 2 5 3 0</TypeName>
+<TypeWidth>18</TypeWidth>
+<PhysicalWidth>18</PhysicalWidth>
+</CType>
+<CFractionWidth>16</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>weights_L1_3_V</name>
+<CType>
+<TypeName>ap_fixed 18 2 5 3 0</TypeName>
+<TypeWidth>18</TypeWidth>
+<PhysicalWidth>18</PhysicalWidth>
+</CType>
+<CFractionWidth>16</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>weights_L1_4_V</name>
+<CType>
+<TypeName>ap_fixed 18 2 5 3 0</TypeName>
+<TypeWidth>18</TypeWidth>
+<PhysicalWidth>18</PhysicalWidth>
+</CType>
+<CFractionWidth>16</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>weights_L1_5_V</name>
+<CType>
+<TypeName>ap_fixed 18 2 5 3 0</TypeName>
+<TypeWidth>18</TypeWidth>
+<PhysicalWidth>18</PhysicalWidth>
+</CType>
+<CFractionWidth>16</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>weights_L1_6_V</name>
+<CType>
+<TypeName>ap_fixed 18 2 5 3 0</TypeName>
+<TypeWidth>18</TypeWidth>
+<PhysicalWidth>18</PhysicalWidth>
+</CType>
+<CFractionWidth>16</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>weights_L1_7_V</name>
+<CType>
+<TypeName>ap_fixed 18 2 5 3 0</TypeName>
+<TypeWidth>18</TypeWidth>
+<PhysicalWidth>18</PhysicalWidth>
+</CType>
+<CFractionWidth>16</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>weights_L2_V</name>
+<CType>
+<TypeName>ap_fixed 18 4 5 3 0</TypeName>
+<TypeWidth>18</TypeWidth>
+<PhysicalWidth>18</PhysicalWidth>
+</CType>
+<CFractionWidth>14</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>input_0_V</name>
+<CType>
+<TypeName>ap_fixed 18 2 5 3 0</TypeName>
+<TypeWidth>18</TypeWidth>
+<PhysicalWidth>18</PhysicalWidth>
+</CType>
+<CFractionWidth>16</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>input_1_V</name>
+<CType>
+<TypeName>ap_fixed 18 2 5 3 0</TypeName>
+<TypeWidth>18</TypeWidth>
+<PhysicalWidth>18</PhysicalWidth>
+</CType>
+<CFractionWidth>16</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>input_2_V</name>
+<CType>
+<TypeName>ap_fixed 18 2 5 3 0</TypeName>
+<TypeWidth>18</TypeWidth>
+<PhysicalWidth>18</PhysicalWidth>
+</CType>
+<CFractionWidth>16</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>input_3_V</name>
+<CType>
+<TypeName>ap_fixed 18 2 5 3 0</TypeName>
+<TypeWidth>18</TypeWidth>
+<PhysicalWidth>18</PhysicalWidth>
+</CType>
+<CFractionWidth>16</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>input_4_V</name>
+<CType>
+<TypeName>ap_fixed 18 2 5 3 0</TypeName>
+<TypeWidth>18</TypeWidth>
+<PhysicalWidth>18</PhysicalWidth>
+</CType>
+<CFractionWidth>16</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>input_5_V</name>
+<CType>
+<TypeName>ap_fixed 18 2 5 3 0</TypeName>
+<TypeWidth>18</TypeWidth>
+<PhysicalWidth>18</PhysicalWidth>
+</CType>
+<CFractionWidth>16</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>input_6_V</name>
+<CType>
+<TypeName>ap_fixed 18 2 5 3 0</TypeName>
+<TypeWidth>18</TypeWidth>
+<PhysicalWidth>18</PhysicalWidth>
+</CType>
+<CFractionWidth>16</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>input_7_V</name>
+<CType>
+<TypeName>ap_fixed 18 2 5 3 0</TypeName>
+<TypeWidth>18</TypeWidth>
+<PhysicalWidth>18</PhysicalWidth>
+</CType>
+<CFractionWidth>16</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>ap_return</name>
+<CType>
+<TypeName>int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+</InterfaceSummary>
+

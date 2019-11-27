@@ -1,0 +1,1428 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sat Oct 26 22:27:49 2019
+# Process ID: 24524
+# Current directory: C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/project.runs/synth_1
+# Command line: vivado.exe -log mlp.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mlp.tcl
+# Log file: C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/project.runs/synth_1/mlp.vds
+# Journal file: C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/project.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source mlp.tcl -notrace
+Command: synth_design -top mlp -part xc7k325tffg676-2 -directive sdx_optimization_effort_high -no_iobuf -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 26636 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 412.594 ; gain = 99.441
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'mlp' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp.v:12]
+INFO: [Synth 8-6157] synthesizing module 'mlp_bias_added_V' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_bias_added_V.v:11]
+	Parameter DataWidth bound to: 18 - type: integer 
+	Parameter AddressRange bound to: 401 - type: integer 
+	Parameter AddressWidth bound to: 9 - type: integer 
+	Parameter BufferCount bound to: 2 - type: integer 
+	Parameter IndexWidth bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_bias_added_V_memcore' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_bias_added_V_memcore.v:66]
+	Parameter DataWidth bound to: 18 - type: integer 
+	Parameter AddressRange bound to: 802 - type: integer 
+	Parameter AddressWidth bound to: 10 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_bias_added_V_memcore_ram' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_bias_added_V_memcore.v:9]
+	Parameter DWIDTH bound to: 18 - type: integer 
+	Parameter AWIDTH bound to: 10 - type: integer 
+	Parameter MEM_SIZE bound to: 802 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_bias_added_V_memcore.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_bias_added_V_memcore_ram' (1#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_bias_added_V_memcore.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_bias_added_V_memcore' (2#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_bias_added_V_memcore.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_bias_added_V' (3#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_bias_added_V.v:11]
+INFO: [Synth 8-6157] synthesizing module 'mlp_L1_no_activ_V' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L1_no_activ_V.v:11]
+	Parameter DataWidth bound to: 18 - type: integer 
+	Parameter AddressRange bound to: 25 - type: integer 
+	Parameter AddressWidth bound to: 5 - type: integer 
+	Parameter BufferCount bound to: 2 - type: integer 
+	Parameter IndexWidth bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_L1_no_activ_V_memcore' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L1_no_activ_V_memcore.v:66]
+	Parameter DataWidth bound to: 18 - type: integer 
+	Parameter AddressRange bound to: 50 - type: integer 
+	Parameter AddressWidth bound to: 6 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_L1_no_activ_V_memcore_ram' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L1_no_activ_V_memcore.v:9]
+	Parameter DWIDTH bound to: 18 - type: integer 
+	Parameter AWIDTH bound to: 6 - type: integer 
+	Parameter MEM_SIZE bound to: 50 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L1_no_activ_V_memcore.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_L1_no_activ_V_memcore_ram' (4#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L1_no_activ_V_memcore.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_L1_no_activ_V_memcore' (5#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L1_no_activ_V_memcore.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_L1_no_activ_V' (6#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L1_no_activ_V.v:11]
+INFO: [Synth 8-6157] synthesizing module 'mlp_L2_bias_added_V' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L2_bias_added_V.v:11]
+	Parameter DataWidth bound to: 18 - type: integer 
+	Parameter AddressRange bound to: 26 - type: integer 
+	Parameter AddressWidth bound to: 5 - type: integer 
+	Parameter BufferCount bound to: 2 - type: integer 
+	Parameter IndexWidth bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_L2_bias_added_V_memcore' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L2_bias_added_V_memcore.v:66]
+	Parameter DataWidth bound to: 18 - type: integer 
+	Parameter AddressRange bound to: 52 - type: integer 
+	Parameter AddressWidth bound to: 6 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_L2_bias_added_V_memcore_ram' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L2_bias_added_V_memcore.v:9]
+	Parameter DWIDTH bound to: 18 - type: integer 
+	Parameter AWIDTH bound to: 6 - type: integer 
+	Parameter MEM_SIZE bound to: 52 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L2_bias_added_V_memcore.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_L2_bias_added_V_memcore_ram' (7#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L2_bias_added_V_memcore.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_L2_bias_added_V_memcore' (8#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L2_bias_added_V_memcore.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_L2_bias_added_V' (9#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L2_bias_added_V.v:11]
+INFO: [Synth 8-6157] synthesizing module 'mlp_L2_out_V' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L2_out_V.v:11]
+	Parameter DataWidth bound to: 18 - type: integer 
+	Parameter AddressRange bound to: 10 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+	Parameter BufferCount bound to: 2 - type: integer 
+	Parameter IndexWidth bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_L2_out_V_memcore' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L2_out_V_memcore.v:66]
+	Parameter DataWidth bound to: 18 - type: integer 
+	Parameter AddressRange bound to: 20 - type: integer 
+	Parameter AddressWidth bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_L2_out_V_memcore_ram' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L2_out_V_memcore.v:9]
+	Parameter DWIDTH bound to: 18 - type: integer 
+	Parameter AWIDTH bound to: 5 - type: integer 
+	Parameter MEM_SIZE bound to: 20 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L2_out_V_memcore.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_L2_out_V_memcore_ram' (10#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L2_out_V_memcore.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_L2_out_V_memcore' (11#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L2_out_V_memcore.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_L2_out_V' (12#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L2_out_V.v:11]
+INFO: [Synth 8-6157] synthesizing module 'add_bias_pre_L1' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/add_bias_pre_L1.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 4'b0001 
+	Parameter ap_ST_fsm_state2 bound to: 4'b0010 
+	Parameter ap_ST_fsm_state3 bound to: 4'b0100 
+	Parameter ap_ST_fsm_state4 bound to: 4'b1000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/add_bias_pre_L1.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'add_bias_pre_L1' (13#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/add_bias_pre_L1.v:10]
+INFO: [Synth 8-6157] synthesizing module 'mvprod_layer_1' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mvprod_layer_1.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 2'b01 
+	Parameter ap_ST_fsm_pp0_stage0 bound to: 2'b10 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mvprod_layer_1.v:59]
+INFO: [Synth 8-6157] synthesizing module 'mlp_mac_muladd_5nbkb' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_5nbkb.v:48]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 3 - type: integer 
+	Parameter din0_WIDTH bound to: 5 - type: integer 
+	Parameter din1_WIDTH bound to: 10 - type: integer 
+	Parameter din2_WIDTH bound to: 9 - type: integer 
+	Parameter dout_WIDTH bound to: 14 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_mac_muladd_5nbkb_DSP48_0' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_5nbkb.v:10]
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+INFO: [Synth 8-6155] done synthesizing module 'mlp_mac_muladd_5nbkb_DSP48_0' (14#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_5nbkb.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_mac_muladd_5nbkb' (15#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_5nbkb.v:48]
+INFO: [Synth 8-6157] synthesizing module 'mlp_mac_muladd_18cud' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_18cud.v:48]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 3 - type: integer 
+	Parameter din0_WIDTH bound to: 18 - type: integer 
+	Parameter din1_WIDTH bound to: 18 - type: integer 
+	Parameter din2_WIDTH bound to: 38 - type: integer 
+	Parameter dout_WIDTH bound to: 39 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_mac_muladd_18cud_DSP48_1' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_18cud.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_mac_muladd_18cud_DSP48_1' (16#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_18cud.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_mac_muladd_18cud' (17#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_18cud.v:48]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mvprod_layer_1.v:677]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mvprod_layer_1.v:683]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mvprod_layer_1.v:695]
+INFO: [Synth 8-6155] done synthesizing module 'mvprod_layer_1' (18#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mvprod_layer_1.v:10]
+INFO: [Synth 8-6157] synthesizing module 'sigmoid_activation_L_1' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/sigmoid_activation_L_1.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 9'b000000001 
+	Parameter ap_ST_fsm_state2 bound to: 9'b000000010 
+	Parameter ap_ST_fsm_state3 bound to: 9'b000000100 
+	Parameter ap_ST_fsm_state4 bound to: 9'b000001000 
+	Parameter ap_ST_fsm_state5 bound to: 9'b000010000 
+	Parameter ap_ST_fsm_state6 bound to: 9'b000100000 
+	Parameter ap_ST_fsm_state7 bound to: 9'b001000000 
+	Parameter ap_ST_fsm_state8 bound to: 9'b010000000 
+	Parameter ap_ST_fsm_state9 bound to: 9'b100000000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/sigmoid_activation_L_1.v:62]
+INFO: [Synth 8-6157] synthesizing module 'mlp_mul_mul_18s_1dEe' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1dEe.v:30]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 3 - type: integer 
+	Parameter din0_WIDTH bound to: 18 - type: integer 
+	Parameter din1_WIDTH bound to: 18 - type: integer 
+	Parameter dout_WIDTH bound to: 31 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_mul_mul_18s_1dEe_DSP48_2' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1dEe.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_mul_mul_18s_1dEe_DSP48_2' (19#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1dEe.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_mul_mul_18s_1dEe' (20#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1dEe.v:30]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/sigmoid_activation_L_1.v:334]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/sigmoid_activation_L_1.v:338]
+INFO: [Synth 8-6155] done synthesizing module 'sigmoid_activation_L_1' (21#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/sigmoid_activation_L_1.v:10]
+INFO: [Synth 8-6157] synthesizing module 'add_bias_pre_L2' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/add_bias_pre_L2.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 3'b001 
+	Parameter ap_ST_fsm_state2 bound to: 3'b010 
+	Parameter ap_ST_fsm_state3 bound to: 3'b100 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/add_bias_pre_L2.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'add_bias_pre_L2' (22#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/add_bias_pre_L2.v:10]
+INFO: [Synth 8-6157] synthesizing module 'mvprod_layer_2' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mvprod_layer_2.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 2'b01 
+	Parameter ap_ST_fsm_pp0_stage0 bound to: 2'b10 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mvprod_layer_2.v:59]
+INFO: [Synth 8-6157] synthesizing module 'mlp_mac_muladd_4neOg' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_4neOg.v:48]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 3 - type: integer 
+	Parameter din0_WIDTH bound to: 4 - type: integer 
+	Parameter din1_WIDTH bound to: 6 - type: integer 
+	Parameter din2_WIDTH bound to: 5 - type: integer 
+	Parameter dout_WIDTH bound to: 9 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_mac_muladd_4neOg_DSP48_3' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_4neOg.v:10]
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+INFO: [Synth 8-6155] done synthesizing module 'mlp_mac_muladd_4neOg_DSP48_3' (23#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_4neOg.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_mac_muladd_4neOg' (24#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_4neOg.v:48]
+INFO: [Synth 8-6157] synthesizing module 'mlp_mul_mul_18s_1fYi' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1fYi.v:30]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 3 - type: integer 
+	Parameter din0_WIDTH bound to: 18 - type: integer 
+	Parameter din1_WIDTH bound to: 18 - type: integer 
+	Parameter dout_WIDTH bound to: 36 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_mul_mul_18s_1fYi_DSP48_4' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1fYi.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_mul_mul_18s_1fYi_DSP48_4' (25#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1fYi.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_mul_mul_18s_1fYi' (26#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1fYi.v:30]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mvprod_layer_2.v:681]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mvprod_layer_2.v:687]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mvprod_layer_2.v:695]
+INFO: [Synth 8-6155] done synthesizing module 'mvprod_layer_2' (27#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mvprod_layer_2.v:10]
+INFO: [Synth 8-6157] synthesizing module 'sigmoid_activation_L' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/sigmoid_activation_L.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 9'b000000001 
+	Parameter ap_ST_fsm_state2 bound to: 9'b000000010 
+	Parameter ap_ST_fsm_state3 bound to: 9'b000000100 
+	Parameter ap_ST_fsm_state4 bound to: 9'b000001000 
+	Parameter ap_ST_fsm_state5 bound to: 9'b000010000 
+	Parameter ap_ST_fsm_state6 bound to: 9'b000100000 
+	Parameter ap_ST_fsm_state7 bound to: 9'b001000000 
+	Parameter ap_ST_fsm_state8 bound to: 9'b010000000 
+	Parameter ap_ST_fsm_state9 bound to: 9'b100000000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/sigmoid_activation_L.v:62]
+INFO: [Synth 8-6157] synthesizing module 'mlp_mul_mul_18s_1g8j' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1g8j.v:30]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 3 - type: integer 
+	Parameter din0_WIDTH bound to: 18 - type: integer 
+	Parameter din1_WIDTH bound to: 18 - type: integer 
+	Parameter dout_WIDTH bound to: 33 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_mul_mul_18s_1g8j_DSP48_5' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1g8j.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_mul_mul_18s_1g8j_DSP48_5' (28#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1g8j.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_mul_mul_18s_1g8j' (29#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1g8j.v:30]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/sigmoid_activation_L.v:336]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/sigmoid_activation_L.v:340]
+INFO: [Synth 8-6155] done synthesizing module 'sigmoid_activation_L' (30#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/sigmoid_activation_L.v:10]
+INFO: [Synth 8-6157] synthesizing module 'classify' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/classify.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 4'b0001 
+	Parameter ap_ST_fsm_state2 bound to: 4'b0010 
+	Parameter ap_ST_fsm_state3 bound to: 4'b0100 
+	Parameter ap_ST_fsm_state4 bound to: 4'b1000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/classify.v:48]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/classify.v:207]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/classify.v:209]
+INFO: [Synth 8-6155] done synthesizing module 'classify' (31#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/classify.v:10]
+INFO: [Synth 8-6157] synthesizing module 'Block_arrayctor_loop' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/Block_arrayctor_loop.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 1'b1 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/Block_arrayctor_loop.v:40]
+INFO: [Synth 8-6155] done synthesizing module 'Block_arrayctor_loop' (32#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/Block_arrayctor_loop.v:10]
+INFO: [Synth 8-6157] synthesizing module 'p_src_mlp_cpp_lin' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/p_src_mlp_cpp_lin.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 1'b1 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/p_src_mlp_cpp_lin.v:40]
+INFO: [Synth 8-6155] done synthesizing module 'p_src_mlp_cpp_lin' (33#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/p_src_mlp_cpp_lin.v:10]
+INFO: [Synth 8-6157] synthesizing module 'fifo_w32_d2_A' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/fifo_w32_d2_A.v:45]
+	Parameter MEM_STYLE bound to: shiftreg - type: string 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_WIDTH bound to: 1 - type: integer 
+	Parameter DEPTH bound to: 2'b10 
+INFO: [Synth 8-6157] synthesizing module 'fifo_w32_d2_A_shiftReg' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/fifo_w32_d2_A.v:11]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_WIDTH bound to: 1 - type: integer 
+	Parameter DEPTH bound to: 2'b10 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w32_d2_A_shiftReg' (34#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/fifo_w32_d2_A.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w32_d2_A' (35#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/fifo_w32_d2_A.v:45]
+WARNING: [Synth 8-6014] Unused sequential element add_bias_pre_L1_U0_ap_ready_count_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp.v:627]
+WARNING: [Synth 8-6014] Unused sequential element mvprod_layer_1_U0_ap_ready_count_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp.v:635]
+WARNING: [Synth 8-6014] Unused sequential element mvprod_layer_2_U0_ap_ready_count_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp.v:643]
+INFO: [Synth 8-6155] done synthesizing module 'mlp' (36#1) [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp.v:12]
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d0[17] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d0[16] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d0[15] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d0[14] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d0[13] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d0[12] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d0[11] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d0[10] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d0[9] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d0[8] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d0[7] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d0[6] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d0[5] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d0[4] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d0[3] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d0[2] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d0[1] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d0[0] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_we0 driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_address1[13] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_address1[12] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_address1[11] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_address1[10] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_address1[9] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_address1[8] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_address1[7] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_address1[6] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_address1[5] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_address1[4] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_address1[3] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_address1[2] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_address1[1] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_address1[0] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_ce1 driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d1[17] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d1[16] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d1[15] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d1[14] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d1[13] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d1[12] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d1[11] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d1[10] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d1[9] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d1[8] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d1[7] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d1[6] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d1[5] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d1[4] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d1[3] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d1[2] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d1[1] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_d1[0] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L1_V_we1 driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d0[17] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d0[16] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d0[15] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d0[14] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d0[13] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d0[12] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d0[11] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d0[10] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d0[9] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d0[8] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d0[7] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d0[6] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d0[5] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d0[4] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d0[3] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d0[2] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d0[1] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d0[0] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_we0 driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_address1[8] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_address1[7] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_address1[6] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_address1[5] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_address1[4] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_address1[3] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_address1[2] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_address1[1] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_address1[0] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_ce1 driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d1[17] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d1[16] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d1[15] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d1[14] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d1[13] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d1[12] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d1[11] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d1[10] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d1[9] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d1[8] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d1[7] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d1[6] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d1[5] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d1[4] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d1[3] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d1[2] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d1[1] driven by constant 0
+WARNING: [Synth 8-3917] design mlp has port weights_L2_V_d1[0] driven by constant 0
+INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3331] design mlp_mul_mul_18s_1g8j_DSP48_5 has unconnected port rst
+WARNING: [Synth 8-3331] design mlp_mul_mul_18s_1fYi_DSP48_4 has unconnected port rst
+WARNING: [Synth 8-3331] design mlp_mac_muladd_4neOg_DSP48_3 has unconnected port rst
+WARNING: [Synth 8-3331] design mlp_mul_mul_18s_1dEe_DSP48_2 has unconnected port rst
+WARNING: [Synth 8-3331] design mlp_mac_muladd_18cud_DSP48_1 has unconnected port rst
+WARNING: [Synth 8-3331] design mlp_mac_muladd_5nbkb_DSP48_0 has unconnected port rst
+WARNING: [Synth 8-3331] design mlp_L2_out_V_memcore has unconnected port reset
+WARNING: [Synth 8-3331] design mlp_L2_bias_added_V_memcore has unconnected port reset
+WARNING: [Synth 8-3331] design mlp_L1_no_activ_V_memcore has unconnected port reset
+WARNING: [Synth 8-3331] design mlp_bias_added_V_memcore has unconnected port reset
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[17]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[16]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[15]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[14]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[13]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[12]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[11]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[10]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[9]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[8]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[7]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[6]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[5]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[4]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[3]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[2]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[1]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[0]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[17]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[16]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[15]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[14]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[13]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[12]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[11]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[10]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[9]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[8]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[7]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[6]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[5]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[4]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[3]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[2]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[1]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[0]
+WARNING: [Synth 8-3331] design mlp has unconnected port input_V_q1[17]
+WARNING: [Synth 8-3331] design mlp has unconnected port input_V_q1[16]
+WARNING: [Synth 8-3331] design mlp has unconnected port input_V_q1[15]
+WARNING: [Synth 8-3331] design mlp has unconnected port input_V_q1[14]
+WARNING: [Synth 8-3331] design mlp has unconnected port input_V_q1[13]
+WARNING: [Synth 8-3331] design mlp has unconnected port input_V_q1[12]
+WARNING: [Synth 8-3331] design mlp has unconnected port input_V_q1[11]
+WARNING: [Synth 8-3331] design mlp has unconnected port input_V_q1[10]
+WARNING: [Synth 8-3331] design mlp has unconnected port input_V_q1[9]
+WARNING: [Synth 8-3331] design mlp has unconnected port input_V_q1[8]
+WARNING: [Synth 8-3331] design mlp has unconnected port input_V_q1[7]
+WARNING: [Synth 8-3331] design mlp has unconnected port input_V_q1[6]
+WARNING: [Synth 8-3331] design mlp has unconnected port input_V_q1[5]
+WARNING: [Synth 8-3331] design mlp has unconnected port input_V_q1[4]
+WARNING: [Synth 8-3331] design mlp has unconnected port input_V_q1[3]
+WARNING: [Synth 8-3331] design mlp has unconnected port input_V_q1[2]
+WARNING: [Synth 8-3331] design mlp has unconnected port input_V_q1[1]
+WARNING: [Synth 8-3331] design mlp has unconnected port input_V_q1[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 470.684 ; gain = 157.531
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 470.684 ; gain = 157.531
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 470.684 ; gain = 157.531
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7k325tffg676-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp.xdc]
+Finished Parsing XDC File [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 875.508 ; gain = 1.898
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 875.508 ; gain = 562.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tffg676-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 875.508 ; gain = 562.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 875.508 ; gain = 562.355
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-5557] Skipped directive 'ram_style', Block implementation is mandatory for this RAM (ram_reg)
+WARNING: [Synth 8-5557] Skipped directive 'ram_style', Block implementation is mandatory for this RAM (ram_reg)
+WARNING: [Synth 8-5557] Skipped directive 'ram_style', Block implementation is mandatory for this RAM (ram_reg)
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5546] ROM "tmp_fu_69_p2" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element m_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_5nbkb.v:33]
+WARNING: [Synth 8-6014] Unused sequential element a_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_5nbkb.v:32]
+WARNING: [Synth 8-6014] Unused sequential element b_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_5nbkb.v:32]
+WARNING: [Synth 8-6014] Unused sequential element m_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_18cud.v:33]
+WARNING: [Synth 8-6014] Unused sequential element a_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_18cud.v:32]
+WARNING: [Synth 8-6014] Unused sequential element b_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_18cud.v:32]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5546] ROM "exitcond_flatten_fu_219_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_15_fu_241_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_8_fu_228_p2" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element a_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1dEe.v:19]
+WARNING: [Synth 8-6014] Unused sequential element b_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1dEe.v:20]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5546] ROM "tmp_fu_103_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5546] ROM "tmp_fu_70_p2" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element m_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_4neOg.v:33]
+WARNING: [Synth 8-6014] Unused sequential element a_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_4neOg.v:32]
+WARNING: [Synth 8-6014] Unused sequential element b_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_4neOg.v:32]
+WARNING: [Synth 8-6014] Unused sequential element a_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1fYi.v:19]
+WARNING: [Synth 8-6014] Unused sequential element b_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1fYi.v:20]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5546] ROM "exitcond_flatten_fu_219_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_1_fu_228_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_6_fu_241_p2" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element a_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1g8j.v:19]
+WARNING: [Synth 8-6014] Unused sequential element b_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1g8j.v:20]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5544] ROM "tmp_fu_101_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5544] ROM "tmp_fu_75_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_empty_n" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-3971] The signal ram_reg was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal ram_reg was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal ram_reg was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal ram_reg was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 875.508 ; gain = 562.355
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     35 Bit       Adders := 1     
+	   3 Input     28 Bit       Adders := 1     
+	   3 Input     26 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 6     
+	   2 Input     14 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 3     
+	   2 Input      5 Bit       Adders := 4     
+	   2 Input      4 Bit       Adders := 3     
+	   2 Input      2 Bit       Adders := 8     
+	   2 Input      1 Bit       Adders := 12    
++---XORs : 
+	   2 Input      1 Bit         XORs := 11    
++---Registers : 
+	               36 Bit    Registers := 1     
+	               33 Bit    Registers := 1     
+	               32 Bit    Registers := 7     
+	               31 Bit    Registers := 1     
+	               18 Bit    Registers := 31    
+	               15 Bit    Registers := 2     
+	               14 Bit    Registers := 5     
+	                9 Bit    Registers := 12    
+	                5 Bit    Registers := 18    
+	                4 Bit    Registers := 17    
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 10    
+	                1 Bit    Registers := 99    
++---RAMs : 
+	              14K Bit         RAMs := 1     
+	              936 Bit         RAMs := 1     
+	              900 Bit         RAMs := 2     
+	              360 Bit         RAMs := 2     
++---Muxes : 
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 6     
+	   2 Input     18 Bit        Muxes := 12    
+	   2 Input     14 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 5     
+	  10 Input      9 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 5     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   6 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 17    
+	   3 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 77    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module mlp 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 11    
++---Registers : 
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mlp_bias_added_V_memcore_ram 
+Detailed RTL Component Info : 
++---Registers : 
+	               18 Bit    Registers := 2     
++---RAMs : 
+	              14K Bit         RAMs := 1     
+Module mlp_bias_added_V 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 2     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module mlp_L1_no_activ_V_memcore_ram 
+Detailed RTL Component Info : 
++---Registers : 
+	               18 Bit    Registers := 2     
++---RAMs : 
+	              900 Bit         RAMs := 1     
+Module mlp_L1_no_activ_V 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 2     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module mlp_L2_bias_added_V_memcore_ram 
+Detailed RTL Component Info : 
++---Registers : 
+	               18 Bit    Registers := 2     
++---RAMs : 
+	              936 Bit         RAMs := 1     
+Module mlp_L2_bias_added_V 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 2     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module mlp_L2_out_V_memcore_ram 
+Detailed RTL Component Info : 
++---Registers : 
+	               18 Bit    Registers := 2     
++---RAMs : 
+	              360 Bit         RAMs := 1     
+Module mlp_L2_out_V 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 2     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module add_bias_pre_L1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                9 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module mlp_mac_muladd_5nbkb_DSP48_0 
+Detailed RTL Component Info : 
++---Registers : 
+	               18 Bit    Registers := 1     
+Module mlp_mac_muladd_18cud_DSP48_1 
+Detailed RTL Component Info : 
++---Registers : 
+	               18 Bit    Registers := 1     
+Module mvprod_layer_1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     14 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 2     
+	               14 Bit    Registers := 3     
+	                9 Bit    Registers := 5     
+	                5 Bit    Registers := 8     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 25    
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 3     
+	   2 Input     14 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 9     
+Module mlp_mul_mul_18s_1dEe_DSP48_2 
+Detailed RTL Component Info : 
++---Registers : 
+	               18 Bit    Registers := 1     
+Module sigmoid_activation_L_1 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     26 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 3     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               31 Bit    Registers := 1     
+	               18 Bit    Registers := 3     
+	               14 Bit    Registers := 2     
+	                9 Bit    Registers := 1     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 3     
+	  10 Input      9 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module add_bias_pre_L2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module mlp_mac_muladd_4neOg_DSP48_3 
+Detailed RTL Component Info : 
++---Registers : 
+	               18 Bit    Registers := 1     
+Module mlp_mul_mul_18s_1fYi_DSP48_4 
+Detailed RTL Component Info : 
++---Registers : 
+	               18 Bit    Registers := 1     
+Module mvprod_layer_2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     35 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               36 Bit    Registers := 1     
+	               18 Bit    Registers := 3     
+	                9 Bit    Registers := 3     
+	                5 Bit    Registers := 5     
+	                4 Bit    Registers := 9     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 30    
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 9     
+Module mlp_mul_mul_18s_1g8j_DSP48_5 
+Detailed RTL Component Info : 
++---Registers : 
+	               18 Bit    Registers := 1     
+Module sigmoid_activation_L 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     28 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 3     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               33 Bit    Registers := 1     
+	               18 Bit    Registers := 3     
+	               15 Bit    Registers := 2     
+	                9 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 3     
+	  10 Input      9 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module classify 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               18 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   3 Input     32 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module Block_arrayctor_loop 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+Module p_src_mlp_cpp_lin 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+Module fifo_w32_d2_A_shiftReg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module fifo_w32_d2_A 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-4471] merging register 'p_src_mlp_cpp_lin_U0/ap_CS_fsm_reg[0:0]' into 'Block_arrayctor_loop_U0/ap_CS_fsm_reg[0:0]' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/p_src_mlp_cpp_lin.v:55]
+INFO: [Synth 8-4471] merging register 'sigmoid_activation_L_1_U0/mlp_mul_mul_18s_1dEe_U10/mlp_mul_mul_18s_1dEe_DSP48_2_U/a_reg_reg[17:0]' into 'sigmoid_activation_L_1_U0/mlp_mul_mul_18s_1dEe_U10/mlp_mul_mul_18s_1dEe_DSP48_2_U/b_reg_reg[17:0]' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1dEe.v:19]
+INFO: [Synth 8-4471] merging register 'sigmoid_activation_L_U0/mlp_mul_mul_18s_1g8j_U23/mlp_mul_mul_18s_1g8j_DSP48_5_U/a_reg_reg[17:0]' into 'sigmoid_activation_L_U0/mlp_mul_mul_18s_1g8j_U23/mlp_mul_mul_18s_1g8j_DSP48_5_U/b_reg_reg[17:0]' [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1g8j.v:19]
+WARNING: [Synth 8-6014] Unused sequential element p_src_mlp_cpp_lin_U0/ap_CS_fsm_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/p_src_mlp_cpp_lin.v:55]
+WARNING: [Synth 8-6014] Unused sequential element sigmoid_activation_L_1_U0/mlp_mul_mul_18s_1dEe_U10/mlp_mul_mul_18s_1dEe_DSP48_2_U/a_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1dEe.v:19]
+WARNING: [Synth 8-6014] Unused sequential element sigmoid_activation_L_U0/mlp_mul_mul_18s_1g8j_U23/mlp_mul_mul_18s_1g8j_DSP48_5_U/a_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1g8j.v:19]
+WARNING: [Synth 8-3936] Found unconnected internal register 'mvprod_layer_1_U0/mlp_mac_muladd_5nbkb_U3/mlp_mac_muladd_5nbkb_DSP48_0_U/a_reg_reg' and it is trimmed from '25' to '14' bits. [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_5nbkb.v:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'mvprod_layer_2_U0/mlp_mac_muladd_4neOg_U16/mlp_mac_muladd_4neOg_DSP48_3_U/a_reg_reg' and it is trimmed from '25' to '9' bits. [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_4neOg.v:32]
+INFO: [Synth 8-5546] ROM "add_bias_pre_L1_U0/tmp_fu_69_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mvprod_layer_1_U0/exitcond_flatten_fu_219_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mvprod_layer_1_U0/tmp_15_fu_241_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mvprod_layer_1_U0/tmp_8_fu_228_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mvprod_layer_2_U0/exitcond_flatten_fu_219_p2" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element mvprod_layer_1_U0/mlp_mac_muladd_5nbkb_U3/mlp_mac_muladd_5nbkb_DSP48_0_U/m_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_5nbkb.v:33]
+WARNING: [Synth 8-6014] Unused sequential element mvprod_layer_1_U0/mlp_mac_muladd_18cud_U4/mlp_mac_muladd_18cud_DSP48_1_U/m_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_18cud.v:33]
+WARNING: [Synth 8-6014] Unused sequential element mvprod_layer_2_U0/mlp_mac_muladd_4neOg_U16/mlp_mac_muladd_4neOg_DSP48_3_U/m_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_4neOg.v:33]
+WARNING: [Synth 8-6014] Unused sequential element sigmoid_activation_L_1_U0/mlp_mul_mul_18s_1dEe_U10/mlp_mul_mul_18s_1dEe_DSP48_2_U/p_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1dEe.v:21]
+WARNING: [Synth 8-6014] Unused sequential element mvprod_layer_2_U0/mlp_mul_mul_18s_1fYi_U17/mlp_mul_mul_18s_1fYi_DSP48_4_U/p_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1fYi.v:21]
+WARNING: [Synth 8-6014] Unused sequential element sigmoid_activation_L_U0/mlp_mul_mul_18s_1g8j_U23/mlp_mul_mul_18s_1g8j_DSP48_5_U/p_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1g8j.v:21]
+WARNING: [Synth 8-6014] Unused sequential element mvprod_layer_1_U0/mlp_mac_muladd_5nbkb_U3/mlp_mac_muladd_5nbkb_DSP48_0_U/b_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_5nbkb.v:32]
+WARNING: [Synth 8-6014] Unused sequential element mvprod_layer_1_U0/mlp_mac_muladd_18cud_U4/mlp_mac_muladd_18cud_DSP48_1_U/b_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_18cud.v:32]
+WARNING: [Synth 8-6014] Unused sequential element sigmoid_activation_L_1_U0/mlp_mul_mul_18s_1dEe_U10/mlp_mul_mul_18s_1dEe_DSP48_2_U/b_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1dEe.v:19]
+WARNING: [Synth 8-6014] Unused sequential element sigmoid_activation_L_1_U0/p_Val2_1_reg_253_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/sigmoid_activation_L_1.v:161]
+WARNING: [Synth 8-6014] Unused sequential element mvprod_layer_2_U0/mlp_mac_muladd_4neOg_U16/mlp_mac_muladd_4neOg_DSP48_3_U/b_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_4neOg.v:32]
+WARNING: [Synth 8-6014] Unused sequential element mvprod_layer_2_U0/mlp_mul_mul_18s_1fYi_U17/mlp_mul_mul_18s_1fYi_DSP48_4_U/b_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1fYi.v:20]
+WARNING: [Synth 8-6014] Unused sequential element mvprod_layer_2_U0/matrix_V_load_reg_378_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mvprod_layer_2.v:207]
+WARNING: [Synth 8-6014] Unused sequential element mvprod_layer_2_U0/input_V_load_reg_373_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mvprod_layer_2.v:208]
+WARNING: [Synth 8-6014] Unused sequential element sigmoid_activation_L_U0/mlp_mul_mul_18s_1g8j_U23/mlp_mul_mul_18s_1g8j_DSP48_5_U/b_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1g8j.v:19]
+WARNING: [Synth 8-6014] Unused sequential element sigmoid_activation_L_U0/p_Val2_2_reg_251_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/sigmoid_activation_L.v:161]
+WARNING: [Synth 8-6014] Unused sequential element mvprod_layer_1_U0/mlp_mac_muladd_5nbkb_U3/mlp_mac_muladd_5nbkb_DSP48_0_U/a_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_5nbkb.v:32]
+WARNING: [Synth 8-6014] Unused sequential element mvprod_layer_1_U0/mlp_mac_muladd_18cud_U4/mlp_mac_muladd_18cud_DSP48_1_U/a_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_18cud.v:32]
+WARNING: [Synth 8-6014] Unused sequential element mvprod_layer_2_U0/mlp_mac_muladd_4neOg_U16/mlp_mac_muladd_4neOg_DSP48_3_U/a_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_4neOg.v:32]
+WARNING: [Synth 8-6014] Unused sequential element mvprod_layer_2_U0/mlp_mul_mul_18s_1fYi_U17/mlp_mul_mul_18s_1fYi_DSP48_4_U/a_reg_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mul_mul_18s_1fYi.v:19]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_5nbkb.v:32]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_5nbkb.v:32]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_4neOg.v:32]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_mac_muladd_4neOg.v:32]
+DSP Report: Generating DSP mvprod_layer_1_U0/tmp_13_reg_343_reg, operation Mode is: (C'+(A2*(B:0x191)')')'.
+DSP Report: register mvprod_layer_1_U0/mlp_mac_muladd_5nbkb_U3/mlp_mac_muladd_5nbkb_DSP48_0_U/b_reg_reg is absorbed into DSP mvprod_layer_1_U0/tmp_13_reg_343_reg.
+DSP Report: register A is absorbed into DSP mvprod_layer_1_U0/tmp_13_reg_343_reg.
+DSP Report: register C is absorbed into DSP mvprod_layer_1_U0/tmp_13_reg_343_reg.
+DSP Report: register mvprod_layer_1_U0/tmp_13_reg_343_reg is absorbed into DSP mvprod_layer_1_U0/tmp_13_reg_343_reg.
+DSP Report: register mvprod_layer_1_U0/mlp_mac_muladd_5nbkb_U3/mlp_mac_muladd_5nbkb_DSP48_0_U/m_reg_reg is absorbed into DSP mvprod_layer_1_U0/tmp_13_reg_343_reg.
+DSP Report: operator mvprod_layer_1_U0/mlp_mac_muladd_5nbkb_U3/mlp_mac_muladd_5nbkb_DSP48_0_U/p is absorbed into DSP mvprod_layer_1_U0/tmp_13_reg_343_reg.
+DSP Report: operator mvprod_layer_1_U0/mlp_mac_muladd_5nbkb_U3/mlp_mac_muladd_5nbkb_DSP48_0_U/m is absorbed into DSP mvprod_layer_1_U0/tmp_13_reg_343_reg.
+DSP Report: Generating DSP mvprod_layer_1_U0/mlp_mac_muladd_18cud_U4/mlp_mac_muladd_18cud_DSP48_1_U/p, operation Mode is: C+(A2*B2)'.
+DSP Report: register mvprod_layer_1_U0/mlp_mac_muladd_18cud_U4/mlp_mac_muladd_18cud_DSP48_1_U/b_reg_reg is absorbed into DSP mvprod_layer_1_U0/mlp_mac_muladd_18cud_U4/mlp_mac_muladd_18cud_DSP48_1_U/p.
+DSP Report: register mvprod_layer_1_U0/mlp_mac_muladd_18cud_U4/mlp_mac_muladd_18cud_DSP48_1_U/a_reg_reg is absorbed into DSP mvprod_layer_1_U0/mlp_mac_muladd_18cud_U4/mlp_mac_muladd_18cud_DSP48_1_U/p.
+DSP Report: register mvprod_layer_1_U0/mlp_mac_muladd_18cud_U4/mlp_mac_muladd_18cud_DSP48_1_U/m_reg_reg is absorbed into DSP mvprod_layer_1_U0/mlp_mac_muladd_18cud_U4/mlp_mac_muladd_18cud_DSP48_1_U/p.
+DSP Report: operator mvprod_layer_1_U0/mlp_mac_muladd_18cud_U4/mlp_mac_muladd_18cud_DSP48_1_U/m is absorbed into DSP mvprod_layer_1_U0/mlp_mac_muladd_18cud_U4/mlp_mac_muladd_18cud_DSP48_1_U/p.
+DSP Report: operator mvprod_layer_1_U0/mlp_mac_muladd_18cud_U4/mlp_mac_muladd_18cud_DSP48_1_U/p is absorbed into DSP mvprod_layer_1_U0/mlp_mac_muladd_18cud_U4/mlp_mac_muladd_18cud_DSP48_1_U/p.
+DSP Report: Generating DSP sigmoid_activation_L_1_U0/tmp_4_reg_274_reg, operation Mode is: (A''*B'')'.
+DSP Report: register sigmoid_activation_L_1_U0/p_Val2_1_reg_253_reg is absorbed into DSP sigmoid_activation_L_1_U0/tmp_4_reg_274_reg.
+DSP Report: register sigmoid_activation_L_1_U0/mlp_mul_mul_18s_1dEe_U10/mlp_mul_mul_18s_1dEe_DSP48_2_U/b_reg_reg is absorbed into DSP sigmoid_activation_L_1_U0/tmp_4_reg_274_reg.
+DSP Report: register sigmoid_activation_L_1_U0/p_Val2_1_reg_253_reg is absorbed into DSP sigmoid_activation_L_1_U0/tmp_4_reg_274_reg.
+DSP Report: register sigmoid_activation_L_1_U0/mlp_mul_mul_18s_1dEe_U10/mlp_mul_mul_18s_1dEe_DSP48_2_U/b_reg_reg is absorbed into DSP sigmoid_activation_L_1_U0/tmp_4_reg_274_reg.
+DSP Report: register sigmoid_activation_L_1_U0/tmp_4_reg_274_reg is absorbed into DSP sigmoid_activation_L_1_U0/tmp_4_reg_274_reg.
+DSP Report: register sigmoid_activation_L_1_U0/mlp_mul_mul_18s_1dEe_U10/mlp_mul_mul_18s_1dEe_DSP48_2_U/p_reg_reg is absorbed into DSP sigmoid_activation_L_1_U0/tmp_4_reg_274_reg.
+DSP Report: operator sigmoid_activation_L_1_U0/mlp_mul_mul_18s_1dEe_U10/mlp_mul_mul_18s_1dEe_DSP48_2_U/p_reg0 is absorbed into DSP sigmoid_activation_L_1_U0/tmp_4_reg_274_reg.
+DSP Report: Generating DSP mvprod_layer_2_U0/tmp_8_reg_349_reg, operation Mode is: (C'+(A2*(B:0x1a)')')'.
+DSP Report: register mvprod_layer_2_U0/mlp_mac_muladd_4neOg_U16/mlp_mac_muladd_4neOg_DSP48_3_U/b_reg_reg is absorbed into DSP mvprod_layer_2_U0/tmp_8_reg_349_reg.
+DSP Report: register A is absorbed into DSP mvprod_layer_2_U0/tmp_8_reg_349_reg.
+DSP Report: register C is absorbed into DSP mvprod_layer_2_U0/tmp_8_reg_349_reg.
+DSP Report: register mvprod_layer_2_U0/tmp_8_reg_349_reg is absorbed into DSP mvprod_layer_2_U0/tmp_8_reg_349_reg.
+DSP Report: register mvprod_layer_2_U0/mlp_mac_muladd_4neOg_U16/mlp_mac_muladd_4neOg_DSP48_3_U/m_reg_reg is absorbed into DSP mvprod_layer_2_U0/tmp_8_reg_349_reg.
+DSP Report: operator mvprod_layer_2_U0/mlp_mac_muladd_4neOg_U16/mlp_mac_muladd_4neOg_DSP48_3_U/p is absorbed into DSP mvprod_layer_2_U0/tmp_8_reg_349_reg.
+DSP Report: operator mvprod_layer_2_U0/mlp_mac_muladd_4neOg_U16/mlp_mac_muladd_4neOg_DSP48_3_U/m is absorbed into DSP mvprod_layer_2_U0/tmp_8_reg_349_reg.
+DSP Report: Generating DSP mvprod_layer_2_U0/p_Val2_s_reg_393_reg, operation Mode is: (A''*B'')'.
+DSP Report: register mvprod_layer_2_U0/input_V_load_reg_373_reg is absorbed into DSP mvprod_layer_2_U0/p_Val2_s_reg_393_reg.
+DSP Report: register mvprod_layer_2_U0/mlp_mul_mul_18s_1fYi_U17/mlp_mul_mul_18s_1fYi_DSP48_4_U/b_reg_reg is absorbed into DSP mvprod_layer_2_U0/p_Val2_s_reg_393_reg.
+DSP Report: register mvprod_layer_2_U0/matrix_V_load_reg_378_reg is absorbed into DSP mvprod_layer_2_U0/p_Val2_s_reg_393_reg.
+DSP Report: register mvprod_layer_2_U0/mlp_mul_mul_18s_1fYi_U17/mlp_mul_mul_18s_1fYi_DSP48_4_U/a_reg_reg is absorbed into DSP mvprod_layer_2_U0/p_Val2_s_reg_393_reg.
+DSP Report: register mvprod_layer_2_U0/p_Val2_s_reg_393_reg is absorbed into DSP mvprod_layer_2_U0/p_Val2_s_reg_393_reg.
+DSP Report: register mvprod_layer_2_U0/mlp_mul_mul_18s_1fYi_U17/mlp_mul_mul_18s_1fYi_DSP48_4_U/p_reg_reg is absorbed into DSP mvprod_layer_2_U0/p_Val2_s_reg_393_reg.
+DSP Report: operator mvprod_layer_2_U0/mlp_mul_mul_18s_1fYi_U17/mlp_mul_mul_18s_1fYi_DSP48_4_U/p_reg0 is absorbed into DSP mvprod_layer_2_U0/p_Val2_s_reg_393_reg.
+DSP Report: Generating DSP sigmoid_activation_L_U0/tmp_8_reg_272_reg, operation Mode is: (A''*B'')'.
+DSP Report: register sigmoid_activation_L_U0/p_Val2_2_reg_251_reg is absorbed into DSP sigmoid_activation_L_U0/tmp_8_reg_272_reg.
+DSP Report: register sigmoid_activation_L_U0/mlp_mul_mul_18s_1g8j_U23/mlp_mul_mul_18s_1g8j_DSP48_5_U/b_reg_reg is absorbed into DSP sigmoid_activation_L_U0/tmp_8_reg_272_reg.
+DSP Report: register sigmoid_activation_L_U0/p_Val2_2_reg_251_reg is absorbed into DSP sigmoid_activation_L_U0/tmp_8_reg_272_reg.
+DSP Report: register sigmoid_activation_L_U0/mlp_mul_mul_18s_1g8j_U23/mlp_mul_mul_18s_1g8j_DSP48_5_U/b_reg_reg is absorbed into DSP sigmoid_activation_L_U0/tmp_8_reg_272_reg.
+DSP Report: register sigmoid_activation_L_U0/tmp_8_reg_272_reg is absorbed into DSP sigmoid_activation_L_U0/tmp_8_reg_272_reg.
+DSP Report: register sigmoid_activation_L_U0/mlp_mul_mul_18s_1g8j_U23/mlp_mul_mul_18s_1g8j_DSP48_5_U/p_reg_reg is absorbed into DSP sigmoid_activation_L_U0/tmp_8_reg_272_reg.
+DSP Report: operator sigmoid_activation_L_U0/mlp_mul_mul_18s_1g8j_U23/mlp_mul_mul_18s_1g8j_DSP48_5_U/p_reg0 is absorbed into DSP sigmoid_activation_L_U0/tmp_8_reg_272_reg.
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[17]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[16]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[15]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[14]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[13]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[12]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[11]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[10]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[9]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[8]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[7]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[6]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[5]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[4]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[3]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[2]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[1]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L1_V_q1[0]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[17]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[16]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[15]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[14]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[13]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[12]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[11]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[10]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[9]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[8]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[7]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[6]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[5]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[4]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[3]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[2]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[1]
+WARNING: [Synth 8-3331] design mlp has unconnected port weights_L2_V_q1[0]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-6014] Unused sequential element bias_added_V_U/mlp_bias_added_V_memcore_U/mlp_bias_added_V_memcore_ram_U/q0_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_bias_added_V_memcore.v:39]
+WARNING: [Synth 8-6014] Unused sequential element bias_added_V_U/mlp_bias_added_V_memcore_U/mlp_bias_added_V_memcore_ram_U/ram_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element L1_no_activ_V_U/mlp_L1_no_activ_V_memcore_U/mlp_L1_no_activ_V_memcore_ram_U/q0_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L1_no_activ_V_memcore.v:39]
+WARNING: [Synth 8-6014] Unused sequential element L1_no_activ_V_U/mlp_L1_no_activ_V_memcore_U/mlp_L1_no_activ_V_memcore_ram_U/ram_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element L1_activ_V_U/mlp_L1_no_activ_V_memcore_U/mlp_L1_no_activ_V_memcore_ram_U/q0_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L1_no_activ_V_memcore.v:39]
+WARNING: [Synth 8-6014] Unused sequential element L1_activ_V_U/mlp_L1_no_activ_V_memcore_U/mlp_L1_no_activ_V_memcore_ram_U/ram_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element L2_bias_added_V_U/mlp_L2_bias_added_V_memcore_U/mlp_L2_bias_added_V_memcore_ram_U/q0_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L2_bias_added_V_memcore.v:39]
+WARNING: [Synth 8-6014] Unused sequential element L2_bias_added_V_U/mlp_L2_bias_added_V_memcore_U/mlp_L2_bias_added_V_memcore_ram_U/ram_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element L2_out_V_U/mlp_L2_out_V_memcore_U/mlp_L2_out_V_memcore_ram_U/q0_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L2_out_V_memcore.v:39]
+WARNING: [Synth 8-6014] Unused sequential element L2_out_V_U/mlp_L2_out_V_memcore_U/mlp_L2_out_V_memcore_ram_U/ram_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element L2_out_activ_V_U/mlp_L2_out_V_memcore_U/mlp_L2_out_V_memcore_ram_U/q0_reg was removed.  [C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/mlp_L2_out_V_memcore.v:39]
+WARNING: [Synth 8-6014] Unused sequential element L2_out_activ_V_U/mlp_L2_out_V_memcore_U/mlp_L2_out_V_memcore_ram_U/ram_reg was removed. 
+INFO: [Synth 8-3886] merging instance 'sigmoid_activation_L_1_U0/p_Val2_s_reg_242_reg[17]' (FDE) to 'sigmoid_activation_L_1_U0/tmp_1_reg_248_reg[0]'
+INFO: [Synth 8-3886] merging instance 'sigmoid_activation_L_1_U0/p_Val2_9_reg_279_reg[0]' (FD) to 'sigmoid_activation_L_U0/p_Val2_5_reg_277_reg[2]'
+INFO: [Synth 8-3886] merging instance 'sigmoid_activation_L_1_U0/p_Val2_9_reg_279_reg[1]' (FD) to 'sigmoid_activation_L_U0/p_Val2_5_reg_277_reg[2]'
+INFO: [Synth 8-3886] merging instance 'sigmoid_activation_L_1_U0/p_Val2_9_reg_279_reg[2]' (FD) to 'sigmoid_activation_L_U0/p_Val2_5_reg_277_reg[2]'
+INFO: [Synth 8-3886] merging instance 'sigmoid_activation_L_1_U0/p_Val2_9_reg_279_reg[3]' (FD) to 'sigmoid_activation_L_U0/p_Val2_5_reg_277_reg[2]'
+INFO: [Synth 8-3886] merging instance 'sigmoid_activation_L_U0/p_Val2_s_reg_240_reg[17]' (FDE) to 'sigmoid_activation_L_U0/tmp_2_reg_246_reg[0]'
+INFO: [Synth 8-3886] merging instance 'sigmoid_activation_L_U0/p_Val2_5_reg_277_reg[0]' (FD) to 'sigmoid_activation_L_U0/p_Val2_5_reg_277_reg[2]'
+INFO: [Synth 8-3886] merging instance 'sigmoid_activation_L_U0/p_Val2_5_reg_277_reg[1]' (FD) to 'sigmoid_activation_L_U0/p_Val2_5_reg_277_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sigmoid_activation_L_U0/p_Val2_5_reg_277_reg[2] )
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[4]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[5]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[5]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[6]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[6]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[7]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[7]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[8]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[8]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[9]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[9]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[10]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[10]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[11]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[11]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[12]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[12]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[13]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[13]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[14]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[14]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[15]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[15]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[16]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[16]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[17]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[17]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[18]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[18]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[19]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[19]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[20]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[20]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[21]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[21]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[22]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[22]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[23]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[23]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[24]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[24]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[25]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[25]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[26]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[26]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[27]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[27]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[28]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[28]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[29]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[29]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[30]'
+INFO: [Synth 8-3886] merging instance 'classify_U0/result_write_assign_reg_52_reg[30]' (FDRE) to 'classify_U0/result_write_assign_reg_52_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\classify_U0/result_write_assign_reg_52_reg[31] )
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][4]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][5]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][5]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][5]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][6]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][6]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][6]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][7]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][7]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][8]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][8]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][8]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][9]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][9]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][9]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][10]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][10]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][10]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][11]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][11]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][11]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][12]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][12]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][12]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][13]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][13]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][13]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][14]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][14]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][14]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][15]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][15]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][15]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][16]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][16]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][16]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][17]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][17]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][17]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][18]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][18]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][18]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][19]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][19]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][19]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][20]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][20]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][20]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][21]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][21]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][21]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][22]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][22]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][22]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][23]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][23]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][23]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][24]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][24]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][24]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][25]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][25]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][25]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][26]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][26]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][26]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][27]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][27]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][27]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][28]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][28]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][28]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][29]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][29]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][29]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][30]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][30]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][31]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\Block_arrayctor_loop_U0/ap_CS_fsm_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\p_src_mlp_cpp_lin_U0/ap_done_reg_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][31] )
+INFO: [Synth 8-3886] merging instance 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][31]' (FDE) to 'digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4] )
+INFO: [Synth 8-3886] merging instance 'digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][4]' (FDE) to 'digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][5]'
+INFO: [Synth 8-3886] merging instance 'digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][5]' (FDE) to 'digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][5]' (FDE) to 'digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][6]'
+INFO: [Synth 8-3886] merging instance 'digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][6]' (FDE) to 'digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][6]' (FDE) to 'digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][7]' (FDE) to 'digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][7]' (FDE) to 'digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][8]'
+INFO: [Synth 8-3886] merging instance 'digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][8]' (FDE) to 'digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][8]' (FDE) to 'digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][9]'
+INFO: [Synth 8-3886] merging instance 'digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][9]' (FDE) to 'digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[0][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4] )
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_CS_fsm_reg[0]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_done_reg_reg) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (classify_U0/result_write_assign_reg_52_reg[31]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[31]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[30]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[29]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[28]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[27]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[26]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[25]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[24]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[23]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[22]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[21]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[20]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[19]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[18]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[17]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[16]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[15]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[14]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[13]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[12]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[11]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[10]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[9]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[8]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[7]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[6]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[5]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (Block_arrayctor_loop_U0/ap_return_preg_reg[4]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[31]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[30]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[29]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[28]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[27]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[26]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[25]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[24]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[23]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[22]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[21]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[20]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[19]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[18]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[17]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[16]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[15]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[14]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[13]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[12]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[11]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[10]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[9]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[8]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[7]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[6]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[5]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (p_src_mlp_cpp_lin_U0/ap_return_preg_reg[4]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (digit_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]) is unused and will be removed from module mlp.
+WARNING: [Synth 8-3332] Sequential element (digit_load_loc_chann_U/U_fifo_w32_d2_A_ram/SRL_SIG_reg[1][4]) is unused and will be removed from module mlp.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 875.508 ; gain = 562.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping  Report (see note below)
++------------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                   | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|mlp_bias_added_V_memcore_ram: | ram_reg    | 1 K x 18(WRITE_FIRST)  | W | R | 1 K x 18(WRITE_FIRST)  | W | R | Port A and B     | 1      | 0      | 
++------------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The tale above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------+-------------------------------------------------------------------------------------------+----------------+----------------------+--------------+
+|Module Name | RTL Object                                                                                | Inference      | Size (Depth x Width) | Primitives   | 
++------------+-------------------------------------------------------------------------------------------+----------------+----------------------+--------------+
+|mlp         | L1_no_activ_V_U/mlp_L1_no_activ_V_memcore_U/mlp_L1_no_activ_V_memcore_ram_U/ram_reg       | User Attribute | 64 x 18              | RAM64M x 6   | 
+|mlp         | L1_activ_V_U/mlp_L1_no_activ_V_memcore_U/mlp_L1_no_activ_V_memcore_ram_U/ram_reg          | User Attribute | 64 x 18              | RAM64M x 6   | 
+|mlp         | L2_bias_added_V_U/mlp_L2_bias_added_V_memcore_U/mlp_L2_bias_added_V_memcore_ram_U/ram_reg | User Attribute | 64 x 18              | RAM64M x 6   | 
+|mlp         | L2_out_V_U/mlp_L2_out_V_memcore_U/mlp_L2_out_V_memcore_ram_U/ram_reg                      | User Attribute | 32 x 18              | RAM32M x 3   | 
+|mlp         | L2_out_activ_V_U/mlp_L2_out_V_memcore_U/mlp_L2_out_V_memcore_ram_U/ram_reg                | User Attribute | 32 x 18              | RAM32M x 3   | 
++------------+-------------------------------------------------------------------------------------------+----------------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping  Report (see note below)
++-----------------------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name                  | DSP Mapping            | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-----------------------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|mlp_mac_muladd_5nbkb_DSP48_0 | (C'+(A2*(B:0x191)')')' | 14     | 14     | 10     | -      | 14     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|mlp_mac_muladd_18cud_DSP48_1 | C+(A2*B2)'             | 25     | 18     | 38     | -      | 38     | 1    | 1    | 0    | -    | -     | 1    | 0    | 
+|mlp                          | (A''*B'')'             | 18     | 18     | -      | -      | 36     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|mlp_mac_muladd_4neOg_DSP48_3 | (C'+(A2*(B:0x1a)')')'  | 9      | 9      | 6      | -      | 9      | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|mlp                          | (A''*B'')'             | 18     | 18     | -      | -      | 36     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|mlp                          | (A''*B'')'             | 18     | 18     | -      | -      | 36     | 2    | 2    | -    | -    | -     | 1    | 1    | 
++-----------------------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance i_4_0/bias_added_V_U/mlp_bias_added_V_memcore_U/mlp_bias_added_V_memcore_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 899.902 ; gain = 586.750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:40 . Memory (MB): peak = 964.730 ; gain = 651.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping  Report
++------------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                   | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|mlp_bias_added_V_memcore_ram: | ram_reg    | 1 K x 18(WRITE_FIRST)  | W | R | 1 K x 18(WRITE_FIRST)  | W | R | Port A and B     | 1      | 0      | 
++------------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping  Report
++------------+-------------------------------------------------------------------------------------------+----------------+----------------------+--------------+
+|Module Name | RTL Object                                                                                | Inference      | Size (Depth x Width) | Primitives   | 
++------------+-------------------------------------------------------------------------------------------+----------------+----------------------+--------------+
+|mlp         | L1_no_activ_V_U/mlp_L1_no_activ_V_memcore_U/mlp_L1_no_activ_V_memcore_ram_U/ram_reg       | User Attribute | 64 x 18              | RAM64M x 6   | 
+|mlp         | L1_activ_V_U/mlp_L1_no_activ_V_memcore_U/mlp_L1_no_activ_V_memcore_ram_U/ram_reg          | User Attribute | 64 x 18              | RAM64M x 6   | 
+|mlp         | L2_bias_added_V_U/mlp_L2_bias_added_V_memcore_U/mlp_L2_bias_added_V_memcore_ram_U/ram_reg | User Attribute | 64 x 18              | RAM64M x 6   | 
+|mlp         | L2_out_V_U/mlp_L2_out_V_memcore_U/mlp_L2_out_V_memcore_ram_U/ram_reg                      | User Attribute | 32 x 18              | RAM32M x 3   | 
+|mlp         | L2_out_activ_V_U/mlp_L2_out_V_memcore_U/mlp_L2_out_V_memcore_ram_U/ram_reg                | User Attribute | 32 x 18              | RAM32M x 3   | 
++------------+-------------------------------------------------------------------------------------------+----------------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance bias_added_V_U/mlp_bias_added_V_memcore_U/mlp_bias_added_V_memcore_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 964.730 ; gain = 651.578
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 964.730 ; gain = 651.578
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 964.730 ; gain = 651.578
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 964.730 ; gain = 651.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 964.730 ; gain = 651.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 964.730 ; gain = 651.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 964.730 ; gain = 651.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+-----------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                                        | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+-----------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|mlp         | mvprod_layer_1_U0/m_mid2_reg_313_pp0_iter6_reg_reg[4]           | 5      | 5     | NO           | NO                 | YES               | 5      | 0       | 
+|mlp         | mvprod_layer_2_U0/m_mid2_reg_319_pp0_iter7_reg_reg[3]           | 6      | 4     | NO           | NO                 | YES               | 4      | 0       | 
+|mlp         | mvprod_layer_1_U0/exitcond_flatten_reg_339_pp0_iter6_reg_reg[0] | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|mlp         | mvprod_layer_1_U0/tmp_15_reg_363_pp0_iter6_reg_reg[0]           | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|mlp         | mvprod_layer_2_U0/exitcond_flatten_reg_345_pp0_iter7_reg_reg[0] | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|mlp         | mvprod_layer_2_U0/tmp_6_reg_369_pp0_iter7_reg_reg[0]            | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|mlp         | mvprod_layer_2_U0/tmp_1_reg_354_pp0_iter7_reg_reg[0]            | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
++------------+-----------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |CARRY4    |    52|
+|2     |DSP48E1   |     2|
+|3     |DSP48E1_1 |     1|
+|4     |DSP48E1_2 |     3|
+|5     |LUT1      |   106|
+|6     |LUT2      |   116|
+|7     |LUT3      |    94|
+|8     |LUT4      |   117|
+|9     |LUT5      |   122|
+|10    |LUT6      |   144|
+|11    |RAM32M    |     6|
+|12    |RAM64M    |    18|
+|13    |RAMB18E1  |     1|
+|14    |SRL16E    |    14|
+|15    |FDRE      |   647|
+|16    |FDSE      |    18|
++------+----------+------+
+
+Report Instance Areas: 
++------+----------------------------------------+--------------------------------+------+
+|      |Instance                                |Module                          |Cells |
++------+----------------------------------------+--------------------------------+------+
+|1     |top                                     |                                |  1461|
+|2     |  Block_arrayctor_loop_U0               |Block_arrayctor_loop            |     6|
+|3     |  L1_activ_V_U                          |mlp_L1_no_activ_V               |    40|
+|4     |    mlp_L1_no_activ_V_memcore_U         |mlp_L1_no_activ_V_memcore_6     |    31|
+|5     |      mlp_L1_no_activ_V_memcore_ram_U   |mlp_L1_no_activ_V_memcore_ram_7 |    31|
+|6     |  L1_no_activ_V_U                       |mlp_L1_no_activ_V_0             |    34|
+|7     |    mlp_L1_no_activ_V_memcore_U         |mlp_L1_no_activ_V_memcore       |    24|
+|8     |      mlp_L1_no_activ_V_memcore_ram_U   |mlp_L1_no_activ_V_memcore_ram   |    24|
+|9     |  L2_bias_added_V_U                     |mlp_L2_bias_added_V             |    40|
+|10    |    mlp_L2_bias_added_V_memcore_U       |mlp_L2_bias_added_V_memcore     |    24|
+|11    |      mlp_L2_bias_added_V_memcore_ram_U |mlp_L2_bias_added_V_memcore_ram |    24|
+|12    |  L2_out_V_U                            |mlp_L2_out_V                    |    31|
+|13    |    mlp_L2_out_V_memcore_U              |mlp_L2_out_V_memcore_4          |    21|
+|14    |      mlp_L2_out_V_memcore_ram_U        |mlp_L2_out_V_memcore_ram_5      |    21|
+|15    |  L2_out_activ_V_U                      |mlp_L2_out_V_1                  |    42|
+|16    |    mlp_L2_out_V_memcore_U              |mlp_L2_out_V_memcore            |    29|
+|17    |      mlp_L2_out_V_memcore_ram_U        |mlp_L2_out_V_memcore_ram        |    29|
+|18    |  add_bias_pre_L1_U0                    |add_bias_pre_L1                 |    90|
+|19    |  add_bias_pre_L2_U0                    |add_bias_pre_L2                 |    48|
+|20    |  bias_added_V_U                        |mlp_bias_added_V                |    17|
+|21    |    mlp_bias_added_V_memcore_U          |mlp_bias_added_V_memcore        |     1|
+|22    |      mlp_bias_added_V_memcore_ram_U    |mlp_bias_added_V_memcore_ram    |     1|
+|23    |  classify_U0                           |classify                        |    70|
+|24    |  digit_U                               |fifo_w32_d2_A                   |    21|
+|25    |    U_fifo_w32_d2_A_ram                 |fifo_w32_d2_A_shiftReg_3        |    12|
+|26    |  digit_load_loc_chann_U                |fifo_w32_d2_A_2                 |    22|
+|27    |    U_fifo_w32_d2_A_ram                 |fifo_w32_d2_A_shiftReg          |    13|
+|28    |  mvprod_layer_1_U0                     |mvprod_layer_1                  |   272|
+|29    |    mlp_mac_muladd_18cud_U4             |mlp_mac_muladd_18cud            |    21|
+|30    |      mlp_mac_muladd_18cud_DSP48_1_U    |mlp_mac_muladd_18cud_DSP48_1    |    21|
+|31    |  mvprod_layer_2_U0                     |mvprod_layer_2                  |   224|
+|32    |  p_src_mlp_cpp_lin_U0                  |p_src_mlp_cpp_lin               |     4|
+|33    |  sigmoid_activation_L_1_U0             |sigmoid_activation_L_1          |   250|
+|34    |  sigmoid_activation_L_U0               |sigmoid_activation_L            |   246|
++------+----------------------------------------+--------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 964.730 ; gain = 651.578
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 323 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:32 . Memory (MB): peak = 964.730 ; gain = 246.754
+Synthesis Optimization Complete : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 964.730 ; gain = 651.578
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 83 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 24 instances were transformed.
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 6 instances
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 18 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+240 Infos, 337 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:46 . Memory (MB): peak = 964.730 ; gain = 664.590
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/area_optimized/impl/verilog/project.runs/synth_1/mlp.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file mlp_utilization_synth.rpt -pb mlp_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.154 . Memory (MB): peak = 964.730 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Oct 26 22:28:40 2019...

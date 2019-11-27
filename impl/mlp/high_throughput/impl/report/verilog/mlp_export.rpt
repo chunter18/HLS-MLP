@@ -1,0 +1,20 @@
+
+
+Implementation tool: Xilinx Vivado v.2018.2
+Project:             mlp
+Solution:            high_throughput
+Device target:       xc7k325tffg676-2
+Report date:         Sun Oct 27 21:27:08 -0700 2019
+
+#=== Post-Implementation Resource usage ===
+SLICE:        19489
+LUT:          36657
+FF:           67208
+DSP:             20
+BRAM:             0
+SRL:           2210
+#=== Final timing ===
+CP required:    4.000
+CP achieved post-synthesis:    8.185
+CP achieved post-implementation:    8.159
+Timing not met

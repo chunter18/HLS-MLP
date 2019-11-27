@@ -1,0 +1,218 @@
+
+
+================================================================
+== Vivado HLS Report for 'mlp'
+================================================================
+* Date:           Sat Oct 26 22:26:25 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        mlp
+* Solution:       area_optimized
+* Product family: kintex7
+* Target device:  xc7k325tffg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|     3.286|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+-------+-------+-------+----------+
+    |    Latency    |    Interval   | Pipeline |
+    |  min  |  max  |  min  |  max  |   Type   |
+    +-------+-------+-------+-------+----------+
+    |  11860|  11862|  10025|  10025| dataflow |
+    +-------+-------+-------+-------+----------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------+------------------------+-------+-------+-------+-------+---------------------------------------------+
+        |                           |                        |    Latency    |    Interval   |                   Pipeline                  |
+        |          Instance         |         Module         |  min  |  max  |  min  |  max  |                     Type                    |
+        +---------------------------+------------------------+-------+-------+-------+-------+---------------------------------------------+
+        |mvprod_layer_2_U0          |mvprod_layer_2          |    267|    268|    260|    260| loop rewind(delay=4 initiation interval(s)) |
+        |sigmoid_activation_L_1_U0  |sigmoid_activation_L_1  |    201|    201|    201|    201|                     none                    |
+        |sigmoid_activation_L_U0    |sigmoid_activation_L    |     81|     81|     81|     81|                     none                    |
+        |mvprod_layer_1_U0          |mvprod_layer_1          |  10031|  10032|  10025|  10025| loop rewind(delay=4 initiation interval(s)) |
+        |classify_U0                |classify                |     22|     22|     22|     22|                     none                    |
+        |add_bias_pre_L1_U0         |add_bias_pre_L1         |   1201|   1201|   1201|   1201|                     none                    |
+        |add_bias_pre_L2_U0         |add_bias_pre_L2         |     51|     51|     51|     51|                     none                    |
+        |Block_arrayctor_loop_U0    |Block_arrayctor_loop    |      0|      0|      0|      0|                     none                    |
+        |p_src_mlp_cpp_lin_U0       |p_src_mlp_cpp_lin       |      0|      0|      0|      0|                     none                    |
+        +---------------------------+------------------------+-------+-------+-------+-------+---------------------------------------------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  |
++-----------------+---------+-------+--------+--------+
+|DSP              |        -|      -|       -|       -|
+|Expression       |        -|      -|       0|      46|
+|FIFO             |        0|      -|      10|      88|
+|Instance         |        0|      6|    1395|    1869|
+|Memory           |        1|      -|     180|      30|
+|Multiplexer      |        -|      -|       -|      54|
+|Register         |        -|      -|       9|       -|
++-----------------+---------+-------+--------+--------+
+|Total            |        1|      6|    1594|    2087|
++-----------------+---------+-------+--------+--------+
+|Available        |      890|    840|  407600|  203800|
++-----------------+---------+-------+--------+--------+
+|Utilization (%)  |    ~0   |   ~0  |   ~0   |       1|
++-----------------+---------+-------+--------+--------+
+
++ Detail: 
+    * Instance: 
+    +---------------------------+------------------------+---------+-------+-----+-----+
+    |          Instance         |         Module         | BRAM_18K| DSP48E|  FF | LUT |
+    +---------------------------+------------------------+---------+-------+-----+-----+
+    |Block_arrayctor_loop_U0    |Block_arrayctor_loop    |        0|      0|   34|   20|
+    |add_bias_pre_L1_U0         |add_bias_pre_L1         |        0|      0|   41|   96|
+    |add_bias_pre_L2_U0         |add_bias_pre_L2         |        0|      0|   14|   89|
+    |classify_U0                |classify                |        0|      0|   63|  162|
+    |mvprod_layer_1_U0          |mvprod_layer_1          |        0|      2|  451|  461|
+    |mvprod_layer_2_U0          |mvprod_layer_2          |        0|      2|  477|  473|
+    |p_src_mlp_cpp_lin_U0       |p_src_mlp_cpp_lin       |        0|      0|   34|   20|
+    |sigmoid_activation_L_U0    |sigmoid_activation_L    |        0|      1|  141|  273|
+    |sigmoid_activation_L_1_U0  |sigmoid_activation_L_1  |        0|      1|  140|  275|
+    +---------------------------+------------------------+---------+-------+-----+-----+
+    |Total                      |                        |        0|      6| 1395| 1869|
+    +---------------------------+------------------------+---------+-------+-----+-----+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +-------------------+---------------------+---------+----+----+------+-----+------+-------------+
+    |       Memory      |        Module       | BRAM_18K| FF | LUT| Words| Bits| Banks| W*Bits*Banks|
+    +-------------------+---------------------+---------+----+----+------+-----+------+-------------+
+    |L1_no_activ_V_U    |mlp_L1_no_activ_V    |        0|  36|   8|    25|   18|     2|          900|
+    |L1_activ_V_U       |mlp_L1_no_activ_V    |        0|  36|   8|    25|   18|     2|          900|
+    |L2_bias_added_V_U  |mlp_L2_bias_added_V  |        0|  36|   8|    26|   18|     2|          936|
+    |L2_out_V_U         |mlp_L2_out_V         |        0|  36|   3|    10|   18|     2|          360|
+    |L2_out_activ_V_U   |mlp_L2_out_V         |        0|  36|   3|    10|   18|     2|          360|
+    |bias_added_V_U     |mlp_bias_added_V     |        1|   0|   0|   401|   18|     2|        14436|
+    +-------------------+---------------------+---------+----+----+------+-----+------+-------------+
+    |Total              |                     |        1| 180|  30|   497|  108|    12|        17892|
+    +-------------------+---------------------+---------+----+----+------+-----+------+-------------+
+
+    * FIFO: 
+    +------------------------+---------+---+----+------+-----+---------+
+    |          Name          | BRAM_18K| FF| LUT| Depth| Bits| Size:D*B|
+    +------------------------+---------+---+----+------+-----+---------+
+    |digit_U                 |        0|  5|  44|     2|   32|       64|
+    |digit_load_loc_chann_U  |        0|  5|  44|     2|   32|       64|
+    +------------------------+---------+---+----+------+-----+---------+
+    |Total                   |        0| 10|  88|     4|   64|      128|
+    +------------------------+---------+---+----+------+-----+---------+
+
+    * Expression: 
+    +-------------------------------------+----------+-------+---+----+------------+------------+
+    |            Variable Name            | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------------------+----------+-------+---+----+------------+------------+
+    |add_bias_pre_L1_U0_ap_ready_count    |     +    |      0|  0|  10|           2|           1|
+    |mvprod_layer_1_U0_ap_ready_count     |     +    |      0|  0|  10|           2|           1|
+    |mvprod_layer_2_U0_ap_ready_count     |     +    |      0|  0|  10|           2|           1|
+    |add_bias_pre_L1_U0_ap_start          |    and   |      0|  0|   2|           1|           1|
+    |ap_idle                              |    and   |      0|  0|   2|           1|           1|
+    |ap_sync_ready                        |    and   |      0|  0|   2|           1|           1|
+    |mvprod_layer_1_U0_ap_start           |    and   |      0|  0|   2|           1|           1|
+    |mvprod_layer_2_U0_ap_start           |    and   |      0|  0|   2|           1|           1|
+    |ap_sync_add_bias_pre_L1_U0_ap_ready  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_mvprod_layer_1_U0_ap_ready   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_mvprod_layer_2_U0_ap_ready   |    or    |      0|  0|   2|           1|           1|
+    +-------------------------------------+----------+-------+---+----+------------+------------+
+    |Total                                |          |      0|  0|  46|          14|          11|
+    +-------------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------------------+----+-----------+-----+-----------+
+    |                   Name                  | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------------------+----+-----------+-----+-----------+
+    |add_bias_pre_L1_U0_ap_ready_count        |   9|          2|    2|          4|
+    |ap_sync_reg_add_bias_pre_L1_U0_ap_ready  |   9|          2|    1|          2|
+    |ap_sync_reg_mvprod_layer_1_U0_ap_ready   |   9|          2|    1|          2|
+    |ap_sync_reg_mvprod_layer_2_U0_ap_ready   |   9|          2|    1|          2|
+    |mvprod_layer_1_U0_ap_ready_count         |   9|          2|    2|          4|
+    |mvprod_layer_2_U0_ap_ready_count         |   9|          2|    2|          4|
+    +-----------------------------------------+----+-----------+-----+-----------+
+    |Total                                    |  54|         12|    9|         18|
+    +-----------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------------------+---+----+-----+-----------+
+    |                   Name                  | FF| LUT| Bits| Const Bits|
+    +-----------------------------------------+---+----+-----+-----------+
+    |add_bias_pre_L1_U0_ap_ready_count        |  2|   0|    2|          0|
+    |ap_sync_reg_add_bias_pre_L1_U0_ap_ready  |  1|   0|    1|          0|
+    |ap_sync_reg_mvprod_layer_1_U0_ap_ready   |  1|   0|    1|          0|
+    |ap_sync_reg_mvprod_layer_2_U0_ap_ready   |  1|   0|    1|          0|
+    |mvprod_layer_1_U0_ap_ready_count         |  2|   0|    2|          0|
+    |mvprod_layer_2_U0_ap_ready_count         |  2|   0|    2|          0|
+    +-----------------------------------------+---+----+-----+-----------+
+    |Total                                    |  9|   0|    9|          0|
+    +-----------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+--------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-----------------------+-----+-----+------------+--------------+--------------+
+|ap_clk                 |  in |    1| ap_ctrl_hs |      mlp     | return value |
+|ap_rst                 |  in |    1| ap_ctrl_hs |      mlp     | return value |
+|ap_return              | out |   32| ap_ctrl_hs |      mlp     | return value |
+|ap_done                | out |    1| ap_ctrl_hs |      mlp     | return value |
+|ap_start               |  in |    1| ap_ctrl_hs |      mlp     | return value |
+|ap_ready               | out |    1| ap_ctrl_hs |      mlp     | return value |
+|ap_idle                | out |    1| ap_ctrl_hs |      mlp     | return value |
+|weights_L1_V_address0  | out |   14|  ap_memory | weights_L1_V |     array    |
+|weights_L1_V_ce0       | out |    1|  ap_memory | weights_L1_V |     array    |
+|weights_L1_V_d0        | out |   18|  ap_memory | weights_L1_V |     array    |
+|weights_L1_V_q0        |  in |   18|  ap_memory | weights_L1_V |     array    |
+|weights_L1_V_we0       | out |    1|  ap_memory | weights_L1_V |     array    |
+|weights_L1_V_address1  | out |   14|  ap_memory | weights_L1_V |     array    |
+|weights_L1_V_ce1       | out |    1|  ap_memory | weights_L1_V |     array    |
+|weights_L1_V_d1        | out |   18|  ap_memory | weights_L1_V |     array    |
+|weights_L1_V_q1        |  in |   18|  ap_memory | weights_L1_V |     array    |
+|weights_L1_V_we1       | out |    1|  ap_memory | weights_L1_V |     array    |
+|weights_L2_V_address0  | out |    9|  ap_memory | weights_L2_V |     array    |
+|weights_L2_V_ce0       | out |    1|  ap_memory | weights_L2_V |     array    |
+|weights_L2_V_d0        | out |   18|  ap_memory | weights_L2_V |     array    |
+|weights_L2_V_q0        |  in |   18|  ap_memory | weights_L2_V |     array    |
+|weights_L2_V_we0       | out |    1|  ap_memory | weights_L2_V |     array    |
+|weights_L2_V_address1  | out |    9|  ap_memory | weights_L2_V |     array    |
+|weights_L2_V_ce1       | out |    1|  ap_memory | weights_L2_V |     array    |
+|weights_L2_V_d1        | out |   18|  ap_memory | weights_L2_V |     array    |
+|weights_L2_V_q1        |  in |   18|  ap_memory | weights_L2_V |     array    |
+|weights_L2_V_we1       | out |    1|  ap_memory | weights_L2_V |     array    |
+|input_V_address0       | out |    9|  ap_memory |    input_V   |     array    |
+|input_V_ce0            | out |    1|  ap_memory |    input_V   |     array    |
+|input_V_d0             | out |   18|  ap_memory |    input_V   |     array    |
+|input_V_q0             |  in |   18|  ap_memory |    input_V   |     array    |
+|input_V_we0            | out |    1|  ap_memory |    input_V   |     array    |
+|input_V_address1       | out |    9|  ap_memory |    input_V   |     array    |
+|input_V_ce1            | out |    1|  ap_memory |    input_V   |     array    |
+|input_V_d1             | out |   18|  ap_memory |    input_V   |     array    |
+|input_V_q1             |  in |   18|  ap_memory |    input_V   |     array    |
+|input_V_we1            | out |    1|  ap_memory |    input_V   |     array    |
++-----------------------+-----+-----+------------+--------------+--------------+
+

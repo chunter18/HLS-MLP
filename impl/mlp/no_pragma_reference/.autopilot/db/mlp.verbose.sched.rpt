@@ -1,0 +1,521 @@
+
+
+================================================================
+== Vivado HLS Report for 'mlp'
+================================================================
+* Date:           Sat Oct 26 14:05:39 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        mlp
+* Solution:       solution1
+* Product family: kintex7
+* Target device:  xc7k325tffg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|     3.286|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+-------+-------+-------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    |  min  |  max  |  min  |  max  |   Type  |
+    +-------+-------+-------+-------+---------+
+    |  63600|  63600|  63600|  63600|   none  |
+    +-------+-------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+------+------+----------+-----------+-----------+------+----------+
+        |          |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+------+------+----------+-----------+-----------+------+----------+
+        |- fill    |  1200|  1200|         3|          -|          -|   400|    no    |
+        |- activ   |   200|   200|         8|          -|          -|    25|    no    |
+        |- fill    |    50|    50|         2|          -|          -|    25|    no    |
+        |- activ   |    80|    80|         8|          -|          -|    10|    no    |
+        |- argmax  |    20|    20|         2|          -|          -|    10|    no    |
+        +----------+------+------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 27
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!tmp_i)
+	5  / (tmp_i)
+3 --> 
+	4  / true
+4 --> 
+	2  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / (!tmp_i2)
+	14  / (tmp_i2)
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	6  / true
+14 --> 
+	15  / (!tmp_i5)
+	16  / (tmp_i5)
+15 --> 
+	14  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / (!tmp_i6_22)
+	25  / (tmp_i6_22)
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	17  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / (!tmp_i9)
+27 --> 
+	26  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.26>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([10025 x i18]* %weights_L1_V), !map !144"   --->   Operation 28 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([260 x i18]* %weights_L2_V), !map !151"   --->   Operation 29 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([400 x i18]* %input_V), !map !158"   --->   Operation 30 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 0) nounwind, !map !164"   --->   Operation 31 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([4 x i8]* @mlp_str) nounwind"   --->   Operation 32 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%bias_added_V = alloca [401 x i18], align 4" [../src/mlp.cpp:6]   --->   Operation 33 'alloca' 'bias_added_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%L1_no_activ_V = alloca [25 x i18], align 4"   --->   Operation 34 'alloca' 'L1_no_activ_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%L1_activ_V = alloca [25 x i18], align 4" [../src/mlp.cpp:8]   --->   Operation 35 'alloca' 'L1_activ_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%L2_bias_added_V = alloca [26 x i18], align 4" [../src/mlp.cpp:9]   --->   Operation 36 'alloca' 'L2_bias_added_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%L2_out_V = alloca [10 x i18], align 4"   --->   Operation 37 'alloca' 'L2_out_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%L2_out_activ_V = alloca [10 x i18], align 4" [../src/mlp.cpp:11]   --->   Operation 38 'alloca' 'L2_out_activ_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%bias_added_V_addr = getelementptr [401 x i18]* %bias_added_V, i64 0, i64 0"   --->   Operation 39 'getelementptr' 'bias_added_V_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (2.26ns)   --->   "store i18 65536, i18* %bias_added_V_addr, align 4" [../src/mlp.cpp:51->../src/mlp.cpp:14]   --->   Operation 40 'store' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_1 : Operation 41 [1/1] (0.87ns)   --->   "br label %0" [../src/mlp.cpp:52->../src/mlp.cpp:14]   --->   Operation 41 'br' <Predicate = true> <Delay = 0.87>
+
+State 2 <SV = 1> <Delay = 2.26>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%i_i = phi i9 [ 0, %arrayctor.loop1.preheader ], [ %i, %1 ]"   --->   Operation 42 'phi' 'i_i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 43 [1/1] (0.98ns)   --->   "%tmp_i = icmp eq i9 %i_i, -112" [../src/mlp.cpp:52->../src/mlp.cpp:14]   --->   Operation 43 'icmp' 'tmp_i' <Predicate = true> <Delay = 0.98> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 400, i64 400, i64 400)"   --->   Operation 44 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 45 [1/1] (1.35ns)   --->   "%i = add i9 %i_i, 1" [../src/mlp.cpp:54->../src/mlp.cpp:14]   --->   Operation 45 'add' 'i' <Predicate = true> <Delay = 1.35> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 46 [1/1] (0.00ns)   --->   "br i1 %tmp_i, label %add_bias_pre_L1.exit, label %1" [../src/mlp.cpp:52->../src/mlp.cpp:14]   --->   Operation 46 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%tmp_43_i = zext i9 %i_i to i64" [../src/mlp.cpp:54->../src/mlp.cpp:14]   --->   Operation 47 'zext' 'tmp_43_i' <Predicate = (!tmp_i)> <Delay = 0.00>
+ST_2 : Operation 48 [1/1] (0.00ns)   --->   "%input_V_addr = getelementptr [400 x i18]* %input_V, i64 0, i64 %tmp_43_i" [../src/mlp.cpp:54->../src/mlp.cpp:14]   --->   Operation 48 'getelementptr' 'input_V_addr' <Predicate = (!tmp_i)> <Delay = 0.00>
+ST_2 : Operation 49 [2/2] (2.26ns)   --->   "%input_V_load = load i18* %input_V_addr, align 4" [../src/mlp.cpp:54->../src/mlp.cpp:14]   --->   Operation 49 'load' 'input_V_load' <Predicate = (!tmp_i)> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_2 : Operation 50 [2/2] (0.00ns)   --->   "call fastcc void @mvprod_layer_1([10025 x i18]* %weights_L1_V, [401 x i18]* %bias_added_V, [25 x i18]* %L1_no_activ_V)" [../src/mlp.cpp:15]   --->   Operation 50 'call' <Predicate = (tmp_i)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 2.26>
+ST_3 : Operation 51 [1/2] (2.26ns)   --->   "%input_V_load = load i18* %input_V_addr, align 4" [../src/mlp.cpp:54->../src/mlp.cpp:14]   --->   Operation 51 'load' 'input_V_load' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+
+State 4 <SV = 3> <Delay = 2.26>
+ST_4 : Operation 52 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([5 x i8]* @p_str1) nounwind" [../src/mlp.cpp:53->../src/mlp.cpp:14]   --->   Operation 52 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_i_19 = zext i9 %i to i64" [../src/mlp.cpp:54->../src/mlp.cpp:14]   --->   Operation 53 'zext' 'tmp_i_19' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 54 [1/1] (0.00ns)   --->   "%bias_added_V_addr_1 = getelementptr [401 x i18]* %bias_added_V, i64 0, i64 %tmp_i_19" [../src/mlp.cpp:54->../src/mlp.cpp:14]   --->   Operation 54 'getelementptr' 'bias_added_V_addr_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 55 [1/1] (2.26ns)   --->   "store i18 %input_V_load, i18* %bias_added_V_addr_1, align 4" [../src/mlp.cpp:54->../src/mlp.cpp:14]   --->   Operation 55 'store' <Predicate = true> <Delay = 2.26> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_4 : Operation 56 [1/1] (0.00ns)   --->   "br label %0" [../src/mlp.cpp:52->../src/mlp.cpp:14]   --->   Operation 56 'br' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 2> <Delay = 0.87>
+ST_5 : Operation 57 [1/2] (0.00ns)   --->   "call fastcc void @mvprod_layer_1([10025 x i18]* %weights_L1_V, [401 x i18]* %bias_added_V, [25 x i18]* %L1_no_activ_V)" [../src/mlp.cpp:15]   --->   Operation 57 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 58 [1/1] (0.87ns)   --->   "br label %2" [../src/mlp.cpp:122->../src/mlp.cpp:16]   --->   Operation 58 'br' <Predicate = true> <Delay = 0.87>
+
+State 6 <SV = 3> <Delay = 1.14>
+ST_6 : Operation 59 [1/1] (0.00ns)   --->   "%i_i1 = phi i5 [ 0, %add_bias_pre_L1.exit ], [ %i_2, %5 ]"   --->   Operation 59 'phi' 'i_i1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 60 [1/1] (0.88ns)   --->   "%tmp_i2 = icmp eq i5 %i_i1, -7" [../src/mlp.cpp:122->../src/mlp.cpp:16]   --->   Operation 60 'icmp' 'tmp_i2' <Predicate = true> <Delay = 0.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 61 [1/1] (0.00ns)   --->   "%empty_20 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 25, i64 25, i64 25)"   --->   Operation 61 'speclooptripcount' 'empty_20' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 62 [1/1] (1.10ns)   --->   "%i_2 = add i5 %i_i1, 1" [../src/mlp.cpp:122->../src/mlp.cpp:16]   --->   Operation 62 'add' 'i_2' <Predicate = true> <Delay = 1.10> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 63 [1/1] (0.00ns)   --->   "br i1 %tmp_i2, label %sigmoid_activation_L1.exit, label %_ifconv.i" [../src/mlp.cpp:122->../src/mlp.cpp:16]   --->   Operation 63 'br' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 64 [1/1] (0.00ns)   --->   "%tmp_i3 = zext i5 %i_i1 to i64" [../src/mlp.cpp:124->../src/mlp.cpp:16]   --->   Operation 64 'zext' 'tmp_i3' <Predicate = (!tmp_i2)> <Delay = 0.00>
+ST_6 : Operation 65 [1/1] (0.00ns)   --->   "%L1_no_activ_V_addr = getelementptr [25 x i18]* %L1_no_activ_V, i64 0, i64 %tmp_i3" [../src/mlp.cpp:124->../src/mlp.cpp:16]   --->   Operation 65 'getelementptr' 'L1_no_activ_V_addr' <Predicate = (!tmp_i2)> <Delay = 0.00>
+ST_6 : Operation 66 [2/2] (1.14ns)   --->   "%p_Val2_s = load i18* %L1_no_activ_V_addr, align 4" [../src/mlp.cpp:124->../src/mlp.cpp:16]   --->   Operation 66 'load' 'p_Val2_s' <Predicate = (!tmp_i2)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_6 : Operation 67 [1/1] (0.00ns)   --->   "%L2_bias_added_V_addr = getelementptr [26 x i18]* %L2_bias_added_V, i64 0, i64 0"   --->   Operation 67 'getelementptr' 'L2_bias_added_V_addr' <Predicate = (tmp_i2)> <Delay = 0.00>
+ST_6 : Operation 68 [1/1] (1.14ns)   --->   "store i18 65536, i18* %L2_bias_added_V_addr, align 4" [../src/mlp.cpp:62->../src/mlp.cpp:18]   --->   Operation 68 'store' <Predicate = (tmp_i2)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_6 : Operation 69 [1/1] (0.87ns)   --->   "br label %6" [../src/mlp.cpp:63->../src/mlp.cpp:18]   --->   Operation 69 'br' <Predicate = (tmp_i2)> <Delay = 0.87>
+
+State 7 <SV = 4> <Delay = 1.14>
+ST_7 : Operation 70 [1/2] (1.14ns)   --->   "%p_Val2_s = load i18* %L1_no_activ_V_addr, align 4" [../src/mlp.cpp:124->../src/mlp.cpp:16]   --->   Operation 70 'load' 'p_Val2_s' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_7 : Operation 71 [1/1] (0.00ns)   --->   "%tmp_1 = call i1 @_ssdm_op_BitSelect.i1.i18.i32(i18 %p_Val2_s, i32 17)" [../src/mlp.cpp:127->../src/mlp.cpp:16]   --->   Operation 71 'bitselect' 'tmp_1' <Predicate = true> <Delay = 0.00>
+
+State 8 <SV = 5> <Delay = 3.21>
+ST_8 : Operation 72 [1/1] (1.36ns)   --->   "%p_Val2_8_i = sub i18 0, %p_Val2_s" [../src/mlp.cpp:128->../src/mlp.cpp:16]   --->   Operation 72 'sub' 'p_Val2_8_i' <Predicate = (tmp_1)> <Delay = 1.36> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 73 [1/1] (0.56ns)   --->   "%p_Val2_3 = select i1 %tmp_1, i18 %p_Val2_8_i, i18 %p_Val2_s" [../src/mlp.cpp:127->../src/mlp.cpp:16]   --->   Operation 73 'select' 'p_Val2_3' <Predicate = true> <Delay = 0.56> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 74 [1/1] (1.28ns)   --->   "%tmp_15_i = icmp sgt i18 %p_Val2_3, 16384" [../src/mlp.cpp:132->../src/mlp.cpp:16]   --->   Operation 74 'icmp' 'tmp_15_i' <Predicate = true> <Delay = 1.28> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 75 [1/1] (0.00ns)   --->   "%tmp = call i14 @_ssdm_op_PartSelect.i14.i18.i32.i32(i18 %p_Val2_3, i32 2, i32 15)" [../src/mlp.cpp:127->../src/mlp.cpp:16]   --->   Operation 75 'partselect' 'tmp' <Predicate = true> <Delay = 0.00>
+
+State 9 <SV = 6> <Delay = 3.04>
+ST_9 : Operation 76 [1/1] (0.00ns)   --->   "%OP1_V = sext i18 %p_Val2_3 to i36" [../src/mlp.cpp:135->../src/mlp.cpp:16]   --->   Operation 76 'sext' 'OP1_V' <Predicate = (!tmp_15_i)> <Delay = 0.00>
+ST_9 : Operation 77 [3/3] (3.04ns)   --->   "%tmp_18_i = mul nsw i36 %OP1_V, %OP1_V" [../src/mlp.cpp:135->../src/mlp.cpp:16]   --->   Operation 77 'mul' 'tmp_18_i' <Predicate = (!tmp_15_i)> <Delay = 3.04> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.04> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 10 <SV = 7> <Delay = 3.04>
+ST_10 : Operation 78 [2/3] (3.04ns)   --->   "%tmp_18_i = mul nsw i36 %OP1_V, %OP1_V" [../src/mlp.cpp:135->../src/mlp.cpp:16]   --->   Operation 78 'mul' 'tmp_18_i' <Predicate = (!tmp_15_i)> <Delay = 3.04> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.04> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 11 <SV = 8> <Delay = 1.36>
+ST_11 : Operation 79 [1/1] (0.00ns)   --->   "%tmp_17_i = call i18 @_ssdm_op_BitConcatenate.i18.i14.i4(i14 %tmp, i4 0)" [../src/mlp.cpp:127->../src/mlp.cpp:16]   --->   Operation 79 'bitconcatenate' 'tmp_17_i' <Predicate = (!tmp_15_i)> <Delay = 0.00>
+ST_11 : Operation 80 [1/3] (0.00ns)   --->   "%tmp_18_i = mul nsw i36 %OP1_V, %OP1_V" [../src/mlp.cpp:135->../src/mlp.cpp:16]   --->   Operation 80 'mul' 'tmp_18_i' <Predicate = (!tmp_15_i)> <Delay = 0.00> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.04> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_11 : Operation 81 [1/1] (1.36ns)   --->   "%p_Val2_5_i = add i18 %tmp_17_i, 32768" [../src/mlp.cpp:135->../src/mlp.cpp:16]   --->   Operation 81 'add' 'p_Val2_5_i' <Predicate = (!tmp_15_i)> <Delay = 1.36> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 9> <Delay = 3.16>
+ST_12 : Operation 82 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([6 x i8]* @p_str4) nounwind" [../src/mlp.cpp:123->../src/mlp.cpp:16]   --->   Operation 82 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 83 [1/1] (0.00ns)   --->   "%tmp_20_i = call i26 @_ssdm_op_BitConcatenate.i26.i18.i8(i18 %p_Val2_5_i, i8 0)" [../src/mlp.cpp:135->../src/mlp.cpp:16]   --->   Operation 83 'bitconcatenate' 'tmp_20_i' <Predicate = (!tmp_15_i)> <Delay = 0.00>
+ST_12 : Operation 84 [1/1] (0.00ns)   --->   "%tmp_21_i_cast = call i26 @_ssdm_op_PartSelect.i26.i36.i32.i32(i36 %tmp_18_i, i32 5, i32 30)" [../src/mlp.cpp:135->../src/mlp.cpp:16]   --->   Operation 84 'partselect' 'tmp_21_i_cast' <Predicate = (!tmp_15_i)> <Delay = 0.00>
+ST_12 : Operation 85 [1/1] (1.45ns)   --->   "%p_Val2_4 = sub i26 %tmp_20_i, %tmp_21_i_cast" [../src/mlp.cpp:135->../src/mlp.cpp:16]   --->   Operation 85 'sub' 'p_Val2_4' <Predicate = (!tmp_15_i)> <Delay = 1.45> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 86 [1/1] (0.00ns)   --->   "%tmp_23_i = call i18 @_ssdm_op_PartSelect.i18.i26.i32.i32(i26 %p_Val2_4, i32 8, i32 25)" [../src/mlp.cpp:135->../src/mlp.cpp:16]   --->   Operation 86 'partselect' 'tmp_23_i' <Predicate = (!tmp_15_i)> <Delay = 0.00>
+ST_12 : Operation 87 [1/1] (0.56ns)   --->   "%p_Val2_5 = select i1 %tmp_15_i, i18 65536, i18 %tmp_23_i" [../src/mlp.cpp:141->../src/mlp.cpp:16]   --->   Operation 87 'select' 'p_Val2_5' <Predicate = true> <Delay = 0.56> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 88 [1/1] (0.00ns)   --->   "br i1 %tmp_1, label %4, label %3" [../src/mlp.cpp:138->../src/mlp.cpp:16]   --->   Operation 88 'br' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 89 [1/1] (0.00ns)   --->   "%L1_activ_V_addr_1 = getelementptr [25 x i18]* %L1_activ_V, i64 0, i64 %tmp_i3" [../src/mlp.cpp:139->../src/mlp.cpp:16]   --->   Operation 89 'getelementptr' 'L1_activ_V_addr_1' <Predicate = (!tmp_1)> <Delay = 0.00>
+ST_12 : Operation 90 [1/1] (1.14ns)   --->   "store i18 %p_Val2_5, i18* %L1_activ_V_addr_1, align 4" [../src/mlp.cpp:139->../src/mlp.cpp:16]   --->   Operation 90 'store' <Predicate = (!tmp_1)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_12 : Operation 91 [1/1] (0.00ns)   --->   "br label %5" [../src/mlp.cpp:139->../src/mlp.cpp:16]   --->   Operation 91 'br' <Predicate = (!tmp_1)> <Delay = 0.00>
+
+State 13 <SV = 10> <Delay = 2.51>
+ST_13 : Operation 92 [1/1] (1.36ns)   --->   "%p_Val2_i = sub i18 65536, %p_Val2_5" [../src/mlp.cpp:141->../src/mlp.cpp:16]   --->   Operation 92 'sub' 'p_Val2_i' <Predicate = (tmp_1)> <Delay = 1.36> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 93 [1/1] (0.00ns)   --->   "%L1_activ_V_addr = getelementptr [25 x i18]* %L1_activ_V, i64 0, i64 %tmp_i3" [../src/mlp.cpp:141->../src/mlp.cpp:16]   --->   Operation 93 'getelementptr' 'L1_activ_V_addr' <Predicate = (tmp_1)> <Delay = 0.00>
+ST_13 : Operation 94 [1/1] (1.14ns)   --->   "store i18 %p_Val2_i, i18* %L1_activ_V_addr, align 4" [../src/mlp.cpp:141->../src/mlp.cpp:16]   --->   Operation 94 'store' <Predicate = (tmp_1)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_13 : Operation 95 [1/1] (0.00ns)   --->   "br label %5"   --->   Operation 95 'br' <Predicate = (tmp_1)> <Delay = 0.00>
+ST_13 : Operation 96 [1/1] (0.00ns)   --->   "br label %2" [../src/mlp.cpp:122->../src/mlp.cpp:16]   --->   Operation 96 'br' <Predicate = true> <Delay = 0.00>
+
+State 14 <SV = 4> <Delay = 1.14>
+ST_14 : Operation 97 [1/1] (0.00ns)   --->   "%i_i4 = phi i5 [ 0, %sigmoid_activation_L1.exit ], [ %i_1, %7 ]"   --->   Operation 97 'phi' 'i_i4' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 98 [1/1] (0.88ns)   --->   "%tmp_i5 = icmp eq i5 %i_i4, -7" [../src/mlp.cpp:63->../src/mlp.cpp:18]   --->   Operation 98 'icmp' 'tmp_i5' <Predicate = true> <Delay = 0.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 99 [1/1] (0.00ns)   --->   "%empty_21 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 25, i64 25, i64 25)"   --->   Operation 99 'speclooptripcount' 'empty_21' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 100 [1/1] (1.10ns)   --->   "%i_1 = add i5 %i_i4, 1" [../src/mlp.cpp:65->../src/mlp.cpp:18]   --->   Operation 100 'add' 'i_1' <Predicate = true> <Delay = 1.10> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 101 [1/1] (0.00ns)   --->   "br i1 %tmp_i5, label %add_bias_pre_L2.exit, label %7" [../src/mlp.cpp:63->../src/mlp.cpp:18]   --->   Operation 101 'br' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 102 [1/1] (0.00ns)   --->   "%tmp_42_i = zext i5 %i_i4 to i64" [../src/mlp.cpp:65->../src/mlp.cpp:18]   --->   Operation 102 'zext' 'tmp_42_i' <Predicate = (!tmp_i5)> <Delay = 0.00>
+ST_14 : Operation 103 [1/1] (0.00ns)   --->   "%L1_activ_V_addr_2 = getelementptr [25 x i18]* %L1_activ_V, i64 0, i64 %tmp_42_i" [../src/mlp.cpp:65->../src/mlp.cpp:18]   --->   Operation 103 'getelementptr' 'L1_activ_V_addr_2' <Predicate = (!tmp_i5)> <Delay = 0.00>
+ST_14 : Operation 104 [2/2] (1.14ns)   --->   "%L1_activ_V_load = load i18* %L1_activ_V_addr_2, align 4" [../src/mlp.cpp:65->../src/mlp.cpp:18]   --->   Operation 104 'load' 'L1_activ_V_load' <Predicate = (!tmp_i5)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_14 : Operation 105 [2/2] (0.00ns)   --->   "call fastcc void @mvprod_layer_2([260 x i18]* %weights_L2_V, [26 x i18]* %L2_bias_added_V, [10 x i18]* %L2_out_V)" [../src/mlp.cpp:19]   --->   Operation 105 'call' <Predicate = (tmp_i5)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 5> <Delay = 2.29>
+ST_15 : Operation 106 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([5 x i8]* @p_str1) nounwind" [../src/mlp.cpp:64->../src/mlp.cpp:18]   --->   Operation 106 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 107 [1/1] (0.00ns)   --->   "%tmp_i6 = zext i5 %i_1 to i64" [../src/mlp.cpp:65->../src/mlp.cpp:18]   --->   Operation 107 'zext' 'tmp_i6' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 108 [1/2] (1.14ns)   --->   "%L1_activ_V_load = load i18* %L1_activ_V_addr_2, align 4" [../src/mlp.cpp:65->../src/mlp.cpp:18]   --->   Operation 108 'load' 'L1_activ_V_load' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_15 : Operation 109 [1/1] (0.00ns)   --->   "%L2_bias_added_V_addr_1 = getelementptr [26 x i18]* %L2_bias_added_V, i64 0, i64 %tmp_i6" [../src/mlp.cpp:65->../src/mlp.cpp:18]   --->   Operation 109 'getelementptr' 'L2_bias_added_V_addr_1' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 110 [1/1] (1.14ns)   --->   "store i18 %L1_activ_V_load, i18* %L2_bias_added_V_addr_1, align 4" [../src/mlp.cpp:65->../src/mlp.cpp:18]   --->   Operation 110 'store' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_15 : Operation 111 [1/1] (0.00ns)   --->   "br label %6" [../src/mlp.cpp:63->../src/mlp.cpp:18]   --->   Operation 111 'br' <Predicate = true> <Delay = 0.00>
+
+State 16 <SV = 5> <Delay = 0.87>
+ST_16 : Operation 112 [1/2] (0.00ns)   --->   "call fastcc void @mvprod_layer_2([260 x i18]* %weights_L2_V, [26 x i18]* %L2_bias_added_V, [10 x i18]* %L2_out_V)" [../src/mlp.cpp:19]   --->   Operation 112 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_16 : Operation 113 [1/1] (0.87ns)   --->   "br label %8" [../src/mlp.cpp:154->../src/mlp.cpp:20]   --->   Operation 113 'br' <Predicate = true> <Delay = 0.87>
+
+State 17 <SV = 6> <Delay = 1.14>
+ST_17 : Operation 114 [1/1] (0.00ns)   --->   "%i_i5 = phi i4 [ 0, %add_bias_pre_L2.exit ], [ %i_3, %11 ]"   --->   Operation 114 'phi' 'i_i5' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 115 [1/1] (0.86ns)   --->   "%tmp_i6_22 = icmp eq i4 %i_i5, -6" [../src/mlp.cpp:154->../src/mlp.cpp:20]   --->   Operation 115 'icmp' 'tmp_i6_22' <Predicate = true> <Delay = 0.86> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 116 [1/1] (0.00ns)   --->   "%empty_23 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)"   --->   Operation 116 'speclooptripcount' 'empty_23' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 117 [1/1] (1.01ns)   --->   "%i_3 = add i4 %i_i5, 1" [../src/mlp.cpp:154->../src/mlp.cpp:20]   --->   Operation 117 'add' 'i_3' <Predicate = true> <Delay = 1.01> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 118 [1/1] (0.00ns)   --->   "br i1 %tmp_i6_22, label %sigmoid_activation_L2.exit, label %_ifconv.i16" [../src/mlp.cpp:154->../src/mlp.cpp:20]   --->   Operation 118 'br' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 119 [1/1] (0.00ns)   --->   "%tmp_1_i = zext i4 %i_i5 to i64" [../src/mlp.cpp:156->../src/mlp.cpp:20]   --->   Operation 119 'zext' 'tmp_1_i' <Predicate = (!tmp_i6_22)> <Delay = 0.00>
+ST_17 : Operation 120 [1/1] (0.00ns)   --->   "%L2_out_V_addr = getelementptr [10 x i18]* %L2_out_V, i64 0, i64 %tmp_1_i" [../src/mlp.cpp:156->../src/mlp.cpp:20]   --->   Operation 120 'getelementptr' 'L2_out_V_addr' <Predicate = (!tmp_i6_22)> <Delay = 0.00>
+ST_17 : Operation 121 [2/2] (1.14ns)   --->   "%p_Val2_6 = load i18* %L2_out_V_addr, align 4" [../src/mlp.cpp:156->../src/mlp.cpp:20]   --->   Operation 121 'load' 'p_Val2_6' <Predicate = (!tmp_i6_22)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_17 : Operation 122 [1/1] (0.00ns)   --->   "%L2_out_activ_V_addr = getelementptr [10 x i18]* %L2_out_activ_V, i64 0, i64 0"   --->   Operation 122 'getelementptr' 'L2_out_activ_V_addr' <Predicate = (tmp_i6_22)> <Delay = 0.00>
+ST_17 : Operation 123 [2/2] (1.14ns)   --->   "%max_V = load i18* %L2_out_activ_V_addr, align 4" [../src/mlp.cpp:29->../src/mlp.cpp:22]   --->   Operation 123 'load' 'max_V' <Predicate = (tmp_i6_22)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+
+State 18 <SV = 7> <Delay = 1.14>
+ST_18 : Operation 124 [1/2] (1.14ns)   --->   "%p_Val2_6 = load i18* %L2_out_V_addr, align 4" [../src/mlp.cpp:156->../src/mlp.cpp:20]   --->   Operation 124 'load' 'p_Val2_6' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_18 : Operation 125 [1/1] (0.00ns)   --->   "%tmp_2 = call i1 @_ssdm_op_BitSelect.i1.i18.i32(i18 %p_Val2_6, i32 17)" [../src/mlp.cpp:159->../src/mlp.cpp:20]   --->   Operation 125 'bitselect' 'tmp_2' <Predicate = true> <Delay = 0.00>
+
+State 19 <SV = 8> <Delay = 3.21>
+ST_19 : Operation 126 [1/1] (1.36ns)   --->   "%p_Val2_1_i9 = sub i18 0, %p_Val2_6" [../src/mlp.cpp:160->../src/mlp.cpp:20]   --->   Operation 126 'sub' 'p_Val2_1_i9' <Predicate = (tmp_2)> <Delay = 1.36> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 127 [1/1] (0.56ns)   --->   "%p_Val2_7 = select i1 %tmp_2, i18 %p_Val2_1_i9, i18 %p_Val2_6" [../src/mlp.cpp:159->../src/mlp.cpp:20]   --->   Operation 127 'select' 'p_Val2_7' <Predicate = true> <Delay = 0.56> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_19 : Operation 128 [1/1] (1.28ns)   --->   "%tmp_7_i1 = icmp sgt i18 %p_Val2_7, 32768" [../src/mlp.cpp:164->../src/mlp.cpp:20]   --->   Operation 128 'icmp' 'tmp_7_i1' <Predicate = true> <Delay = 1.28> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 129 [1/1] (0.00ns)   --->   "%tmp_s = call i15 @_ssdm_op_PartSelect.i15.i18.i32.i32(i18 %p_Val2_7, i32 2, i32 16)" [../src/mlp.cpp:159->../src/mlp.cpp:20]   --->   Operation 129 'partselect' 'tmp_s' <Predicate = true> <Delay = 0.00>
+
+State 20 <SV = 9> <Delay = 3.04>
+ST_20 : Operation 130 [1/1] (0.00ns)   --->   "%OP1_V_1 = sext i18 %p_Val2_7 to i36" [../src/mlp.cpp:167->../src/mlp.cpp:20]   --->   Operation 130 'sext' 'OP1_V_1' <Predicate = (!tmp_7_i1)> <Delay = 0.00>
+ST_20 : Operation 131 [3/3] (3.04ns)   --->   "%tmp_8_i = mul nsw i36 %OP1_V_1, %OP1_V_1" [../src/mlp.cpp:167->../src/mlp.cpp:20]   --->   Operation 131 'mul' 'tmp_8_i' <Predicate = (!tmp_7_i1)> <Delay = 3.04> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.04> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 21 <SV = 10> <Delay = 3.04>
+ST_21 : Operation 132 [2/3] (3.04ns)   --->   "%tmp_8_i = mul nsw i36 %OP1_V_1, %OP1_V_1" [../src/mlp.cpp:167->../src/mlp.cpp:20]   --->   Operation 132 'mul' 'tmp_8_i' <Predicate = (!tmp_7_i1)> <Delay = 3.04> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.04> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 22 <SV = 11> <Delay = 1.36>
+ST_22 : Operation 133 [1/1] (0.00ns)   --->   "%tmp_i2_24 = call i18 @_ssdm_op_BitConcatenate.i18.i15.i3(i15 %tmp_s, i3 0)" [../src/mlp.cpp:159->../src/mlp.cpp:20]   --->   Operation 133 'bitconcatenate' 'tmp_i2_24' <Predicate = (!tmp_7_i1)> <Delay = 0.00>
+ST_22 : Operation 134 [1/3] (0.00ns)   --->   "%tmp_8_i = mul nsw i36 %OP1_V_1, %OP1_V_1" [../src/mlp.cpp:167->../src/mlp.cpp:20]   --->   Operation 134 'mul' 'tmp_8_i' <Predicate = (!tmp_7_i1)> <Delay = 0.00> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.04> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_22 : Operation 135 [1/1] (1.36ns)   --->   "%p_Val2_2_i = add i18 %tmp_i2_24, 32768" [../src/mlp.cpp:167->../src/mlp.cpp:20]   --->   Operation 135 'add' 'p_Val2_2_i' <Predicate = (!tmp_7_i1)> <Delay = 1.36> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 12> <Delay = 3.18>
+ST_23 : Operation 136 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([6 x i8]* @p_str4) nounwind" [../src/mlp.cpp:155->../src/mlp.cpp:20]   --->   Operation 136 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 137 [1/1] (0.00ns)   --->   "%tmp_6_i1 = call i28 @_ssdm_op_BitConcatenate.i28.i18.i10(i18 %p_Val2_2_i, i10 0)" [../src/mlp.cpp:167->../src/mlp.cpp:20]   --->   Operation 137 'bitconcatenate' 'tmp_6_i1' <Predicate = (!tmp_7_i1)> <Delay = 0.00>
+ST_23 : Operation 138 [1/1] (0.00ns)   --->   "%tmp_10_i_cast = call i28 @_ssdm_op_PartSelect.i28.i36.i32.i32(i36 %tmp_8_i, i32 5, i32 32)" [../src/mlp.cpp:167->../src/mlp.cpp:20]   --->   Operation 138 'partselect' 'tmp_10_i_cast' <Predicate = (!tmp_7_i1)> <Delay = 0.00>
+ST_23 : Operation 139 [1/1] (1.47ns)   --->   "%p_Val2_8 = sub i28 %tmp_6_i1, %tmp_10_i_cast" [../src/mlp.cpp:167->../src/mlp.cpp:20]   --->   Operation 139 'sub' 'p_Val2_8' <Predicate = (!tmp_7_i1)> <Delay = 1.47> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 140 [1/1] (0.00ns)   --->   "%tmp_12_i = call i18 @_ssdm_op_PartSelect.i18.i28.i32.i32(i28 %p_Val2_8, i32 10, i32 27)" [../src/mlp.cpp:167->../src/mlp.cpp:20]   --->   Operation 140 'partselect' 'tmp_12_i' <Predicate = (!tmp_7_i1)> <Delay = 0.00>
+ST_23 : Operation 141 [1/1] (0.56ns)   --->   "%p_Val2_9 = select i1 %tmp_7_i1, i18 65536, i18 %tmp_12_i" [../src/mlp.cpp:173->../src/mlp.cpp:20]   --->   Operation 141 'select' 'p_Val2_9' <Predicate = true> <Delay = 0.56> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_23 : Operation 142 [1/1] (0.00ns)   --->   "br i1 %tmp_2, label %10, label %9" [../src/mlp.cpp:170->../src/mlp.cpp:20]   --->   Operation 142 'br' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 143 [1/1] (0.00ns)   --->   "%L2_out_activ_V_addr_2 = getelementptr [10 x i18]* %L2_out_activ_V, i64 0, i64 %tmp_1_i" [../src/mlp.cpp:171->../src/mlp.cpp:20]   --->   Operation 143 'getelementptr' 'L2_out_activ_V_addr_2' <Predicate = (!tmp_2)> <Delay = 0.00>
+ST_23 : Operation 144 [1/1] (1.14ns)   --->   "store i18 %p_Val2_9, i18* %L2_out_activ_V_addr_2, align 4" [../src/mlp.cpp:171->../src/mlp.cpp:20]   --->   Operation 144 'store' <Predicate = (!tmp_2)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_23 : Operation 145 [1/1] (0.00ns)   --->   "br label %11" [../src/mlp.cpp:171->../src/mlp.cpp:20]   --->   Operation 145 'br' <Predicate = (!tmp_2)> <Delay = 0.00>
+
+State 24 <SV = 13> <Delay = 2.51>
+ST_24 : Operation 146 [1/1] (1.36ns)   --->   "%p_Val2_7_i = sub i18 65536, %p_Val2_9" [../src/mlp.cpp:173->../src/mlp.cpp:20]   --->   Operation 146 'sub' 'p_Val2_7_i' <Predicate = (tmp_2)> <Delay = 1.36> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 147 [1/1] (0.00ns)   --->   "%L2_out_activ_V_addr_1 = getelementptr [10 x i18]* %L2_out_activ_V, i64 0, i64 %tmp_1_i" [../src/mlp.cpp:173->../src/mlp.cpp:20]   --->   Operation 147 'getelementptr' 'L2_out_activ_V_addr_1' <Predicate = (tmp_2)> <Delay = 0.00>
+ST_24 : Operation 148 [1/1] (1.14ns)   --->   "store i18 %p_Val2_7_i, i18* %L2_out_activ_V_addr_1, align 4" [../src/mlp.cpp:173->../src/mlp.cpp:20]   --->   Operation 148 'store' <Predicate = (tmp_2)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_24 : Operation 149 [1/1] (0.00ns)   --->   "br label %11"   --->   Operation 149 'br' <Predicate = (tmp_2)> <Delay = 0.00>
+ST_24 : Operation 150 [1/1] (0.00ns)   --->   "br label %8" [../src/mlp.cpp:154->../src/mlp.cpp:20]   --->   Operation 150 'br' <Predicate = true> <Delay = 0.00>
+
+State 25 <SV = 7> <Delay = 1.14>
+ST_25 : Operation 151 [1/2] (1.14ns)   --->   "%max_V = load i18* %L2_out_activ_V_addr, align 4" [../src/mlp.cpp:29->../src/mlp.cpp:22]   --->   Operation 151 'load' 'max_V' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_25 : Operation 152 [1/1] (0.87ns)   --->   "br label %12" [../src/mlp.cpp:33->../src/mlp.cpp:22]   --->   Operation 152 'br' <Predicate = true> <Delay = 0.87>
+
+State 26 <SV = 8> <Delay = 1.14>
+ST_26 : Operation 153 [1/1] (0.00ns)   --->   "%p_0_i = phi i18 [ %max_V, %sigmoid_activation_L2.exit ], [ %max_V_1_i_0_i, %._crit_edge.i ]"   --->   Operation 153 'phi' 'p_0_i' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 154 [1/1] (0.00ns)   --->   "%digit = phi i32 [ 1, %sigmoid_activation_L2.exit ], [ %network_digit_2_i_ne, %._crit_edge.i ]" [../src/mlp.cpp:35->../src/mlp.cpp:22]   --->   Operation 154 'phi' 'digit' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 155 [1/1] (0.00ns)   --->   "%k_i = phi i4 [ 0, %sigmoid_activation_L2.exit ], [ %network_digit, %._crit_edge.i ]"   --->   Operation 155 'phi' 'k_i' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 156 [1/1] (0.86ns)   --->   "%tmp_i9 = icmp eq i4 %k_i, -6" [../src/mlp.cpp:33->../src/mlp.cpp:22]   --->   Operation 156 'icmp' 'tmp_i9' <Predicate = true> <Delay = 0.86> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 157 [1/1] (0.00ns)   --->   "%empty_25 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)"   --->   Operation 157 'speclooptripcount' 'empty_25' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 158 [1/1] (1.01ns)   --->   "%network_digit = add i4 %k_i, 1" [../src/mlp.cpp:38->../src/mlp.cpp:22]   --->   Operation 158 'add' 'network_digit' <Predicate = true> <Delay = 1.01> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 159 [1/1] (0.00ns)   --->   "br i1 %tmp_i9, label %classify.exit, label %._crit_edge.i" [../src/mlp.cpp:33->../src/mlp.cpp:22]   --->   Operation 159 'br' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 160 [1/1] (0.00ns)   --->   "%tmp_i1 = zext i4 %k_i to i64" [../src/mlp.cpp:35->../src/mlp.cpp:22]   --->   Operation 160 'zext' 'tmp_i1' <Predicate = (!tmp_i9)> <Delay = 0.00>
+ST_26 : Operation 161 [1/1] (0.00ns)   --->   "%L2_out_activ_V_addr_3 = getelementptr [10 x i18]* %L2_out_activ_V, i64 0, i64 %tmp_i1" [../src/mlp.cpp:35->../src/mlp.cpp:22]   --->   Operation 161 'getelementptr' 'L2_out_activ_V_addr_3' <Predicate = (!tmp_i9)> <Delay = 0.00>
+ST_26 : Operation 162 [2/2] (1.14ns)   --->   "%max_V_1 = load i18* %L2_out_activ_V_addr_3, align 4" [../src/mlp.cpp:35->../src/mlp.cpp:22]   --->   Operation 162 'load' 'max_V_1' <Predicate = (!tmp_i9)> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_26 : Operation 163 [1/1] (0.00ns)   --->   "ret i32 %digit" [../src/mlp.cpp:24]   --->   Operation 163 'ret' <Predicate = (tmp_i9)> <Delay = 0.00>
+
+State 27 <SV = 9> <Delay = 2.99>
+ST_27 : Operation 164 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([7 x i8]* @p_str) nounwind" [../src/mlp.cpp:34->../src/mlp.cpp:22]   --->   Operation 164 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 165 [1/2] (1.14ns)   --->   "%max_V_1 = load i18* %L2_out_activ_V_addr_3, align 4" [../src/mlp.cpp:35->../src/mlp.cpp:22]   --->   Operation 165 'load' 'max_V_1' <Predicate = true> <Delay = 1.14> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 18> <Depth = 10> <RAM>
+ST_27 : Operation 166 [1/1] (1.28ns)   --->   "%tmp_41_i = icmp sgt i18 %max_V_1, %p_0_i" [../src/mlp.cpp:35->../src/mlp.cpp:22]   --->   Operation 166 'icmp' 'tmp_41_i' <Predicate = true> <Delay = 1.28> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 167 [1/1] (0.00ns)   --->   "%network_digit_cast = zext i4 %network_digit to i32" [../src/mlp.cpp:38->../src/mlp.cpp:22]   --->   Operation 167 'zext' 'network_digit_cast' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 168 [1/1] (0.56ns)   --->   "%max_V_1_i_0_i = select i1 %tmp_41_i, i18 %max_V_1, i18 %p_0_i" [../src/mlp.cpp:35->../src/mlp.cpp:22]   --->   Operation 168 'select' 'max_V_1_i_0_i' <Predicate = true> <Delay = 0.56> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_27 : Operation 169 [1/1] (0.49ns)   --->   "%network_digit_2_i_ne = select i1 %tmp_41_i, i32 %network_digit_cast, i32 %digit" [../src/mlp.cpp:35->../src/mlp.cpp:22]   --->   Operation 169 'select' 'network_digit_2_i_ne' <Predicate = true> <Delay = 0.49> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_27 : Operation 170 [1/1] (0.00ns)   --->   "br label %12" [../src/mlp.cpp:33->../src/mlp.cpp:22]   --->   Operation 170 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 0.5ns.
+
+ <State 1>: 2.27ns
+The critical path consists of the following:
+	'alloca' operation ('bias_added.V', ../src/mlp.cpp:6) [9]  (0 ns)
+	'getelementptr' operation ('bias_added_V_addr') [15]  (0 ns)
+	'store' operation (../src/mlp.cpp:51->../src/mlp.cpp:14) of constant 65536 on array 'bias_added.V', ../src/mlp.cpp:6 [16]  (2.27 ns)
+
+ <State 2>: 2.27ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', ../src/mlp.cpp:54->../src/mlp.cpp:14) [19]  (0 ns)
+	'getelementptr' operation ('input_V_addr', ../src/mlp.cpp:54->../src/mlp.cpp:14) [28]  (0 ns)
+	'load' operation ('input_V_load', ../src/mlp.cpp:54->../src/mlp.cpp:14) on array 'input_V' [29]  (2.27 ns)
+
+ <State 3>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('input_V_load', ../src/mlp.cpp:54->../src/mlp.cpp:14) on array 'input_V' [29]  (2.27 ns)
+
+ <State 4>: 2.27ns
+The critical path consists of the following:
+	'getelementptr' operation ('bias_added_V_addr_1', ../src/mlp.cpp:54->../src/mlp.cpp:14) [30]  (0 ns)
+	'store' operation (../src/mlp.cpp:54->../src/mlp.cpp:14) of variable 'input_V_load', ../src/mlp.cpp:54->../src/mlp.cpp:14 on array 'bias_added.V', ../src/mlp.cpp:6 [31]  (2.27 ns)
+
+ <State 5>: 0.872ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', ../src/mlp.cpp:122->../src/mlp.cpp:16) [37]  (0.872 ns)
+
+ <State 6>: 1.15ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', ../src/mlp.cpp:122->../src/mlp.cpp:16) [37]  (0 ns)
+	'getelementptr' operation ('L1_no_activ_V_addr', ../src/mlp.cpp:124->../src/mlp.cpp:16) [45]  (0 ns)
+	'load' operation ('__Val2__', ../src/mlp.cpp:124->../src/mlp.cpp:16) on array 'L1_no_activ_V' [46]  (1.15 ns)
+
+ <State 7>: 1.15ns
+The critical path consists of the following:
+	'load' operation ('__Val2__', ../src/mlp.cpp:124->../src/mlp.cpp:16) on array 'L1_no_activ_V' [46]  (1.15 ns)
+
+ <State 8>: 3.21ns
+The critical path consists of the following:
+	'sub' operation ('p_Val2_8_i', ../src/mlp.cpp:128->../src/mlp.cpp:16) [48]  (1.37 ns)
+	'select' operation ('__Val2__', ../src/mlp.cpp:127->../src/mlp.cpp:16) [49]  (0.563 ns)
+	'icmp' operation ('tmp_15_i', ../src/mlp.cpp:132->../src/mlp.cpp:16) [50]  (1.28 ns)
+
+ <State 9>: 3.04ns
+The critical path consists of the following:
+	'mul' operation ('tmp_18_i', ../src/mlp.cpp:135->../src/mlp.cpp:16) [54]  (3.04 ns)
+
+ <State 10>: 3.04ns
+The critical path consists of the following:
+	'mul' operation ('tmp_18_i', ../src/mlp.cpp:135->../src/mlp.cpp:16) [54]  (3.04 ns)
+
+ <State 11>: 1.37ns
+The critical path consists of the following:
+	'add' operation ('p_Val2_5_i', ../src/mlp.cpp:135->../src/mlp.cpp:16) [55]  (1.37 ns)
+
+ <State 12>: 3.16ns
+The critical path consists of the following:
+	'sub' operation ('__Val2__', ../src/mlp.cpp:135->../src/mlp.cpp:16) [58]  (1.45 ns)
+	'select' operation ('__Val2__', ../src/mlp.cpp:141->../src/mlp.cpp:16) [60]  (0.563 ns)
+	'store' operation (../src/mlp.cpp:139->../src/mlp.cpp:16) of variable '__Val2__', ../src/mlp.cpp:141->../src/mlp.cpp:16 on array 'L1_activ.V', ../src/mlp.cpp:8 [64]  (1.15 ns)
+
+ <State 13>: 2.51ns
+The critical path consists of the following:
+	'sub' operation ('p_Val2_i', ../src/mlp.cpp:141->../src/mlp.cpp:16) [67]  (1.37 ns)
+	'store' operation (../src/mlp.cpp:141->../src/mlp.cpp:16) of variable 'p_Val2_i', ../src/mlp.cpp:141->../src/mlp.cpp:16 on array 'L1_activ.V', ../src/mlp.cpp:8 [69]  (1.15 ns)
+
+ <State 14>: 1.15ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', ../src/mlp.cpp:65->../src/mlp.cpp:18) [78]  (0 ns)
+	'getelementptr' operation ('L1_activ_V_addr_2', ../src/mlp.cpp:65->../src/mlp.cpp:18) [87]  (0 ns)
+	'load' operation ('L1_activ_V_load', ../src/mlp.cpp:65->../src/mlp.cpp:18) on array 'L1_activ.V', ../src/mlp.cpp:8 [88]  (1.15 ns)
+
+ <State 15>: 2.3ns
+The critical path consists of the following:
+	'load' operation ('L1_activ_V_load', ../src/mlp.cpp:65->../src/mlp.cpp:18) on array 'L1_activ.V', ../src/mlp.cpp:8 [88]  (1.15 ns)
+	'store' operation (../src/mlp.cpp:65->../src/mlp.cpp:18) of variable 'L1_activ_V_load', ../src/mlp.cpp:65->../src/mlp.cpp:18 on array 'L2_bias_added.V', ../src/mlp.cpp:9 [90]  (1.15 ns)
+
+ <State 16>: 0.872ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', ../src/mlp.cpp:154->../src/mlp.cpp:20) [96]  (0.872 ns)
+
+ <State 17>: 1.15ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', ../src/mlp.cpp:154->../src/mlp.cpp:20) [96]  (0 ns)
+	'getelementptr' operation ('L2_out_V_addr', ../src/mlp.cpp:156->../src/mlp.cpp:20) [104]  (0 ns)
+	'load' operation ('__Val2__', ../src/mlp.cpp:156->../src/mlp.cpp:20) on array 'L2_out_V' [105]  (1.15 ns)
+
+ <State 18>: 1.15ns
+The critical path consists of the following:
+	'load' operation ('__Val2__', ../src/mlp.cpp:156->../src/mlp.cpp:20) on array 'L2_out_V' [105]  (1.15 ns)
+
+ <State 19>: 3.21ns
+The critical path consists of the following:
+	'sub' operation ('p_Val2_1_i9', ../src/mlp.cpp:160->../src/mlp.cpp:20) [107]  (1.37 ns)
+	'select' operation ('__Val2__', ../src/mlp.cpp:159->../src/mlp.cpp:20) [108]  (0.563 ns)
+	'icmp' operation ('tmp_7_i1', ../src/mlp.cpp:164->../src/mlp.cpp:20) [109]  (1.28 ns)
+
+ <State 20>: 3.04ns
+The critical path consists of the following:
+	'mul' operation ('tmp_8_i', ../src/mlp.cpp:167->../src/mlp.cpp:20) [113]  (3.04 ns)
+
+ <State 21>: 3.04ns
+The critical path consists of the following:
+	'mul' operation ('tmp_8_i', ../src/mlp.cpp:167->../src/mlp.cpp:20) [113]  (3.04 ns)
+
+ <State 22>: 1.37ns
+The critical path consists of the following:
+	'add' operation ('p_Val2_2_i', ../src/mlp.cpp:167->../src/mlp.cpp:20) [114]  (1.37 ns)
+
+ <State 23>: 3.18ns
+The critical path consists of the following:
+	'sub' operation ('__Val2__', ../src/mlp.cpp:167->../src/mlp.cpp:20) [117]  (1.47 ns)
+	'select' operation ('__Val2__', ../src/mlp.cpp:173->../src/mlp.cpp:20) [119]  (0.563 ns)
+	'store' operation (../src/mlp.cpp:171->../src/mlp.cpp:20) of variable '__Val2__', ../src/mlp.cpp:173->../src/mlp.cpp:20 on array 'L2_out_activ.V', ../src/mlp.cpp:11 [123]  (1.15 ns)
+
+ <State 24>: 2.51ns
+The critical path consists of the following:
+	'sub' operation ('p_Val2_7_i', ../src/mlp.cpp:173->../src/mlp.cpp:20) [126]  (1.37 ns)
+	'store' operation (../src/mlp.cpp:173->../src/mlp.cpp:20) of variable 'p_Val2_7_i', ../src/mlp.cpp:173->../src/mlp.cpp:20 on array 'L2_out_activ.V', ../src/mlp.cpp:11 [128]  (1.15 ns)
+
+ <State 25>: 1.15ns
+The critical path consists of the following:
+	'load' operation ('max.V', ../src/mlp.cpp:29->../src/mlp.cpp:22) on array 'L2_out_activ.V', ../src/mlp.cpp:11 [134]  (1.15 ns)
+
+ <State 26>: 1.15ns
+The critical path consists of the following:
+	'phi' operation ('network_digit') with incoming values : ('network_digit', ../src/mlp.cpp:38->../src/mlp.cpp:22) [139]  (0 ns)
+	'getelementptr' operation ('L2_out_activ_V_addr_3', ../src/mlp.cpp:35->../src/mlp.cpp:22) [147]  (0 ns)
+	'load' operation ('max.V', ../src/mlp.cpp:35->../src/mlp.cpp:22) on array 'L2_out_activ.V', ../src/mlp.cpp:11 [148]  (1.15 ns)
+
+ <State 27>: 3ns
+The critical path consists of the following:
+	'load' operation ('max.V', ../src/mlp.cpp:35->../src/mlp.cpp:22) on array 'L2_out_activ.V', ../src/mlp.cpp:11 [148]  (1.15 ns)
+	'icmp' operation ('tmp_41_i', ../src/mlp.cpp:35->../src/mlp.cpp:22) [149]  (1.28 ns)
+	'select' operation ('max_V_1_i_0_i', ../src/mlp.cpp:35->../src/mlp.cpp:22) [151]  (0.563 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

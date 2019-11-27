@@ -1,0 +1,156 @@
+#include <iostream>
+#include <fstream>
+
+#include "math.h"
+#include "mlp.h"
+
+//intermediate products for reference
+#define L1_FILENAME "L1_out_no_activ.dat"
+#define H1_FILENAME "L1_out_activ.dat"
+#define L2_FILENAME "L2_out_no_activ.dat"
+#define H2_FILENAME "L2_out_activ.dat"
+
+//weights needed
+#define WEIGHTS_L1_FILENAME "theta1.dat"
+#define WEIGHTS_L2_FILENAME "theta2.dat"
+
+//input and output data
+#define INPUT_BATCH_FILENAME "network_inputs_fullbatch.dat"
+#define OUTPUT_BATCH_FILENAME "network_outputs_fullbatch.dat"
+
+
+int main(void)
+{
+	/*
+	 * Testing bits at a time. first test will be for the un-activated L1 output
+	 */
+
+	//epsilon is maximum error rate allowed
+	float epsilon = 0.001;
+
+	//define filestreams to read in relevant data
+	std::ifstream input_data_s;		// network input data stream, aka the images batch
+	std::ifstream L1_weights_s;		// L1 wights data stream theta1
+	std::ifstream L1_outputs_s;		// golden reference stream for first layer
+
+	//define some arrays to hold input data
+
+	/*
+	 * So I encountered an error here trying to do this: input_data[5000][400]
+	 * HLS told me I had a seg fault but I hadnt seen any code run yet. I looked
+	 * Up the error and it said it happens when you try to allocated too much data
+	 * on the stack which I think is a bit wierd for a testbench - but instead f loading
+	 * the whole batch and passing a vector at a time, i will need to load a vector at a
+	 * time and re read as needed.
+	 */
+	input_t input_data[400]; 		//arg to function
+	weights_t L1_weights[25][401];	//arg to function
+	L1_out_t L1_out[25];			//arg to function
+
+	//float error_matrix[25];		// difference between L1_out and the golden reference matlab data
+
+	//open all the necessary files for reading
+
+	input_data_s.open(INPUT_BATCH_FILENAME);
+	if (input_data_s.is_open()==0)
+	{
+		std::cout << "failure opening file: " << INPUT_BATCH_FILENAME << std::endl;
+	}
+	else
+	{
+		std::cout << "opening file: " << INPUT_BATCH_FILENAME << std::endl;
+	}
+
+	L1_weights_s.open(WEIGHTS_L1_FILENAME);
+	if (L1_weights_s.is_open()==0)
+	{
+		std::cout << "failure opening file: " << WEIGHTS_L1_FILENAME << std::endl;
+	}
+	else
+	{
+		std::cout << "opening file: " << WEIGHTS_L1_FILENAME << std::endl;
+	}
+
+	L1_outputs_s.open(L1_FILENAME);
+	if (L1_outputs_s.is_open()==0)
+	{
+		std::cout << "failure opening file: " << L1_FILENAME << std::endl;
+	}
+	else
+	{
+		std::cout << "opening file: " << L1_FILENAME << std::endl;
+	}
+
+	//read in the data
+	float floating_point_tmp;
+	unsigned int i,j;
+	//read in the weights
+	for (i=0; i<25; i++)
+	{
+		for (j=0; j<401; j++)
+		{
+			L1_weights_s >> floating_point_tmp;
+			L1_weights[i][j] =  floating_point_tmp;
+		}
+	}
+	std::cout << std::endl <<  "L1 weights matrix read in successfully" << std::endl;
+	std::cout <<  "reference weight values:" << std::endl;
+	std::cout <<  (float)L1_weights[1][0] << std::endl;
+	std::cout <<  (float)L1_weights[1][0] << std::endl;
+	std::cout <<  (float)L1_weights[1][0] << std::endl;
+	std::cout <<  (float)L1_weights[1][0] << std::endl;
+	std::cout << std::endl;
+
+	float golden;
+	float diff = 0;
+	float max_diff = 0;
+	float MSE = 0;
+
+	for (i=0; i<400; i++)
+	{
+		input_data_s >> floating_point_tmp;
+		input_data[i] =  floating_point_tmp;
+	}
+	std::cout << std::endl <<  "input vector read in successfully" << std::endl;
+	std::cout <<  "reference input values:" << std::endl;
+	std::cout <<  (float)input_data[70] << std::endl;
+	std::cout <<  (float)input_data[71] << std::endl;
+	std::cout <<  (float)input_data[72] << std::endl;
+	std::cout <<  (float)input_data[73] << std::endl;
+	std::cout << std::endl;
+
+	//do the computation for single input.
+	mlp(L1_weights, input_data, L1_out);
+
+	float val;
+	//check the output
+	for (i=0; i<25; i++)
+	{
+		//read in a reference value
+		L1_outputs_s >> golden;
+		val = (float)L1_out[i];
+
+		std::cout << val << std::endl;
+		std::cout << golden << std::endl << std::endl;
+
+		diff = fabs(golden - val);
+		MSE += diff*diff;
+
+		if (diff > max_diff)
+		{
+			max_diff = diff;
+		}
+	}
+	MSE = MSE / float(25);
+	std::cout << std::endl << "maximum error = " << max_diff << std::endl;
+	std::cout << std::endl << "mean-squared error = " << MSE << std::endl;
+
+	std::cout << std::endl;
+	std::cout << "cleaning-up" << std::endl;
+	//close up the files.
+	input_data_s.close();
+	L1_weights_s.close();
+
+
+	return 0;
+}

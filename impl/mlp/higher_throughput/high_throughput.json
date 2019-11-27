@@ -1,0 +1,241 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "mlp",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "weights_L1",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "block",
+                "value": "",
+                "positionalBoolean": "type"
+              },
+              {
+                "name": "factor",
+                "value": "16"
+              },
+              {
+                "name": "dim",
+                "value": "2"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "mlp",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {"name": "DATAFLOW"}
+        },
+        {
+          "functionName": "mlp",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "input",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "block",
+                "value": "",
+                "positionalBoolean": "type"
+              },
+              {
+                "name": "factor",
+                "value": "16"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "mlp",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "bias_added",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "block",
+                "value": "",
+                "positionalBoolean": "type"
+              },
+              {
+                "name": "factor",
+                "value": "16"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "mvprod_layer_1",
+          "label": "outer",
+          "functionLabel": "",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [
+              {
+                "name": "II",
+                "value": "26"
+              },
+              {
+                "name": "rewind",
+                "value": "",
+                "positionalBoolean": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "mvprod_layer_1",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "ALLOCATION",
+            "option": [
+              {
+                "name": "instances",
+                "value": "mul",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "limit",
+                "value": "16"
+              },
+              {
+                "name": "operation",
+                "value": "",
+                "positionalBoolean": "type"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "mvprod_layer_2",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "ALLOCATION",
+            "option": [
+              {
+                "name": "instances",
+                "value": "mul",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "limit",
+                "value": "16"
+              },
+              {
+                "name": "operation",
+                "value": "",
+                "positionalBoolean": "type"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "mvprod_layer_2",
+          "label": "outer",
+          "functionLabel": "",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [
+              {
+                "name": "II",
+                "value": "13"
+              },
+              {
+                "name": "rewind",
+                "value": "",
+                "positionalBoolean": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "add_bias_pre_L1",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [{
+                "name": "II",
+                "value": "1"
+              }]
+          }
+        },
+        {
+          "functionName": "add_bias_pre_L2",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [{
+                "name": "II",
+                "value": "1"
+              }]
+          }
+        },
+        {
+          "functionName": "sigmoid_activation_L1",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [{
+                "name": "II",
+                "value": "1"
+              }]
+          }
+        },
+        {
+          "functionName": "sigmoid_activation_L2",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [{
+                "name": "II",
+                "value": "1"
+              }]
+          }
+        },
+        {
+          "functionName": "classify",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [{
+                "name": "II",
+                "value": "1"
+              }]
+          }
+        }
+      ]
+    }]}

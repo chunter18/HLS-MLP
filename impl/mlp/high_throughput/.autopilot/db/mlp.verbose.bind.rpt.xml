@@ -1,0 +1,54 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'mlp'" level="0">
+<item name = "Date">Sun Oct 27 20:35:42 2019
+</item>
+<item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
+<item name = "Project">mlp</item>
+<item name = "Solution">high_throughput</item>
+<item name = "Product family">kintex7</item>
+<item name = "Target device">xc7k325tffg676-2</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">4.00, 3.289, 0.50</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">1336, 1338, 650, 650, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_mvprod_layer_1_fu_122">mvprod_layer_1, 828, 829, 650, 650, loop rewind(delay=0 initiation interval(s))</column>
+<column name="grp_add_bias_pre_L1_fu_561">add_bias_pre_L1, 13, 13, 13, 13, none</column>
+<column name="grp_mvprod_layer_2_fu_597">mvprod_layer_2, 134, 135, 130, 130, loop rewind(delay=1 initiation interval(s))</column>
+<column name="grp_sigmoid_activation_L_1_fu_605">sigmoid_activation_L_1, 201, 201, 201, 201, none</column>
+<column name="grp_sigmoid_activation_L_fu_611">sigmoid_activation_L, 81, 81, 81, 81, none</column>
+<column name="grp_classify_fu_617">classify, 22, 22, 22, 22, none</column>
+<column name="grp_add_bias_pre_L2_fu_622">add_bias_pre_L2, 51, 51, 51, 51, none</column>
+<column name="digit_load_loc_chann_Block_arrayctor_loop_fu_628">Block_arrayctor_loop, 0, 0, 0, 0, none</column>
+<column name="tmp_p_src_mlp_cpp_lin_fu_634">p_src_mlp_cpp_lin, 0, 0, 0, 0, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

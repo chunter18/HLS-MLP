@@ -1,0 +1,1021 @@
+
+
+================================================================
+== Vivado HLS Report for 'add_bias_pre_L1'
+================================================================
+* Date:           Sun Oct 27 20:36:01 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        mlp
+* Solution:       high_throughput
+* Product family: kintex7
+* Target device:  xc7k325tffg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|     1.148|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   13|   13|   13|   13|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  |
++-----------------+---------+-------+--------+--------+
+|DSP              |        -|      -|       -|       -|
+|Expression       |        -|      -|       0|       2|
+|FIFO             |        -|      -|       -|       -|
+|Instance         |        -|      -|       -|       -|
+|Memory           |        -|      -|       -|       -|
+|Multiplexer      |        -|      -|       -|    1830|
+|Register         |        -|      -|    6639|       -|
++-----------------+---------+-------+--------+--------+
+|Total            |        0|      0|    6639|    1832|
++-----------------+---------+-------+--------+--------+
+|Available        |      890|    840|  407600|  203800|
++-----------------+---------+-------+--------+--------+
+|Utilization (%)  |        0|      0|       1|   ~0   |
++-----------------+---------+-------+--------+--------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+-------+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+-------+---+----+------------+------------+
+    |ap_block_state1  |    or    |      0|  0|   2|           1|           1|
+    +-----------------+----------+-------+---+----+------------+------------+
+    |Total            |          |      0|  0|   2|           1|           1|
+    +-----------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------+----+-----------+-----+-----------+
+    |         Name        | LUT| Input Size| Bits| Total Bits|
+    +---------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm            |  61|         15|    1|         15|
+    |ap_done              |   9|          2|    1|          2|
+    |input_0_V_address0   |  57|         14|    5|         70|
+    |input_0_V_address1   |  53|         13|    5|         65|
+    |input_10_V_address0  |  57|         14|    5|         70|
+    |input_10_V_address1  |  53|         13|    5|         65|
+    |input_11_V_address0  |  57|         14|    5|         70|
+    |input_11_V_address1  |  53|         13|    5|         65|
+    |input_12_V_address0  |  57|         14|    5|         70|
+    |input_12_V_address1  |  53|         13|    5|         65|
+    |input_13_V_address0  |  57|         14|    5|         70|
+    |input_13_V_address1  |  53|         13|    5|         65|
+    |input_14_V_address0  |  57|         14|    5|         70|
+    |input_14_V_address1  |  53|         13|    5|         65|
+    |input_15_V_address0  |  57|         14|    5|         70|
+    |input_15_V_address1  |  53|         13|    5|         65|
+    |input_1_V_address0   |  57|         14|    5|         70|
+    |input_1_V_address1   |  53|         13|    5|         65|
+    |input_2_V_address0   |  57|         14|    5|         70|
+    |input_2_V_address1   |  53|         13|    5|         65|
+    |input_3_V_address0   |  57|         14|    5|         70|
+    |input_3_V_address1   |  53|         13|    5|         65|
+    |input_4_V_address0   |  57|         14|    5|         70|
+    |input_4_V_address1   |  53|         13|    5|         65|
+    |input_5_V_address0   |  57|         14|    5|         70|
+    |input_5_V_address1   |  53|         13|    5|         65|
+    |input_6_V_address0   |  57|         14|    5|         70|
+    |input_6_V_address1   |  53|         13|    5|         65|
+    |input_7_V_address0   |  57|         14|    5|         70|
+    |input_7_V_address1   |  53|         13|    5|         65|
+    |input_8_V_address0   |  57|         14|    5|         70|
+    |input_8_V_address1   |  53|         13|    5|         65|
+    |input_9_V_address0   |  57|         14|    5|         70|
+    |input_9_V_address1   |  53|         13|    5|         65|
+    +---------------------+----+-----------+-----+-----------+
+    |Total                |1830|        449|  162|       2177|
+    +---------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------+----+----+-----+-----------+
+    |             Name            | FF | LUT| Bits| Const Bits|
+    +-----------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                    |  14|   0|   14|          0|
+    |ap_done_reg                  |   1|   0|    1|          0|
+    |input_0_V_load_10_reg_7475   |  18|   0|   18|          0|
+    |input_0_V_load_11_reg_7790   |  18|   0|   18|          0|
+    |input_0_V_load_12_reg_7795   |  18|   0|   18|          0|
+    |input_0_V_load_13_reg_8110   |  18|   0|   18|          0|
+    |input_0_V_load_14_reg_8115   |  18|   0|   18|          0|
+    |input_0_V_load_15_reg_8430   |  18|   0|   18|          0|
+    |input_0_V_load_16_reg_8435   |  18|   0|   18|          0|
+    |input_0_V_load_17_reg_8750   |  18|   0|   18|          0|
+    |input_0_V_load_18_reg_8755   |  18|   0|   18|          0|
+    |input_0_V_load_19_reg_9070   |  18|   0|   18|          0|
+    |input_0_V_load_1_reg_6190    |  18|   0|   18|          0|
+    |input_0_V_load_20_reg_9075   |  18|   0|   18|          0|
+    |input_0_V_load_21_reg_9390   |  18|   0|   18|          0|
+    |input_0_V_load_22_reg_9395   |  18|   0|   18|          0|
+    |input_0_V_load_2_reg_6195    |  18|   0|   18|          0|
+    |input_0_V_load_3_reg_6510    |  18|   0|   18|          0|
+    |input_0_V_load_4_reg_6515    |  18|   0|   18|          0|
+    |input_0_V_load_5_reg_6830    |  18|   0|   18|          0|
+    |input_0_V_load_6_reg_6835    |  18|   0|   18|          0|
+    |input_0_V_load_7_reg_7150    |  18|   0|   18|          0|
+    |input_0_V_load_8_reg_7155    |  18|   0|   18|          0|
+    |input_0_V_load_9_reg_7470    |  18|   0|   18|          0|
+    |input_0_V_load_reg_5950      |  18|   0|   18|          0|
+    |input_10_V_load_10_reg_7675  |  18|   0|   18|          0|
+    |input_10_V_load_11_reg_7990  |  18|   0|   18|          0|
+    |input_10_V_load_12_reg_7995  |  18|   0|   18|          0|
+    |input_10_V_load_13_reg_8310  |  18|   0|   18|          0|
+    |input_10_V_load_14_reg_8315  |  18|   0|   18|          0|
+    |input_10_V_load_15_reg_8630  |  18|   0|   18|          0|
+    |input_10_V_load_16_reg_8635  |  18|   0|   18|          0|
+    |input_10_V_load_17_reg_8950  |  18|   0|   18|          0|
+    |input_10_V_load_18_reg_8955  |  18|   0|   18|          0|
+    |input_10_V_load_19_reg_9270  |  18|   0|   18|          0|
+    |input_10_V_load_1_reg_6390   |  18|   0|   18|          0|
+    |input_10_V_load_20_reg_9275  |  18|   0|   18|          0|
+    |input_10_V_load_21_reg_9590  |  18|   0|   18|          0|
+    |input_10_V_load_22_reg_9595  |  18|   0|   18|          0|
+    |input_10_V_load_2_reg_6395   |  18|   0|   18|          0|
+    |input_10_V_load_3_reg_6710   |  18|   0|   18|          0|
+    |input_10_V_load_4_reg_6715   |  18|   0|   18|          0|
+    |input_10_V_load_5_reg_7030   |  18|   0|   18|          0|
+    |input_10_V_load_6_reg_7035   |  18|   0|   18|          0|
+    |input_10_V_load_7_reg_7350   |  18|   0|   18|          0|
+    |input_10_V_load_8_reg_7355   |  18|   0|   18|          0|
+    |input_10_V_load_9_reg_7670   |  18|   0|   18|          0|
+    |input_10_V_load_reg_6100     |  18|   0|   18|          0|
+    |input_11_V_load_10_reg_7695  |  18|   0|   18|          0|
+    |input_11_V_load_11_reg_8010  |  18|   0|   18|          0|
+    |input_11_V_load_12_reg_8015  |  18|   0|   18|          0|
+    |input_11_V_load_13_reg_8330  |  18|   0|   18|          0|
+    |input_11_V_load_14_reg_8335  |  18|   0|   18|          0|
+    |input_11_V_load_15_reg_8650  |  18|   0|   18|          0|
+    |input_11_V_load_16_reg_8655  |  18|   0|   18|          0|
+    |input_11_V_load_17_reg_8970  |  18|   0|   18|          0|
+    |input_11_V_load_18_reg_8975  |  18|   0|   18|          0|
+    |input_11_V_load_19_reg_9290  |  18|   0|   18|          0|
+    |input_11_V_load_1_reg_6410   |  18|   0|   18|          0|
+    |input_11_V_load_20_reg_9295  |  18|   0|   18|          0|
+    |input_11_V_load_21_reg_9610  |  18|   0|   18|          0|
+    |input_11_V_load_22_reg_9615  |  18|   0|   18|          0|
+    |input_11_V_load_2_reg_6415   |  18|   0|   18|          0|
+    |input_11_V_load_3_reg_6730   |  18|   0|   18|          0|
+    |input_11_V_load_4_reg_6735   |  18|   0|   18|          0|
+    |input_11_V_load_5_reg_7050   |  18|   0|   18|          0|
+    |input_11_V_load_6_reg_7055   |  18|   0|   18|          0|
+    |input_11_V_load_7_reg_7370   |  18|   0|   18|          0|
+    |input_11_V_load_8_reg_7375   |  18|   0|   18|          0|
+    |input_11_V_load_9_reg_7690   |  18|   0|   18|          0|
+    |input_11_V_load_reg_6115     |  18|   0|   18|          0|
+    |input_12_V_load_10_reg_7715  |  18|   0|   18|          0|
+    |input_12_V_load_11_reg_8030  |  18|   0|   18|          0|
+    |input_12_V_load_12_reg_8035  |  18|   0|   18|          0|
+    |input_12_V_load_13_reg_8350  |  18|   0|   18|          0|
+    |input_12_V_load_14_reg_8355  |  18|   0|   18|          0|
+    |input_12_V_load_15_reg_8670  |  18|   0|   18|          0|
+    |input_12_V_load_16_reg_8675  |  18|   0|   18|          0|
+    |input_12_V_load_17_reg_8990  |  18|   0|   18|          0|
+    |input_12_V_load_18_reg_8995  |  18|   0|   18|          0|
+    |input_12_V_load_19_reg_9310  |  18|   0|   18|          0|
+    |input_12_V_load_1_reg_6430   |  18|   0|   18|          0|
+    |input_12_V_load_20_reg_9315  |  18|   0|   18|          0|
+    |input_12_V_load_21_reg_9630  |  18|   0|   18|          0|
+    |input_12_V_load_22_reg_9635  |  18|   0|   18|          0|
+    |input_12_V_load_2_reg_6435   |  18|   0|   18|          0|
+    |input_12_V_load_3_reg_6750   |  18|   0|   18|          0|
+    |input_12_V_load_4_reg_6755   |  18|   0|   18|          0|
+    |input_12_V_load_5_reg_7070   |  18|   0|   18|          0|
+    |input_12_V_load_6_reg_7075   |  18|   0|   18|          0|
+    |input_12_V_load_7_reg_7390   |  18|   0|   18|          0|
+    |input_12_V_load_8_reg_7395   |  18|   0|   18|          0|
+    |input_12_V_load_9_reg_7710   |  18|   0|   18|          0|
+    |input_12_V_load_reg_6130     |  18|   0|   18|          0|
+    |input_13_V_load_10_reg_7735  |  18|   0|   18|          0|
+    |input_13_V_load_11_reg_8050  |  18|   0|   18|          0|
+    |input_13_V_load_12_reg_8055  |  18|   0|   18|          0|
+    |input_13_V_load_13_reg_8370  |  18|   0|   18|          0|
+    |input_13_V_load_14_reg_8375  |  18|   0|   18|          0|
+    |input_13_V_load_15_reg_8690  |  18|   0|   18|          0|
+    |input_13_V_load_16_reg_8695  |  18|   0|   18|          0|
+    |input_13_V_load_17_reg_9010  |  18|   0|   18|          0|
+    |input_13_V_load_18_reg_9015  |  18|   0|   18|          0|
+    |input_13_V_load_19_reg_9330  |  18|   0|   18|          0|
+    |input_13_V_load_1_reg_6450   |  18|   0|   18|          0|
+    |input_13_V_load_20_reg_9335  |  18|   0|   18|          0|
+    |input_13_V_load_21_reg_9650  |  18|   0|   18|          0|
+    |input_13_V_load_22_reg_9655  |  18|   0|   18|          0|
+    |input_13_V_load_2_reg_6455   |  18|   0|   18|          0|
+    |input_13_V_load_3_reg_6770   |  18|   0|   18|          0|
+    |input_13_V_load_4_reg_6775   |  18|   0|   18|          0|
+    |input_13_V_load_5_reg_7090   |  18|   0|   18|          0|
+    |input_13_V_load_6_reg_7095   |  18|   0|   18|          0|
+    |input_13_V_load_7_reg_7410   |  18|   0|   18|          0|
+    |input_13_V_load_8_reg_7415   |  18|   0|   18|          0|
+    |input_13_V_load_9_reg_7730   |  18|   0|   18|          0|
+    |input_13_V_load_reg_6145     |  18|   0|   18|          0|
+    |input_14_V_load_10_reg_7755  |  18|   0|   18|          0|
+    |input_14_V_load_11_reg_8070  |  18|   0|   18|          0|
+    |input_14_V_load_12_reg_8075  |  18|   0|   18|          0|
+    |input_14_V_load_13_reg_8390  |  18|   0|   18|          0|
+    |input_14_V_load_14_reg_8395  |  18|   0|   18|          0|
+    |input_14_V_load_15_reg_8710  |  18|   0|   18|          0|
+    |input_14_V_load_16_reg_8715  |  18|   0|   18|          0|
+    |input_14_V_load_17_reg_9030  |  18|   0|   18|          0|
+    |input_14_V_load_18_reg_9035  |  18|   0|   18|          0|
+    |input_14_V_load_19_reg_9350  |  18|   0|   18|          0|
+    |input_14_V_load_1_reg_6470   |  18|   0|   18|          0|
+    |input_14_V_load_20_reg_9355  |  18|   0|   18|          0|
+    |input_14_V_load_21_reg_9670  |  18|   0|   18|          0|
+    |input_14_V_load_22_reg_9675  |  18|   0|   18|          0|
+    |input_14_V_load_2_reg_6475   |  18|   0|   18|          0|
+    |input_14_V_load_3_reg_6790   |  18|   0|   18|          0|
+    |input_14_V_load_4_reg_6795   |  18|   0|   18|          0|
+    |input_14_V_load_5_reg_7110   |  18|   0|   18|          0|
+    |input_14_V_load_6_reg_7115   |  18|   0|   18|          0|
+    |input_14_V_load_7_reg_7430   |  18|   0|   18|          0|
+    |input_14_V_load_8_reg_7435   |  18|   0|   18|          0|
+    |input_14_V_load_9_reg_7750   |  18|   0|   18|          0|
+    |input_14_V_load_reg_6160     |  18|   0|   18|          0|
+    |input_15_V_load_10_reg_7775  |  18|   0|   18|          0|
+    |input_15_V_load_11_reg_8090  |  18|   0|   18|          0|
+    |input_15_V_load_12_reg_8095  |  18|   0|   18|          0|
+    |input_15_V_load_13_reg_8410  |  18|   0|   18|          0|
+    |input_15_V_load_14_reg_8415  |  18|   0|   18|          0|
+    |input_15_V_load_15_reg_8730  |  18|   0|   18|          0|
+    |input_15_V_load_16_reg_8735  |  18|   0|   18|          0|
+    |input_15_V_load_17_reg_9050  |  18|   0|   18|          0|
+    |input_15_V_load_18_reg_9055  |  18|   0|   18|          0|
+    |input_15_V_load_19_reg_9370  |  18|   0|   18|          0|
+    |input_15_V_load_1_reg_6490   |  18|   0|   18|          0|
+    |input_15_V_load_20_reg_9375  |  18|   0|   18|          0|
+    |input_15_V_load_21_reg_9690  |  18|   0|   18|          0|
+    |input_15_V_load_22_reg_9695  |  18|   0|   18|          0|
+    |input_15_V_load_2_reg_6495   |  18|   0|   18|          0|
+    |input_15_V_load_3_reg_6810   |  18|   0|   18|          0|
+    |input_15_V_load_4_reg_6815   |  18|   0|   18|          0|
+    |input_15_V_load_5_reg_7130   |  18|   0|   18|          0|
+    |input_15_V_load_6_reg_7135   |  18|   0|   18|          0|
+    |input_15_V_load_7_reg_7450   |  18|   0|   18|          0|
+    |input_15_V_load_8_reg_7455   |  18|   0|   18|          0|
+    |input_15_V_load_9_reg_7770   |  18|   0|   18|          0|
+    |input_15_V_load_reg_6175     |  18|   0|   18|          0|
+    |input_1_V_load_10_reg_7495   |  18|   0|   18|          0|
+    |input_1_V_load_11_reg_7810   |  18|   0|   18|          0|
+    |input_1_V_load_12_reg_7815   |  18|   0|   18|          0|
+    |input_1_V_load_13_reg_8130   |  18|   0|   18|          0|
+    |input_1_V_load_14_reg_8135   |  18|   0|   18|          0|
+    |input_1_V_load_15_reg_8450   |  18|   0|   18|          0|
+    |input_1_V_load_16_reg_8455   |  18|   0|   18|          0|
+    |input_1_V_load_17_reg_8770   |  18|   0|   18|          0|
+    |input_1_V_load_18_reg_8775   |  18|   0|   18|          0|
+    |input_1_V_load_19_reg_9090   |  18|   0|   18|          0|
+    |input_1_V_load_1_reg_6210    |  18|   0|   18|          0|
+    |input_1_V_load_20_reg_9095   |  18|   0|   18|          0|
+    |input_1_V_load_21_reg_9410   |  18|   0|   18|          0|
+    |input_1_V_load_22_reg_9415   |  18|   0|   18|          0|
+    |input_1_V_load_2_reg_6215    |  18|   0|   18|          0|
+    |input_1_V_load_3_reg_6530    |  18|   0|   18|          0|
+    |input_1_V_load_4_reg_6535    |  18|   0|   18|          0|
+    |input_1_V_load_5_reg_6850    |  18|   0|   18|          0|
+    |input_1_V_load_6_reg_6855    |  18|   0|   18|          0|
+    |input_1_V_load_7_reg_7170    |  18|   0|   18|          0|
+    |input_1_V_load_8_reg_7175    |  18|   0|   18|          0|
+    |input_1_V_load_9_reg_7490    |  18|   0|   18|          0|
+    |input_1_V_load_reg_5965      |  18|   0|   18|          0|
+    |input_2_V_load_10_reg_7515   |  18|   0|   18|          0|
+    |input_2_V_load_11_reg_7830   |  18|   0|   18|          0|
+    |input_2_V_load_12_reg_7835   |  18|   0|   18|          0|
+    |input_2_V_load_13_reg_8150   |  18|   0|   18|          0|
+    |input_2_V_load_14_reg_8155   |  18|   0|   18|          0|
+    |input_2_V_load_15_reg_8470   |  18|   0|   18|          0|
+    |input_2_V_load_16_reg_8475   |  18|   0|   18|          0|
+    |input_2_V_load_17_reg_8790   |  18|   0|   18|          0|
+    |input_2_V_load_18_reg_8795   |  18|   0|   18|          0|
+    |input_2_V_load_19_reg_9110   |  18|   0|   18|          0|
+    |input_2_V_load_1_reg_6230    |  18|   0|   18|          0|
+    |input_2_V_load_20_reg_9115   |  18|   0|   18|          0|
+    |input_2_V_load_21_reg_9430   |  18|   0|   18|          0|
+    |input_2_V_load_22_reg_9435   |  18|   0|   18|          0|
+    |input_2_V_load_2_reg_6235    |  18|   0|   18|          0|
+    |input_2_V_load_3_reg_6550    |  18|   0|   18|          0|
+    |input_2_V_load_4_reg_6555    |  18|   0|   18|          0|
+    |input_2_V_load_5_reg_6870    |  18|   0|   18|          0|
+    |input_2_V_load_6_reg_6875    |  18|   0|   18|          0|
+    |input_2_V_load_7_reg_7190    |  18|   0|   18|          0|
+    |input_2_V_load_8_reg_7195    |  18|   0|   18|          0|
+    |input_2_V_load_9_reg_7510    |  18|   0|   18|          0|
+    |input_2_V_load_reg_5980      |  18|   0|   18|          0|
+    |input_3_V_load_10_reg_7535   |  18|   0|   18|          0|
+    |input_3_V_load_11_reg_7850   |  18|   0|   18|          0|
+    |input_3_V_load_12_reg_7855   |  18|   0|   18|          0|
+    |input_3_V_load_13_reg_8170   |  18|   0|   18|          0|
+    |input_3_V_load_14_reg_8175   |  18|   0|   18|          0|
+    |input_3_V_load_15_reg_8490   |  18|   0|   18|          0|
+    |input_3_V_load_16_reg_8495   |  18|   0|   18|          0|
+    |input_3_V_load_17_reg_8810   |  18|   0|   18|          0|
+    |input_3_V_load_18_reg_8815   |  18|   0|   18|          0|
+    |input_3_V_load_19_reg_9130   |  18|   0|   18|          0|
+    |input_3_V_load_1_reg_6250    |  18|   0|   18|          0|
+    |input_3_V_load_20_reg_9135   |  18|   0|   18|          0|
+    |input_3_V_load_21_reg_9450   |  18|   0|   18|          0|
+    |input_3_V_load_22_reg_9455   |  18|   0|   18|          0|
+    |input_3_V_load_2_reg_6255    |  18|   0|   18|          0|
+    |input_3_V_load_3_reg_6570    |  18|   0|   18|          0|
+    |input_3_V_load_4_reg_6575    |  18|   0|   18|          0|
+    |input_3_V_load_5_reg_6890    |  18|   0|   18|          0|
+    |input_3_V_load_6_reg_6895    |  18|   0|   18|          0|
+    |input_3_V_load_7_reg_7210    |  18|   0|   18|          0|
+    |input_3_V_load_8_reg_7215    |  18|   0|   18|          0|
+    |input_3_V_load_9_reg_7530    |  18|   0|   18|          0|
+    |input_3_V_load_reg_5995      |  18|   0|   18|          0|
+    |input_4_V_load_10_reg_7555   |  18|   0|   18|          0|
+    |input_4_V_load_11_reg_7870   |  18|   0|   18|          0|
+    |input_4_V_load_12_reg_7875   |  18|   0|   18|          0|
+    |input_4_V_load_13_reg_8190   |  18|   0|   18|          0|
+    |input_4_V_load_14_reg_8195   |  18|   0|   18|          0|
+    |input_4_V_load_15_reg_8510   |  18|   0|   18|          0|
+    |input_4_V_load_16_reg_8515   |  18|   0|   18|          0|
+    |input_4_V_load_17_reg_8830   |  18|   0|   18|          0|
+    |input_4_V_load_18_reg_8835   |  18|   0|   18|          0|
+    |input_4_V_load_19_reg_9150   |  18|   0|   18|          0|
+    |input_4_V_load_1_reg_6270    |  18|   0|   18|          0|
+    |input_4_V_load_20_reg_9155   |  18|   0|   18|          0|
+    |input_4_V_load_21_reg_9470   |  18|   0|   18|          0|
+    |input_4_V_load_22_reg_9475   |  18|   0|   18|          0|
+    |input_4_V_load_2_reg_6275    |  18|   0|   18|          0|
+    |input_4_V_load_3_reg_6590    |  18|   0|   18|          0|
+    |input_4_V_load_4_reg_6595    |  18|   0|   18|          0|
+    |input_4_V_load_5_reg_6910    |  18|   0|   18|          0|
+    |input_4_V_load_6_reg_6915    |  18|   0|   18|          0|
+    |input_4_V_load_7_reg_7230    |  18|   0|   18|          0|
+    |input_4_V_load_8_reg_7235    |  18|   0|   18|          0|
+    |input_4_V_load_9_reg_7550    |  18|   0|   18|          0|
+    |input_4_V_load_reg_6010      |  18|   0|   18|          0|
+    |input_5_V_load_10_reg_7575   |  18|   0|   18|          0|
+    |input_5_V_load_11_reg_7890   |  18|   0|   18|          0|
+    |input_5_V_load_12_reg_7895   |  18|   0|   18|          0|
+    |input_5_V_load_13_reg_8210   |  18|   0|   18|          0|
+    |input_5_V_load_14_reg_8215   |  18|   0|   18|          0|
+    |input_5_V_load_15_reg_8530   |  18|   0|   18|          0|
+    |input_5_V_load_16_reg_8535   |  18|   0|   18|          0|
+    |input_5_V_load_17_reg_8850   |  18|   0|   18|          0|
+    |input_5_V_load_18_reg_8855   |  18|   0|   18|          0|
+    |input_5_V_load_19_reg_9170   |  18|   0|   18|          0|
+    |input_5_V_load_1_reg_6290    |  18|   0|   18|          0|
+    |input_5_V_load_20_reg_9175   |  18|   0|   18|          0|
+    |input_5_V_load_21_reg_9490   |  18|   0|   18|          0|
+    |input_5_V_load_22_reg_9495   |  18|   0|   18|          0|
+    |input_5_V_load_2_reg_6295    |  18|   0|   18|          0|
+    |input_5_V_load_3_reg_6610    |  18|   0|   18|          0|
+    |input_5_V_load_4_reg_6615    |  18|   0|   18|          0|
+    |input_5_V_load_5_reg_6930    |  18|   0|   18|          0|
+    |input_5_V_load_6_reg_6935    |  18|   0|   18|          0|
+    |input_5_V_load_7_reg_7250    |  18|   0|   18|          0|
+    |input_5_V_load_8_reg_7255    |  18|   0|   18|          0|
+    |input_5_V_load_9_reg_7570    |  18|   0|   18|          0|
+    |input_5_V_load_reg_6025      |  18|   0|   18|          0|
+    |input_6_V_load_10_reg_7595   |  18|   0|   18|          0|
+    |input_6_V_load_11_reg_7910   |  18|   0|   18|          0|
+    |input_6_V_load_12_reg_7915   |  18|   0|   18|          0|
+    |input_6_V_load_13_reg_8230   |  18|   0|   18|          0|
+    |input_6_V_load_14_reg_8235   |  18|   0|   18|          0|
+    |input_6_V_load_15_reg_8550   |  18|   0|   18|          0|
+    |input_6_V_load_16_reg_8555   |  18|   0|   18|          0|
+    |input_6_V_load_17_reg_8870   |  18|   0|   18|          0|
+    |input_6_V_load_18_reg_8875   |  18|   0|   18|          0|
+    |input_6_V_load_19_reg_9190   |  18|   0|   18|          0|
+    |input_6_V_load_1_reg_6310    |  18|   0|   18|          0|
+    |input_6_V_load_20_reg_9195   |  18|   0|   18|          0|
+    |input_6_V_load_21_reg_9510   |  18|   0|   18|          0|
+    |input_6_V_load_22_reg_9515   |  18|   0|   18|          0|
+    |input_6_V_load_2_reg_6315    |  18|   0|   18|          0|
+    |input_6_V_load_3_reg_6630    |  18|   0|   18|          0|
+    |input_6_V_load_4_reg_6635    |  18|   0|   18|          0|
+    |input_6_V_load_5_reg_6950    |  18|   0|   18|          0|
+    |input_6_V_load_6_reg_6955    |  18|   0|   18|          0|
+    |input_6_V_load_7_reg_7270    |  18|   0|   18|          0|
+    |input_6_V_load_8_reg_7275    |  18|   0|   18|          0|
+    |input_6_V_load_9_reg_7590    |  18|   0|   18|          0|
+    |input_6_V_load_reg_6040      |  18|   0|   18|          0|
+    |input_7_V_load_10_reg_7615   |  18|   0|   18|          0|
+    |input_7_V_load_11_reg_7930   |  18|   0|   18|          0|
+    |input_7_V_load_12_reg_7935   |  18|   0|   18|          0|
+    |input_7_V_load_13_reg_8250   |  18|   0|   18|          0|
+    |input_7_V_load_14_reg_8255   |  18|   0|   18|          0|
+    |input_7_V_load_15_reg_8570   |  18|   0|   18|          0|
+    |input_7_V_load_16_reg_8575   |  18|   0|   18|          0|
+    |input_7_V_load_17_reg_8890   |  18|   0|   18|          0|
+    |input_7_V_load_18_reg_8895   |  18|   0|   18|          0|
+    |input_7_V_load_19_reg_9210   |  18|   0|   18|          0|
+    |input_7_V_load_1_reg_6330    |  18|   0|   18|          0|
+    |input_7_V_load_20_reg_9215   |  18|   0|   18|          0|
+    |input_7_V_load_21_reg_9530   |  18|   0|   18|          0|
+    |input_7_V_load_22_reg_9535   |  18|   0|   18|          0|
+    |input_7_V_load_2_reg_6335    |  18|   0|   18|          0|
+    |input_7_V_load_3_reg_6650    |  18|   0|   18|          0|
+    |input_7_V_load_4_reg_6655    |  18|   0|   18|          0|
+    |input_7_V_load_5_reg_6970    |  18|   0|   18|          0|
+    |input_7_V_load_6_reg_6975    |  18|   0|   18|          0|
+    |input_7_V_load_7_reg_7290    |  18|   0|   18|          0|
+    |input_7_V_load_8_reg_7295    |  18|   0|   18|          0|
+    |input_7_V_load_9_reg_7610    |  18|   0|   18|          0|
+    |input_7_V_load_reg_6055      |  18|   0|   18|          0|
+    |input_8_V_load_10_reg_7635   |  18|   0|   18|          0|
+    |input_8_V_load_11_reg_7950   |  18|   0|   18|          0|
+    |input_8_V_load_12_reg_7955   |  18|   0|   18|          0|
+    |input_8_V_load_13_reg_8270   |  18|   0|   18|          0|
+    |input_8_V_load_14_reg_8275   |  18|   0|   18|          0|
+    |input_8_V_load_15_reg_8590   |  18|   0|   18|          0|
+    |input_8_V_load_16_reg_8595   |  18|   0|   18|          0|
+    |input_8_V_load_17_reg_8910   |  18|   0|   18|          0|
+    |input_8_V_load_18_reg_8915   |  18|   0|   18|          0|
+    |input_8_V_load_19_reg_9230   |  18|   0|   18|          0|
+    |input_8_V_load_1_reg_6350    |  18|   0|   18|          0|
+    |input_8_V_load_20_reg_9235   |  18|   0|   18|          0|
+    |input_8_V_load_21_reg_9550   |  18|   0|   18|          0|
+    |input_8_V_load_22_reg_9555   |  18|   0|   18|          0|
+    |input_8_V_load_2_reg_6355    |  18|   0|   18|          0|
+    |input_8_V_load_3_reg_6670    |  18|   0|   18|          0|
+    |input_8_V_load_4_reg_6675    |  18|   0|   18|          0|
+    |input_8_V_load_5_reg_6990    |  18|   0|   18|          0|
+    |input_8_V_load_6_reg_6995    |  18|   0|   18|          0|
+    |input_8_V_load_7_reg_7310    |  18|   0|   18|          0|
+    |input_8_V_load_8_reg_7315    |  18|   0|   18|          0|
+    |input_8_V_load_9_reg_7630    |  18|   0|   18|          0|
+    |input_8_V_load_reg_6070      |  18|   0|   18|          0|
+    |input_9_V_load_10_reg_7655   |  18|   0|   18|          0|
+    |input_9_V_load_11_reg_7970   |  18|   0|   18|          0|
+    |input_9_V_load_12_reg_7975   |  18|   0|   18|          0|
+    |input_9_V_load_13_reg_8290   |  18|   0|   18|          0|
+    |input_9_V_load_14_reg_8295   |  18|   0|   18|          0|
+    |input_9_V_load_15_reg_8610   |  18|   0|   18|          0|
+    |input_9_V_load_16_reg_8615   |  18|   0|   18|          0|
+    |input_9_V_load_17_reg_8930   |  18|   0|   18|          0|
+    |input_9_V_load_18_reg_8935   |  18|   0|   18|          0|
+    |input_9_V_load_19_reg_9250   |  18|   0|   18|          0|
+    |input_9_V_load_1_reg_6370    |  18|   0|   18|          0|
+    |input_9_V_load_20_reg_9255   |  18|   0|   18|          0|
+    |input_9_V_load_21_reg_9570   |  18|   0|   18|          0|
+    |input_9_V_load_22_reg_9575   |  18|   0|   18|          0|
+    |input_9_V_load_2_reg_6375    |  18|   0|   18|          0|
+    |input_9_V_load_3_reg_6690    |  18|   0|   18|          0|
+    |input_9_V_load_4_reg_6695    |  18|   0|   18|          0|
+    |input_9_V_load_5_reg_7010    |  18|   0|   18|          0|
+    |input_9_V_load_6_reg_7015    |  18|   0|   18|          0|
+    |input_9_V_load_7_reg_7330    |  18|   0|   18|          0|
+    |input_9_V_load_8_reg_7335    |  18|   0|   18|          0|
+    |input_9_V_load_9_reg_7650    |  18|   0|   18|          0|
+    |input_9_V_load_reg_6085      |  18|   0|   18|          0|
+    +-----------------------------+----+----+-----+-----------+
+    |Total                        |6639|   0| 6639|          0|
+    +-----------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------+-----+-----+------------+-----------------+--------------+
+|      RTL Ports      | Dir | Bits|  Protocol  |  Source Object  |    C Type    |
++---------------------+-----+-----+------------+-----------------+--------------+
+|ap_clk               |  in |    1| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_rst               |  in |    1| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_start             |  in |    1| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_done              | out |    1| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_continue          |  in |    1| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_idle              | out |    1| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_ready             | out |    1| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_0          | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_1          | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_2          | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_3          | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_4          | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_5          | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_6          | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_7          | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_8          | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_9          | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_10         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_11         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_12         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_13         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_14         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_15         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_16         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_17         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_18         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_19         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_20         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_21         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_22         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_23         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_24         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_25         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_26         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_27         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_28         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_29         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_30         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_31         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_32         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_33         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_34         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_35         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_36         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_37         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_38         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_39         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_40         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_41         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_42         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_43         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_44         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_45         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_46         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_47         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_48         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_49         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_50         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_51         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_52         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_53         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_54         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_55         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_56         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_57         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_58         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_59         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_60         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_61         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_62         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_63         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_64         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_65         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_66         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_67         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_68         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_69         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_70         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_71         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_72         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_73         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_74         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_75         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_76         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_77         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_78         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_79         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_80         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_81         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_82         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_83         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_84         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_85         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_86         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_87         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_88         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_89         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_90         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_91         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_92         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_93         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_94         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_95         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_96         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_97         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_98         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_99         | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_100        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_101        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_102        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_103        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_104        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_105        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_106        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_107        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_108        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_109        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_110        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_111        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_112        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_113        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_114        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_115        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_116        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_117        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_118        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_119        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_120        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_121        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_122        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_123        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_124        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_125        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_126        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_127        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_128        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_129        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_130        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_131        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_132        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_133        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_134        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_135        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_136        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_137        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_138        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_139        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_140        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_141        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_142        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_143        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_144        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_145        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_146        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_147        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_148        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_149        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_150        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_151        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_152        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_153        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_154        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_155        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_156        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_157        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_158        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_159        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_160        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_161        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_162        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_163        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_164        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_165        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_166        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_167        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_168        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_169        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_170        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_171        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_172        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_173        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_174        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_175        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_176        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_177        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_178        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_179        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_180        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_181        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_182        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_183        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_184        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_185        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_186        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_187        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_188        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_189        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_190        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_191        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_192        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_193        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_194        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_195        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_196        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_197        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_198        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_199        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_200        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_201        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_202        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_203        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_204        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_205        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_206        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_207        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_208        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_209        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_210        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_211        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_212        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_213        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_214        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_215        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_216        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_217        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_218        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_219        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_220        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_221        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_222        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_223        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_224        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_225        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_226        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_227        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_228        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_229        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_230        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_231        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_232        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_233        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_234        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_235        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_236        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_237        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_238        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_239        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_240        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_241        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_242        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_243        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_244        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_245        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_246        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_247        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_248        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_249        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_250        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_251        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_252        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_253        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_254        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_255        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_256        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_257        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_258        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_259        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_260        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_261        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_262        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_263        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_264        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_265        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_266        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_267        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_268        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_269        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_270        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_271        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_272        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_273        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_274        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_275        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_276        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_277        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_278        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_279        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_280        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_281        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_282        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_283        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_284        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_285        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_286        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_287        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_288        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_289        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_290        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_291        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_292        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_293        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_294        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_295        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_296        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_297        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_298        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_299        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_300        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_301        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_302        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_303        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_304        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_305        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_306        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_307        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_308        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_309        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_310        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_311        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_312        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_313        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_314        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_315        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_316        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_317        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_318        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_319        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_320        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_321        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_322        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_323        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_324        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_325        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_326        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_327        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_328        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_329        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_330        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_331        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_332        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_333        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_334        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_335        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_336        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_337        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_338        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_339        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_340        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_341        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_342        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_343        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_344        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_345        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_346        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_347        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_348        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_349        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_350        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_351        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_352        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_353        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_354        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_355        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_356        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_357        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_358        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_359        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_360        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_361        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_362        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_363        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_364        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_365        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_366        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_367        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_368        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_369        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_370        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_371        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_372        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_373        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_374        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_375        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_376        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_377        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_378        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_379        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_380        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_381        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_382        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_383        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_384        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_385        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_386        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_387        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_388        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_389        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_390        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_391        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_392        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_393        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_394        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_395        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_396        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_397        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_398        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|ap_return_399        | out |   18| ap_ctrl_hs | add_bias_pre_L1 | return value |
+|input_0_V_address0   | out |    5|  ap_memory |    input_0_V    |     array    |
+|input_0_V_ce0        | out |    1|  ap_memory |    input_0_V    |     array    |
+|input_0_V_q0         |  in |   18|  ap_memory |    input_0_V    |     array    |
+|input_0_V_address1   | out |    5|  ap_memory |    input_0_V    |     array    |
+|input_0_V_ce1        | out |    1|  ap_memory |    input_0_V    |     array    |
+|input_0_V_q1         |  in |   18|  ap_memory |    input_0_V    |     array    |
+|input_1_V_address0   | out |    5|  ap_memory |    input_1_V    |     array    |
+|input_1_V_ce0        | out |    1|  ap_memory |    input_1_V    |     array    |
+|input_1_V_q0         |  in |   18|  ap_memory |    input_1_V    |     array    |
+|input_1_V_address1   | out |    5|  ap_memory |    input_1_V    |     array    |
+|input_1_V_ce1        | out |    1|  ap_memory |    input_1_V    |     array    |
+|input_1_V_q1         |  in |   18|  ap_memory |    input_1_V    |     array    |
+|input_2_V_address0   | out |    5|  ap_memory |    input_2_V    |     array    |
+|input_2_V_ce0        | out |    1|  ap_memory |    input_2_V    |     array    |
+|input_2_V_q0         |  in |   18|  ap_memory |    input_2_V    |     array    |
+|input_2_V_address1   | out |    5|  ap_memory |    input_2_V    |     array    |
+|input_2_V_ce1        | out |    1|  ap_memory |    input_2_V    |     array    |
+|input_2_V_q1         |  in |   18|  ap_memory |    input_2_V    |     array    |
+|input_3_V_address0   | out |    5|  ap_memory |    input_3_V    |     array    |
+|input_3_V_ce0        | out |    1|  ap_memory |    input_3_V    |     array    |
+|input_3_V_q0         |  in |   18|  ap_memory |    input_3_V    |     array    |
+|input_3_V_address1   | out |    5|  ap_memory |    input_3_V    |     array    |
+|input_3_V_ce1        | out |    1|  ap_memory |    input_3_V    |     array    |
+|input_3_V_q1         |  in |   18|  ap_memory |    input_3_V    |     array    |
+|input_4_V_address0   | out |    5|  ap_memory |    input_4_V    |     array    |
+|input_4_V_ce0        | out |    1|  ap_memory |    input_4_V    |     array    |
+|input_4_V_q0         |  in |   18|  ap_memory |    input_4_V    |     array    |
+|input_4_V_address1   | out |    5|  ap_memory |    input_4_V    |     array    |
+|input_4_V_ce1        | out |    1|  ap_memory |    input_4_V    |     array    |
+|input_4_V_q1         |  in |   18|  ap_memory |    input_4_V    |     array    |
+|input_5_V_address0   | out |    5|  ap_memory |    input_5_V    |     array    |
+|input_5_V_ce0        | out |    1|  ap_memory |    input_5_V    |     array    |
+|input_5_V_q0         |  in |   18|  ap_memory |    input_5_V    |     array    |
+|input_5_V_address1   | out |    5|  ap_memory |    input_5_V    |     array    |
+|input_5_V_ce1        | out |    1|  ap_memory |    input_5_V    |     array    |
+|input_5_V_q1         |  in |   18|  ap_memory |    input_5_V    |     array    |
+|input_6_V_address0   | out |    5|  ap_memory |    input_6_V    |     array    |
+|input_6_V_ce0        | out |    1|  ap_memory |    input_6_V    |     array    |
+|input_6_V_q0         |  in |   18|  ap_memory |    input_6_V    |     array    |
+|input_6_V_address1   | out |    5|  ap_memory |    input_6_V    |     array    |
+|input_6_V_ce1        | out |    1|  ap_memory |    input_6_V    |     array    |
+|input_6_V_q1         |  in |   18|  ap_memory |    input_6_V    |     array    |
+|input_7_V_address0   | out |    5|  ap_memory |    input_7_V    |     array    |
+|input_7_V_ce0        | out |    1|  ap_memory |    input_7_V    |     array    |
+|input_7_V_q0         |  in |   18|  ap_memory |    input_7_V    |     array    |
+|input_7_V_address1   | out |    5|  ap_memory |    input_7_V    |     array    |
+|input_7_V_ce1        | out |    1|  ap_memory |    input_7_V    |     array    |
+|input_7_V_q1         |  in |   18|  ap_memory |    input_7_V    |     array    |
+|input_8_V_address0   | out |    5|  ap_memory |    input_8_V    |     array    |
+|input_8_V_ce0        | out |    1|  ap_memory |    input_8_V    |     array    |
+|input_8_V_q0         |  in |   18|  ap_memory |    input_8_V    |     array    |
+|input_8_V_address1   | out |    5|  ap_memory |    input_8_V    |     array    |
+|input_8_V_ce1        | out |    1|  ap_memory |    input_8_V    |     array    |
+|input_8_V_q1         |  in |   18|  ap_memory |    input_8_V    |     array    |
+|input_9_V_address0   | out |    5|  ap_memory |    input_9_V    |     array    |
+|input_9_V_ce0        | out |    1|  ap_memory |    input_9_V    |     array    |
+|input_9_V_q0         |  in |   18|  ap_memory |    input_9_V    |     array    |
+|input_9_V_address1   | out |    5|  ap_memory |    input_9_V    |     array    |
+|input_9_V_ce1        | out |    1|  ap_memory |    input_9_V    |     array    |
+|input_9_V_q1         |  in |   18|  ap_memory |    input_9_V    |     array    |
+|input_10_V_address0  | out |    5|  ap_memory |    input_10_V   |     array    |
+|input_10_V_ce0       | out |    1|  ap_memory |    input_10_V   |     array    |
+|input_10_V_q0        |  in |   18|  ap_memory |    input_10_V   |     array    |
+|input_10_V_address1  | out |    5|  ap_memory |    input_10_V   |     array    |
+|input_10_V_ce1       | out |    1|  ap_memory |    input_10_V   |     array    |
+|input_10_V_q1        |  in |   18|  ap_memory |    input_10_V   |     array    |
+|input_11_V_address0  | out |    5|  ap_memory |    input_11_V   |     array    |
+|input_11_V_ce0       | out |    1|  ap_memory |    input_11_V   |     array    |
+|input_11_V_q0        |  in |   18|  ap_memory |    input_11_V   |     array    |
+|input_11_V_address1  | out |    5|  ap_memory |    input_11_V   |     array    |
+|input_11_V_ce1       | out |    1|  ap_memory |    input_11_V   |     array    |
+|input_11_V_q1        |  in |   18|  ap_memory |    input_11_V   |     array    |
+|input_12_V_address0  | out |    5|  ap_memory |    input_12_V   |     array    |
+|input_12_V_ce0       | out |    1|  ap_memory |    input_12_V   |     array    |
+|input_12_V_q0        |  in |   18|  ap_memory |    input_12_V   |     array    |
+|input_12_V_address1  | out |    5|  ap_memory |    input_12_V   |     array    |
+|input_12_V_ce1       | out |    1|  ap_memory |    input_12_V   |     array    |
+|input_12_V_q1        |  in |   18|  ap_memory |    input_12_V   |     array    |
+|input_13_V_address0  | out |    5|  ap_memory |    input_13_V   |     array    |
+|input_13_V_ce0       | out |    1|  ap_memory |    input_13_V   |     array    |
+|input_13_V_q0        |  in |   18|  ap_memory |    input_13_V   |     array    |
+|input_13_V_address1  | out |    5|  ap_memory |    input_13_V   |     array    |
+|input_13_V_ce1       | out |    1|  ap_memory |    input_13_V   |     array    |
+|input_13_V_q1        |  in |   18|  ap_memory |    input_13_V   |     array    |
+|input_14_V_address0  | out |    5|  ap_memory |    input_14_V   |     array    |
+|input_14_V_ce0       | out |    1|  ap_memory |    input_14_V   |     array    |
+|input_14_V_q0        |  in |   18|  ap_memory |    input_14_V   |     array    |
+|input_14_V_address1  | out |    5|  ap_memory |    input_14_V   |     array    |
+|input_14_V_ce1       | out |    1|  ap_memory |    input_14_V   |     array    |
+|input_14_V_q1        |  in |   18|  ap_memory |    input_14_V   |     array    |
+|input_15_V_address0  | out |    5|  ap_memory |    input_15_V   |     array    |
+|input_15_V_ce0       | out |    1|  ap_memory |    input_15_V   |     array    |
+|input_15_V_q0        |  in |   18|  ap_memory |    input_15_V   |     array    |
+|input_15_V_address1  | out |    5|  ap_memory |    input_15_V   |     array    |
+|input_15_V_ce1       | out |    1|  ap_memory |    input_15_V   |     array    |
+|input_15_V_q1        |  in |   18|  ap_memory |    input_15_V   |     array    |
++---------------------+-----+-----+------------+-----------------+--------------+
+

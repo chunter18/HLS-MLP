@@ -1,0 +1,37 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "mlp",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {"name": "DATAFLOW"}
+        },
+        {
+          "functionName": "mvprod_layer_1",
+          "label": "inner",
+          "functionLabel": "",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [{
+                "name": "rewind",
+                "value": "",
+                "positionalBoolean": "1"
+              }]
+          }
+        },
+        {
+          "functionName": "mvprod_layer_2",
+          "label": "inner",
+          "functionLabel": "",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [{
+                "name": "rewind",
+                "value": "",
+                "positionalBoolean": "1"
+              }]
+          }
+        }
+      ]
+    }]}

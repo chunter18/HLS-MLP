@@ -1,0 +1,1443 @@
+
+
+================================================================
+== Vivado HLS Report for 'mlp'
+================================================================
+* Date:           Sun Oct 27 17:46:14 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        mlp
+* Solution:       medium_throughput
+* Product family: kintex7
+* Target device:  xc7k325tffg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|     3.374|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+----------+
+    |   Latency   |   Interval  | Pipeline |
+    |  min |  max |  min |  max |   Type   |
+    +------+------+------+------+----------+
+    |  2864|  2867|  1275|  1275| dataflow |
+    +------+------+------+------+----------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------+------------------------+------+------+------+------+---------------------------------------------+
+        |                           |                        |   Latency   |   Interval  |                   Pipeline                  |
+        |          Instance         |         Module         |  min |  max |  min |  max |                     Type                    |
+        +---------------------------+------------------------+------+------+------+------+---------------------------------------------+
+        |mvprod_layer_1_U0          |mvprod_layer_1          |  1429|  1430|  1275|  1275| loop rewind(delay=0 initiation interval(s)) |
+        |mvprod_layer_2_U0          |mvprod_layer_2          |   263|   264|   260|   260| loop rewind(delay=0 initiation interval(s)) |
+        |add_bias_pre_L1_U0         |add_bias_pre_L1         |   811|   812|   800|   800| loop rewind(delay=0 initiation interval(s)) |
+        |sigmoid_activation_L_1_U0  |sigmoid_activation_L_1  |   201|   201|   201|   201|                     none                    |
+        |sigmoid_activation_L_U0    |sigmoid_activation_L    |    81|    81|    81|    81|                     none                    |
+        |classify_U0                |classify                |    22|    22|    22|    22|                     none                    |
+        |add_bias_pre_L2_U0         |add_bias_pre_L2         |    51|    51|    51|    51|                     none                    |
+        |Block_arrayctor_loop_U0    |Block_arrayctor_loop    |     0|     0|     0|     0|                     none                    |
+        |p_src_mlp_cpp_lin_U0       |p_src_mlp_cpp_lin       |     0|     0|     0|     0|                     none                    |
+        +---------------------------+------------------------+------+------+------+------+---------------------------------------------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  |
++-----------------+---------+-------+--------+--------+
+|DSP              |        -|      -|       -|       -|
+|Expression       |        -|      -|       0|      80|
+|FIFO             |        0|      -|      10|      88|
+|Instance         |        0|     12|   42529|   35528|
+|Memory           |        0|      -|     468|     148|
+|Multiplexer      |        -|      -|       -|     126|
+|Register         |        -|      -|      17|       -|
++-----------------+---------+-------+--------+--------+
+|Total            |        0|     12|   43024|   35970|
++-----------------+---------+-------+--------+--------+
+|Available        |      890|    840|  407600|  203800|
++-----------------+---------+-------+--------+--------+
+|Utilization (%)  |        0|      1|      10|      17|
++-----------------+---------+-------+--------+--------+
+
++ Detail: 
+    * Instance: 
+    +---------------------------+------------------------+---------+-------+-------+-------+
+    |          Instance         |         Module         | BRAM_18K| DSP48E|   FF  |  LUT  |
+    +---------------------------+------------------------+---------+-------+-------+-------+
+    |Block_arrayctor_loop_U0    |Block_arrayctor_loop    |        0|      0|     34|     20|
+    |add_bias_pre_L1_U0         |add_bias_pre_L1         |        0|      1|    869|    573|
+    |add_bias_pre_L2_U0         |add_bias_pre_L2         |        0|      0|     14|     89|
+    |classify_U0                |classify                |        0|      0|     63|    162|
+    |mvprod_layer_1_U0          |mvprod_layer_1          |        0|      8|  39915|  31876|
+    |mvprod_layer_2_U0          |mvprod_layer_2          |        0|      1|   1319|   2240|
+    |p_src_mlp_cpp_lin_U0       |p_src_mlp_cpp_lin       |        0|      0|     34|     20|
+    |sigmoid_activation_L_U0    |sigmoid_activation_L    |        0|      1|    141|    273|
+    |sigmoid_activation_L_1_U0  |sigmoid_activation_L_1  |        0|      1|    140|    275|
+    +---------------------------+------------------------+---------+-------+-------+-------+
+    |Total                      |                        |        0|     12|  42529|  35528|
+    +---------------------------+------------------------+---------+-------+-------+-------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +-------------------+---------------------+---------+----+----+------+-----+------+-------------+
+    |       Memory      |        Module       | BRAM_18K| FF | LUT| Words| Bits| Banks| W*Bits*Banks|
+    +-------------------+---------------------+---------+----+----+------+-----+------+-------------+
+    |L1_no_activ_V_U    |mlp_L1_no_activ_V    |        0|  36|   8|    25|   18|     2|          900|
+    |L1_activ_V_U       |mlp_L1_no_activ_V    |        0|  36|   8|    25|   18|     2|          900|
+    |L2_bias_added_V_U  |mlp_L2_bias_added_V  |        0|  36|   8|    26|   18|     2|          936|
+    |L2_out_V_U         |mlp_L2_out_V         |        0|  36|   3|    10|   18|     2|          360|
+    |L2_out_activ_V_U   |mlp_L2_out_V         |        0|  36|   3|    10|   18|     2|          360|
+    |bias_added_0_V_U   |mlp_bias_added_0_V   |        0|  36|  15|    51|   18|     2|         1836|
+    |bias_added_1_V_U   |mlp_bias_added_0_V   |        0|  36|  15|    51|   18|     2|         1836|
+    |bias_added_2_V_U   |mlp_bias_added_0_V   |        0|  36|  15|    51|   18|     2|         1836|
+    |bias_added_3_V_U   |mlp_bias_added_0_V   |        0|  36|  15|    51|   18|     2|         1836|
+    |bias_added_4_V_U   |mlp_bias_added_0_V   |        0|  36|  15|    51|   18|     2|         1836|
+    |bias_added_5_V_U   |mlp_bias_added_0_V   |        0|  36|  15|    51|   18|     2|         1836|
+    |bias_added_6_V_U   |mlp_bias_added_0_V   |        0|  36|  15|    51|   18|     2|         1836|
+    |bias_added_7_V_U   |mlp_bias_added_7_V   |        0|  36|  13|    44|   18|     2|         1584|
+    +-------------------+---------------------+---------+----+----+------+-----+------+-------------+
+    |Total              |                     |        0| 468| 148|   497|  234|    26|        17892|
+    +-------------------+---------------------+---------+----+----+------+-----+------+-------------+
+
+    * FIFO: 
+    +------------------------+---------+---+----+------+-----+---------+
+    |          Name          | BRAM_18K| FF| LUT| Depth| Bits| Size:D*B|
+    +------------------------+---------+---+----+------+-----+---------+
+    |digit_U                 |        0|  5|  44|     2|   32|       64|
+    |digit_load_loc_chann_U  |        0|  5|  44|     2|   32|       64|
+    +------------------------+---------+---+----+------+-----+---------+
+    |Total                   |        0| 10|  88|     4|   64|      128|
+    +------------------------+---------+---+----+------+-----+---------+
+
+    * Expression: 
+    +--------------------------------------+----------+-------+---+----+------------+------------+
+    |             Variable Name            | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------------------------+----------+-------+---+----+------------+------------+
+    |add_bias_pre_L1_U0_ap_ready_count     |     +    |      0|  0|  10|           2|           1|
+    |mvprod_layer_1_U0_ap_ready_count      |     +    |      0|  0|  10|           2|           1|
+    |mvprod_layer_2_U0_ap_ready_count      |     +    |      0|  0|  10|           2|           1|
+    |add_bias_pre_L1_U0_ap_continue        |    and   |      0|  0|   2|           1|           1|
+    |add_bias_pre_L1_U0_ap_start           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_bias_added_0_V        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_bias_added_1_V        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_bias_added_2_V        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_bias_added_3_V        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_bias_added_4_V        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_bias_added_5_V        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_bias_added_6_V        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_bias_added_7_V        |    and   |      0|  0|   2|           1|           1|
+    |ap_idle                               |    and   |      0|  0|   2|           1|           1|
+    |ap_sync_ready                         |    and   |      0|  0|   2|           1|           1|
+    |mvprod_layer_1_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |mvprod_layer_2_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |ap_sync_add_bias_pre_L1_U0_ap_ready   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_bias_added_0_V  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_bias_added_1_V  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_bias_added_2_V  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_bias_added_3_V  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_bias_added_4_V  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_bias_added_5_V  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_bias_added_6_V  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_bias_added_7_V  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_mvprod_layer_1_U0_ap_ready    |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_mvprod_layer_2_U0_ap_ready    |    or    |      0|  0|   2|           1|           1|
+    +--------------------------------------+----------+-------+---+----+------------+------------+
+    |Total                                 |          |      0|  0|  80|          31|          28|
+    +--------------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------------------+----+-----------+-----+-----------+
+    |                   Name                   | LUT| Input Size| Bits| Total Bits|
+    +------------------------------------------+----+-----------+-----+-----------+
+    |add_bias_pre_L1_U0_ap_ready_count         |   9|          2|    2|          4|
+    |ap_sync_reg_add_bias_pre_L1_U0_ap_ready   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_bias_added_0_V  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_bias_added_1_V  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_bias_added_2_V  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_bias_added_3_V  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_bias_added_4_V  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_bias_added_5_V  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_bias_added_6_V  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_bias_added_7_V  |   9|          2|    1|          2|
+    |ap_sync_reg_mvprod_layer_1_U0_ap_ready    |   9|          2|    1|          2|
+    |ap_sync_reg_mvprod_layer_2_U0_ap_ready    |   9|          2|    1|          2|
+    |mvprod_layer_1_U0_ap_ready_count          |   9|          2|    2|          4|
+    |mvprod_layer_2_U0_ap_ready_count          |   9|          2|    2|          4|
+    +------------------------------------------+----+-----------+-----+-----------+
+    |Total                                     | 126|         28|   17|         34|
+    +------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------------+---+----+-----+-----------+
+    |                   Name                   | FF| LUT| Bits| Const Bits|
+    +------------------------------------------+---+----+-----+-----------+
+    |add_bias_pre_L1_U0_ap_ready_count         |  2|   0|    2|          0|
+    |ap_sync_reg_add_bias_pre_L1_U0_ap_ready   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_bias_added_0_V  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_bias_added_1_V  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_bias_added_2_V  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_bias_added_3_V  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_bias_added_4_V  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_bias_added_5_V  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_bias_added_6_V  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_bias_added_7_V  |  1|   0|    1|          0|
+    |ap_sync_reg_mvprod_layer_1_U0_ap_ready    |  1|   0|    1|          0|
+    |ap_sync_reg_mvprod_layer_2_U0_ap_ready    |  1|   0|    1|          0|
+    |mvprod_layer_1_U0_ap_ready_count          |  2|   0|    2|          0|
+    |mvprod_layer_2_U0_ap_ready_count          |  2|   0|    2|          0|
+    +------------------------------------------+---+----+-----+-----------+
+    |Total                                     | 17|   0|   17|          0|
+    +------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------+-----+-----+------------+----------------+--------------+
+|        RTL Ports        | Dir | Bits|  Protocol  |  Source Object |    C Type    |
++-------------------------+-----+-----+------------+----------------+--------------+
+|ap_clk                   |  in |    1| ap_ctrl_hs |       mlp      | return value |
+|ap_rst                   |  in |    1| ap_ctrl_hs |       mlp      | return value |
+|ap_return                | out |   32| ap_ctrl_hs |       mlp      | return value |
+|ap_done                  | out |    1| ap_ctrl_hs |       mlp      | return value |
+|ap_start                 |  in |    1| ap_ctrl_hs |       mlp      | return value |
+|ap_ready                 | out |    1| ap_ctrl_hs |       mlp      | return value |
+|ap_idle                  | out |    1| ap_ctrl_hs |       mlp      | return value |
+|weights_L1_0_V_address0  | out |   11|  ap_memory | weights_L1_0_V |     array    |
+|weights_L1_0_V_ce0       | out |    1|  ap_memory | weights_L1_0_V |     array    |
+|weights_L1_0_V_d0        | out |   18|  ap_memory | weights_L1_0_V |     array    |
+|weights_L1_0_V_q0        |  in |   18|  ap_memory | weights_L1_0_V |     array    |
+|weights_L1_0_V_we0       | out |    1|  ap_memory | weights_L1_0_V |     array    |
+|weights_L1_0_V_address1  | out |   11|  ap_memory | weights_L1_0_V |     array    |
+|weights_L1_0_V_ce1       | out |    1|  ap_memory | weights_L1_0_V |     array    |
+|weights_L1_0_V_d1        | out |   18|  ap_memory | weights_L1_0_V |     array    |
+|weights_L1_0_V_q1        |  in |   18|  ap_memory | weights_L1_0_V |     array    |
+|weights_L1_0_V_we1       | out |    1|  ap_memory | weights_L1_0_V |     array    |
+|weights_L1_1_V_address0  | out |   11|  ap_memory | weights_L1_1_V |     array    |
+|weights_L1_1_V_ce0       | out |    1|  ap_memory | weights_L1_1_V |     array    |
+|weights_L1_1_V_d0        | out |   18|  ap_memory | weights_L1_1_V |     array    |
+|weights_L1_1_V_q0        |  in |   18|  ap_memory | weights_L1_1_V |     array    |
+|weights_L1_1_V_we0       | out |    1|  ap_memory | weights_L1_1_V |     array    |
+|weights_L1_1_V_address1  | out |   11|  ap_memory | weights_L1_1_V |     array    |
+|weights_L1_1_V_ce1       | out |    1|  ap_memory | weights_L1_1_V |     array    |
+|weights_L1_1_V_d1        | out |   18|  ap_memory | weights_L1_1_V |     array    |
+|weights_L1_1_V_q1        |  in |   18|  ap_memory | weights_L1_1_V |     array    |
+|weights_L1_1_V_we1       | out |    1|  ap_memory | weights_L1_1_V |     array    |
+|weights_L1_2_V_address0  | out |   11|  ap_memory | weights_L1_2_V |     array    |
+|weights_L1_2_V_ce0       | out |    1|  ap_memory | weights_L1_2_V |     array    |
+|weights_L1_2_V_d0        | out |   18|  ap_memory | weights_L1_2_V |     array    |
+|weights_L1_2_V_q0        |  in |   18|  ap_memory | weights_L1_2_V |     array    |
+|weights_L1_2_V_we0       | out |    1|  ap_memory | weights_L1_2_V |     array    |
+|weights_L1_2_V_address1  | out |   11|  ap_memory | weights_L1_2_V |     array    |
+|weights_L1_2_V_ce1       | out |    1|  ap_memory | weights_L1_2_V |     array    |
+|weights_L1_2_V_d1        | out |   18|  ap_memory | weights_L1_2_V |     array    |
+|weights_L1_2_V_q1        |  in |   18|  ap_memory | weights_L1_2_V |     array    |
+|weights_L1_2_V_we1       | out |    1|  ap_memory | weights_L1_2_V |     array    |
+|weights_L1_3_V_address0  | out |   11|  ap_memory | weights_L1_3_V |     array    |
+|weights_L1_3_V_ce0       | out |    1|  ap_memory | weights_L1_3_V |     array    |
+|weights_L1_3_V_d0        | out |   18|  ap_memory | weights_L1_3_V |     array    |
+|weights_L1_3_V_q0        |  in |   18|  ap_memory | weights_L1_3_V |     array    |
+|weights_L1_3_V_we0       | out |    1|  ap_memory | weights_L1_3_V |     array    |
+|weights_L1_3_V_address1  | out |   11|  ap_memory | weights_L1_3_V |     array    |
+|weights_L1_3_V_ce1       | out |    1|  ap_memory | weights_L1_3_V |     array    |
+|weights_L1_3_V_d1        | out |   18|  ap_memory | weights_L1_3_V |     array    |
+|weights_L1_3_V_q1        |  in |   18|  ap_memory | weights_L1_3_V |     array    |
+|weights_L1_3_V_we1       | out |    1|  ap_memory | weights_L1_3_V |     array    |
+|weights_L1_4_V_address0  | out |   11|  ap_memory | weights_L1_4_V |     array    |
+|weights_L1_4_V_ce0       | out |    1|  ap_memory | weights_L1_4_V |     array    |
+|weights_L1_4_V_d0        | out |   18|  ap_memory | weights_L1_4_V |     array    |
+|weights_L1_4_V_q0        |  in |   18|  ap_memory | weights_L1_4_V |     array    |
+|weights_L1_4_V_we0       | out |    1|  ap_memory | weights_L1_4_V |     array    |
+|weights_L1_4_V_address1  | out |   11|  ap_memory | weights_L1_4_V |     array    |
+|weights_L1_4_V_ce1       | out |    1|  ap_memory | weights_L1_4_V |     array    |
+|weights_L1_4_V_d1        | out |   18|  ap_memory | weights_L1_4_V |     array    |
+|weights_L1_4_V_q1        |  in |   18|  ap_memory | weights_L1_4_V |     array    |
+|weights_L1_4_V_we1       | out |    1|  ap_memory | weights_L1_4_V |     array    |
+|weights_L1_5_V_address0  | out |   11|  ap_memory | weights_L1_5_V |     array    |
+|weights_L1_5_V_ce0       | out |    1|  ap_memory | weights_L1_5_V |     array    |
+|weights_L1_5_V_d0        | out |   18|  ap_memory | weights_L1_5_V |     array    |
+|weights_L1_5_V_q0        |  in |   18|  ap_memory | weights_L1_5_V |     array    |
+|weights_L1_5_V_we0       | out |    1|  ap_memory | weights_L1_5_V |     array    |
+|weights_L1_5_V_address1  | out |   11|  ap_memory | weights_L1_5_V |     array    |
+|weights_L1_5_V_ce1       | out |    1|  ap_memory | weights_L1_5_V |     array    |
+|weights_L1_5_V_d1        | out |   18|  ap_memory | weights_L1_5_V |     array    |
+|weights_L1_5_V_q1        |  in |   18|  ap_memory | weights_L1_5_V |     array    |
+|weights_L1_5_V_we1       | out |    1|  ap_memory | weights_L1_5_V |     array    |
+|weights_L1_6_V_address0  | out |   11|  ap_memory | weights_L1_6_V |     array    |
+|weights_L1_6_V_ce0       | out |    1|  ap_memory | weights_L1_6_V |     array    |
+|weights_L1_6_V_d0        | out |   18|  ap_memory | weights_L1_6_V |     array    |
+|weights_L1_6_V_q0        |  in |   18|  ap_memory | weights_L1_6_V |     array    |
+|weights_L1_6_V_we0       | out |    1|  ap_memory | weights_L1_6_V |     array    |
+|weights_L1_6_V_address1  | out |   11|  ap_memory | weights_L1_6_V |     array    |
+|weights_L1_6_V_ce1       | out |    1|  ap_memory | weights_L1_6_V |     array    |
+|weights_L1_6_V_d1        | out |   18|  ap_memory | weights_L1_6_V |     array    |
+|weights_L1_6_V_q1        |  in |   18|  ap_memory | weights_L1_6_V |     array    |
+|weights_L1_6_V_we1       | out |    1|  ap_memory | weights_L1_6_V |     array    |
+|weights_L1_7_V_address0  | out |   11|  ap_memory | weights_L1_7_V |     array    |
+|weights_L1_7_V_ce0       | out |    1|  ap_memory | weights_L1_7_V |     array    |
+|weights_L1_7_V_d0        | out |   18|  ap_memory | weights_L1_7_V |     array    |
+|weights_L1_7_V_q0        |  in |   18|  ap_memory | weights_L1_7_V |     array    |
+|weights_L1_7_V_we0       | out |    1|  ap_memory | weights_L1_7_V |     array    |
+|weights_L1_7_V_address1  | out |   11|  ap_memory | weights_L1_7_V |     array    |
+|weights_L1_7_V_ce1       | out |    1|  ap_memory | weights_L1_7_V |     array    |
+|weights_L1_7_V_d1        | out |   18|  ap_memory | weights_L1_7_V |     array    |
+|weights_L1_7_V_q1        |  in |   18|  ap_memory | weights_L1_7_V |     array    |
+|weights_L1_7_V_we1       | out |    1|  ap_memory | weights_L1_7_V |     array    |
+|weights_L2_V_address0    | out |    9|  ap_memory |  weights_L2_V  |     array    |
+|weights_L2_V_ce0         | out |    1|  ap_memory |  weights_L2_V  |     array    |
+|weights_L2_V_d0          | out |   18|  ap_memory |  weights_L2_V  |     array    |
+|weights_L2_V_q0          |  in |   18|  ap_memory |  weights_L2_V  |     array    |
+|weights_L2_V_we0         | out |    1|  ap_memory |  weights_L2_V  |     array    |
+|weights_L2_V_address1    | out |    9|  ap_memory |  weights_L2_V  |     array    |
+|weights_L2_V_ce1         | out |    1|  ap_memory |  weights_L2_V  |     array    |
+|weights_L2_V_d1          | out |   18|  ap_memory |  weights_L2_V  |     array    |
+|weights_L2_V_q1          |  in |   18|  ap_memory |  weights_L2_V  |     array    |
+|weights_L2_V_we1         | out |    1|  ap_memory |  weights_L2_V  |     array    |
+|input_0_V_address0       | out |    6|  ap_memory |    input_0_V   |     array    |
+|input_0_V_ce0            | out |    1|  ap_memory |    input_0_V   |     array    |
+|input_0_V_d0             | out |   18|  ap_memory |    input_0_V   |     array    |
+|input_0_V_q0             |  in |   18|  ap_memory |    input_0_V   |     array    |
+|input_0_V_we0            | out |    1|  ap_memory |    input_0_V   |     array    |
+|input_0_V_address1       | out |    6|  ap_memory |    input_0_V   |     array    |
+|input_0_V_ce1            | out |    1|  ap_memory |    input_0_V   |     array    |
+|input_0_V_d1             | out |   18|  ap_memory |    input_0_V   |     array    |
+|input_0_V_q1             |  in |   18|  ap_memory |    input_0_V   |     array    |
+|input_0_V_we1            | out |    1|  ap_memory |    input_0_V   |     array    |
+|input_1_V_address0       | out |    6|  ap_memory |    input_1_V   |     array    |
+|input_1_V_ce0            | out |    1|  ap_memory |    input_1_V   |     array    |
+|input_1_V_d0             | out |   18|  ap_memory |    input_1_V   |     array    |
+|input_1_V_q0             |  in |   18|  ap_memory |    input_1_V   |     array    |
+|input_1_V_we0            | out |    1|  ap_memory |    input_1_V   |     array    |
+|input_1_V_address1       | out |    6|  ap_memory |    input_1_V   |     array    |
+|input_1_V_ce1            | out |    1|  ap_memory |    input_1_V   |     array    |
+|input_1_V_d1             | out |   18|  ap_memory |    input_1_V   |     array    |
+|input_1_V_q1             |  in |   18|  ap_memory |    input_1_V   |     array    |
+|input_1_V_we1            | out |    1|  ap_memory |    input_1_V   |     array    |
+|input_2_V_address0       | out |    6|  ap_memory |    input_2_V   |     array    |
+|input_2_V_ce0            | out |    1|  ap_memory |    input_2_V   |     array    |
+|input_2_V_d0             | out |   18|  ap_memory |    input_2_V   |     array    |
+|input_2_V_q0             |  in |   18|  ap_memory |    input_2_V   |     array    |
+|input_2_V_we0            | out |    1|  ap_memory |    input_2_V   |     array    |
+|input_2_V_address1       | out |    6|  ap_memory |    input_2_V   |     array    |
+|input_2_V_ce1            | out |    1|  ap_memory |    input_2_V   |     array    |
+|input_2_V_d1             | out |   18|  ap_memory |    input_2_V   |     array    |
+|input_2_V_q1             |  in |   18|  ap_memory |    input_2_V   |     array    |
+|input_2_V_we1            | out |    1|  ap_memory |    input_2_V   |     array    |
+|input_3_V_address0       | out |    6|  ap_memory |    input_3_V   |     array    |
+|input_3_V_ce0            | out |    1|  ap_memory |    input_3_V   |     array    |
+|input_3_V_d0             | out |   18|  ap_memory |    input_3_V   |     array    |
+|input_3_V_q0             |  in |   18|  ap_memory |    input_3_V   |     array    |
+|input_3_V_we0            | out |    1|  ap_memory |    input_3_V   |     array    |
+|input_3_V_address1       | out |    6|  ap_memory |    input_3_V   |     array    |
+|input_3_V_ce1            | out |    1|  ap_memory |    input_3_V   |     array    |
+|input_3_V_d1             | out |   18|  ap_memory |    input_3_V   |     array    |
+|input_3_V_q1             |  in |   18|  ap_memory |    input_3_V   |     array    |
+|input_3_V_we1            | out |    1|  ap_memory |    input_3_V   |     array    |
+|input_4_V_address0       | out |    6|  ap_memory |    input_4_V   |     array    |
+|input_4_V_ce0            | out |    1|  ap_memory |    input_4_V   |     array    |
+|input_4_V_d0             | out |   18|  ap_memory |    input_4_V   |     array    |
+|input_4_V_q0             |  in |   18|  ap_memory |    input_4_V   |     array    |
+|input_4_V_we0            | out |    1|  ap_memory |    input_4_V   |     array    |
+|input_4_V_address1       | out |    6|  ap_memory |    input_4_V   |     array    |
+|input_4_V_ce1            | out |    1|  ap_memory |    input_4_V   |     array    |
+|input_4_V_d1             | out |   18|  ap_memory |    input_4_V   |     array    |
+|input_4_V_q1             |  in |   18|  ap_memory |    input_4_V   |     array    |
+|input_4_V_we1            | out |    1|  ap_memory |    input_4_V   |     array    |
+|input_5_V_address0       | out |    6|  ap_memory |    input_5_V   |     array    |
+|input_5_V_ce0            | out |    1|  ap_memory |    input_5_V   |     array    |
+|input_5_V_d0             | out |   18|  ap_memory |    input_5_V   |     array    |
+|input_5_V_q0             |  in |   18|  ap_memory |    input_5_V   |     array    |
+|input_5_V_we0            | out |    1|  ap_memory |    input_5_V   |     array    |
+|input_5_V_address1       | out |    6|  ap_memory |    input_5_V   |     array    |
+|input_5_V_ce1            | out |    1|  ap_memory |    input_5_V   |     array    |
+|input_5_V_d1             | out |   18|  ap_memory |    input_5_V   |     array    |
+|input_5_V_q1             |  in |   18|  ap_memory |    input_5_V   |     array    |
+|input_5_V_we1            | out |    1|  ap_memory |    input_5_V   |     array    |
+|input_6_V_address0       | out |    6|  ap_memory |    input_6_V   |     array    |
+|input_6_V_ce0            | out |    1|  ap_memory |    input_6_V   |     array    |
+|input_6_V_d0             | out |   18|  ap_memory |    input_6_V   |     array    |
+|input_6_V_q0             |  in |   18|  ap_memory |    input_6_V   |     array    |
+|input_6_V_we0            | out |    1|  ap_memory |    input_6_V   |     array    |
+|input_6_V_address1       | out |    6|  ap_memory |    input_6_V   |     array    |
+|input_6_V_ce1            | out |    1|  ap_memory |    input_6_V   |     array    |
+|input_6_V_d1             | out |   18|  ap_memory |    input_6_V   |     array    |
+|input_6_V_q1             |  in |   18|  ap_memory |    input_6_V   |     array    |
+|input_6_V_we1            | out |    1|  ap_memory |    input_6_V   |     array    |
+|input_7_V_address0       | out |    6|  ap_memory |    input_7_V   |     array    |
+|input_7_V_ce0            | out |    1|  ap_memory |    input_7_V   |     array    |
+|input_7_V_d0             | out |   18|  ap_memory |    input_7_V   |     array    |
+|input_7_V_q0             |  in |   18|  ap_memory |    input_7_V   |     array    |
+|input_7_V_we0            | out |    1|  ap_memory |    input_7_V   |     array    |
+|input_7_V_address1       | out |    6|  ap_memory |    input_7_V   |     array    |
+|input_7_V_ce1            | out |    1|  ap_memory |    input_7_V   |     array    |
+|input_7_V_d1             | out |   18|  ap_memory |    input_7_V   |     array    |
+|input_7_V_q1             |  in |   18|  ap_memory |    input_7_V   |     array    |
+|input_7_V_we1            | out |    1|  ap_memory |    input_7_V   |     array    |
++-------------------------+-----+-----+------------+----------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 2
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 14
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 14, States = { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 }
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.14>
+ST_1 : Operation 15 [1/1] (1.14ns)   --->   "%bias_added_0_V = alloca [51 x i18], align 4" [../src/mlp.cpp:6]   --->   Operation 15 'alloca' 'bias_added_0_V' <Predicate = true> <Delay = 1.14>
+ST_1 : Operation 16 [1/1] (1.14ns)   --->   "%bias_added_1_V = alloca [51 x i18], align 4" [../src/mlp.cpp:6]   --->   Operation 16 'alloca' 'bias_added_1_V' <Predicate = true> <Delay = 1.14>
+ST_1 : Operation 17 [1/1] (1.14ns)   --->   "%bias_added_2_V = alloca [51 x i18], align 4" [../src/mlp.cpp:6]   --->   Operation 17 'alloca' 'bias_added_2_V' <Predicate = true> <Delay = 1.14>
+ST_1 : Operation 18 [1/1] (1.14ns)   --->   "%bias_added_3_V = alloca [51 x i18], align 4" [../src/mlp.cpp:6]   --->   Operation 18 'alloca' 'bias_added_3_V' <Predicate = true> <Delay = 1.14>
+ST_1 : Operation 19 [1/1] (1.14ns)   --->   "%bias_added_4_V = alloca [51 x i18], align 4" [../src/mlp.cpp:6]   --->   Operation 19 'alloca' 'bias_added_4_V' <Predicate = true> <Delay = 1.14>
+ST_1 : Operation 20 [1/1] (1.14ns)   --->   "%bias_added_5_V = alloca [51 x i18], align 4" [../src/mlp.cpp:6]   --->   Operation 20 'alloca' 'bias_added_5_V' <Predicate = true> <Delay = 1.14>
+ST_1 : Operation 21 [1/1] (1.14ns)   --->   "%bias_added_6_V = alloca [51 x i18], align 4" [../src/mlp.cpp:6]   --->   Operation 21 'alloca' 'bias_added_6_V' <Predicate = true> <Delay = 1.14>
+ST_1 : Operation 22 [1/1] (1.14ns)   --->   "%bias_added_7_V = alloca [44 x i18], align 4" [../src/mlp.cpp:6]   --->   Operation 22 'alloca' 'bias_added_7_V' <Predicate = true> <Delay = 1.14>
+ST_1 : Operation 23 [1/1] (1.14ns)   --->   "%L1_no_activ_V = alloca [25 x i18], align 4" [../src/mlp.cpp:7]   --->   Operation 23 'alloca' 'L1_no_activ_V' <Predicate = true> <Delay = 1.14>
+ST_1 : Operation 24 [1/1] (1.14ns)   --->   "%L1_activ_V = alloca [25 x i18], align 4" [../src/mlp.cpp:8]   --->   Operation 24 'alloca' 'L1_activ_V' <Predicate = true> <Delay = 1.14>
+ST_1 : Operation 25 [1/1] (1.14ns)   --->   "%L2_bias_added_V = alloca [26 x i18], align 4" [../src/mlp.cpp:9]   --->   Operation 25 'alloca' 'L2_bias_added_V' <Predicate = true> <Delay = 1.14>
+ST_1 : Operation 26 [1/1] (1.14ns)   --->   "%L2_out_V = alloca [10 x i18], align 4" [../src/mlp.cpp:10]   --->   Operation 26 'alloca' 'L2_out_V' <Predicate = true> <Delay = 1.14>
+ST_1 : Operation 27 [1/1] (1.14ns)   --->   "%L2_out_activ_V = alloca [10 x i18], align 4" [../src/mlp.cpp:11]   --->   Operation 27 'alloca' 'L2_out_activ_V' <Predicate = true> <Delay = 1.14>
+ST_1 : Operation 28 [2/2] (0.00ns)   --->   "call fastcc void @add_bias_pre_L1([50 x i18]* %input_0_V, [50 x i18]* %input_1_V, [50 x i18]* %input_2_V, [50 x i18]* %input_3_V, [50 x i18]* %input_4_V, [50 x i18]* %input_5_V, [50 x i18]* %input_6_V, [50 x i18]* %input_7_V, [51 x i18]* %bias_added_0_V, [51 x i18]* %bias_added_1_V, [51 x i18]* %bias_added_2_V, [51 x i18]* %bias_added_3_V, [51 x i18]* %bias_added_4_V, [51 x i18]* %bias_added_5_V, [51 x i18]* %bias_added_6_V, [44 x i18]* %bias_added_7_V)" [../src/mlp.cpp:14]   --->   Operation 28 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 29 [1/2] (0.00ns)   --->   "call fastcc void @add_bias_pre_L1([50 x i18]* %input_0_V, [50 x i18]* %input_1_V, [50 x i18]* %input_2_V, [50 x i18]* %input_3_V, [50 x i18]* %input_4_V, [50 x i18]* %input_5_V, [50 x i18]* %input_6_V, [50 x i18]* %input_7_V, [51 x i18]* %bias_added_0_V, [51 x i18]* %bias_added_1_V, [51 x i18]* %bias_added_2_V, [51 x i18]* %bias_added_3_V, [51 x i18]* %bias_added_4_V, [51 x i18]* %bias_added_5_V, [51 x i18]* %bias_added_6_V, [44 x i18]* %bias_added_7_V)" [../src/mlp.cpp:14]   --->   Operation 29 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 30 [2/2] (0.00ns)   --->   "call fastcc void @mvprod_layer_1([1275 x i18]* %weights_L1_0_V, [1275 x i18]* %weights_L1_1_V, [1275 x i18]* %weights_L1_2_V, [1275 x i18]* %weights_L1_3_V, [1275 x i18]* %weights_L1_4_V, [1275 x i18]* %weights_L1_5_V, [1275 x i18]* %weights_L1_6_V, [1100 x i18]* %weights_L1_7_V, [51 x i18]* %bias_added_0_V, [51 x i18]* %bias_added_1_V, [51 x i18]* %bias_added_2_V, [51 x i18]* %bias_added_3_V, [51 x i18]* %bias_added_4_V, [51 x i18]* %bias_added_5_V, [51 x i18]* %bias_added_6_V, [44 x i18]* %bias_added_7_V, [25 x i18]* %L1_no_activ_V)" [../src/mlp.cpp:15]   --->   Operation 30 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 31 [1/2] (0.00ns)   --->   "call fastcc void @mvprod_layer_1([1275 x i18]* %weights_L1_0_V, [1275 x i18]* %weights_L1_1_V, [1275 x i18]* %weights_L1_2_V, [1275 x i18]* %weights_L1_3_V, [1275 x i18]* %weights_L1_4_V, [1275 x i18]* %weights_L1_5_V, [1275 x i18]* %weights_L1_6_V, [1100 x i18]* %weights_L1_7_V, [51 x i18]* %bias_added_0_V, [51 x i18]* %bias_added_1_V, [51 x i18]* %bias_added_2_V, [51 x i18]* %bias_added_3_V, [51 x i18]* %bias_added_4_V, [51 x i18]* %bias_added_5_V, [51 x i18]* %bias_added_6_V, [44 x i18]* %bias_added_7_V, [25 x i18]* %L1_no_activ_V)" [../src/mlp.cpp:15]   --->   Operation 31 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 32 [2/2] (0.00ns)   --->   "call fastcc void @sigmoid_activation_L.1([25 x i18]* %L1_no_activ_V, [25 x i18]* %L1_activ_V)" [../src/mlp.cpp:16]   --->   Operation 32 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 33 [1/2] (0.00ns)   --->   "call fastcc void @sigmoid_activation_L.1([25 x i18]* %L1_no_activ_V, [25 x i18]* %L1_activ_V)" [../src/mlp.cpp:16]   --->   Operation 33 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 34 [2/2] (0.00ns)   --->   "call fastcc void @add_bias_pre_L2([25 x i18]* %L1_activ_V, [26 x i18]* %L2_bias_added_V)" [../src/mlp.cpp:18]   --->   Operation 34 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 35 [1/2] (0.00ns)   --->   "call fastcc void @add_bias_pre_L2([25 x i18]* %L1_activ_V, [26 x i18]* %L2_bias_added_V)" [../src/mlp.cpp:18]   --->   Operation 35 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 0.00>
+ST_9 : Operation 36 [2/2] (0.00ns)   --->   "call fastcc void @mvprod_layer_2([260 x i18]* %weights_L2_V, [26 x i18]* %L2_bias_added_V, [10 x i18]* %L2_out_V)" [../src/mlp.cpp:19]   --->   Operation 36 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 0.00>
+ST_10 : Operation 37 [1/2] (0.00ns)   --->   "call fastcc void @mvprod_layer_2([260 x i18]* %weights_L2_V, [26 x i18]* %L2_bias_added_V, [10 x i18]* %L2_out_V)" [../src/mlp.cpp:19]   --->   Operation 37 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 0.00>
+ST_11 : Operation 38 [2/2] (0.00ns)   --->   "call fastcc void @sigmoid_activation_L([10 x i18]* %L2_out_V, [10 x i18]* %L2_out_activ_V)" [../src/mlp.cpp:20]   --->   Operation 38 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 11> <Delay = 0.00>
+ST_12 : Operation 39 [1/2] (0.00ns)   --->   "call fastcc void @sigmoid_activation_L([10 x i18]* %L2_out_V, [10 x i18]* %L2_out_activ_V)" [../src/mlp.cpp:20]   --->   Operation 39 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 12> <Delay = 0.00>
+ST_13 : Operation 40 [2/2] (0.00ns)   --->   "%digit = call fastcc i32 @classify([10 x i18]* %L2_out_activ_V)" [../src/mlp.cpp:22]   --->   Operation 40 'call' 'digit' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.46> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+
+State 14 <SV = 13> <Delay = 0.00>
+ST_14 : Operation 41 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str1) nounwind" [../src/mlp.cpp:6]   --->   Operation 41 'specdataflowpipeline' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 42 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([1100 x i18]* %weights_L1_7_V), !map !143"   --->   Operation 42 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 43 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([1275 x i18]* %weights_L1_6_V), !map !150"   --->   Operation 43 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 44 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([1275 x i18]* %weights_L1_5_V), !map !156"   --->   Operation 44 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 45 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([1275 x i18]* %weights_L1_4_V), !map !162"   --->   Operation 45 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 46 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([1275 x i18]* %weights_L1_3_V), !map !168"   --->   Operation 46 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 47 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([1275 x i18]* %weights_L1_2_V), !map !174"   --->   Operation 47 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 48 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([1275 x i18]* %weights_L1_1_V), !map !180"   --->   Operation 48 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 49 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([1275 x i18]* %weights_L1_0_V), !map !186"   --->   Operation 49 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 50 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([50 x i18]* %input_7_V), !map !192"   --->   Operation 50 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 51 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([50 x i18]* %input_6_V), !map !198"   --->   Operation 51 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 52 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([50 x i18]* %input_5_V), !map !204"   --->   Operation 52 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 53 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([50 x i18]* %input_4_V), !map !210"   --->   Operation 53 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 54 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([50 x i18]* %input_3_V), !map !216"   --->   Operation 54 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 55 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([50 x i18]* %input_2_V), !map !222"   --->   Operation 55 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 56 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([50 x i18]* %input_1_V), !map !228"   --->   Operation 56 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 57 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([50 x i18]* %input_0_V), !map !234"   --->   Operation 57 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 58 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([260 x i18]* %weights_L2_V), !map !240"   --->   Operation 58 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 59 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 0) nounwind, !map !247"   --->   Operation 59 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 60 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([4 x i8]* @mlp_str) nounwind"   --->   Operation 60 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 61 [1/2] (0.00ns)   --->   "%digit = call fastcc i32 @classify([10 x i18]* %L2_out_activ_V)" [../src/mlp.cpp:22]   --->   Operation 61 'call' 'digit' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.46> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_14 : Operation 62 [1/1] (0.00ns)   --->   "%digit_load_loc_chann = call fastcc i32 @Block_arrayctor.loop(i32 %digit)" [../src/mlp.cpp:22]   --->   Operation 62 'call' 'digit_load_loc_chann' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.46> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_14 : Operation 63 [1/1] (0.00ns)   --->   "%tmp = call fastcc i32 @"__../src/mlp.cpp_lin"(i32 %digit_load_loc_chann)" [../src/mlp.cpp:22]   --->   Operation 63 'call' 'tmp' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_14 : Operation 64 [1/1] (0.00ns)   --->   "ret i32 %tmp" [../src/mlp.cpp:24]   --->   Operation 64 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 1
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ weights_L1_0_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11]; IO mode=ap_memory:ce=0
+Port [ weights_L1_1_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11]; IO mode=ap_memory:ce=0
+Port [ weights_L1_2_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11]; IO mode=ap_memory:ce=0
+Port [ weights_L1_3_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11]; IO mode=ap_memory:ce=0
+Port [ weights_L1_4_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11]; IO mode=ap_memory:ce=0
+Port [ weights_L1_5_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11]; IO mode=ap_memory:ce=0
+Port [ weights_L1_6_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11]; IO mode=ap_memory:ce=0
+Port [ weights_L1_7_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11]; IO mode=ap_memory:ce=0
+Port [ weights_L2_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11]; IO mode=ap_memory:ce=0
+Port [ input_0_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ input_1_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ input_2_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ input_3_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ input_4_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ input_5_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ input_6_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ input_7_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+bias_added_0_V       (alloca              ) [ 001110000000000]
+bias_added_1_V       (alloca              ) [ 001110000000000]
+bias_added_2_V       (alloca              ) [ 001110000000000]
+bias_added_3_V       (alloca              ) [ 001110000000000]
+bias_added_4_V       (alloca              ) [ 001110000000000]
+bias_added_5_V       (alloca              ) [ 001110000000000]
+bias_added_6_V       (alloca              ) [ 001110000000000]
+bias_added_7_V       (alloca              ) [ 001110000000000]
+L1_no_activ_V        (alloca              ) [ 001111100000000]
+L1_activ_V           (alloca              ) [ 001111111000000]
+L2_bias_added_V      (alloca              ) [ 001111111110000]
+L2_out_V             (alloca              ) [ 001111111111100]
+L2_out_activ_V       (alloca              ) [ 001111111111111]
+StgValue_29          (call                ) [ 000000000000000]
+StgValue_31          (call                ) [ 000000000000000]
+StgValue_33          (call                ) [ 000000000000000]
+StgValue_35          (call                ) [ 000000000000000]
+StgValue_37          (call                ) [ 000000000000000]
+StgValue_39          (call                ) [ 000000000000000]
+StgValue_41          (specdataflowpipeline) [ 000000000000000]
+StgValue_42          (specbitsmap         ) [ 000000000000000]
+StgValue_43          (specbitsmap         ) [ 000000000000000]
+StgValue_44          (specbitsmap         ) [ 000000000000000]
+StgValue_45          (specbitsmap         ) [ 000000000000000]
+StgValue_46          (specbitsmap         ) [ 000000000000000]
+StgValue_47          (specbitsmap         ) [ 000000000000000]
+StgValue_48          (specbitsmap         ) [ 000000000000000]
+StgValue_49          (specbitsmap         ) [ 000000000000000]
+StgValue_50          (specbitsmap         ) [ 000000000000000]
+StgValue_51          (specbitsmap         ) [ 000000000000000]
+StgValue_52          (specbitsmap         ) [ 000000000000000]
+StgValue_53          (specbitsmap         ) [ 000000000000000]
+StgValue_54          (specbitsmap         ) [ 000000000000000]
+StgValue_55          (specbitsmap         ) [ 000000000000000]
+StgValue_56          (specbitsmap         ) [ 000000000000000]
+StgValue_57          (specbitsmap         ) [ 000000000000000]
+StgValue_58          (specbitsmap         ) [ 000000000000000]
+StgValue_59          (specbitsmap         ) [ 000000000000000]
+StgValue_60          (spectopmodule       ) [ 000000000000000]
+digit                (call                ) [ 000000000000000]
+digit_load_loc_chann (call                ) [ 000000000000000]
+tmp                  (call                ) [ 000000000000000]
+StgValue_64          (ret                 ) [ 000000000000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="weights_L1_0_V">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="weights_L1_0_V"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="weights_L1_1_V">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="weights_L1_1_V"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="weights_L1_2_V">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="weights_L1_2_V"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="weights_L1_3_V">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="weights_L1_3_V"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="weights_L1_4_V">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="weights_L1_4_V"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="weights_L1_5_V">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="weights_L1_5_V"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1000" name="weights_L1_6_V">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="weights_L1_6_V"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1000" name="weights_L1_7_V">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="weights_L1_7_V"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1000" name="weights_L2_V">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="weights_L2_V"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1000" name="input_0_V">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="input_0_V"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1000" name="input_1_V">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="input_1_V"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1000" name="input_2_V">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="input_2_V"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1000" name="input_3_V">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="input_3_V"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1000" name="input_4_V">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="input_4_V"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1000" name="input_5_V">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="input_5_V"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1000" name="input_6_V">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="input_6_V"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1000" name="input_7_V">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="input_7_V"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="add_bias_pre_L1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1001" name="const_38">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mvprod_layer_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1001" name="const_40">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="sigmoid_activation_L.1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1001" name="const_42">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="add_bias_pre_L2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1001" name="const_44">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mvprod_layer_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1001" name="const_46">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="sigmoid_activation_L"/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1001" name="const_48">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="classify"/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1001" name="const_50">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecDataflowPipeline"/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1001" name="const_52">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1001" name="const_54">
+<pin_list>
+<pin id="55" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="56" class="1001" name="const_56">
+<pin_list>
+<pin id="57" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecBitsMap"/></StgValue>
+</bind>
+</comp>
+
+<comp id="58" class="1001" name="const_58">
+<pin_list>
+<pin id="59" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="60" class="1001" name="const_60">
+<pin_list>
+<pin id="61" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecTopModule"/></StgValue>
+</bind>
+</comp>
+
+<comp id="62" class="1001" name="const_62">
+<pin_list>
+<pin id="63" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mlp_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="64" class="1001" name="const_64">
+<pin_list>
+<pin id="65" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="Block_arrayctor.loop"/></StgValue>
+</bind>
+</comp>
+
+<comp id="66" class="1001" name="const_66">
+<pin_list>
+<pin id="67" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="__../src/mlp.cpp_lin"/></StgValue>
+</bind>
+</comp>
+
+<comp id="68" class="1004" name="bias_added_0_V_alloca_fu_68">
+<pin_list>
+<pin id="69" dir="0" index="0" bw="1" slack="0"/>
+<pin id="70" dir="1" index="1" bw="18" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="bias_added_0_V/1 "/>
+</bind>
+</comp>
+
+<comp id="72" class="1004" name="bias_added_1_V_alloca_fu_72">
+<pin_list>
+<pin id="73" dir="0" index="0" bw="1" slack="0"/>
+<pin id="74" dir="1" index="1" bw="18" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="bias_added_1_V/1 "/>
+</bind>
+</comp>
+
+<comp id="76" class="1004" name="bias_added_2_V_alloca_fu_76">
+<pin_list>
+<pin id="77" dir="0" index="0" bw="1" slack="0"/>
+<pin id="78" dir="1" index="1" bw="18" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="bias_added_2_V/1 "/>
+</bind>
+</comp>
+
+<comp id="80" class="1004" name="bias_added_3_V_alloca_fu_80">
+<pin_list>
+<pin id="81" dir="0" index="0" bw="1" slack="0"/>
+<pin id="82" dir="1" index="1" bw="18" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="bias_added_3_V/1 "/>
+</bind>
+</comp>
+
+<comp id="84" class="1004" name="bias_added_4_V_alloca_fu_84">
+<pin_list>
+<pin id="85" dir="0" index="0" bw="1" slack="0"/>
+<pin id="86" dir="1" index="1" bw="18" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="bias_added_4_V/1 "/>
+</bind>
+</comp>
+
+<comp id="88" class="1004" name="bias_added_5_V_alloca_fu_88">
+<pin_list>
+<pin id="89" dir="0" index="0" bw="1" slack="0"/>
+<pin id="90" dir="1" index="1" bw="18" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="bias_added_5_V/1 "/>
+</bind>
+</comp>
+
+<comp id="92" class="1004" name="bias_added_6_V_alloca_fu_92">
+<pin_list>
+<pin id="93" dir="0" index="0" bw="1" slack="0"/>
+<pin id="94" dir="1" index="1" bw="18" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="bias_added_6_V/1 "/>
+</bind>
+</comp>
+
+<comp id="96" class="1004" name="bias_added_7_V_alloca_fu_96">
+<pin_list>
+<pin id="97" dir="0" index="0" bw="1" slack="0"/>
+<pin id="98" dir="1" index="1" bw="18" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="bias_added_7_V/1 "/>
+</bind>
+</comp>
+
+<comp id="100" class="1004" name="L1_no_activ_V_alloca_fu_100">
+<pin_list>
+<pin id="101" dir="0" index="0" bw="1" slack="0"/>
+<pin id="102" dir="1" index="1" bw="18" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="L1_no_activ_V/1 "/>
+</bind>
+</comp>
+
+<comp id="104" class="1004" name="L1_activ_V_alloca_fu_104">
+<pin_list>
+<pin id="105" dir="0" index="0" bw="1" slack="0"/>
+<pin id="106" dir="1" index="1" bw="18" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="L1_activ_V/1 "/>
+</bind>
+</comp>
+
+<comp id="108" class="1004" name="L2_bias_added_V_alloca_fu_108">
+<pin_list>
+<pin id="109" dir="0" index="0" bw="1" slack="0"/>
+<pin id="110" dir="1" index="1" bw="18" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="L2_bias_added_V/1 "/>
+</bind>
+</comp>
+
+<comp id="112" class="1004" name="L2_out_V_alloca_fu_112">
+<pin_list>
+<pin id="113" dir="0" index="0" bw="1" slack="0"/>
+<pin id="114" dir="1" index="1" bw="18" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="L2_out_V/1 "/>
+</bind>
+</comp>
+
+<comp id="116" class="1004" name="L2_out_activ_V_alloca_fu_116">
+<pin_list>
+<pin id="117" dir="0" index="0" bw="1" slack="0"/>
+<pin id="118" dir="1" index="1" bw="18" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="L2_out_activ_V/1 "/>
+</bind>
+</comp>
+
+<comp id="120" class="1004" name="grp_mvprod_layer_1_fu_120">
+<pin_list>
+<pin id="121" dir="0" index="0" bw="0" slack="0"/>
+<pin id="122" dir="0" index="1" bw="18" slack="0"/>
+<pin id="123" dir="0" index="2" bw="18" slack="0"/>
+<pin id="124" dir="0" index="3" bw="18" slack="0"/>
+<pin id="125" dir="0" index="4" bw="18" slack="0"/>
+<pin id="126" dir="0" index="5" bw="18" slack="0"/>
+<pin id="127" dir="0" index="6" bw="18" slack="0"/>
+<pin id="128" dir="0" index="7" bw="18" slack="0"/>
+<pin id="129" dir="0" index="8" bw="18" slack="0"/>
+<pin id="130" dir="0" index="9" bw="18" slack="2147483647"/>
+<pin id="131" dir="0" index="10" bw="18" slack="2147483647"/>
+<pin id="132" dir="0" index="11" bw="18" slack="2147483647"/>
+<pin id="133" dir="0" index="12" bw="18" slack="2147483647"/>
+<pin id="134" dir="0" index="13" bw="18" slack="2147483647"/>
+<pin id="135" dir="0" index="14" bw="18" slack="2147483647"/>
+<pin id="136" dir="0" index="15" bw="18" slack="2147483647"/>
+<pin id="137" dir="0" index="16" bw="18" slack="2147483647"/>
+<pin id="138" dir="0" index="17" bw="18" slack="2147483647"/>
+<pin id="139" dir="1" index="18" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_30/3 "/>
+</bind>
+</comp>
+
+<comp id="149" class="1004" name="grp_mvprod_layer_2_fu_149">
+<pin_list>
+<pin id="150" dir="0" index="0" bw="0" slack="0"/>
+<pin id="151" dir="0" index="1" bw="18" slack="0"/>
+<pin id="152" dir="0" index="2" bw="18" slack="2147483647"/>
+<pin id="153" dir="0" index="3" bw="18" slack="2147483647"/>
+<pin id="154" dir="1" index="4" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_36/9 "/>
+</bind>
+</comp>
+
+<comp id="157" class="1004" name="grp_add_bias_pre_L1_fu_157">
+<pin_list>
+<pin id="158" dir="0" index="0" bw="0" slack="0"/>
+<pin id="159" dir="0" index="1" bw="18" slack="0"/>
+<pin id="160" dir="0" index="2" bw="18" slack="0"/>
+<pin id="161" dir="0" index="3" bw="18" slack="0"/>
+<pin id="162" dir="0" index="4" bw="18" slack="0"/>
+<pin id="163" dir="0" index="5" bw="18" slack="0"/>
+<pin id="164" dir="0" index="6" bw="18" slack="0"/>
+<pin id="165" dir="0" index="7" bw="18" slack="0"/>
+<pin id="166" dir="0" index="8" bw="18" slack="0"/>
+<pin id="167" dir="0" index="9" bw="18" slack="0"/>
+<pin id="168" dir="0" index="10" bw="18" slack="0"/>
+<pin id="169" dir="0" index="11" bw="18" slack="0"/>
+<pin id="170" dir="0" index="12" bw="18" slack="0"/>
+<pin id="171" dir="0" index="13" bw="18" slack="0"/>
+<pin id="172" dir="0" index="14" bw="18" slack="0"/>
+<pin id="173" dir="0" index="15" bw="18" slack="0"/>
+<pin id="174" dir="0" index="16" bw="18" slack="0"/>
+<pin id="175" dir="1" index="17" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_28/1 "/>
+</bind>
+</comp>
+
+<comp id="193" class="1004" name="grp_sigmoid_activation_L_1_fu_193">
+<pin_list>
+<pin id="194" dir="0" index="0" bw="0" slack="0"/>
+<pin id="195" dir="0" index="1" bw="18" slack="2147483647"/>
+<pin id="196" dir="0" index="2" bw="18" slack="2147483647"/>
+<pin id="197" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_32/5 "/>
+</bind>
+</comp>
+
+<comp id="199" class="1004" name="grp_sigmoid_activation_L_fu_199">
+<pin_list>
+<pin id="200" dir="0" index="0" bw="0" slack="0"/>
+<pin id="201" dir="0" index="1" bw="18" slack="2147483647"/>
+<pin id="202" dir="0" index="2" bw="18" slack="2147483647"/>
+<pin id="203" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_38/11 "/>
+</bind>
+</comp>
+
+<comp id="205" class="1004" name="grp_classify_fu_205">
+<pin_list>
+<pin id="206" dir="0" index="0" bw="32" slack="0"/>
+<pin id="207" dir="0" index="1" bw="18" slack="2147483647"/>
+<pin id="208" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="digit/13 "/>
+</bind>
+</comp>
+
+<comp id="210" class="1004" name="grp_add_bias_pre_L2_fu_210">
+<pin_list>
+<pin id="211" dir="0" index="0" bw="0" slack="0"/>
+<pin id="212" dir="0" index="1" bw="18" slack="2147483647"/>
+<pin id="213" dir="0" index="2" bw="18" slack="2147483647"/>
+<pin id="214" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_34/7 "/>
+</bind>
+</comp>
+
+<comp id="216" class="1004" name="digit_load_loc_chann_Block_arrayctor_loop_fu_216">
+<pin_list>
+<pin id="217" dir="0" index="0" bw="32" slack="0"/>
+<pin id="218" dir="0" index="1" bw="32" slack="0"/>
+<pin id="219" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="digit_load_loc_chann/14 "/>
+</bind>
+</comp>
+
+<comp id="222" class="1004" name="tmp_p_src_mlp_cpp_lin_fu_222">
+<pin_list>
+<pin id="223" dir="0" index="0" bw="32" slack="0"/>
+<pin id="224" dir="0" index="1" bw="32" slack="0"/>
+<pin id="225" dir="1" index="2" bw="32" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="tmp/14 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="71"><net_src comp="34" pin="0"/><net_sink comp="68" pin=0"/></net>
+
+<net id="75"><net_src comp="34" pin="0"/><net_sink comp="72" pin=0"/></net>
+
+<net id="79"><net_src comp="34" pin="0"/><net_sink comp="76" pin=0"/></net>
+
+<net id="83"><net_src comp="34" pin="0"/><net_sink comp="80" pin=0"/></net>
+
+<net id="87"><net_src comp="34" pin="0"/><net_sink comp="84" pin=0"/></net>
+
+<net id="91"><net_src comp="34" pin="0"/><net_sink comp="88" pin=0"/></net>
+
+<net id="95"><net_src comp="34" pin="0"/><net_sink comp="92" pin=0"/></net>
+
+<net id="99"><net_src comp="34" pin="0"/><net_sink comp="96" pin=0"/></net>
+
+<net id="103"><net_src comp="34" pin="0"/><net_sink comp="100" pin=0"/></net>
+
+<net id="107"><net_src comp="34" pin="0"/><net_sink comp="104" pin=0"/></net>
+
+<net id="111"><net_src comp="34" pin="0"/><net_sink comp="108" pin=0"/></net>
+
+<net id="115"><net_src comp="34" pin="0"/><net_sink comp="112" pin=0"/></net>
+
+<net id="119"><net_src comp="34" pin="0"/><net_sink comp="116" pin=0"/></net>
+
+<net id="140"><net_src comp="38" pin="0"/><net_sink comp="120" pin=0"/></net>
+
+<net id="141"><net_src comp="0" pin="0"/><net_sink comp="120" pin=1"/></net>
+
+<net id="142"><net_src comp="2" pin="0"/><net_sink comp="120" pin=2"/></net>
+
+<net id="143"><net_src comp="4" pin="0"/><net_sink comp="120" pin=3"/></net>
+
+<net id="144"><net_src comp="6" pin="0"/><net_sink comp="120" pin=4"/></net>
+
+<net id="145"><net_src comp="8" pin="0"/><net_sink comp="120" pin=5"/></net>
+
+<net id="146"><net_src comp="10" pin="0"/><net_sink comp="120" pin=6"/></net>
+
+<net id="147"><net_src comp="12" pin="0"/><net_sink comp="120" pin=7"/></net>
+
+<net id="148"><net_src comp="14" pin="0"/><net_sink comp="120" pin=8"/></net>
+
+<net id="155"><net_src comp="44" pin="0"/><net_sink comp="149" pin=0"/></net>
+
+<net id="156"><net_src comp="16" pin="0"/><net_sink comp="149" pin=1"/></net>
+
+<net id="176"><net_src comp="36" pin="0"/><net_sink comp="157" pin=0"/></net>
+
+<net id="177"><net_src comp="18" pin="0"/><net_sink comp="157" pin=1"/></net>
+
+<net id="178"><net_src comp="20" pin="0"/><net_sink comp="157" pin=2"/></net>
+
+<net id="179"><net_src comp="22" pin="0"/><net_sink comp="157" pin=3"/></net>
+
+<net id="180"><net_src comp="24" pin="0"/><net_sink comp="157" pin=4"/></net>
+
+<net id="181"><net_src comp="26" pin="0"/><net_sink comp="157" pin=5"/></net>
+
+<net id="182"><net_src comp="28" pin="0"/><net_sink comp="157" pin=6"/></net>
+
+<net id="183"><net_src comp="30" pin="0"/><net_sink comp="157" pin=7"/></net>
+
+<net id="184"><net_src comp="32" pin="0"/><net_sink comp="157" pin=8"/></net>
+
+<net id="185"><net_src comp="68" pin="1"/><net_sink comp="157" pin=9"/></net>
+
+<net id="186"><net_src comp="72" pin="1"/><net_sink comp="157" pin=10"/></net>
+
+<net id="187"><net_src comp="76" pin="1"/><net_sink comp="157" pin=11"/></net>
+
+<net id="188"><net_src comp="80" pin="1"/><net_sink comp="157" pin=12"/></net>
+
+<net id="189"><net_src comp="84" pin="1"/><net_sink comp="157" pin=13"/></net>
+
+<net id="190"><net_src comp="88" pin="1"/><net_sink comp="157" pin=14"/></net>
+
+<net id="191"><net_src comp="92" pin="1"/><net_sink comp="157" pin=15"/></net>
+
+<net id="192"><net_src comp="96" pin="1"/><net_sink comp="157" pin=16"/></net>
+
+<net id="198"><net_src comp="40" pin="0"/><net_sink comp="193" pin=0"/></net>
+
+<net id="204"><net_src comp="46" pin="0"/><net_sink comp="199" pin=0"/></net>
+
+<net id="209"><net_src comp="48" pin="0"/><net_sink comp="205" pin=0"/></net>
+
+<net id="215"><net_src comp="42" pin="0"/><net_sink comp="210" pin=0"/></net>
+
+<net id="220"><net_src comp="64" pin="0"/><net_sink comp="216" pin=0"/></net>
+
+<net id="221"><net_src comp="205" pin="2"/><net_sink comp="216" pin=1"/></net>
+
+<net id="226"><net_src comp="66" pin="0"/><net_sink comp="222" pin=0"/></net>
+
+<net id="227"><net_src comp="216" pin="2"/><net_sink comp="222" pin=1"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+	Port: mlp : weights_L1_0_V | {3 4 }
+	Port: mlp : weights_L1_1_V | {3 4 }
+	Port: mlp : weights_L1_2_V | {3 4 }
+	Port: mlp : weights_L1_3_V | {3 4 }
+	Port: mlp : weights_L1_4_V | {3 4 }
+	Port: mlp : weights_L1_5_V | {3 4 }
+	Port: mlp : weights_L1_6_V | {3 4 }
+	Port: mlp : weights_L1_7_V | {3 4 }
+	Port: mlp : weights_L2_V | {9 10 }
+	Port: mlp : input_0_V | {1 2 }
+	Port: mlp : input_1_V | {1 2 }
+	Port: mlp : input_2_V | {1 2 }
+	Port: mlp : input_3_V | {1 2 }
+	Port: mlp : input_4_V | {1 2 }
+	Port: mlp : input_5_V | {1 2 }
+	Port: mlp : input_6_V | {1 2 }
+	Port: mlp : input_7_V | {1 2 }
+  - Chain level:
+	State 1
+		StgValue_28 : 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+		digit_load_loc_chann : 1
+		tmp : 2
+		StgValue_64 : 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|--------------------------------------------------|---------|---------|---------|---------|
+| Operation|                  Functional Unit                 |  DSP48E |  Delay  |    FF   |   LUT   |
+|----------|--------------------------------------------------|---------|---------|---------|---------|
+|          |             grp_mvprod_layer_1_fu_120            |    8    | 116.379 |  60931  |  33826  |
+|          |             grp_mvprod_layer_2_fu_149            |    1    | 24.3743 |   3479  |   2509  |
+|          |            grp_add_bias_pre_L1_fu_157            |    1    | 18.3476 |   846   |   490   |
+|          |         grp_sigmoid_activation_L_1_fu_193        |    1    |   4.36  |   229   |   233   |
+|   call   |          grp_sigmoid_activation_L_fu_199         |    1    |   4.36  |   231   |   231   |
+|          |                grp_classify_fu_205               |    0    | 1.81514 |   134   |   116   |
+|          |            grp_add_bias_pre_L2_fu_210            |    0    |  2.616  |    15   |    53   |
+|          | digit_load_loc_chann_Block_arrayctor_loop_fu_216 |    0    |    0    |    0    |    0    |
+|          |           tmp_p_src_mlp_cpp_lin_fu_222           |    0    |    0    |    0    |    0    |
+|----------|--------------------------------------------------|---------|---------|---------|---------|
+|   Total  |                                                  |    12   | 172.253 |  65865  |  37458  |
+|----------|--------------------------------------------------|---------|---------|---------|---------|
+
+Memories:
++---------------+--------+--------+--------+
+|               |  BRAM  |   FF   |   LUT  |
++---------------+--------+--------+--------+
+|   L1_activ_V  |    0   |   36   |    8   |
+| L1_no_activ_V |    0   |   36   |    8   |
+|L2_bias_added_V|    0   |   36   |    8   |
+|    L2_out_V   |    0   |   36   |    3   |
+| L2_out_activ_V|    0   |   36   |    3   |
+| bias_added_0_V|    0   |   36   |   15   |
+| bias_added_1_V|    0   |   36   |   15   |
+| bias_added_2_V|    0   |   36   |   15   |
+| bias_added_3_V|    0   |   36   |   15   |
+| bias_added_4_V|    0   |   36   |   15   |
+| bias_added_5_V|    0   |   36   |   15   |
+| bias_added_6_V|    0   |   36   |   15   |
+| bias_added_7_V|    0   |   36   |   13   |
++---------------+--------+--------+--------+
+|     Total     |    0   |   468  |   148  |
++---------------+--------+--------+--------+
+
+* Register list:
+N/A
+
+* Multiplexer (MUX) list: 
+|--------|------|------|------|--------|
+|  Comp  |  Pin | Size |  BW  | S x BW |
+|--------|------|------|------|--------|
+|  Total |      |      |      |    0   |
+|--------|------|------|------|--------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+--------+
+|           |  BRAM  | DSP48E |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+--------+--------+
+|  Function |    -   |   12   |   172  |  65865 |  37458 |
+|   Memory  |    0   |    -   |    -   |   468  |   148  |
+|Multiplexer|    -   |    -   |    -   |    -   |    -   |
+|  Register |    -   |    -   |    -   |    -   |    -   |
++-----------+--------+--------+--------+--------+--------+
+|   Total   |    0   |   12   |   172  |  66333 |  37606 |
++-----------+--------+--------+--------+--------+--------+

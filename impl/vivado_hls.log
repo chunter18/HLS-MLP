@@ -1,0 +1,106 @@
+INFO: [HLS 200-10] Running 'A:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'chunt' on host 'desktop-s201mjr' (Windows NT_amd64 version 6.2) on Sun Oct 27 21:56:00 -0700 2019
+INFO: [HLS 200-10] In directory 'C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl'
+INFO: [HLS 200-10] Opening project 'C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp'.
+INFO: [HLS 200-10] Adding design file '../src/mlp.cpp' to the project
+INFO: [HLS 200-10] Adding design file '../src/mlp.h' to the project
+INFO: [HLS 200-10] Adding test bench file '../../mvprod_test/src/L1_out_activ.dat' to the project
+INFO: [HLS 200-10] Adding test bench file '../../mvprod_test/src/L1_out_no_activ.dat' to the project
+INFO: [HLS 200-10] Adding test bench file '../../mvprod_test/src/L2_out_activ.dat' to the project
+INFO: [HLS 200-10] Adding test bench file '../../mvprod_test/src/L2_out_no_activ.dat' to the project
+INFO: [HLS 200-10] Adding test bench file '../src/network_inputs_fullbatch.dat' to the project
+INFO: [HLS 200-10] Adding test bench file '../src/network_outputs_fullbatch.dat' to the project
+INFO: [HLS 200-10] Adding test bench file '../src/tb_mlp.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file '../src/theta1.dat' to the project
+INFO: [HLS 200-10] Adding test bench file '../src/theta2.dat' to the project
+INFO: [HLS 200-10] Opening solution 'C:/Users/chunt/Desktop/ELEN226/assignment3/mlp/impl/mlp/higher_throughput'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-10] Setting target device to 'xc7k325tffg676-2'
+INFO: [HLS 200-10] Analyzing design file '../src/mlp.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:18 . Memory (MB): peak = 102.680 ; gain = 46.691
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:18 . Memory (MB): peak = 102.680 ; gain = 46.691
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<18, 6, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'sigmoid_activation_L1' (../src/mlp.cpp:137).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<36, 12, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'sigmoid_activation_L1' (../src/mlp.cpp:137).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<18, 5, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'sigmoid_activation_L2' (../src/mlp.cpp:169).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<36, 10, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'sigmoid_activation_L2' (../src/mlp.cpp:169).
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:20 . Memory (MB): peak = 124.453 ; gain = 68.465
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:04 ; elapsed = 00:00:22 . Memory (MB): peak = 136.617 ; gain = 80.629
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'classify' (../src/mlp.cpp:29).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'sigmoid_activation_L2' (../src/mlp.cpp:148).
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'outer' (../src/mlp.cpp:99) in function 'mvprod_layer_2' for pipelining.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'add_bias_pre_L2' (../src/mlp.cpp:60).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'sigmoid_activation_L1' (../src/mlp.cpp:116).
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'outer' (../src/mlp.cpp:77) in function 'mvprod_layer_1' for pipelining.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'add_bias_pre_L1' (../src/mlp.cpp:49).
+INFO: [XFORM 203-501] Unrolling loop 'argmax' (../src/mlp.cpp:36) in function 'classify' completely.
+INFO: [XFORM 203-501] Unrolling loop 'activ' (../src/mlp.cpp:157) in function 'sigmoid_activation_L2' completely.
+INFO: [XFORM 203-501] Unrolling loop 'inner' (../src/mlp.cpp:101) in function 'mvprod_layer_2' completely.
+INFO: [XFORM 203-501] Unrolling loop 'fill' (../src/mlp.cpp:66) in function 'add_bias_pre_L2' completely.
+INFO: [XFORM 203-501] Unrolling loop 'activ' (../src/mlp.cpp:125) in function 'sigmoid_activation_L1' completely.
+INFO: [XFORM 203-501] Unrolling loop 'inner' (../src/mlp.cpp:79) in function 'mvprod_layer_1' completely.
+INFO: [XFORM 203-501] Unrolling loop 'fill' (../src/mlp.cpp:55) in function 'add_bias_pre_L1' completely.
+INFO: [XFORM 203-102] Partitioning array 'L1_activ.V' (../src/mlp.cpp:8) automatically.
+INFO: [XFORM 203-102] Partitioning array 'L2_bias_added.V' (../src/mlp.cpp:9) automatically.
+INFO: [XFORM 203-102] Partitioning array 'L2_out_activ.V' (../src/mlp.cpp:11) automatically.
+WARNING: [XFORM 203-105] Cannot partition array 'weights_L1.V' (../src/mlp.cpp:4): indivisible factor 100 on dimension 2, which has 401 elements.
+WARNING: [XFORM 203-105] Cannot partition array 'bias_added.V' (../src/mlp.cpp:6): indivisible factor 100 on dimension 1, which has 401 elements.
+WARNING: [XFORM 203-105] Cannot partition array 'weights_L1.V' (../src/mlp.cpp:4): indivisible factor 100 on dimension 2, which has 401 elements.
+WARNING: [XFORM 203-105] Cannot partition array 'bias_added.V' (../src/mlp.cpp:6): indivisible factor 100 on dimension 1, which has 401 elements.
+INFO: [XFORM 203-101] Partitioning array 'input.V' (../src/mlp.cpp:4) in dimension 1 with a block factor 100.
+INFO: [XFORM 203-101] Partitioning array 'weights_L2.V' (../src/mlp.cpp:4) in dimension 1 completely.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L1.V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L1.V' has read operations in process function 'mvprod_layer_1'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[0].V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2[0].V' has read operations in process function 'mvprod_layer_2'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[1].V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2[1].V' has read operations in process function 'mvprod_layer_2'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[2].V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2[2].V' has read operations in process function 'mvprod_layer_2'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[3].V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2[3].V' has read operations in process function 'mvprod_layer_2'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[4].V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2[4].V' has read operations in process function 'mvprod_layer_2'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[5].V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2[5].V' has read operations in process function 'mvprod_layer_2'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[6].V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2[6].V' has read operations in process function 'mvprod_layer_2'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[7].V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2[7].V' has read operations in process function 'mvprod_layer_2'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[8].V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2[8].V' has read operations in process function 'mvprod_layer_2'.
+WARNING: [XFORM 203-713] Reading dataflow channel 'weights_L2[9].V' in the middle of dataflow may stall the dataflow pipeline:
+WARNING: [XFORM 203-713] Argument 'weights_L2[9].V' has read operations in process function 'mvprod_layer_2'.
+INFO: [XFORM 203-712] Applying dataflow to function 'mlp', detected/extracted 9 process function(s): 
+	 'add_bias_pre_L1'
+	 'mvprod_layer_1'
+	 'sigmoid_activation_L1'
+	 'add_bias_pre_L2'
+	 'mvprod_layer_2'
+	 'sigmoid_activation_L2'
+	 'classify'
+	 'Block_arrayctor.loop2.preheader210_proc'
+	 '__../src/mlp.cpp_line24_proc'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../src/mlp.cpp:148:37) to (../src/mlp.cpp:178:1) in function 'sigmoid_activation_L2'... converting 21 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../src/mlp.cpp:116:37) to (../src/mlp.cpp:146:1) in function 'sigmoid_activation_L1'... converting 51 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:18 ; elapsed = 00:00:36 . Memory (MB): peak = 187.633 ; gain = 131.645
+WARNING: [XFORM 203-631] Renaming function 'sigmoid_activation_L2' to 'sigmoid_activation_L' (../src/mlp.cpp:150:1)
+WARNING: [XFORM 203-631] Renaming function 'sigmoid_activation_L1' to 'sigmoid_activation_L.1' (../src/mlp.cpp:118:1)
+WARNING: [XFORM 203-631] Renaming function '__../src/mlp.cpp_line24_proc' to '__../src/mlp.cpp_lin' 
+WARNING: [XFORM 203-631] Renaming function 'Block_arrayctor.loop2.preheader210_proc' to 'Block_arrayctor.loop' 
+INFO: [XFORM 203-531] Rewinding loop 'outer' (../src/mlp.cpp:99) in function 'mvprod_layer_2'.
+INFO: [XFORM 203-531] Rewinding loop 'outer' (../src/mlp.cpp:77) in function 'mvprod_layer_1'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:31 ; elapsed = 00:00:50 . Memory (MB): peak = 355.902 ; gain = 299.914
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'mlp' ...
+WARNING: [SYN 201-103] Legalizing function name 'sigmoid_activation_L.1' to 'sigmoid_activation_L_1'.
+WARNING: [SYN 201-103] Legalizing function name 'Block_arrayctor.loop' to 'Block_arrayctor_loop'.
+WARNING: [SYN 201-103] Legalizing function name '__../src/mlp.cpp_lin' to 'p_src_mlp_cpp_lin'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'add_bias_pre_L1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'add_bias_pre_L1'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('input_0_V_load_2', ../src/mlp.cpp:56) on array 'input_0_V' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'input_0_V'.
+WARNING: [SCHED 204-69] Unable to schedule 'store' operation (../src/mlp.cpp:56) of variable 'input_0_V_load_3', ../src/mlp.cpp:56 on array 'result_V' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'result_V'.
